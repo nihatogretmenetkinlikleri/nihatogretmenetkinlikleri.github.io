@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atatürk'ü Keşfet - Mürüvvet Hanım İlkokulu</title>
+    <title>Nihat Öğretmen'in Dijital Sınıfı</title>
     <style>
         :root {
             --primary-red: #E30A17;
-            --bg-color: #F8F9FA;
+            --bg-color: #f4f6f9;
             --card-bg: #FFFFFF;
             --text-color: #2D3748;
             --accent-yellow: #FFD700;
@@ -15,45 +15,102 @@
         }
 
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
         }
 
-        header {
+        /* 1. KISIM: ORİJİNAL TURUNCU-SARI GİRİŞ BANNERI */
+        .ust-banner {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .ana-baslik {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 800;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .alt-baslik {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* İÇERİK BÖLGESİ */
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 15px 60px 15px;
+        }
+
+        /* 2. KISIM: KESİKLİ MAVİ ÇERÇEVELİ AÇILIŞ / KARŞILAMA KARTU */
+        .hosgeldiniz-kartı {
+            background: white;
+            border: 3px dashed #4a90e2;
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-top: -30px; /* Banner üzerine hafif taşma efekti */
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+
+        .hosgeldiniz-kartı h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .hosgeldiniz-kartı p {
+            color: #5a738e;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* 3. KISIM: KIRMIZI-BEYAZ OKUL ÇALIŞMASI BAŞLIĞI */
+        .okul-calisma-baslik {
             background: linear-gradient(135deg, #E30A17, #b50812);
             color: white;
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 20px 15px;
+            border-radius: 15px;
             border-bottom: 5px solid var(--accent-yellow);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
         }
 
         .school-badge {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             background: rgba(255,255,255,0.2);
-            padding: 6px 15px;
+            padding: 4px 12px;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
-        header h1 {
-            margin: 10px 0;
-            font-size: 2.2rem;
+        .okul-calisma-baslik h1 {
+            margin: 5px 0;
+            font-size: 1.8rem;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 15px 40px 15px;
-        }
-
+        /* GENEL ETKİNLİK KARTLARI */
         .card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -65,7 +122,7 @@
 
         h2 {
             color: var(--primary-red);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-top: 0;
             display: flex;
             align-items: center;
@@ -113,7 +170,6 @@
             border-radius: 10px;
             padding: 10px;
             text-align: center;
-            position: relative;
         }
 
         .timeline-year {
@@ -136,7 +192,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Oranı */
+            padding-bottom: 56.25%;
             height: 0;
             border-radius: 10px;
             overflow: hidden;
@@ -223,21 +279,21 @@
             font-weight: bold;
         }
 
-        /* YENİ EKLENEN DERS SAYFALARI PANELİ (Sade ve Uyumlu) */
-        .ders-kütüphanesi {
+        /* EN ALT DERS MENÜSÜ PANELİ */
+        .ders-menusu {
             margin-top: 40px;
-            border-top: 3px dashed #E2E8F0;
+            border-top: 3px dashed #ff7e5f;
             padding-top: 25px;
         }
 
-        .ders-izgara {
+        .ders-buton-listesi {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 12px;
             margin-top: 15px;
         }
 
-        .ders-link-buton {
+        .ders-menusu-butonu {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -252,16 +308,15 @@
             font-size: 0.9rem;
             box-shadow: var(--shadow);
             transition: all 0.2s ease;
-            border-top: 3px solid #E2E8F0;
         }
 
-        .ders-link-buton:hover {
+        .ders-menusu-butonu:hover {
             transform: translateY(-2px);
-            border-color: var(--primary-red);
-            color: var(--primary-red);
+            border-color: #ff7e5f;
+            color: #ff7e5f;
         }
 
-        .ders-link-buton span {
+        .ders-menusu-butonu span {
             font-size: 1.6rem;
             margin-bottom: 6px;
         }
@@ -276,71 +331,31 @@
 </head>
 <body>
 
-    <header>
-        <div class="school-badge">Mürüvvet Hanım İlkokulu</div>
-        <h1>Atatürk'ü Keşfet</h1>
-        <p>Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
-    </header>
+    <!-- 1. BÖLÜM: ORİJİNAL TURUNCU BANNER -->
+    <div class="ust-banner">
+        <h1 class="ana-baslik">Nihat Öğretmen'in Dijital Sınıfı</h1>
+        <p class="alt-baslik">🚀 Eğlenceli Öğrenme Yolculuğu</p>
+    </div>
 
     <div class="container">
 
-        <!-- 1. Atatürk Kimdir? & Temel Bilgiler -->
+        <!-- 2. BÖLÜM: ORİJİNAL MAVİ KESİKLİ KARŞILAMA KARTU (GİRİŞ EKRANI) -->
+        <div class="hosgeldiniz-kartı">
+            <h2>Sınıfımıza Hoş Geldiniz Çocuklar! 👋</h2>
+            <p>Sizler için hazırladığım interaktif çalışmalara, videolu derslere ve eğlenceli testlere aşağıdan kolayca ulaşabilirsiniz. Hadi, keşfetmeye başlayın!</p>
+        </div>
+
+        <!-- 3. BÖLÜM: KIRMIZI-BEYAZ OKUL ETKİNLİK BAŞLIĞI -->
+        <div class="okul-calisma-baslik">
+            <div class="school-badge">Mürüvvet Hanım İlkokulu</div>
+            <h1>Atatürk'ü Keşfet</h1>
+            <p>10 Kasım Özel Çalışma Sayfası</p>
+        </div>
+
+        <!-- Atatürk Kimdir? & Temel Bilgiler -->
         <div class="card">
             <h2>⭐ Atatürk Kimdir?</h2>
             <p>Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanı olan Gazi Mustafa Kemal Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
             
             <div class="info-grid">
                 <div class="info-item">
-                    <strong>Gazi ve Başöğretmen</strong>
-                    Milletinin verdiği unvanlar
-                </div>
-                <div class="info-item">
-                    <strong>Çocuk Sevgisi</strong>
-                    23 Nisan'ı çocuklara armağan etti
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. Zaman Çizelgesi -->
-        <div class="card">
-            <h2>📜 Hayatından Kısa Zaman Çizelgesi</h2>
-            <p>Olayları sırayla zihnimizde canlandıralım:</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-year">1881</span>
-                    <div class="timeline-desc">Selanik'te dünyaya geldi.</div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">1919</span>
-                    <div class="timeline-desc">Millî mücadeleyi başlattı.</div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">1923</span>
-                    <div class="timeline-desc">Cumhuriyet ilan edildi.</div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">1938</span>
-                    <div class="timeline-desc">Dolmabahçe'de vefat etti.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. Eğitici Video (YouTube İzleme Sorunu Düzeltildi) -->
-        <div class="card">
-            <h2>🎥 Eğitici Videoyu İzleyelim</h2>
-            <div class="video-container">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <!-- 4. İnteraktif Quiz Alanı -->
-        <div class="card" id="quiz-card">
-            <h2>🧠 Mini Keşif Testi</h2>
-            <div id="quiz-area">
-                <div class="quiz-question" id="question-text">Soru yükleniyor...</div>
-                <div class="quiz-options" id="options-area"></div>
-                <div class="quiz-feedback" id="feedback-text"></div>
-            </div>
-            <div id="result-screen">
-                <h3>Tebrikler Küçük Kaşif! 🎉</h3>
-                <p id="score-text"></p>
