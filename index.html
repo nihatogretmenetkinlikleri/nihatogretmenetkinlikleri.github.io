@@ -3,88 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nihat Öğretmen'in Eğlenceli Sınıfı</title>
+    <title>Mürüvvet Hanım İlkokulu - Dijital Sınıf</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; }
-        body { background: linear-gradient(135deg, #fef9e7 0%, #ebf5fb 100%); min-height: 100vh; color: #333; display: flex; flex-direction: column; }
-        
-        /* Sihirli Başlık Alanı */
-        header { background: linear-gradient(135deg, #FF5733, #FFC300); color: white; padding: 40px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
-        header h1 { font-size: 32px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 10px; }
-        header p { font-size: 18px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; }
-        
-        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; flex: 1; }
-        
-        /* Karşılama Panosu */
-        .welcome-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 35px; border: 3px dashed #3498db; }
-        .welcome-card h2 { color: #2c3e50; font-size: 24px; margin-bottom: 10px; }
-        .welcome-card p { color: #666; font-size: 16px; line-height: 1.5; }
-        
-        .section-title { font-size: 22px; color: #2c3e50; margin-bottom: 20px; text-align: center; position: relative; }
-        .section-title::after { content: '⭐'; display: block; font-size: 14px; margin-top: 5px; }
-
-        /* Buton Alanı */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; justify-content: center; }
-        
-        /* Canlı ve Büyük Etkinlik Butonları */
-        .menu-button { background: white; border-radius: 20px; box-shadow: 0 8px 15px rgba(0,0,0,0.08); padding: 25px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px solid #e74c3c; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; cursor: pointer; }
-        .menu-button:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(231, 76, 60, 0.2); }
-        .menu-button .icon { font-size: 45px; margin-bottom: 12px; animation: float 3s ease-in-out infinite; }
-        .menu-button h3 { color: #c0392b; font-size: 20px; margin-bottom: 8px; }
-        .menu-button p { color: #7f8c8d; font-size: 14px; font-weight: bold; }
-
-        /* Yakında Gelecek Çalışma Kutuları */
-        .disabled-button { background: #f2f4f4; border-radius: 20px; padding: 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px dashed #bdc3c7; opacity: 0.7; }
-        .disabled-button .icon { font-size: 45px; margin-bottom: 12px; filter: grayscale(100%); }
-        .disabled-button h3 { color: #7f8c8d; font-size: 20px; margin-bottom: 8px; }
-        .disabled-button p { color: #95a5a6; font-size: 14px; }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
+        /* GENEL SAYFA AYARLARI */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; margin-top: auto; font-weight: bold; }
+        /* KIRMIZI ÜST BANNER (Mevcut Tasarımınız) */
+        .ust-banner {
+            background-color: #d31d24; /* Okul kırmızısı */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid #ffcc00; /* Sarı şerit çizgisi */
+        }
+
+        .okul-adi {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .ana-baslik {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .alt-baslik {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* İÇERİK KONTEYNERİ */
+        .ana-konteyner {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        /* ÖZEL EKLENEN ÇALIŞMALAR (Örn: 10 Kasım) */
+        .ozel-caliskan {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #d31d24;
+        }
+
+        .ozel-caliskan h3 {
+            margin-top: 0;
+            color: #d31d24;
+        }
+
+        /* DERS BÖLÜMLERİ VE BAŞLIKLARI */
+        .kategori-bolumu {
+            margin-bottom: 35px;
+        }
+
+        .bolum-baslik {
+            color: #444;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid #d31d24;
+            padding-left: 10px;
+            font-weight: 700;
+        }
+
+        /* BUTON IZGARA YAPISI */
+        .buton-izgara {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* BUTON TASARIMLARI */
+        .ders-buton {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ders-buton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .buton-ikon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        /* DERS RENK GRUPLARI */
+        .turkce { background: linear-gradient(135deg, #ff9233, #ff5200); }
+        .matematik { background: linear-gradient(135deg, #4da3ff, #005ce6); }
+        .fen { background: linear-gradient(135deg, #33cc77, #00993d); }
+        .hayat { background: linear-gradient(135deg, #ff6680, #cc0029); }
+        .sosyal { background: linear-gradient(135deg, #8866ff, #4400cc); }
+
+        .gorsel { background: linear-gradient(135deg, #e65cbf, #b30084); }
+        .ingilizce { background: linear-gradient(135deg, #33d6cc, #00998f); }
+        .belirli-gun { background: linear-gradient(135deg, #ffbe33, #e69d00); }
+
+        .eglence { background: linear-gradient(135deg, #7cd633, #4ea300); }
+        .veli { background: linear-gradient(135deg, #738699, #404f5e); }
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 500px) {
+            .buton-izgara {
+                grid-template-columns: 1fr; /* Mobilde tek sütun */
+            }
+            .ana-baslik {
+                font-size: 26px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Nihat Öğretmen'in Dijital Sınıfı</h1>
-    <p>🚀 Eğlenceli Öğrenme Yolculuğu</p>
-</header>
-
-<div class="container">
-    <div class="welcome-card">
-        <h2>Sınıfımıza Hoş Geldiniz Çocuklar! 👋</h2>
-        <p>Sizler için hazırladığım interaktif çalışmalara, videolu derslere ve eğlenceli testlere aşağıdan kolayca ulaşabilirsiniz. Hadi, keşfetmeye başlayın!</p>
+    <!-- KIRMIZI ÜST BANNER -->
+    <div class="ust-banner">
+        <div class="okul-adi">Mürüvvet Hanım İlkokulu</div>
+        <h1 class="ana-baslik">Atatürk'ü Keşfet</h1>
+        <p class="alt-baslik">Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
     </div>
 
-    <h2 class="section-title">Bugünün Çalışmaları</h2>
-    
-    <div class="grid">
-        
-        <!-- AKTİF 10 KASIM BUTONU -->
-        <a href="10kasim.html" class="menu-button">
-            <div class="icon">🇹🇷</div>
-            <h3>10 Kasım Atatürk'ü Keşfet</h3>
-            <p>Videolu Anlatım & 5 Soruluk Test</p>
-        </a>
+    <!-- ANA İÇERİK ALANI -->
+    <div class="ana-konteyner">
 
-        <!-- YAKINDA GELECEK YENİ ÇALIŞMA ALANI -->
-        <div class="disabled-button">
-            <div class="icon">✏️</div>
-            <h3>Yeni Çalışmalar</h3>
-            <p>Çok Yakında Yüklenecektir...</p>
+        <!-- ÖNE ÇIKAN ÖZEL ÇALIŞMA (Karekodun Bağlı Olduğu Bölüm) -->
+        <div class="ozel-caliskan">
+            <h3>⭐ Atatürk Kimdir?</h3>
+            <p>Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanı olan Gazi Mustafa Kemal Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
+            <p><strong>Gazi ve Başöğretmen:</strong> Milletinin verdiği unvanlar</p>
+            <p><strong>Çocuk Sevgisi:</strong> Dünyada çocuklara bayram armağan eden tek lider.</p>
+        </div>
+
+        <!-- 1. BÖLÜM: TEMEL DERSLER -->
+        <div class="kategori-bolumu">
+            <h3 class="bolum-baslik">Temel Dersler</h3>
+            <div class="buton-izgara">
+                <a href="turkce.html" class="ders-buton turkce">
+                    <span class="buton-ikon">📚</span>
+                    <span class="buton-metin">Türkçe</span>
+                </a>
+                <a href="matematik.html" class="ders-buton matematik">
+                    <span class="buton-ikon">📐</span>
+                    <span class="buton-metin">Matematik</span>
+                </a>
+                <a href="fen.html" class="ders-buton fen">
+                    <span class="buton-ikon">🧪</span>
+                    <span class="buton-metin">Fen Bilimleri</span>
+                </a>
+                <a href="hayat-bilgisi.html" class="ders-buton hayat">
+                    <span class="buton-ikon">🏠</span>
+                    <span class="buton-metin">Hayat Bilgisi</span>
+                </a>
+                <a href="sosyal-bilgiler.html" class="ders-buton sosyal">
+                    <span class="buton-ikon">🗺️</span>
+                    <span class="buton-metin">Sosyal Bilgiler</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. BÖLÜM: YETENEK & KÜLTÜR -->
+        <div class="kategori-bolumu">
+            <h3 class="bolum-baslik">Yetenek & Kültür</h3>
+            <div class="buton-izgara">
+                <a href="gorselsanatlar.html" class="ders-buton gorsel">
+                    <span class="buton-ikon">🎨</span>
+                    <span class="buton-metin">Görsel Sanatlar</span>
+                </a>
+                <a href="ingilizce.html" class="ders-buton ingilizce">
+                    <span class="buton-ikon">🔤</span>
+                    <span class="buton-metin">İngilizce</span>
+                </a>
+                <a href="belirli-gunler.html" class="ders-buton belirli-gun">
+                    <span class="buton-ikon">📅</span>
+                    <span class="buton-metin">Belirli Gün & Haftalar</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. BÖLÜM: EĞLENCE & REHBERLİK -->
+        <div class="kategori-bolumu">
+            <h3 class="bolum-baslik">Eğlence & Rehberlik</h3>
+            <div class="buton-izgara">
+                <a href="zeka-oyunlari.html" class="ders-buton eglence">
+                    <span class="buton-ikon">🧩</span>
+                    <span class="buton-metin">Zeka Oyunları</span>
+                </a>
+                <a href="veli-kosesi.html" class="ders-buton veli">
+                    <span class="buton-ikon">👨‍👩‍👧</span>
+                    <span class="buton-metin">Veli Köşesi</span>
+                </a>
+            </div>
         </div>
 
     </div>
-</div>
-
-<footer>
-    🎈 Başarılar Dilerim! - Nihat Öğretmen &copy; 2026
-</footer>
 
 </body>
 </html>
