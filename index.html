@@ -5,13 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nihat Öğretmen Etkinlikleri</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        p { color: #666; font-size: 18px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; }
+        header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+        header h1 { margin-bottom: 5px; font-size: 24px; }
+        header p { font-size: 14px; opacity: 0.9; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+        .welcome-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; margin-bottom: 25px; }
+        .section-title { margin-bottom: 15px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #3498db; }
+        .card h3 { color: #2c3e50; margin-bottom: 10px; font-size: 18px; }
+        .card p { color: #666; font-size: 14px; margin-bottom: 15px; flex-grow: 1; }
+        .btn { display: inline-block; background-color: #3498db; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; transition: background 0.2s; }
+        .btn:hover { background-color: #2980b9; }
+        footer { text-align: center; padding: 20px; color: #888; font-size: 12px; margin-top: 40px; }
     </style>
 </head>
 <body>
-    <h1>Nihat Öğretmen Etkinlikleri Sitemize Hoş Geldiniz!</h1>
-    <p>Yakında yepyeni çalışmalar ve etkinlikler burada yayında olacak.</p>
+
+<header>
+    <h1>Nihat Öğretmen Etkinlikleri</h1>
+    <p>İlkokul Ders Materyalleri ve Çalışma Kağıtları</p>
+</header>
+
+<div class="container">
+    <div class="welcome-box">
+        <h2>Sitemize Hoş Geldiniz!</h2>
+        <p style="margin-top: 10px; color: #555;">Öğrencilerimiz için hazırladığım en güncel ders etkinliklerine ve çalışma kağıtlarına aşağıdan ulaşabilir, ücretsiz olarak indirebilirsiniz.</p>
+    </div>
+
+    <h2 class="section-title">Güncel Etkinlikler</h2>
+    <div class="grid">
+        
+        <!-- Örnek Etkinlik Kartı 1 -->
+        <div class="card">
+            <div>
+                <h3>1. Sınıf Okuma Yazma Etkinliği</h3>
+                <p>Harf çalışmaları ve hece birleştirme içerikli eğlenceli çalışma kağıdı.</p>
+            </div>
+            <a href="etkinlik1.pdf" class="btn">PDF Olarak İndir</a>
+        </div>
+
+        <!-- Örnek Etkinlik Kartı 2 -->
+        <div class="card">
+            <div>
+                <h3>Matematik Dört İşlem Alıştırmaları</h3>
+                <p>Toplama ve çıkarma işlemlerini pekiştirmek için hazırlanan çalışma sayfası.</p>
+            </div>
+            <a href="etkinlik2.pdf" class="btn">PDF Olarak İndir</a>
+        </div>
+
+        <!-- Örnek Etkinlik Kartı 3 -->
+        <div class="card">
+            <div>
+                <h3>Serbest Etkinlik boyama Sayfası</h3>
+                <p>Öğrencilerin el becerilerini geliştirecek eğlenceli boyama ve çizim sayfaları.</p>
+            </div>
+            <a href="etkinlik3.pdf" class="btn">PDF Olarak İndir</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Nihat Öğretmen Etkinlikleri. Tüm Hakları Saklıdır.
+</footer>
+
 </body>
 </html>
