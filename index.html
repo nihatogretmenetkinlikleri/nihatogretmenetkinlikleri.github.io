@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mürüvvet Hanım İlkokulu - Dijital Sınıf</title>
     <style>
-        /* GENEL SAYFA AYARLARI */
         body {
             margin: 0;
             padding: 0;
@@ -13,16 +12,13 @@
             background-color: #f9f9f9;
             color: #333;
         }
-
-        /* KIRMIZI ÜST BANNER (Mevcut Tasarımınız) */
         .ust-banner {
-            background-color: #d31d24; /* Okul kırmızısı */
+            background-color: #d31d24;
             color: white;
             text-align: center;
             padding: 40px 20px;
-            border-bottom: 5px solid #ffcc00; /* Sarı şerit çizgisi */
+            border-bottom: 5px solid #ffcc00;
         }
-
         .okul-adi {
             background-color: rgba(255, 255, 255, 0.2);
             padding: 8px 20px;
@@ -34,28 +30,22 @@
             margin-bottom: 15px;
             text-transform: uppercase;
         }
-
         .ana-baslik {
             margin: 0 0 10px 0;
             font-size: 32px;
             font-weight: 800;
         }
-
         .alt-baslik {
             margin: 0;
             font-size: 16px;
             opacity: 0.9;
             font-weight: 400;
         }
-
-        /* İÇERİK KONTEYNERİ */
         .ana-konteyner {
             max-width: 650px;
             margin: 30px auto;
             padding: 0 20px 50px 20px;
         }
-
-        /* ÖZEL EKLENEN ÇALIŞMALAR (Örn: 10 Kasım) */
         .ozel-caliskan {
             background: white;
             border-radius: 15px;
@@ -64,17 +54,13 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-top: 4px solid #d31d24;
         }
-
         .ozel-caliskan h3 {
             margin-top: 0;
             color: #d31d24;
         }
-
-        /* DERS BÖLÜMLERİ VE BAŞLIKLARI */
         .kategori-bolumu {
             margin-bottom: 35px;
         }
-
         .bolum-baslik {
             color: #444;
             font-size: 18px;
@@ -83,15 +69,11 @@
             padding-left: 10px;
             font-weight: 700;
         }
-
-        /* BUTON IZGARA YAPISI */
         .buton-izgara {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
-
-        /* BUTON TASARIMLARI */
         .ders-buton {
             display: flex;
             align-items: center;
@@ -104,35 +86,28 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.06);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-
         .ders-buton:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.12);
         }
-
         .buton-ikon {
             font-size: 24px;
             margin-right: 12px;
         }
-
-        /* DERS RENK GRUPLARI */
         .turkce { background: linear-gradient(135deg, #ff9233, #ff5200); }
         .matematik { background: linear-gradient(135deg, #4da3ff, #005ce6); }
         .fen { background: linear-gradient(135deg, #33cc77, #00993d); }
         .hayat { background: linear-gradient(135deg, #ff6680, #cc0029); }
         .sosyal { background: linear-gradient(135deg, #8866ff, #4400cc); }
-
         .gorsel { background: linear-gradient(135deg, #e65cbf, #b30084); }
         .ingilizce { background: linear-gradient(135deg, #33d6cc, #00998f); }
         .belirli-gun { background: linear-gradient(135deg, #ffbe33, #e69d00); }
-
         .eglence { background: linear-gradient(135deg, #7cd633, #4ea300); }
         .veli { background: linear-gradient(135deg, #738699, #404f5e); }
 
-        /* MOBİL UYUMLULUK */
         @media (max-width: 500px) {
             .buton-izgara {
-                grid-template-columns: 1fr; /* Mobilde tek sütun */
+                grid-template-columns: 1fr;
             }
             .ana-baslik {
                 font-size: 26px;
@@ -142,25 +117,19 @@
 </head>
 <body>
 
-    <!-- KIRMIZI ÜST BANNER -->
     <div class="ust-banner">
         <div class="okul-adi">Mürüvvet Hanım İlkokulu</div>
         <h1 class="ana-baslik">Atatürk'ü Keşfet</h1>
         <p class="alt-baslik">Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
     </div>
 
-    <!-- ANA İÇERİK ALANI -->
     <div class="ana-konteyner">
 
-        <!-- ÖNE ÇIKAN ÖZEL ÇALIŞMA (Karekodun Bağlı Olduğu Bölüm) -->
         <div class="ozel-caliskan">
             <h3>⭐ Atatürk Kimdir?</h3>
-            <p>Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanı olan Gazi Mustafa Kemal Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
-            <p><strong>Gazi ve Başöğretmen:</strong> Milletinin verdiği unvanlar</p>
-            <p><strong>Çocuk Sevgisi:</strong> Dünyada çocuklara bayram armağan eden tek lider.</p>
+            <p>Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
         </div>
 
-        <!-- 1. BÖLÜM: TEMEL DERSLER -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Temel Dersler</h3>
             <div class="buton-izgara">
@@ -187,7 +156,6 @@
             </div>
         </div>
 
-        <!-- 2. BÖLÜM: YETENEK & KÜLTÜR -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Yetenek & Kültür</h3>
             <div class="buton-izgara">
@@ -206,7 +174,6 @@
             </div>
         </div>
 
-        <!-- 3. BÖLÜM: EĞLENCE & REHBERLİK -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Eğlence & Rehberlik</h3>
             <div class="buton-izgara">
