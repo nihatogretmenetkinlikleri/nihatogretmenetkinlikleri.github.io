@@ -3,159 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mürüvvet Hanım İlkokulu - Atatürk'ü Keşfet</title>
+    <title>Mürüvvet Hanım İlkokulu - Dijital Sınıf</title>
     <style>
-        /* CANLI VE MODERN SAYFA AYARLARI */
+        /* GENEL SAYFA AYARLARI */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff; /* Soluk görünümü yok etmek için net beyaz arka plan */
-            color: #2c3e50;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        /* YÜKSEK ENERJİLİ KIRMIZI-SARI GEÇİŞLİ BANNER */
+        /* KIRMIZI ÜST BANNER (Mevcut Tasarımınız) */
         .ust-banner {
-            background: linear-gradient(135deg, #e31c25, #ff5252, #ffcc00); /* Çok daha canlı ve parlak renkler */
+            background-color: #d31d24; /* Okul kırmızısı */
             color: white;
             text-align: center;
-            padding: 45px 20px;
-            border-bottom: 6px solid #ffcc00;
-            box-shadow: 0 4px 20px rgba(227, 28, 37, 0.2);
+            padding: 40px 20px;
+            border-bottom: 5px solid #ffcc00; /* Sarı şerit çizgisi */
         }
 
-        .okul-adi-kutusu {
-            background-color: rgba(255, 255, 255, 0.25);
-            padding: 8px 18px;
-            border-radius: 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .okul-adi {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
             font-size: 14px;
-            font-weight: 800;
+            font-weight: bold;
             letter-spacing: 1px;
             margin-bottom: 15px;
             text-transform: uppercase;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .ana-baslik {
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             font-size: 32px;
-            font-weight: 900;
-            text-shadow: 2px 3px 6px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            font-weight: 800;
         }
 
         .alt-baslik {
             margin: 0;
             font-size: 16px;
-            opacity: 0.95;
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            opacity: 0.9;
+            font-weight: 400;
         }
 
         /* İÇERİK KONTEYNERİ */
         .ana-konteyner {
-            max-width: 600px;
-            margin: 25px auto;
-            padding: 0 15px 60px 15px;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 0 20px 50px 20px;
         }
 
-        /* 10 KASIM ATATÜRK ÖZEL BÖLÜMÜ */
-        .ataturk-bolumu {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 25px 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border: 2px solid #f0f0f0;
-            border-top: 5px solid #e31c25;
-        }
-
-        .ataturk-bolumu h2 {
-            color: #e31c25;
-            margin-top: 0;
-            font-size: 22px;
-            font-weight: 800;
-            border-bottom: 2px solid #f9f9f9;
-            padding-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .ataturk-bolumu p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #34495e;
-        }
-
-        /* VİDEO ALANI */
-        .video-kapsayici {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 14px;
-            background: #000;
-            margin: 20px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        }
-
-        .video-kapsayici iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* TEST / SORULAR ALANI */
-        .soru-kutusu {
-            background-color: #fffafb;
-            border-left: 5px solid #e31c25;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-
-        .soru-metni {
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #2c3e50;
-            font-size: 15px;
-        }
-
-        .secenekler {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .secenek-buton {
+        /* ÖZEL EKLENEN ÇALIŞMALAR (Örn: 10 Kasım) */
+        .ozel-caliskan {
             background: white;
-            border: 2px solid #eaeaea;
-            padding: 12px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 600;
-            color: #4f5f6f;
-            transition: all 0.2s ease;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #d31d24;
         }
 
-        .secenek-buton:hover {
-            background: #fff5f5;
-            border-color: #ff5252;
-            color: #e31c25;
-            transform: scale(1.01);
+        .ozel-caliskan h3 {
+            margin-top: 0;
+            color: #d31d24;
         }
 
         /* DERS BÖLÜMLERİ VE BAŞLIKLARI */
@@ -164,38 +76,38 @@
         }
 
         .bolum-baslik {
-            color: #2c3e50;
+            color: #444;
             font-size: 18px;
             margin-bottom: 15px;
-            border-left: 4px solid #ff7e5f;
-            padding-left: 12px;
-            font-weight: 800;
+            border-left: 4px solid #d31d24;
+            padding-left: 10px;
+            font-weight: 700;
         }
 
         /* BUTON IZGARA YAPISI */
         .buton-izgara {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 15px;
         }
 
-        /* PARLAK VE CANLI DERS BUTONLARI */
+        /* BUTON TASARIMLARI */
         .ders-buton {
             display: flex;
             align-items: center;
             padding: 16px;
-            border-radius: 14px;
+            border-radius: 12px;
             text-decoration: none;
             color: white;
-            font-weight: 700;
-            font-size: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-            transition: all 0.2s ease;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .ders-buton:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
         }
 
         .buton-ikon {
@@ -203,71 +115,49 @@
             margin-right: 12px;
         }
 
-        /* DOYGUN VE PARLAK RENK GRUPLARI */
-        .turkce { background: linear-gradient(135deg, #ff9f43, #ff5252); }
-        .matematik { background: linear-gradient(135deg, #54a0ff, #2e86de); }
-        .fen { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
-        .hayat { background: linear-gradient(135deg, #ff6b6b, #ee5253); }
-        .sosyal { background: linear-gradient(135deg, #a55eea, #8854d0); }
-        .gorsel { background: linear-gradient(135deg, #ff7675, #d63031); }
-        .ingilizce { background: linear-gradient(135deg, #00d2d3, #01a3a4); }
-        .belirli-gun { background: linear-gradient(135deg, #feca57, #ff9f43); }
-        .eglence { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
-        .veli { background: linear-gradient(135deg, #8395a7, #576574); }
+        /* DERS RENK GRUPLARI */
+        .turkce { background: linear-gradient(135deg, #ff9233, #ff5200); }
+        .matematik { background: linear-gradient(135deg, #4da3ff, #005ce6); }
+        .fen { background: linear-gradient(135deg, #33cc77, #00993d); }
+        .hayat { background: linear-gradient(135deg, #ff6680, #cc0029); }
+        .sosyal { background: linear-gradient(135deg, #8866ff, #4400cc); }
+
+        .gorsel { background: linear-gradient(135deg, #e65cbf, #b30084); }
+        .ingilizce { background: linear-gradient(135deg, #33d6cc, #00998f); }
+        .belirli-gun { background: linear-gradient(135deg, #ffbe33, #e69d00); }
+
+        .eglence { background: linear-gradient(135deg, #7cd633, #4ea300); }
+        .veli { background: linear-gradient(135deg, #738699, #404f5e); }
 
         /* MOBİL UYUMLULUK */
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
             .buton-izgara {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Mobilde tek sütun */
             }
             .ana-baslik {
-                font-size: 24px;
+                font-size: 26px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- YENİ CANLI BANNER VE GİRİŞ İKONLARI -->
+    <!-- KIRMIZI ÜST BANNER -->
     <div class="ust-banner">
-        <div class="okul-adi-kutusu">
-            <span>🏫</span> Mürüvvet Hanım İlkokulu
-        </div>
-        <h1 class="ana-baslik">🇹🇷 Atatürk'ü Keşfet 🏅</h1>
-        <p class="alt-baslik">🚀 Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
+        <div class="okul-adi">Mürüvvet Hanım İlkokulu</div>
+        <h1 class="ana-baslik">Atatürk'ü Keşfet</h1>
+        <p class="alt-baslik">Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
     </div>
 
     <!-- ANA İÇERİK ALANI -->
     <div class="ana-konteyner">
 
-        <!-- 10 KASIM ETKİNLİK ALANI -->
-        <div class="ataturk-bolumu">
-            <h2>✨ 10 Kasım Özel Etkinliği</h2>
-            <p>Sevgili Çocuklar, önce aşağıdaki videomuzu dikkatlice izleyelim, ardından altındaki soruları cevaplayalım!</p>
-            
-            <!-- Eğitici Video -->
-            <div class="video-kapsayici">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-            </div>
-
-            <!-- İnteraktif Sorular -->
-            <div class="soru-kutusu">
-                <div class="soru-metni">Soru 1: Cumhuriyetimizin kurucusu Gazi Mustafa Kemal Atatürk'e "Başöğretmen" unvanı hangi alandaki çalışmaları nedeniyle verilmiştir?</div>
-                <div class="secenekler">
-                    <button class="secenek-buton">A) Askeri başarıları ve kazandığı savaşlar</button>
-                    <button class="secenek-buton">B) Eğitim alanında yaptığı yenilikler ve harf devrimi</button>
-                    <button class="secenek-buton">C) Yabancı devletlerle yaptığı antlaşmalar</button>
-                </div>
-            </div>
-
-            <div class="soru-kutusu">
-                <div class="soru-metni">Soru 2: Dünyada çocuklara bayram (23 Nisan) armağan eden tek lider kimdir?</div>
-                <div class="secenekler">
-                    <button class="secenek-buton">A) Gazi Mustafa Kemal Atatürk</button>
-                    <button class="secenek-buton">B) İsmet İnönü</button>
-                    <button class="secenek-buton">C) Fevzi Çakmak</button>
-                </div>
-            </div>
+        <!-- ÖNE ÇIKAN ÖZEL ÇALIŞMA (Karekodun Bağlı Olduğu Bölüm) -->
+        <div class="ozel-caliskan">
+            <h3>⭐ Atatürk Kimdir?</h3>
+            <p>Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanı olan Gazi Mustafa Kemal Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
+            <p><strong>Gazi ve Başöğretmen:</strong> Milletinin verdiği unvanlar</p>
+            <p><strong>Çocuk Sevgisi:</strong> Dünyada çocuklara bayram armağan eden tek lider.</p>
         </div>
 
         <!-- 1. BÖLÜM: TEMEL DERSLER -->
@@ -298,3 +188,40 @@
         </div>
 
         <!-- 2. BÖLÜM: YETENEK & KÜLTÜR -->
+        <div class="kategori-bolumu">
+            <h3 class="bolum-baslik">Yetenek & Kültür</h3>
+            <div class="buton-izgara">
+                <a href="gorselsanatlar.html" class="ders-buton gorsel">
+                    <span class="buton-ikon">🎨</span>
+                    <span class="buton-metin">Görsel Sanatlar</span>
+                </a>
+                <a href="ingilizce.html" class="ders-buton ingilizce">
+                    <span class="buton-ikon">🔤</span>
+                    <span class="buton-metin">İngilizce</span>
+                </a>
+                <a href="belirli-gunler.html" class="ders-buton belirli-gun">
+                    <span class="buton-ikon">📅</span>
+                    <span class="buton-metin">Belirli Gün & Haftalar</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. BÖLÜM: EĞLENCE & REHBERLİK -->
+        <div class="kategori-bolumu">
+            <h3 class="bolum-baslik">Eğlence & Rehberlik</h3>
+            <div class="buton-izgara">
+                <a href="zeka-oyunlari.html" class="ders-buton eglence">
+                    <span class="buton-ikon">🧩</span>
+                    <span class="buton-metin">Zeka Oyunları</span>
+                </a>
+                <a href="veli-kosesi.html" class="ders-buton veli">
+                    <span class="buton-ikon">👨‍👩‍👧</span>
+                    <span class="buton-metin">Veli Köşesi</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
