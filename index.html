@@ -3,74 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nihat Öğretmen Etkinlikleri</title>
+    <title>Atatürk'ü Keşfet - Mürüvvet Hanım İlkokulu</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; }
-        header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
-        header h1 { margin-bottom: 5px; font-size: 24px; }
-        header p { font-size: 14px; opacity: 0.9; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
-        .welcome-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; margin-bottom: 25px; }
-        .section-title { margin-bottom: 15px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; display: inline-block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #3498db; }
-        .card h3 { color: #2c3e50; margin-bottom: 10px; font-size: 18px; }
-        .card p { color: #666; font-size: 14px; margin-bottom: 15px; flex-grow: 1; }
-        .btn { display: inline-block; background-color: #3498db; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; transition: background 0.2s; }
-        .btn:hover { background-color: #2980b9; }
-        footer { text-align: center; padding: 20px; color: #888; font-size: 12px; margin-top: 40px; }
+        :root {
+            --primary-red: #E30A17;
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-color: #2D3748;
+            --accent-yellow: #FFD700;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #E30A17, #b50812);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 5px solid var(--accent-yellow);
+        }
+
+        .school-badge {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-red);
+        }
+
+        h2 {
+            color: var(--primary-red);
+            font-size: 1.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Temel Bilgiler Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #FFF5F5;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #fed7d7;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--primary-red);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Zaman Çizelgesi */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 30px 0 10px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            min-width: 120px;
+            background: #FFF;
+            border: 2px solid #E30A17;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-year {
+            background: var(--primary-red);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Video Bölümü */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Oranı */
+            height: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000;
+            margin-top: 15px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Çocuklara Mesaj & Düşün Alanı */
+        .message-box, .think-box {
+            background: #FFFDF0;
+            border-left: 5px solid var(--accent-yellow);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .think-box {
+            background: #F0F8FF;
+            border-left-color: #3182CE;
+        }
+
+        /* Quiz Alanı */
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-btn {
+            background: white;
+            border: 2px solid #E2E8F0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-btn:hover {
+            border-color: var(--primary-red);
+            background: #FFF5F5;
+        }
+
+        .quiz-btn.correct {
+            background: #C6F6D5 !important;
+            border-color: #38A169 !important;
+            color: #22543D;
+        }
+
+        .quiz-btn.wrong {
+            background: #FED7D7 !important;
+            border-color: #E53E3E !important;
+            color: #742A2A;
+        }
+
+        .quiz-feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Sonuç Ekranı */
+        #result-screen {
+            text-align: center;
+            display: none;
+        }
+
+        #result-screen h3 {
+            color: #38A169;
+            font-size: 1.8rem;
+        }
+
+        .restart-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Nihat Öğretmen Etkinlikleri</h1>
-    <p>İlkokul Ders Materyalleri ve Çalışma Kağıtları</p>
-</header>
+    <header>
+        <div class="school-badge">Mürüvvet Hanım İlkokulu</div>
+        <h1>Atatürk'ü Keşfet</h1>
+        <p>Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
+    </header>
 
-<div class="container">
-    <div class="welcome-box">
-        <h2>Sitemize Hoş Geldiniz!</h2>
-        <p style="margin-top: 10px; color: #555;">Öğrencilerimiz için hazırladığım en güncel ders etkinliklerine ve çalışma kağıtlarına aşağıdan ulaşabilir, ücretsiz olarak indirebilirsiniz.</p>
+    <div class="container">
+
+        <!-- 1. Atatürk Kimdir? & Temel Bilgiler -->
+        <div class="card">
+            <h2>⭐ Atatürk Kimdir?</h2>
+            <p>Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanı olan Gazi Mustafa Kemal Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Gazi ve Başöğretmen</strong>
+                    Milletinin verdiği unvanlar
+                </div>
+                <div class="info-item">
+                    <strong>Çocuk Sevgisi</strong>
+                    23 Nisan'ı çocuklara armağan etti
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Zaman Çizelgesi -->
+        <div class="card">
+            <h2>📜 Hayatından Kısa Zaman Çizelgesi</h2>
+            <p>Olayları sırayla zihnimizde canlandıralım:</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1881</span>
+                    <div class="timeline-desc">Selanik'te dünyaya geldi.</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1919</span>
+                    <div class="timeline-desc">Millî mücadeleyi başlattı.</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1923</span>
+                    <div class="timeline-desc">Cumhuriyet ilan edildi.</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1938</span>
+                    <div class="timeline-desc">Aramızdan ayrıldı.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Video Bölümü (Çocuklara uygun Atatürk & Çocuk şarkı/eğitici video eklendi) -->
+        <div class="card">
+            <h2>🎬 Atatürk'ü Tanıyorum (Video)</h2>
+            <p>Atatürk'ün hayatını ve çocuk sevgisini anlatan kısa videomuzu izleyelim:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/e4dSIT4VVTo" title="Atatürk'ün Hayatı Çocuk Şarkısı" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- 4. Çocuklara Mesaj -->
+        <div class="card">
+            <h2>🇹🇷 Atatürk'ün Çocuklara Mesajı</h2>
+            <p>Atatürk çocukları çok sever, en büyük sevgiyi ve güveni onlara bağlardı:</p>
+            <div class="message-box">
+                "Küçük hanımlar, küçük beyler! Sizler hepiniz geleceğin bir gülü, yıldızı ve ikbal ışığısınız. Memleketi asıl ışığa boğacak olan sizsiniz."
+            </div>
+        </div>
+
+        <!-- 5. Düşün ve Keşfet -->
+        <div class="card">
+            <h2>🧠 Düşün ve Keşfet</h2>
+            <p>Küçük bir soru, derin bir düşünce:</p>
+            <div class="think-box">
+                <strong>🤔 Biraz Düşün...</strong><br>
+                Sence Atatürk neden çocuklara bu kadar çok önem veriyor ve geleceği onlara emanet ediyordu? 
+            </div>
+        </div>
+
+        <!-- 6. 5 Soruluk Mini Quiz -->
+        <div class="card" id="quiz-card">
+            <h2>🎯 Mini Quiz: Ne Kadar Hatırlıyoruz?</h2>
+            
+            <div id="question-container">
+                <div class="quiz-question" id="question-text">Soru yükleniyor...</div>
+                <div class="quiz-options" id="options-container"></div>
+                <div class="quiz-feedback" id="feedback"></div>
+            </div>
+
+            <div id="result-screen">
+                <h3>🎉 TEBRİKLER! ATATÜRK'Ü KEŞFETTİN!</h3>
+                <p id="score-text" style="font-size: 1.2rem; font-weight: bold; margin: 15px 0;"></p>
+                <p>Harika bir iş çıkardın küçük kaşif!</p>
+                <button class="restart-btn" onclick="restartQuiz()">Quizi Tekrar Çöz</button>
+            </div>
+        </div>
+
     </div>
 
-    <h2 class="section-title">Güncel Etkinlikler</h2>
-    <div class="grid">
-        
-        <!-- Örnek Etkinlik Kartı 1 -->
-        <div class="card">
-            <div>
-                <h3>1. Sınıf Okuma Yazma Etkinliği</h3>
-                <p>Harf çalışmaları ve hece birleştirme içerikli eğlenceli çalışma kağıdı.</p>
-            </div>
-            <a href="etkinlik1.pdf" class="btn">PDF Olarak İndir</a>
-        </div>
+    <footer>
+        <p>&copy; 2026 Mürüvvet Hanım İlkokulu | Tüm Hakları Saklıdır.</p>
+    </footer>
 
-        <!-- Örnek Etkinlik Kartı 2 -->
-        <div class="card">
-            <div>
-                <h3>Matematik Dört İşlem Alıştırmaları</h3>
-                <p>Toplama ve çıkarma işlemlerini pekiştirmek için hazırlanan çalışma sayfası.</p>
-            </div>
-            <a href="etkinlik2.pdf" class="btn">PDF Olarak İndir</a>
-        </div>
+    <script>
+        const quizData = [
+            {
+                question: "1. Mustafa Kemal Atatürk hangi şehirde doğmuştur?",
+                options: ["Ankara", "İstanbul", "Selanik", "İzmir"],
+                answer: 2
+            },
+            {
+                question: "2. Türkiye Cumhuriyeti hangi yıl ilan edilmiştir?",
+                options: ["1919", "1920", "1923", "1938"],
+                answer: 2
+            },
+            {
+                question: "3. Atatürk millî mücadeleyi başlatmak için hangi şehre çıkmıştır?",
+                options: ["Samsun", "Çanakkale", "Bursa", "Antalya"],
+                answer: 0
+            },
+            {
+                question: "4. 23 Nisan hangi bayram olarak çocuklara armağan edilmiştir?",
+                options: ["Zafer Bayramı", "Ulusal Egemenlik ve Çocuk Bayramı", "Gençlik ve Spor Bayramı", "Cumhuriyet Bayramı"],
+                answer: 1
+            },
+            {
+                question: "5. Atatürk'ün hayata gözlerini yumduğu ve veda ettiği saray hangisidir?",
+                options: ["Topkapı Sarayı", "Çankaya Köşkü", "Dolmabahçe Sarayı", "Yıldız Sarayı"],
+                answer: 2
+            }
+        ];
 
-        <!-- Örnek Etkinlik Kartı 3 -->
-        <div class="card">
-            <div>
-                <h3>Serbest Etkinlik boyama Sayfası</h3>
-                <p>Öğrencilerin el becerilerini geliştirecek eğlenceli boyama ve çizim sayfaları.</p>
-            </div>
-            <a href="etkinlik3.pdf" class="btn">PDF Olarak İndir</a>
-        </div>
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
 
-    </div>
-</div>
+        const questionText = document.getElementById("question-text");
+        const optionsContainer = document.getElementById("options-container");
+        const feedback = document.getElementById("feedback");
+        const questionContainer = document.getElementById("question-container");
+        const resultScreen = document.getElementById("result-screen");
+        const scoreText = document.getElementById("score-text");
 
-<footer>
-    &copy; 2026 Nihat Öğretmen Etkinlikleri. Tüm Hakları Saklıdır.
-</footer>
+        function loadQuestion() {
+            answered = false;
+            feedback.textContent = "";
+            feedback.style.color = "";
+            
+            const current = quizData[currentQuestion];
+            questionText.textContent = current.question;
+            optionsContainer.innerHTML = "";
 
+            current.options.forEach((option, index) => {
+                const btn = document.createElement("button");
+                btn.classList.add("quiz-btn");
+                btn.textContent = option;
+                btn.onclick = () => selectOption(index, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIndex, selectedBtn) {
+            if (answered) return;
+            answered = true;
+
+            const current = quizData[currentQuestion];
+            const buttons = optionsContainer.getElementsByClassName("quiz-btn");
+
+            if (selectedIndex === current.answer) {
+                selectedBtn.classList.add("correct");
+                feedback.textContent = "✅ Harika, doğru cevap!";
+                feedback.style.color = "#38A169";
+                score++;
+            } else {
+                selectedBtn.classList.add("wrong");
+                buttons[current.answer].classList.add("correct");
+                feedback.textContent = "❌ Yanlış ama olsun, öğrenmek harika!";
+                feedback.style.color = "#E53E3E";
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1500);
+        }
+
+        function showResult() {
+            questionContainer.style.display = "none";
+            resultScreen.style.display = "block";
+            scoreText.textContent = `⭐ 5 sorudan ${score}'ini doğru yaptın!`;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            questionContainer.style.display = "block";
+            resultScreen.style.display = "none";
+            loadQuestion();
+        }
+
+        // Başlangıçta quizi yükle
+        loadQuestion();
+    </script>
 </body>
 </html>
+
