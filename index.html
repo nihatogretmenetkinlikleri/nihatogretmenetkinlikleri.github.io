@@ -3,97 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mürüvvet Hanım İlkokulu - Dijital Sınıf</title>
+    <title>Nihat Öğretmen'in Dijital Sınıfı</title>
     <style>
+        /* GENEL SAYFA AYARLARI */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f6f9;
             color: #333;
         }
+
+        /* ESKİ TURUNCU-SARI ÜST BANNER */
         .ust-banner {
-            background-color: #d31d24;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Sıcak turuncu-sarı geçiş */
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 5px solid #ffcc00;
+            padding: 45px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .okul-adi {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+
         .ana-baslik {
             margin: 0 0 10px 0;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.15);
         }
+
         .alt-baslik {
             margin: 0;
             font-size: 16px;
-            opacity: 0.9;
-            font-weight: 400;
+            opacity: 0.95;
+            font-weight: 500;
         }
+
+        /* ANA İÇERİK KONTEYNERİ */
         .ana-konteyner {
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 0 20px 50px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 15px 50px 15px;
         }
-        .ozel-caliskan {
+
+        /* HOŞ GELDİNİZ KARTU (Kesikli Mavi Çerçeveli) */
+        .hosgeldiniz-kartı {
             background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid #d31d24;
+            border: 3px dashed #4a90e2; /* Kesikli mavi çizgi */
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-top: -25px; /* Banner'ın üzerine hafifçe taşması için */
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
         }
-        .ozel-caliskan h3 {
+
+        .hosgeldiniz-kartı h2 {
+            color: #2c3e50;
+            font-size: 22px;
             margin-top: 0;
-            color: #d31d24;
+            margin-bottom: 12px;
         }
+
+        .hosgeldiniz-kartı p {
+            color: #5a738e;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* DERS BÖLÜMLERİ VE BAŞLIKLARI */
         .kategori-bolumu {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
+
         .bolum-baslik {
-            color: #444;
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-left: 4px solid #d31d24;
+            color: #2c3e50;
+            font-size: 17px;
+            margin-bottom: 12px;
+            border-left: 4px solid #ff7e5f; /* Turuncu başlık çizgisi */
             padding-left: 10px;
             font-weight: 700;
         }
+
+        /* BUTON IZGARA YAPISI */
         .buton-izgara {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 12px;
         }
+
+        /* BUTON TASARIMLARI */
         .ders-buton {
             display: flex;
             align-items: center;
-            padding: 16px;
+            padding: 15px;
             border-radius: 12px;
             text-decoration: none;
             color: white;
             font-weight: 600;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+            font-size: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .ders-buton:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
+
         .buton-ikon {
-            font-size: 24px;
-            margin-right: 12px;
+            font-size: 22px;
+            margin-right: 10px;
         }
+
+        /* DERS RENK GRUPLARI */
         .turkce { background: linear-gradient(135deg, #ff9233, #ff5200); }
         .matematik { background: linear-gradient(135deg, #4da3ff, #005ce6); }
         .fen { background: linear-gradient(135deg, #33cc77, #00993d); }
@@ -105,31 +129,35 @@
         .eglence { background: linear-gradient(135deg, #7cd633, #4ea300); }
         .veli { background: linear-gradient(135deg, #738699, #404f5e); }
 
-        @media (max-width: 500px) {
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 480px) {
             .buton-izgara {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Mobilde tek sıra */
             }
             .ana-baslik {
-                font-size: 26px;
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- ESKİ TURUNCU BANNER -->
     <div class="ust-banner">
-        <div class="okul-adi">Mürüvvet Hanım İlkokulu</div>
-        <h1 class="ana-baslik">Atatürk'ü Keşfet</h1>
-        <p class="alt-baslik">Küçük Kaşifler İçin Eğlenceli Öğrenme Yolculuğu</p>
+        <h1 class="ana-baslik">Nihat Öğretmen'in Dijital Sınıfı</h1>
+        <p class="alt-baslik">🚀 Eğlenceli Öğrenme Yolculuğu</p>
     </div>
 
+    <!-- ANA İÇERİK ALANI -->
     <div class="ana-konteyner">
 
-        <div class="ozel-caliskan">
-            <h3>⭐ Atatürk Kimdir?</h3>
-            <p>Atatürk, hayatını milletinin bağımsızlığına ve çağdaşlaşmasına adamış büyük bir liderdir.</p>
+        <!-- ESKİ HOŞ GELDİNİZ KARTU -->
+        <div class="hosgeldiniz-kartı">
+            <h2>Sınıfımıza Hoş Geldiniz Çocuklar! 👋</h2>
+            <p>Sizler için hazırladığım interaktif çalışmalara, videolu derslere ve eğlenceli testlere aşağıdan kolayca ulaşabilirsiniz. Hadi, keşfetmeye başlayın!</p>
         </div>
 
+        <!-- 1. BÖLÜM: TEMEL DERSLER -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Temel Dersler</h3>
             <div class="buton-izgara">
@@ -156,6 +184,7 @@
             </div>
         </div>
 
+        <!-- 2. BÖLÜM: YETENEK & KÜLTÜR -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Yetenek & Kültür</h3>
             <div class="buton-izgara">
@@ -174,6 +203,7 @@
             </div>
         </div>
 
+        <!-- 3. BÖLÜM: EĞLENCE & REHBERLİK -->
         <div class="kategori-bolumu">
             <h3 class="bolum-baslik">Eğlence & Rehberlik</h3>
             <div class="buton-izgara">
