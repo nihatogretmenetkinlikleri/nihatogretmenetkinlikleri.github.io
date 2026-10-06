@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihat Öğretmen'in Eğlenceli Sınıfı</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; }
+        body { background: linear-gradient(135deg, #fef9e7 0%, #ebf5fb 100%); min-height: 100vh; color: #333; display: flex; flex-direction: column; }
+        
+        /* Sihirli Başlık Alanı */
+        header { background: linear-gradient(135deg, #FF5733, #FFC300); color: white; padding: 40px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+        header h1 { font-size: 32px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 10px; }
+        header p { font-size: 18px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; }
+        
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; flex: 1; }
+        
+        /* Karşılama Panosu */
+        .welcome-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 35px; border: 3px dashed #3498db; }
+        .welcome-card h2 { color: #2c3e50; font-size: 24px; margin-bottom: 10px; }
+        .welcome-card p { color: #666; font-size: 16px; line-height: 1.5; }
+        
+        .section-title { font-size: 22px; color: #2c3e50; margin-bottom: 20px; text-align: center; position: relative; }
+        .section-title::after { content: '⭐'; display: block; font-size: 14px; margin-top: 5px; }
+
+        /* Buton Alanı */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; justify-content: center; }
+        
+        /* Canlı ve Büyük Etkinlik Butonları */
+        .menu-button { background: white; border-radius: 20px; box-shadow: 0 8px 15px rgba(0,0,0,0.08); padding: 25px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px solid #e74c3c; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; cursor: pointer; }
+        .menu-button:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(231, 76, 60, 0.2); }
+        .menu-button .icon { font-size: 45px; margin-bottom: 12px; animation: float 3s ease-in-out infinite; }
+        .menu-button h3 { color: #c0392b; font-size: 20px; margin-bottom: 8px; }
+        .menu-button p { color: #7f8c8d; font-size: 14px; font-weight: bold; }
+
+        /* Yakında Gelecek Çalışma Kutuları */
+        .disabled-button { background: #f2f4f4; border-radius: 20px; padding: 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px dashed #bdc3c7; opacity: 0.7; }
+        .disabled-button .icon { font-size: 45px; margin-bottom: 12px; filter: grayscale(100%); }
+        .disabled-button h3 { color: #7f8c8d; font-size: 20px; margin-bottom: 8px; }
+        .disabled-button p { color: #95a5a6; font-size: 14px; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; margin-top: auto; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nihat Öğretmen'in Dijital Sınıfı</h1>
+    <p>🚀 Eğlenceli Öğrenme Yolculuğu</p>
+</header>
+
+<div class="container">
+    <div class="welcome-card">
+        <h2>Sınıfımıza Hoş Geldiniz Çocuklar! 👋</h2>
+        <p>Sizler için hazırladığım interaktif çalışmalara, videolu derslere ve eğlenceli testlere aşağıdan kolayca ulaşabilirsiniz. Hadi, keşfetmeye başlayın!</p>
+    </div>
+
+    <h2 class="section-title">Bugünün Çalışmaları</h2>
+    
+    <div class="grid">
+        
+        <!-- AKTİF 10 KASIM BUTONU -->
+        <a href="10kasim.html" class="menu-button">
+            <div class="icon">🇹🇷</div>
+            <h3>10 Kasım Atatürk'ü Keşfet</h3>
+            <p>Videolu Anlatım & 5 Soruluk Test</p>
+        </a>
+
+        <!-- YAKINDA GELECEK YENİ ÇALIŞMA ALANI -->
+        <div class="disabled-button">
+            <div class="icon">✏️</div>
+            <h3>Yeni Çalışmalar</h3>
+            <p>Çok Yakında Yüklenecektir...</p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    🎈 Başarılar Dilerim! - Nihat Öğretmen &copy; 2026
+</footer>
+
+</body>
+</html>
