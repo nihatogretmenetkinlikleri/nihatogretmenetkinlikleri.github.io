@@ -37,19 +37,19 @@
         .btn-success { background: #27ae60; color: white; }
         .btn-success:hover { background: #229954; transform: scale(1.02); }
 
-        /* A4 Baskı Alanı Tam Dolu ve Verimli Optimizasyon */
+        /* A4 Baskı Alanı Tam Dolu ve Tek Sayfa Optimizasyonu */
         #worksheetArea { border: 3px solid #cbd5e0; padding: 15px 20px; border-radius: 15px; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.06); width: 100%; max-width: 100%; }
-        .sheet-header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 4px; margin-bottom: 8px; display: none; }
-        .sheet-header h2 { font-size: 16px; color: #2c3e50; }
-        .sheet-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; font-size: 12px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+        .sheet-header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 4px; margin-bottom: 6px; display: none; }
+        .sheet-header h2 { font-size: 15px; color: #2c3e50; }
+        .sheet-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; font-size: 11.5px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
         
-        .section-title { font-size: 11px; font-weight: bold; color: #c0392b; margin: 8px 0 2px 0; border-left: 3px solid #e74c3c; padding-left: 5px; display: none; }
+        .section-title { font-size: 10.5px; font-weight: bold; color: #c0392b; margin: 5px 0 2px 0; border-left: 3px solid #e74c3c; padding-left: 4px; display: none; }
         
         /* 2 Sütunlu Maksimum Verimli Soru Düzeni */
-        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 8px; width: 100%; }
-        .question-card { font-size: 11px; padding: 4px 6px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
+        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; width: 100%; }
+        .question-card { font-size: 10.5px; padding: 3px 5px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
 
-        /* Yazdırma (Print) A4 Sığdırma Kuralları */
+        /* Yazdırma (Print) Tek Sayfa Sığdırma Kuralları */
         @media print {
             body { background: white; padding: 0; }
             .container { max-width: 100%; margin: 0; padding: 0; }
@@ -57,8 +57,8 @@
             #worksheetArea { border: none; padding: 0; box-shadow: none; width: 100%; }
             .sheet-header, .sheet-info, .section-title { display: flex !important; }
             .section-title { display: block !important; }
-            .question-card { border: 1px solid #ccc; break-inside: avoid; background: white !important; }
-            @page { size: A4; margin: 5mm; }
+            .question-card { border: 1px solid #bbb; break-inside: avoid; background: white !important; }
+            @page { size: A4; margin: 4mm; }
         }
 
         footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; font-weight: bold; }
@@ -269,12 +269,12 @@ function calismaUret() {
     };
     document.getElementById("sheetLessonTitle").innerText = "NİHAT ÖĞRETMEN - " + dersAdlari[aktifDers];
 
-    // İLGİLİ DERSİN SEÇİMLERİNE GÖRE SORU ÜRETİMİ (Tek konu seçilse bile kağıdı tam dolduran 16+ soru)
+    // Tek bir konu seçilse bile A4 sayfasını tepeden tırnağa tamamen dolduracak yüksek örnek sayıları (24+ soru)
     if (aktifDers === 'mat') {
         if (document.getElementById('mat-ritmik').checked) {
             ekleBaslik("A) Ritmik Sayma Tamamlama Etkinliği:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 16; i++) {
+            for (let i = 1; i <= 24; i++) {
                 let artis = [2, 3, 4, 5, 10][rand(0, 4)];
                 let bas = artis * rand(1, 5);
                 let card = document.createElement("div");
@@ -286,7 +286,7 @@ function calismaUret() {
         if (document.getElementById('mat-toplama').checked) {
             ekleBaslik("B) Eldeli Toplama İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 16; i++) {
+            for (let i = 1; i <= 24; i++) {
                 let s1 = rand(20, 85), s2 = rand(15, 75);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -297,7 +297,7 @@ function calismaUret() {
         if (document.getElementById('mat-cikarma').checked) {
             ekleBaslik("C) Onluk Bozarak Çıkarma İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 16; i++) {
+            for (let i = 1; i <= 24; i++) {
                 let s1 = rand(40, 98), s2 = rand(12, s1 - 5);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -308,7 +308,7 @@ function calismaUret() {
         if (document.getElementById('mat-carpma').checked) {
             ekleBaslik("D) Çarpma İşlemi Çalışmaları:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 16; i++) {
+            for (let i = 1; i <= 24; i++) {
                 let s1 = rand(10, 90), s2 = rand(2, 9);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -319,7 +319,7 @@ function calismaUret() {
         if (document.getElementById('mat-bolme').checked) {
             ekleBaslik("E) Temel Bölme İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 16; i++) {
+            for (let i = 1; i <= 24; i++) {
                 let bolen = rand(2, 9), bolum = rand(3, 12), bolunen = bolen * bolum;
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -330,71 +330,71 @@ function calismaUret() {
         if (document.getElementById('mat-basamak').checked) {
             ekleBaslik("F) Basamak Analizi (Yüzlük - Onluk - Birlik):");
             let grid = olusturGrid();
-            for (let i = 1; i <= 14; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let sayi = rand(150, 950);
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span style="font-size:11px;">${i}. <b>${sayi}</b> = ..Yüz, ..On, ..Birlik</span>`;
+                card.innerHTML = `<span style="font-size:10px;">${i}. <b>${sayi}</b> = ..Yüz, ..On, ..Birlik</span>`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-para').checked) {
             ekleBaslik("G) Paralarımız Hesaplama Problemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let t1 = rand(2, 9), t2 = rand(1, 6);
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. ${t1} tane 10 TL ve ${t2} tane 5 TL =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span> TL`;
+                card.innerHTML = `<span>${i}. ${t1} tane 10 TL ve ${t2} tane 5 TL =</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span> TL`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-zaman').checked) {
             ekleBaslik("H) Zaman Ölçüleri Dönüşümleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let s = rand(1, 6);
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. ${s} saat =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span> dakika`;
+                card.innerHTML = `<span>${i}. ${s} saat =</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span> dk`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-geometri').checked) {
             ekleBaslik("İ) Geometrik Şekiller ve Cisimler:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. Kare kaç kenarlıdır?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. Karenin kaç kenarı vardır?</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-kesir').checked) {
             ekleBaslik("J) Kesirler ve Bütün-Yarım İlişkisi:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let sayi = rand(4, 20) * 2;
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. ${sayi} elmanın yarısı kaçtır?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. ${sayi} elmanın yarısı kaçtır?</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-tartma').checked) {
             ekleBaslik("K) Tartma ve Uzunluk Ölçüleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 20; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. 3 kg patates =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span> gram`;
+                card.innerHTML = `<span>${i}. 2 kg elma =</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span> gram`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('mat-problem').checked) {
             ekleBaslik("L) Rutin Olmayan Problem Çözme:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 12; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
@@ -407,23 +407,23 @@ function calismaUret() {
     else if (aktifDers === 'tur') {
         if (document.getElementById('tur-zit').checked) {
             ekleBaslik("A) Zıt Anlamlı Kelimeler:");
-            let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı", "Genç", "Ucuz", "Acı", "Zor", "Fakir", "Dolu"];
+            let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı", "Genç", "Ucuz", "Acı", "Zor", "Fakir", "Dolu", "İnce", "Kalın", "Tatlı", "Tuzlu", "Ağır", "Hafif", "Çalışkan", "Tembel"];
             let grid = olusturGrid();
             kelimeler.forEach((k, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${k} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${idx+1}. ${k} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 50px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             });
         }
         if (document.getElementById('tur-es').checked) {
             ekleBaslik("B) Eş Anlamlı Kelimeler:");
-            let liste = ["Okul (Mektep)", "Öğrenci (Talebe)", "Kırmızı (Al)", "Siyah (Kara)", "Hediye (Armağan)", "Fakir (Yoksul)", "Yaşlı (İhtiyar)", "Doktor (Hekim)"];
+            let liste = ["Okul (Mektep)", "Öğrenci (Talebe)", "Kırmızı (Al)", "Siyah (Kara)", "Hediye (Armağan)", "Fakir (Yoksul)", "Yaşlı (İhtiyar)", "Doktor (Hekim)", "Yıl (Sene)", "Öğretmen (Muallim)", "Anı (Hatıra)", "Misafir (Konuk)"];
             let grid = olusturGrid();
             liste.forEach((k, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${k} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${idx+1}. ${k} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 50px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             });
         }
@@ -432,42 +432,42 @@ function calismaUret() {
             let cumleler = [
                 "Yarın sinemaya gideceğiz", "Bugün hava ne kadar güzel", "Sınavda kaç puan aldın", 
                 "Eyvah, çantam otobüste kaldı", "Atatürk 1881 yılında doğdu", "Kitabımı gördün mü",
-                "Yaşasın, maç kazandık", "Ödevlerini bitirdin mi"
+                "Yaşasın, maç kazandık", "Ödevlerini bitirdin mi", "Eyvah, kedi kaçtı", "Ankara'ya ne zaman gideceğiz"
             ];
             let grid = olusturGrid();
             cumleler.forEach((c, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${c}</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block; text-align:center;">( &nbsp; )</span>`;
+                card.innerHTML = `<span>${idx+1}. ${c}</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( &nbsp; )</span>`;
                 grid.appendChild(card);
             });
         }
         if (document.getElementById('tur-alfabe').checked) {
             ekleBaslik("D) Alfabetik Sıralama Becerisi:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 12; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span>${i}. Kelimeleri alfabetik sıraya diziniz (masa, lale, armut):</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. Kelimeleri alfabetik sıraya diziniz.</span> <span style="border-bottom: 1px dotted #333; width: 100px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('tur-hece').checked) {
             ekleBaslik("E) Hece Sayısı Bulma:");
-            let kelimeler = ["Öğretmenlik", "Kitaplık", "Bilgisayar", "Kalemlik", "Cumhuriyet", "Matematik", "Okul", "Öğrenci"];
+            let kelimeler = ["Öğretmenlik", "Kitaplık", "Bilgisayar", "Kalemlik", "Cumhuriyet", "Matematik", "Okul", "Öğrenci", "Masa", "Silgi", "Defter", "Televizyon"];
             let grid = olusturGrid();
             kelimeler.forEach((k, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${k}</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span> hece`;
+                card.innerHTML = `<span>${idx+1}. ${k}</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block;"></span> hece`;
                 grid.appendChild(card);
             });
         }
         if (document.getElementById('tur-esSesli').checked) {
             ekleBaslik("F) Eş Sesli (Sesteş) Kelimeler:");
             let grid = olusturGrid();
-            let sesliler = ["Yaz", "Gül", "Çay", "Bin", "İn", "Yol"];
+            let sesliler = ["Yaz", "Gül", "Çay", "Bin", "İn", "Yol", "Kır", "Saç"];
             sesliler.forEach((s, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -479,7 +479,7 @@ function calismaUret() {
         if (document.getElementById('tur-yazim').checked) {
             ekleBaslik("G) Yazım Kuralları Düzeltme:");
             let grid = olusturGrid();
-            let cumleler = ["ankara 'da hava çok soğuktu.", "öğretmenimiz ahmet bey geldi.", "yarın izmire gideceğiz."];
+            let cumleler = ["ankara 'da hava çok soğuktu.", "öğretmenimiz ahmet bey geldi.", "yarın izmire gideceğiz.", "atatürk 1881 de doğdu."];
             cumleler.forEach((c, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -491,7 +491,7 @@ function calismaUret() {
         if (document.getElementById('tur-deDah').checked) {
             ekleBaslik("H) Bağlaç ve Ek Olan '-de / -da' Yazımı:");
             let grid = olusturGrid();
-            let maddeler = ["Kitabım evde kaldı.", "Kalemide bana verirmisin?", "Bahçede oynadık."];
+            let maddeler = ["Kitabım evde kaldı.", "Kalemide bana verirmisin?", "Bahçede oynadık.", "Sınavda başarılı oldu."];
             maddeler.forEach((m, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -503,7 +503,7 @@ function calismaUret() {
         if (document.getElementById('tur-atsoz').checked) {
             ekleBaslik("İ) Atasözleri ve Deyimler Anlamı:");
             let grid = olusturGrid();
-            let maddeler = ["\"Ağaç yaşken eğilir\" atasözü neyi ifade eder?"];
+            let maddeler = ["\"Ağaç yaşken eğilir\" atasözü neyi ifade eder?", "\"Etekleri zil çalmak\" deyimi ne anlama gelir?"];
             maddeler.forEach((m, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -515,11 +515,11 @@ function calismaUret() {
         if (document.getElementById('tur-5n1k').checked) {
             ekleBaslik("J) 5N1K Metin Soruları Oluşturma:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 4; i++) {
+            for (let i = 1; i <= 6; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span>${i}. \"Ali sabah erkenden okula koştu.\" cümlecine göre KİM ve NEREYE sorularını yanıtlayın.</span>`;
+                card.innerHTML = `<span>${i}. \"Ali sabah erkenden okula koştu.\" cümlesine göre KİM ve NEREYE sorularını yanıtlayın.</span>`;
                 grid.appendChild(card);
             }
         }
@@ -532,14 +532,16 @@ function calismaUret() {
                 "Ders sırasında söz almadan konuşmamalıyız.",
                 "Sınıfımızı ve okul bahçemizi temiz tutmalıyız.",
                 "Koridorlarda koşarak arkadaşımıza şaka yapabiliriz.",
-                "Öğretmenimiz konuşurken onu dikkatle dinlemeliyiz."
+                "Öğretmenimiz konuşurken onu dikkatle dinlemeliyiz.",
+                "Sıramızın üzerine yazı yazabiliriz.",
+                "Okul eşyalarımızı özenli kullanmalıyız."
             ];
             let grid = olusturGrid();
             maddeler.forEach((m, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
@@ -569,7 +571,7 @@ function calismaUret() {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
@@ -584,7 +586,7 @@ function calismaUret() {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
@@ -691,7 +693,7 @@ function calismaUret() {
             organlar.forEach((o, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${o} organı</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${idx+1}. ${o} organı</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             });
         }
@@ -925,7 +927,7 @@ function calismaUret() {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
@@ -983,11 +985,11 @@ function calismaUret() {
         if (document.getElementById('ing-numbers').checked) {
             ekleBaslik("B) Numbers (Sayılar):");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let n = rand(1, 15);
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. What is ${n} + 2 = ?</span> <span style="border-bottom: 1px dotted #333; width: 40px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. What is ${n} + 2 = ?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             }
         }
@@ -1077,7 +1079,7 @@ function calismaUret() {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
@@ -1095,7 +1097,7 @@ function calismaUret() {
         }
         if (document.getElementById('trf-isik').checked) {
             ekleBaslik("C) Trafik Işıkları:");
-            let sorular = ["Trafik lambasında sarı ışık yandığında sürücüler ................... hazrlanmalıdır."];
+            let sorular = ["Trafik lambasında sarı ışık yandığında sürücüler ................... hazırlanmalıdır."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
                 let card = document.createElement("div");
@@ -1116,7 +1118,7 @@ function calismaUret() {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                card.innerHTML = `<span style="font-size:10.5px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
                 grid.appendChild(card);
             });
         }
