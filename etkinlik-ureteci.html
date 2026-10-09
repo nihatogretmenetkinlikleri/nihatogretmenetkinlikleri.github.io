@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ders Bazlı Akıllı Etkinlik Üreteci - Nihat Öğretmen</title>
+    <title>Maarif Modeli Etkinlik Üreteci - Nihat Öğretmen</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; }
         body { background: linear-gradient(135deg, #fef9e7 0%, #ebf5fb 100%); min-height: 100vh; color: #333; display: flex; flex-direction: column; }
         
-        header { background: linear-gradient(135deg, #FF5733, #FFC300); color: white; padding: 25px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        header { background: linear-gradient(135deg, #27ae60, #2980b9); color: white; padding: 25px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         header h1 { font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 5px; }
-        header p { font-size: 15px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; }
+        header p { font-size: 14px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; }
         
-        .container { max-width: 950px; margin: 25px auto; padding: 0 15px; flex: 1; width: 100%; }
+        .container { max-width: 980px; margin: 25px auto; padding: 0 15px; flex: 1; width: 100%; }
         
         .back-btn { display: inline-block; background: #2c3e50; color: white; text-decoration: none; padding: 8px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; font-weight: bold; }
         .back-btn:hover { background: #34495e; }
 
         /* Ders Seçim Sekmeleri */
-        .lesson-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; }
-        .tab-btn { background: #fff; border: 2px solid #3498db; color: #2c3e50; padding: 10px 16px; font-size: 13.5px; font-weight: bold; border-radius: 12px; cursor: pointer; transition: 0.2s; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
-        .tab-btn:hover, .tab-btn.active { background: #3498db; color: white; transform: translateY(-2px); }
+        .lesson-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; }
+        .tab-btn { background: #fff; border: 2px solid #2980b9; color: #2c3e50; padding: 9px 14px; font-size: 13px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: 0.2s; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+        .tab-btn:hover, .tab-btn.active { background: #2980b9; color: white; transform: translateY(-2px); }
 
-        .lesson-panel { display: none; background: white; border: 2px dashed #3498db; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); }
+        .lesson-panel { display: none; background: white; border: 2px dashed #2980b9; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); }
         .lesson-panel.active { display: block; }
-        .lesson-title { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; border-bottom: 2px solid #ecf0f1; padding-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .lesson-title { font-size: 16px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; border-bottom: 2px solid #ecf0f1; padding-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         
-        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: bold; color: #555; cursor: pointer; }
-        .checkbox-item input { accent-color: #e74c3c; width: 18px; height: 18px; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: bold; color: #555; cursor: pointer; }
+        .checkbox-item input { accent-color: #27ae60; width: 17px; height: 17px; }
         
         .action-bar { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
         button { padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 12px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .btn-primary { background: #3498db; color: white; }
-        .btn-primary:hover { background: #2980b9; transform: scale(1.02); }
+        .btn-primary { background: #2980b9; color: white; }
+        .btn-primary:hover { background: #2471a3; transform: scale(1.02); }
         .btn-success { background: #27ae60; color: white; }
-        .btn-success:hover { background: #219653; transform: scale(1.02); }
+        .btn-success:hover { background: #229954; transform: scale(1.02); }
 
         /* A4 Baskı Alanı Tam Dolu ve Verimli Optimizasyon */
         #worksheetArea { border: 3px solid #cbd5e0; padding: 15px 20px; border-radius: 15px; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.06); width: 100%; max-width: 100%; }
@@ -43,11 +43,11 @@
         .sheet-header h2 { font-size: 16px; color: #2c3e50; }
         .sheet-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; font-size: 12px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
         
-        .section-title { font-size: 11.5px; font-weight: bold; color: #c0392b; margin: 6px 0 2px 0; border-left: 3px solid #e74c3c; padding-left: 5px; display: none; }
+        .section-title { font-size: 11px; font-weight: bold; color: #c0392b; margin: 8px 0 2px 0; border-left: 3px solid #e74c3c; padding-left: 5px; display: none; }
         
         /* 2 Sütunlu Maksimum Verimli Soru Düzeni */
-        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 8px; width: 100%; }
-        .question-card { font-size: 11px; padding: 3px 6px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
+        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 8px; width: 100%; }
+        .question-card { font-size: 11px; padding: 4px 6px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
 
         /* Yazdırma (Print) A4 Sığdırma Kuralları */
         @media print {
@@ -67,8 +67,8 @@
 <body>
 
 <header>
-    <h1>🎯 Müstakil Ders Etkinlik Üreteci</h1>
-    <p>Dersinizi Seçin, Müfredat Konularını Derinlemesine İşleyin</p>
+    <h1>🎯 Türkiye Yüzyılı Maarif Modeli Etkinlik Üreteci</h1>
+    <p>Yetkin Muhafız & Beceri Odaklı Kapsamlı Çalışma Kağıdı Sistemi</p>
 </header>
 
 <div class="container">
@@ -82,95 +82,136 @@
         <button class="tab-btn" onclick="dersSec('fen')">🔬 Fen Bilimleri</button>
         <button class="tab-btn" onclick="dersSec('sos')">🏛️ Sosyal Bilgiler</button>
         <button class="tab-btn" onclick="dersSec('din')">🌙 Din Kültürü</button>
+        <button class="tab-btn" onclick="dersSec('ing')">🇬🇧 İngilizce</button>
+        <button class="tab-btn" onclick="dersSec('trf')">🚦 Trafik Güvenliği</button>
     </div>
 
     <!-- 1. MATEMATİK PANELİ -->
     <div id="panel-mat" class="lesson-panel active">
-        <div class="lesson-title">📐 Matematik Müfredatı ve Etkinlikleri</div>
+        <div class="lesson-title">📐 Matematik (Maarif Modeli - Sayı ve İşlem, Geometri, Veri)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="mat-ritmik" checked> Ritmik Saymalar</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-toplama" checked> Eldeli / Eldesiz Toplama</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-cikarma" checked> Onluk Bozarak Çıkarma</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-carpma" checked> Çarpma İşlemi Tablosu</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-bolme"> Kalansız / Kalanlı Bölme</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-basamak"> Yüzlük, Onluk, Birlik Analizi</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-para"> Paralarımız ve Hesaplama</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-zaman"> Zaman Ölçüleri (Saat-Dakika)</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-geometri"> Geometrik Şekiller ve Cisimler</label>
-            <label class="checkbox-item"><input type="checkbox" id="mat-kesir"> Temel Kesirler</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-ritmik"> Doğal Sayılarla Ritmik Sayma</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-toplama"> Doğal Sayılarda Eldeli Toplama</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-cikarma"> Doğal Sayılarda Onluk Bozarak Çıkarma</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-carpma"> Doğal Sayılarla Çarpma İşlemi</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-bolme"> Doğal Sayılarla Bölme İşlemi</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-basamak"> Sayı Basamakları ve Çözümleme</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-para"> Paralarımız ve Finansal Okuryazarlık</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-zaman"> Zaman Ölçüleri ve Takvim Bilgisi</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-geometri"> Geometrik Örüntüler ve Cisimler</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-kesir"> Kesirler ve Bütün-Yarım İlişkisi</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-tartma"> Tartma ve Uzunluk Ölçüleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="mat-problem"> Rutin Olmayan Problem Çözme</label>
         </div>
     </div>
 
     <!-- 2. TÜRKÇE PANELİ -->
     <div id="panel-tur" class="lesson-panel">
-        <div class="lesson-title">📖 Türkçe Müfredatı ve Etkinlikleri</div>
+        <div class="lesson-title">📖 Türkçe (Dinleme, Konuşma, Okuma, Yazma - Maarif Modeli)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="tur-zit" checked> Zıt (Karşıt) Anlamlı Kelimeler</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-es" checked> Eş Anlamlı Kelimeler</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-noktalama" checked> Noktalama İşaretleri</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-alfabe"> Alfabetik Sıralama Yapma</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-hece"> Hece ve Kelime Sayısı Bulma</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-esSesli"> Eş Sesli (Sesteş) Kelimeler</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-yazim"> Yazım Kuralları (Büyük Harf vb.)</label>
-            <label class="checkbox-item"><input type="checkbox" id="tur-deDah"> "-de / -da" Eklerinin Yazılışı</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-zit"> Zıt (Karşıt) Anlamlı Kelimeler</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-es"> Eş Anlamlı (Anlamdaş) Kelimeler</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-noktalama"> Cümle Sonu ve İçi Noktalama İşaretleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-alfabe"> Sözlük Sıralaması / Alfabetik Beceri</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-hece"> Hece Bilgisi ve Kelime Tahlili</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-esSesli"> Eş Sesli (Sesteş) Kelimelerle Cümle</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-yazim"> Özel Adlar ve Yazım Kuralları</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-deDah"> Bağlaç Olan ve Ek Olan "-de / -da"</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-atsoz"> Atasözleri ve Deyimler Bilinci</label>
+            <label class="checkbox-item"><input type="checkbox" id="tur-5n1k"> Metin Anlama ve 5N1K Çalışmaları</label>
         </div>
     </div>
 
     <!-- 3. HAYAT BİLGİSİ PANELİ -->
     <div id="panel-hay" class="lesson-panel">
-        <div class="lesson-title">🌍 Hayat Bilgisi Müfredatı ve Etkinlikleri</div>
+        <div class="lesson-title">🌍 Hayat Bilgisi (Okulumuzda Hayat, Evimizde Hayat, Sağlıklı Hayat)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="hay-okul" checked> Okul ve Sınıf Kuralları (D/Y)</label>
-            <label class="checkbox-item"><input type="checkbox" id="hay-trafik" checked> Trafik Güvenliği Kuralları</label>
-            <label class="checkbox-item"><input type="checkbox" id="hay-komsu"> Komşuluk ve Akrabalık İlişkileri</label>
-            <label class="checkbox-item"><input type="checkbox" id="hay-saglik"> Sağlıklı Beslenme ve Hijyen</label>
-            <label class="checkbox-item"><input type="checkbox" id="hay-evYasam"> Evde Yaşam ve Sorumluluklar</label>
-            <label class="checkbox-item"><input type="checkbox" id="hay-dogadaYasam"> Doğada Hayat ve Mevsimler</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-okul"> Okulda İletişim ve Sınıf Kuralları</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-trafik"> Güvenli Okul Yolu ve Trafik</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-komsu"> Komşuluk, Akrabalık ve Değerler</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-saglik"> Dengeli Beslenme ve Hijyen</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-evYasam"> Evde Rol ve Sorumluluk Paylaşımı</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-dogadaYasam"> Mevsimler, Bitkiler ve Hayvanlar</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-bilincsiz"> Kaynakların Bilinçli Kullanımı</label>
+            <label class="checkbox-item"><input type="checkbox" id="hay-bayrak"> Milli Birlik, Bayrak ve Vatan Sevgisi</label>
         </div>
     </div>
 
     <!-- 4. FEN BİLİMLERİ PANELİ -->
     <div id="panel-fen" class="lesson-panel">
-        <div class="lesson-title">🔬 Fen Bilimleri Müfredatı ve Etkinlikleri</div>
+        <div class="lesson-title">🔬 Fen Bilimleri (Dünyamız, Beş Duyu, Kuvvet, Madde, Çevre)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="fen-dunya" checked> Dünyamızın Şekli ve Katmanları</label>
-            <label class="checkbox-item"><input type="checkbox" id="fen-besin" checked> Besinlerimiz ve Enerji Kaynakları</label>
-            <label class="checkbox-item"><input type="checkbox" id="fen-kuvvet"> Kuvvetin Etkileri (İtme - Çekme)</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-dunya"> Dünyamızın Şekli ve Katmanları</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-besin"> Besinlerimiz ve Sağlıklı Yaşam</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-kuvvet"> Kuvvetin Cisimler Üzerindeki Etkisi</label>
             <label class="checkbox-item"><input type="checkbox" id="fen-duyu"> Beş Duyumuz ve Organlarımız</label>
-            <label class="checkbox-item"><input type="checkbox" id="fen-madde"> Maddenin Halleri ve Özellikleri</label>
-            <label class="checkbox-item"><input type="checkbox" id="fen-cevre"> Çevre ve Canlılar Dünyası</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-madde"> Maddenin Niteliksel Halleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-cevre"> Çevremizdeki Canlılar ve Ekoloji</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-gezegen"> Gezegenler ve Gökyüzü Olayları</label>
+            <label class="checkbox-item"><input type="checkbox" id="fen-isikSes"> Aydınlatma ve Ses Teknolojileri</label>
         </div>
     </div>
 
     <!-- 5. SOSYAL BİLGİLER PANELİ -->
     <div id="panel-sos" class="lesson-panel">
-        <div class="lesson-title">🏛️ Sosyal Bilgiler Müfredatı ve Etkinlikleri</div>
+        <div class="lesson-title">🏛️ Sosyal Bilgiler (Kimlik, Kültür, Coğrafya, Tarih, Ekonomi)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="sos-kimlik" checked> Resmi Kimlik Belgesi İnceleme</label>
-            <label class="checkbox-item"><input type="checkbox" id="sos-yon" checked> Doğal ve Yapay Yönler</label>
-            <label class="checkbox-item"><input type="checkbox" id="sos-kultur"> Milli Kültür Unsurlarımız ve Tarih</label>
-            <label class="checkbox-item"><input type="checkbox" id="sos-afet"> Doğal Afetler ve Alınacak Önlemler</label>
-            <label class="checkbox-item"><input type="checkbox" id="sos-gecmis"> Geçmişimi Öğreniyorum (Soyağacı)</label>
-            <label class="checkbox-item"><input type="checkbox" id="sos-uret"> Üretiyoruz, Bilinçli Tüketiciyiz</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-kimlik"> Resmi Kimlik Kartı ve Bireysel Farklılık</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-yon"> Yönler ve Çevre Tanıma</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-kultur"> Milli Kültür, Gelenek ve Görenekler</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-afet"> Doğal Afet Bilinci ve Afet Öncesi Hazırlık</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-gecmis"> Aile Tarihi ve Soyağacı Çalışmaları</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-uret"> Üreten Türkiye ve Bilinçli Tüketici</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-hak"> Çocuk Hakları ve Sorumluluklar</label>
+            <label class="checkbox-item"><input type="checkbox" id="sos-harita"> Kroki Okuma ve Çizme Becerisi</label>
         </div>
     </div>
 
     <!-- 6. DİN KÜLTÜRÜ PANELİ -->
     <div id="panel-din" class="lesson-panel">
-        <div class="lesson-title">🌙 Din Kültürü ve Ahlak Bilgisi Etkinlikleri</div>
+        <div class="lesson-title">🌙 Din Kültürü ve Ahlak Bilgisi (İnanç, İbadet, Ahlak)</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" id="din-allah" checked> Allah'ın Varlığı ve Birliği (İnanç)</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-kelime" checked> Kelime-i Şehadet ve Anlamı</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-islamSart"> İslam'ın Şartları ve İmanın Şartları</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-temizlik"> Dinimizde Temizlik ve Abdest</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-guzelAhlak"> Güzel Ahlak ve Görgü Kuralları</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-peygamber"> Peygamber Sevgisi ve Hz. Muhammed</label>
-            <label class="checkbox-item"><input type="checkbox" id="din-dua"> Günlük Dualar ve Sureler (Fatiha, İhlas)</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-allah"> Allah'ın Varlığı, Birliği ve Evren</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-kelime"> Kelime-i Şehadet ve Manası</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-islamSart"> İslam'ın ve İmanın Şartları</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-temizlik"> İslam'da Maddi-Manevi Temizlik</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-guzelAhlak"> Güzel Ahlak, Dürüstlük ve Merhamet</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-peygamber"> Hz. Muhammed'in Hayatı ve Örnekliği</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-dua"> Günlük Dualar, Sübhaneke ve Fatiha</label>
+            <label class="checkbox-item"><input type="checkbox" id="din-deger"> Milli ve Dini Değerlerimiz (Bayramlar)</label>
+        </div>
+    </div>
+
+    <!-- 7. İNGİLİZCE PANELİ -->
+    <div id="panel-ing" class="lesson-panel">
+        <div class="lesson-title">🇬🇧 İngilizce (Greetings, Classroom Objects, Numbers, Colors)</div>
+        <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" id="ing-greetings"> Greetings & Meeting People (Hello / Goodbye)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-numbers"> Numbers (Sayılar 1-20 ve İşlemler)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-colors"> Colors & Shapes (Renkler ve Geometrik Şekiller)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-classroom"> Classroom Objects (Pencil, Book, Eraser)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-family"> My Family (Mother, Father, Sister, Brother)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-animals"> Animals & Nature (Cats, Dogs, Birds)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-feelings"> Feelings & Emotions (Happy, Sad, Tired)</label>
+            <label class="checkbox-item"><input type="checkbox" id="ing-toys"> Toys & Games (Ball, Doll, Car)</label>
+        </div>
+    </div>
+
+    <!-- 8. TRAFİK GÜVENLİĞİ PANELİ -->
+    <div id="panel-trf" class="lesson-panel">
+        <div class="lesson-title">🚦 Trafik Güvenliği (Kurallar, Levhalar, Yaya Bilinci)</div>
+        <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" id="trf-kurallar"> Yaya ve Yolcu Olarak Uyulacak Kurallar</label>
+            <label class="checkbox-item"><input type="checkbox" id="trf-levha"> Temel Trafik Levhaları ve Anlamları</label>
+            <label class="checkbox-item"><input type="checkbox" id="trf-isik"> Trafik Işıkları ve Görevleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="trf-servis"> Okul Servislerinde Güvenli Yolculuk</label>
+            <label class="checkbox-item"><input type="checkbox" id="trf-bisiklet"> Bisiklet, Kaykay ve Scooter Güvenliği</label>
+            <label class="checkbox-item"><input type="checkbox" id="trf-gecis"> Güvenli Geçiş Yerleri (Üstgeçit, Yaya Geçidi)</label>
         </div>
     </div>
 
     <div class="action-bar">
-        <button class="btn-primary" onclick="calismaUret()">✨ Bu Ders İçin Dopdolu Çalışma Kağıdı Hazırla</button>
+        <button class="btn-primary" onclick="calismaUret()">✨ Maarif Modeli Çalışma Kağıdı Hazırla</button>
         <button class="btn-success" onclick="window.print()">🖨️ Yazdır / PDF Kaydet</button>
     </div>
 
@@ -191,7 +232,7 @@
 </div>
 
 <footer>
-    🎈 Başarılar Dilerim! - Nihat Öğretmen &copy; 2026
+    🎈 Türkiye Yüzyılı Maarif Modeli - Nihat Öğretmen &copy; 2026
 </footer>
 
 <script>
@@ -222,16 +263,18 @@ function calismaUret() {
         'hay': 'HAYAT BİLGİSİ DERSİ ETKİNLİK YAPRAĞI',
         'fen': 'FEN BİLİMLERİ DERSİ ETKİNLİK YAPRAĞI',
         'sos': 'SOSYAL BİLGİLER DERSİ ETKİNLİK YAPRAĞI',
-        'din': 'DİN KÜLTÜRÜ VE AHLAK BİLGİSİ DERSİ ETKİNLİK YAPRAĞI'
+        'din': 'DİN KÜLTÜRÜ VE AHLAK BİLGİSİ DERSİ ETKİNLİK YAPRAĞI',
+        'ing': 'İNGİLİZCE DERSİ ETKİNLİK YAPRAĞI',
+        'trf': 'TRAFİK GÜVENLİĞİ DERSİ ETKİNLİK YAPRAĞI'
     };
     document.getElementById("sheetLessonTitle").innerText = "NİHAT ÖĞRETMEN - " + dersAdlari[aktifDers];
 
-    // AKTİF DERSİN SEÇİMLERİNE GÖRE SORU ÜRETİMİ
+    // İLGİLİ DERSİN SEÇİMLERİNE GÖRE SORU ÜRETİMİ (Tek konu seçilse bile kağıdı tam dolduran 16+ soru)
     if (aktifDers === 'mat') {
         if (document.getElementById('mat-ritmik').checked) {
             ekleBaslik("A) Ritmik Sayma Tamamlama Etkinliği:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let artis = [2, 3, 4, 5, 10][rand(0, 4)];
                 let bas = artis * rand(1, 5);
                 let card = document.createElement("div");
@@ -241,9 +284,9 @@ function calismaUret() {
             }
         }
         if (document.getElementById('mat-toplama').checked) {
-            ekleBaslik("B) Eldeli ve Eldesiz Toplama İşlemleri:");
+            ekleBaslik("B) Eldeli Toplama İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let s1 = rand(20, 85), s2 = rand(15, 75);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -254,7 +297,7 @@ function calismaUret() {
         if (document.getElementById('mat-cikarma').checked) {
             ekleBaslik("C) Onluk Bozarak Çıkarma İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let s1 = rand(40, 98), s2 = rand(12, s1 - 5);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -265,7 +308,7 @@ function calismaUret() {
         if (document.getElementById('mat-carpma').checked) {
             ekleBaslik("D) Çarpma İşlemi Çalışmaları:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let s1 = rand(10, 90), s2 = rand(2, 9);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -276,7 +319,7 @@ function calismaUret() {
         if (document.getElementById('mat-bolme').checked) {
             ekleBaslik("E) Temel Bölme İşlemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 16; i++) {
                 let bolen = rand(2, 9), bolum = rand(3, 12), bolunen = bolen * bolum;
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -287,7 +330,7 @@ function calismaUret() {
         if (document.getElementById('mat-basamak').checked) {
             ekleBaslik("F) Basamak Analizi (Yüzlük - Onluk - Birlik):");
             let grid = olusturGrid();
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 14; i++) {
                 let sayi = rand(150, 950);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -298,7 +341,7 @@ function calismaUret() {
         if (document.getElementById('mat-para').checked) {
             ekleBaslik("G) Paralarımız Hesaplama Problemleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 12; i++) {
                 let t1 = rand(2, 9), t2 = rand(1, 6);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -307,9 +350,9 @@ function calismaUret() {
             }
         }
         if (document.getElementById('mat-zaman').checked) {
-            ekleBaslik("H) Zaman Ölçüleri (Saat Dönüşümleri):");
+            ekleBaslik("H) Zaman Ölçüleri Dönüşümleri:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 12; i++) {
                 let s = rand(1, 6);
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -318,23 +361,44 @@ function calismaUret() {
             }
         }
         if (document.getElementById('mat-geometri').checked) {
-            ekleBaslik("İ) Geometrik Cisimler ve Özellikleri:");
-            let cisimler = ["Üçgenin köşe sayısı: ...", "Kare kaç kenarlıdır: ...", "Dikdörtgenin köşegen sayısı: ...", "Çemberin köşe sayısı: ..."];
+            ekleBaslik("İ) Geometrik Şekiller ve Cisimler:");
             let grid = olusturGrid();
-            cisimler.forEach((c, idx) => {
+            for (let i = 1; i <= 12; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${idx+1}. ${c}</span>`;
+                card.innerHTML = `<span>${i}. Kare kaç kenarlıdır?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
                 grid.appendChild(card);
-            });
+            }
         }
         if (document.getElementById('mat-kesir').checked) {
-            ekleBaslik("J) Temel Kesir İfadeleri:");
+            ekleBaslik("J) Kesirler ve Bütün-Yarım İlişkisi:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 4; i++) {
+            for (let i = 1; i <= 12; i++) {
+                let sayi = rand(4, 20) * 2;
                 let card = document.createElement("div");
                 card.className = "question-card";
-                card.innerHTML = `<span>${i}. 12 elmanın yarısı kaç elmadır?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. ${sayi} elmanın yarısı kaçtır?</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+                grid.appendChild(card);
+            }
+        }
+        if (document.getElementById('mat-tartma').checked) {
+            ekleBaslik("K) Tartma ve Uzunluk Ölçüleri:");
+            let grid = olusturGrid();
+            for (let i = 1; i <= 12; i++) {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.innerHTML = `<span>${i}. 3 kg patates =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span> gram`;
+                grid.appendChild(card);
+            }
+        }
+        if (document.getElementById('mat-problem').checked) {
+            ekleBaslik("L) Rutin Olmayan Problem Çözme:");
+            let grid = olusturGrid();
+            for (let i = 1; i <= 8; i++) {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${i}. Annem marketten aldığı 45 TL'lik ürüne 100 TL verdi. Kaç TL para üstü alır?</span>`;
                 grid.appendChild(card);
             }
         }
@@ -342,11 +406,10 @@ function calismaUret() {
 
     else if (aktifDers === 'tur') {
         if (document.getElementById('tur-zit').checked) {
-            ekleBaslik("A) Zıt (Karşıt) Anlamlı Kelimeler:");
-            let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı", "Genç", "Ucuz", "Acı", "Zor"];
-            let secilenler = kelimeler.sort(() => 0.5 - Math.random()).slice(0, 8);
+            ekleBaslik("A) Zıt Anlamlı Kelimeler:");
+            let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı", "Genç", "Ucuz", "Acı", "Zor", "Fakir", "Dolu"];
             let grid = olusturGrid();
-            secilenler.forEach((k, idx) => {
+            kelimeler.forEach((k, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.innerHTML = `<span>${idx+1}. ${k} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
@@ -365,10 +428,11 @@ function calismaUret() {
             });
         }
         if (document.getElementById('tur-noktalama').checked) {
-            ekleBaslik("C) Cümle Sonu Noktalama İşaretleri:");
+            ekleBaslik("C) Noktalama İşaretleri:");
             let cumleler = [
                 "Yarın sinemaya gideceğiz", "Bugün hava ne kadar güzel", "Sınavda kaç puan aldın", 
-                "Eyvah, çantam otobüste kaldı", "Atatürk 1881 yılında doğdu", "Kitabımı gördün mü"
+                "Eyvah, çantam otobüste kaldı", "Atatürk 1881 yılında doğdu", "Kitabımı gördün mü",
+                "Yaşasın, maç kazandık", "Ödevlerini bitirdin mi"
             ];
             let grid = olusturGrid();
             cumleler.forEach((c, idx) => {
@@ -379,19 +443,19 @@ function calismaUret() {
             });
         }
         if (document.getElementById('tur-alfabe').checked) {
-            ekleBaslik("D) Alfabetik Sıralama Yapma:");
+            ekleBaslik("D) Alfabetik Sıralama Becerisi:");
             let grid = olusturGrid();
-            for (let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 8; i++) {
                 let card = document.createElement("div");
                 card.className = "question-card";
                 card.style.gridColumn = "span 2";
-                card.innerHTML = `<span>${i}. Kelimeleri alfabetik sıraya dizin (kalem, defter, silgi):</span> <span style="border-bottom: 1px dotted #333; width: 100px; display:inline-block;"></span>`;
+                card.innerHTML = `<span>${i}. Kelimeleri alfabetik sıraya diziniz (masa, lale, armut):</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block;"></span>`;
                 grid.appendChild(card);
             }
         }
         if (document.getElementById('tur-hece').checked) {
             ekleBaslik("E) Hece Sayısı Bulma:");
-            let kelimeler = ["Öğretmenlik", "Kitaplık", "Bilgisayar", "Kalemlik", "Cumhuriyet", "Matematik"];
+            let kelimeler = ["Öğretmenlik", "Kitaplık", "Bilgisayar", "Kalemlik", "Cumhuriyet", "Matematik", "Okul", "Öğrenci"];
             let grid = olusturGrid();
             kelimeler.forEach((k, idx) => {
                 let card = document.createElement("div");
@@ -403,7 +467,7 @@ function calismaUret() {
         if (document.getElementById('tur-esSesli').checked) {
             ekleBaslik("F) Eş Sesli (Sesteş) Kelimeler:");
             let grid = olusturGrid();
-            let sesliler = ["Yaz", "Gül", "Çay", "Bin"];
+            let sesliler = ["Yaz", "Gül", "Çay", "Bin", "İn", "Yol"];
             sesliler.forEach((s, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -415,7 +479,7 @@ function calismaUret() {
         if (document.getElementById('tur-yazim').checked) {
             ekleBaslik("G) Yazım Kuralları Düzeltme:");
             let grid = olusturGrid();
-            let cumleler = ["ankara 'da hava çok soğuktu.", "öğretmenimiz ahmet bey geldi."];
+            let cumleler = ["ankara 'da hava çok soğuktu.", "öğretmenimiz ahmet bey geldi.", "yarın izmire gideceğiz."];
             cumleler.forEach((c, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -425,9 +489,9 @@ function calismaUret() {
             });
         }
         if (document.getElementById('tur-deDah').checked) {
-            ekleBaslik("H) '-de / -da' Eklerinin Yazımı (Doğru / Yanlış):");
+            ekleBaslik("H) Bağlaç ve Ek Olan '-de / -da' Yazımı:");
             let grid = olusturGrid();
-            let maddeler = ["Kitabım evde kaldı.", "Kalemide bana verirmisin?"];
+            let maddeler = ["Kitabım evde kaldı.", "Kalemide bana verirmisin?", "Bahçede oynadık."];
             maddeler.forEach((m, idx) => {
                 let card = document.createElement("div");
                 card.className = "question-card";
@@ -436,11 +500,34 @@ function calismaUret() {
                 grid.appendChild(card);
             });
         }
+        if (document.getElementById('tur-atsoz').checked) {
+            ekleBaslik("İ) Atasözleri ve Deyimler Anlamı:");
+            let grid = olusturGrid();
+            let maddeler = ["\"Ağaç yaşken eğilir\" atasözü neyi ifade eder?"];
+            maddeler.forEach((m, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${m}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('tur-5n1k').checked) {
+            ekleBaslik("J) 5N1K Metin Soruları Oluşturma:");
+            let grid = olusturGrid();
+            for (let i = 1; i <= 4; i++) {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${i}. \"Ali sabah erkenden okula koştu.\" cümlecine göre KİM ve NEREYE sorularını yanıtlayın.</span>`;
+                grid.appendChild(card);
+            }
+        }
     }
 
     else if (aktifDers === 'hay') {
         if (document.getElementById('hay-okul').checked) {
-            ekleBaslik("A) Okul ve Sınıf Kuralları (Doğru / Yanlış):");
+            ekleBaslik("A) Okulda İletişim ve Sınıf Kuralları:");
             let maddeler = [
                 "Ders sırasında söz almadan konuşmamalıyız.",
                 "Sınıfımızı ve okul bahçemizi temiz tutmalıyız.",
@@ -457,11 +544,10 @@ function calismaUret() {
             });
         }
         if (document.getElementById('hay-trafik').checked) {
-            ekleBaslik("B) Trafik Güvenliği Kuralları:");
+            ekleBaslik("B) Güvenli Okul Yolu ve Trafik:");
             let sorular = [
                 "Karşıdan karşıya geçerken öncelikle ................... geçidini kullanmalıyız.",
-                "Araçlarda yolculuk ederken mutlaka ................... kemeri takmalıyız.",
-                "Trafik ışıklarında yayalar için kırmızı yanıyorsa ................... gerekir."
+                "Araçlarda yolculuk ederken mutlaka ................... kemeri takmalıyız."
             ];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
@@ -473,7 +559,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('hay-komsu').checked) {
-            ekleBaslik("C) Komşuluk ve Akrabalık İlişkileri:");
+            ekleBaslik("C) Komşuluk ve Değerler Bilinci:");
             let maddeler = [
                 "Komşularımızın özel günlerinde ve zor anlarında yanlarında olmalıyız.",
                 "Evde gece geç saatlerde yüksek sesle müzik dinleyebiliriz."
@@ -488,7 +574,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('hay-saglik').checked) {
-            ekleBaslik("D) Sağlıklı Beslenme ve Hijyen Kuralları:");
+            ekleBaslik("D) Dengeli Beslenme ve Hijyen:");
             let maddeler = [
                 "Meyve ve sebzeleri yemeden önce mutlaka yıkamalıyız.",
                 "Ambalajı yırtılmış veya son kullanma tarihi geçmiş ürünleri almamalıyız."
@@ -503,7 +589,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('hay-evYasam').checked) {
-            ekleBaslik("E) Evde Yaşam ve Sorumluluklar:");
+            ekleBaslik("E) Evde Rol ve Sorumluluklar:");
             let sorular = ["Odamızı ve yatağımızı toplamak bizim ................... sorumluluğumuzdur."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
@@ -517,6 +603,30 @@ function calismaUret() {
         if (document.getElementById('hay-dogadaYasam').checked) {
             ekleBaslik("F) Doğada Hayat ve Mevsimler:");
             let sorular = ["Sonbahar mevsiminde ağaçların yaprakları sararıp ................... ." ];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('hay-bilincsiz').checked) {
+            ekleBaslik("G) Kaynakların Bilinçli Kullanımı:");
+            let sorular = ["Boş yanan lambaları kapatmak elektrik ................... sağlamaktır."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('hay-bayrak').checked) {
+            ekleBaslik("H) Milli Birlik ve Vatan Sevgisi:");
+            let sorular = ["İstiklal Marşı söylenirken selama durup ................... okumalıyız."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
                 let card = document.createElement("div");
@@ -545,7 +655,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('fen-besin').checked) {
-            ekleBaslik("B) Besinlerimiz ve Enerji Kaynakları:");
+            ekleBaslik("B) Besinlerimiz ve Sağlıklı Yaşam:");
             let maddeler = [
                 "Vücudumuzun büyümesi ve onarılması için ................... ağırlıklı beslenmeliyiz.",
                 "Enerji ihtiyacımızı karşılamak için karbonhidrat ve ................... tüketiriz."
@@ -560,7 +670,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('fen-kuvvet').checked) {
-            ekleBaslik("C) Kuvvetin Etkileri (İtme ve Çekme):");
+            ekleBaslik("C) Kuvvetin Etkileri:");
             let maddeler = [
                 "Futbol topuna ayağımızla vurmak bir ................... kuvvetidir.",
                 "Çekmeceyi kendimize doğru açmak bir ................... kuvvetidir."
@@ -575,7 +685,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('fen-duyu').checked) {
-            ekleBaslik("D) Beş Duyumuz ve Organlarımız Eşleştirme:");
+            ekleBaslik("D) Beş Duyumuz ve Organlarımız:");
             let organlar = ["Göz &rarr; Görme", "Kulak &rarr; İşitme", "Burun &rarr; Koklama", "Dil &rarr; Tatma", "Deri &rarr; Dokunma"];
             let grid = olusturGrid();
             organlar.forEach((o, idx) => {
@@ -586,7 +696,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('fen-madde').checked) {
-            ekleBaslik("E) Maddenin Halleri (Katı, Sıvı, Gaz):");
+            ekleBaslik("E) Maddenin Halleri:");
             let sorular = ["Su, oda sıcaklığında maddelerin hangi halindedir? ..................."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
@@ -598,8 +708,32 @@ function calismaUret() {
             });
         }
         if (document.getElementById('fen-cevre').checked) {
-            ekleBaslik("F) Çevre ve Canlılar:");
+            ekleBaslik("F) Çevre ve Canlılar Dünyası:");
             let sorular = ["Doğal çevreyi korumak için bolca ................... dikmeliyiz."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('fen-gezegen').checked) {
+            ekleBaslik("G) Gökyüzü ve Uzay Bilimi:");
+            let sorular = ["Dünyamızın tek doğal uydusu ................... 'dür."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('fen-isikSes').checked) {
+            ekleBaslik("H) Aydınlatma ve Ses Teknolojileri:");
+            let sorular = ["Doğal ışık kaynağımız ................... iken yapay ışık kaynağı ampuldür."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
                 let card = document.createElement("div");
@@ -696,11 +830,35 @@ function calismaUret() {
                 grid.appendChild(card);
             });
         }
+        if (document.getElementById('sos-hak').checked) {
+            ekleBaslik("G) Çocuk Hakları:");
+            let sorular = ["Her çocuğun eğitim görme hakkı temel birer ................... hakkıdır."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('sos-harita').checked) {
+            ekleBaslik("H) Kroki Okuma:");
+            let sorular = ["Kuşbakışı çizilen ve ölçeksiz kaba taslak çizime ................... denir."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
     }
 
     else if (aktifDers === 'din') {
         if (document.getElementById('din-allah').checked) {
-            ekleBaslik("A) Allah'ın Varlığı ve Birliği (İnanç):");
+            ekleBaslik("A) Allah'ın Varlığı ve Birliği:");
             let maddeler = [
                 "Evrendeki düzen, dağlar, denizler ve canlılar Allah'ın ................... ve birliğini gösterir.",
                 "Bize hayat veren, bizi yaratan ve koruyan yüce varlık ................... 'dır."
@@ -715,7 +873,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('din-kelime').checked) {
-            ekleBaslik("B) Kelime-i Şehadet ve Anlamı:");
+            ekleBaslik("B) Kelime-i Şehadet:");
             let sorular = ["Kelime-i şehadet getirirken \"Eşhedü en lâ ilâhe illallah ve...\" şeklinde devam eder."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
@@ -727,7 +885,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('din-islamSart').checked) {
-            ekleBaslik("C) İslam'ın Şartları ve İmanın Şartları:");
+            ekleBaslik("C) İslam'ın Şartları:");
             let maddeler = [
                 "İslam'ın şartlarından biri de namaz kılmak ve oruç ................... .",
                 "İslam'ın temel ibadetlerinden biri de zekat vermek ve hacca ................... ."
@@ -742,7 +900,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('din-temizlik').checked) {
-            ekleBaslik("D) Dinimizde Temizlik ve Abdest:");
+            ekleBaslik("D) Dinimizde Temizlik:");
             let maddeler = [
                 "\"Temizlik imandandır\" sözü dinimizin ................... önem verdiğini gösterir.",
                 "Namaz kılmadan önce aldığımız ibadet temizliğine ................... denir."
@@ -757,7 +915,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('din-guzelAhlak').checked) {
-            ekleBaslik("E) Güzel Ahlak ve Görgü Kuralları (D / Y):");
+            ekleBaslik("E) Güzel Ahlak ve Görgü Kuralları:");
             let maddeler = [
                 "Büyüklere saygı, küçüklere sevgi göstermek güzel ahlak gereğidir.",
                 "Arkadaşlarımıza lakap takmak ve onlarla alay etmek dinimizce yasaklanmıştır."
@@ -772,7 +930,7 @@ function calismaUret() {
             });
         }
         if (document.getElementById('din-peygamber').checked) {
-            ekleBaslik("F) Peygamber Sevgisi ve Hz. Muhammed:");
+            ekleBaslik("F) Peygamber Sevgisi:");
             let sorular = ["Sevgili Peygamberimiz Hz. Muhammed (s.a.v.) ................... yılında Mekke'de doğmuştur."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
@@ -786,6 +944,197 @@ function calismaUret() {
         if (document.getElementById('din-dua').checked) {
             ekleBaslik("G) Günlük Dualar ve Sureler:");
             let sorular = ["Kur'an-ı Kerim'in ilk süresi ve namazlarda okuduğumuz sure ................... suresidir."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('din-deger').checked) {
+            ekleBaslik("H) Milli ve Dini Değerlerimiz:");
+            let sorular = ["Kurban ve Ramazan mübarek dini ...................lerimizdir."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+    }
+
+    else if (aktifDers === 'ing') {
+        if (document.getElementById('ing-greetings').checked) {
+            ekleBaslik("A) Greetings & Meeting People:");
+            let sorular = ["Good morning kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-numbers').checked) {
+            ekleBaslik("B) Numbers (Sayılar):");
+            let grid = olusturGrid();
+            for (let i = 1; i <= 8; i++) {
+                let n = rand(1, 15);
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.innerHTML = `<span>${i}. What is ${n} + 2 = ?</span> <span style="border-bottom: 1px dotted #333; width: 40px; display:inline-block;"></span>`;
+                grid.appendChild(card);
+            }
+        }
+        if (document.getElementById('ing-colors').checked) {
+            ekleBaslik("C) Colors & Shapes:");
+            let sorular = ["Red renginin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-classroom').checked) {
+            ekleBaslik("D) Classroom Objects:");
+            let sorular = ["Pencil kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-family').checked) {
+            ekleBaslik("E) My Family:");
+            let sorular = ["Mother kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-animals').checked) {
+            ekleBaslik("F) Animals & Nature:");
+            let sorular = ["Cat kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-feelings').checked) {
+            ekleBaslik("G) Feelings & Emotions:");
+            let sorular = ["Happy kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('ing-toys').checked) {
+            ekleBaslik("H) Toys & Games:");
+            let sorular = ["Ball kelimesinin Türkçe karşılığı: ..................."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+    }
+
+    else if (aktifDers === 'trf') {
+        if (document.getElementById('trf-kurallar').checked) {
+            ekleBaslik("A) Yaya ve Yolcu Olarak Kurallar:");
+            let maddeler = [
+                "Yaya kaldırımı olmayan yerlerde yolun sol kenarından yürümeliyiz.",
+                "Taşıt yolunda oyun oynamak tehlikeli ve yasaktır."
+            ];
+            let grid = olusturGrid();
+            maddeler.forEach((m, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('trf-levha').checked) {
+            ekleBaslik("B) Trafik Levhaları Anlamları:");
+            let sorular = ["\"Taşıt giremez\" levhasını gören bir sürücü o yola ................... ."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('trf-isik').checked) {
+            ekleBaslik("C) Trafik Işıkları:");
+            let sorular = ["Trafik lambasında sarı ışık yandığında sürücüler ................... hazrlanmalıdır."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('trf-servis').checked) {
+            ekleBaslik("D) Okul Servis Kuralları:");
+            let maddeler = [
+                "Servis hareket halindeyken camdan sarkmamalı ve emniyet kemerimizi takmalıyız.",
+                "Servise binerken ve inerken sırasıyla acele etmeden hareket etmeliyiz."
+            ];
+            let grid = olusturGrid();
+            maddeler.forEach((m, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span style="font-size:11px;">${idx+1}. (${m})</span> <span style="border-bottom: 1px dotted #333; width: 25px; display:inline-block; text-align:center;">( D / Y )</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('trf-bisiklet').checked) {
+            ekleBaslik("E) Bisiklet ve Scooter Güvenliği:");
+            let sorular = ["Bisiklet sürerken başımıza mutlaka ................... (kask) takmalıyız."];
+            let grid = olusturGrid();
+            sorular.forEach((s, idx) => {
+                let card = document.createElement("div");
+                card.className = "question-card";
+                card.style.gridColumn = "span 2";
+                card.innerHTML = `<span>${idx+1}. ${s}</span>`;
+                grid.appendChild(card);
+            });
+        }
+        if (document.getElementById('trf-gecis').checked) {
+            ekleBaslik("F) Güvenli Geçiş Yerleri:");
+            let sorular = ["Işıklı işaret cihazı olmayan yerlerde öncelikle ................... geçidini seçmeliyiz."];
             let grid = olusturGrid();
             sorular.forEach((s, idx) => {
                 let card = document.createElement("div");
