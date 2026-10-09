@@ -12,14 +12,14 @@
         header h1 { font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 5px; }
         header p { font-size: 15px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; }
         
-        .container { max-width: 900px; margin: 25px auto; padding: 0 20px; flex: 1; width: 100%; }
+        .container { max-width: 900px; margin: 25px auto; padding: 0 15px; flex: 1; width: 100%; }
         
         .back-btn { display: inline-block; background: #2c3e50; color: white; text-decoration: none; padding: 8px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; font-weight: bold; }
         .back-btn:hover { background: #34495e; }
 
         .lesson-section { background: white; border: 2px dashed #3498db; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); }
         .lesson-title { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; border-bottom: 2px solid #ecf0f1; padding-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
         .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: bold; color: #555; cursor: pointer; }
         .checkbox-item input { accent-color: #e74c3c; width: 18px; height: 18px; }
         
@@ -30,25 +30,28 @@
         .btn-success { background: #27ae60; color: white; }
         .btn-success:hover { background: #219653; transform: scale(1.02); }
 
-        #worksheetArea { border: 3px solid #cbd5e0; padding: 30px; border-radius: 15px; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
-        .sheet-header { text-align: center; border-bottom: 3px double #333; padding-bottom: 10px; margin-bottom: 15px; display: none; }
-        .sheet-header h2 { font-size: 22px; color: #2c3e50; }
-        .sheet-info { display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: bold; font-size: 14px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        /* A4 Baskı Alanı Tam Dolu Optimizasyonu */
+        #worksheetArea { border: 3px solid #cbd5e0; padding: 15px 20px; border-radius: 15px; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.06); width: 100%; max-width: 100%; }
+        .sheet-header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 4px; margin-bottom: 8px; display: none; }
+        .sheet-header h2 { font-size: 16px; color: #2c3e50; }
+        .sheet-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; font-size: 12px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
         
-        .section-title { font-size: 16px; font-weight: bold; color: #c0392b; margin: 25px 0 10px 0; border-left: 5px solid #e74c3c; padding-left: 8px; display: none; }
+        .section-title { font-size: 12px; font-weight: bold; color: #c0392b; margin: 8px 0 3px 0; border-left: 3px solid #e74c3c; padding-left: 5px; display: none; }
         
-        /* Soruların düzgün yerleşmesi için güncellenen liste alanı */
-        .questions-list { display: flex; flex-direction: column; gap: 10px; }
-        .question-card { font-size: 15px; padding: 12px 14px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
+        /* 2 Sütunlu Kompakt ve Verimli Soru Düzeni */
+        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 8px; width: 100%; }
+        .question-card { font-size: 11.5px; padding: 4px 6px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; width: 100%; }
 
+        /* Yazdırma (Print) A4 Sığdırma Kuralları */
         @media print {
             body { background: white; padding: 0; }
             .container { max-width: 100%; margin: 0; padding: 0; }
             .back-btn, .lesson-section, .action-bar, header, footer { display: none !important; }
-            #worksheetArea { border: none; padding: 0; box-shadow: none; }
+            #worksheetArea { border: none; padding: 0; box-shadow: none; width: 100%; }
             .sheet-header, .sheet-info, .section-title { display: flex !important; }
             .section-title { display: block !important; }
-            .question-card { border: 1px solid #bbb; break-inside: avoid; background: white !important; }
+            .question-card { border: 1px solid #ccc; break-inside: avoid; background: white !important; }
+            @page { size: A4; margin: 6mm; }
         }
 
         footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; font-weight: bold; }
@@ -69,10 +72,10 @@
         <div class="checkbox-grid">
             <label class="checkbox-item"><input type="checkbox" id="chkRitmik" checked> Ritmik Sayma Tamamlama</label>
             <label class="checkbox-item"><input type="checkbox" id="chkEldeliToplama" checked> Eldeli Toplama İşlemleri</label>
-            <label class="checkbox-item"><input type="checkbox" id="chkOnlukBozarak"> Onluk Bozarak Çıkarma</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkOnlukBozarak" checked> Onluk Bozarak Çıkarma</label>
             <label class="checkbox-item"><input type="checkbox" id="chkCarpma" checked> Çarpma İşlemleri</label>
-            <label class="checkbox-item"><input type="checkbox" id="chkBolme"> Temel Bölme İşlemleri</label>
-            <label class="checkbox-item"><input type="checkbox" id="chkBasamak"> Yüzlük - Onluk - Birlik</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkBolme" checked> Temel Bölme İşlemleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkBasamak" checked> Yüzlük - Onluk - Birlik</label>
         </div>
     </div>
 
@@ -80,7 +83,7 @@
         <div class="lesson-title">📖 Türkçe Etkinlikleri</div>
         <div class="checkbox-grid">
             <label class="checkbox-item"><input type="checkbox" id="chkZitAnlam" checked> Zıt (Karşıt) Anlamlı Kelimeler</label>
-            <label class="checkbox-item"><input type="checkbox" id="chkNoktalama"> Noktalama İşaretleri (Cümle Sonu)</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkNoktalama" checked> Noktalama İşaretleri (Cümle Sonu)</label>
         </div>
     </div>
 
@@ -88,7 +91,7 @@
         <div class="lesson-title">🌍 Hayat Bilgisi Etkinlikleri</div>
         <div class="checkbox-grid">
             <label class="checkbox-item"><input type="checkbox" id="chkOkulKurallari" checked> Okul ve Sınıf Kuralları (D / Y)</label>
-            <label class="checkbox-item"><input type="checkbox" id="chkTrafik"> Trafik Güvenliği Kuralları</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkTrafik" checked> Trafik Güvenliği Kuralları</label>
         </div>
     </div>
 
@@ -107,7 +110,7 @@
             <span>Puan: ............</span>
         </div>
 
-        <div id="icerikAlani" style="text-align: center; color: #a0aec0; padding: 40px; font-weight: bold;">
+        <div id="icerikAlani" style="text-align: center; color: #a0aec0; padding: 25px; font-weight: bold;">
             Henüz çalışma üretilmedi. Yukarıdan etkinlikleri seçip "Çalışma Kağıdı Hazırla" butonuna tıklayın! 🚀
         </div>
     </div>
@@ -148,140 +151,157 @@ function calismaUret() {
     document.querySelector(".sheet-header").style.display = "block";
     document.querySelector(".sheet-info").style.display = "flex";
 
+    // 1. Ritmik Sayma (8 Soru)
     if (secimler.ritmik) {
         ekleBaslik("A) Aşağıdaki Ritmik Saymalarda Boş Bırakılan Yerleri Tamamlayınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 4; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 8; i++) {
             let artis = [2, 5, 10][rand(0, 2)];
             let baslangic = artis * rand(1, 4);
             let s1 = baslangic, s2 = s1 + artis, s3 = s2 + artis;
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}.  ${s1}, ${s2}, ${s3}, &nbsp; ........... , &nbsp; ........... , &nbsp; ${s3 + (artis*3)}</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${i}. ${s1}, ${s2}, ${s3}, ___, ___, ${s3 + (artis*3)}</span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 2. Eldeli Toplama (10 Soru)
     if (secimler.eldeliToplama) {
         ekleBaslik("B) Aşağıdaki Toplama İşlemlerini Yapınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 6; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 10; i++) {
             let s1 = rand(25, 88), s2 = rand(18, 75);
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}.  ${s1} + ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block; text-align:center;">.......</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${i}. ${s1} + ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 3. Onluk Bozarak Çıkarma (10 Soru)
     if (secimler.onlukBozarak) {
         ekleBaslik("C) Aşağıdaki Çıkarma İşlemlerini Yapınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 6; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 10; i++) {
             let s1 = rand(40, 95), s2 = rand(15, s1 - 5);
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}.  ${s1} - ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block; text-align:center;">.......</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${i}. ${s1} - ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 4. Çarpma İşlemi (10 Soru)
     if (secimler.carpma) {
         ekleBaslik("D) Aşağıdaki Çarpma İşlemlerini Yapınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 6; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 10; i++) {
             let s1 = rand(12, 95), s2 = rand(2, 9);
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}.  ${s1} × ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block; text-align:center;">.......</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${i}. ${s1} × ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 5. Bölme İşlemi (8 Soru)
     if (secimler.bolme) {
         ekleBaslik("E) Aşağıdaki Kalansız Bölme İşlemlerini Yapınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 6; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 8; i++) {
             let bolen = rand(2, 9), bolum = rand(4, 15), bolunen = bolen * bolum;
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}.  ${bolunen} ÷ ${bolen} =</span> <span style="border-bottom: 1px dotted #333; width: 80px; display:inline-block; text-align:center;">.......</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${i}. ${bolunen} ÷ ${bolen} =</span> <span style="border-bottom: 1px dotted #333; width: 35px; display:inline-block;"></span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 6. Basamak Analizi (8 Soru)
     if (secimler.basamak) {
         ekleBaslik("F) Aşağıdaki Sayıların Yüzlük, Onluk ve Birliklerini Yazınız:");
-        let list = olusturListe();
-        for (let i = 1; i <= 4; i++) {
+        let grid = olusturGrid();
+        for (let i = 1; i <= 8; i++) {
             let sayi = rand(210, 895);
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${i}. <b>${sayi}</b> = ..... Yüzlük, ..... Onluk, ..... Birlik</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span style="font-size:11px;">${i}. <b>${sayi}</b>=..Yüz..On..Birlik</span>`;
+            grid.appendChild(card);
         }
     }
 
+    // 7. Zıt Anlamlılar (8 Soru)
     if (secimler.zitAnlam) {
         ekleBaslik("G) Aşağıda Verilen Kelimelerin Zıt Anlamlılarını Karşılarına Yazınız:");
-        let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı"];
-        let secilenler = kelimeler.sort(() => 0.5 - Math.random()).slice(0, 6);
-        let list = olusturListe();
+        let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı", "Genç", "Ucuz", "Acı", "Zor"];
+        let secilenler = kelimeler.sort(() => 0.5 - Math.random()).slice(0, 8);
+        let grid = olusturGrid();
         secilenler.forEach((kelime, index) => {
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${index + 1}.  ${kelime} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 120px; display:inline-block;"></span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${index + 1}. ${kelime} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 55px; display:inline-block;"></span>`;
+            grid.appendChild(card);
         });
     }
 
+    // 8. Noktalama İşaretleri (6 Soru)
     if (secimler.noktalama) {
         ekleBaslik("H) Aşağıdaki Cümlelerin Sonuna Uygun Noktalama İşaretlerini Koyunuz:");
         let cumleler = [
             "Yarın sinemaya gideceğiz",
             "Bugün hava ne kadar güzel",
             "Sınavda kaç puan aldın",
-            "Eyvah, çantam otobüste kaldı"
+            "Eyvah, çantam otobüste kaldı",
+            " Atatürk 1881 yılında doğdu",
+            " Kitabımı gördün mü"
         ];
-        let list = olusturListe();
+        let grid = olusturGrid();
         cumleler.forEach((cumle, index) => {
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${index + 1}.  ${cumle}</span> <span style="border-bottom: 1px dotted #333; width: 50px; display:inline-block; text-align:center;">( &nbsp;&nbsp;&nbsp;&nbsp; )</span>`;
-            list.appendChild(card);
+            card.innerHTML = `<span>${index + 1}. ${cumle}</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block; text-align:center;">( &nbsp; )</span>`;
+            grid.appendChild(card);
         });
     }
 
+    // 9. Okul Kuralları (6 Soru)
     if (secimler.okulKurallari) {
         ekleBaslik("İ) Aşağıdaki Cümlelerden Doğru Olanlara (D), Yanlış Olanlara (Y) Yazınız:");
         let maddeler = [
             "Ders sırasında söz almadan konuşmamalıyız.",
             "Sınıfımızı ve okul bahçemizi temiz tutmalıyız.",
             "Koridorlarda koşarak arkadaşımıza şaka yapabiliriz.",
-            "Öğretmenimiz konuşurken onu dikkatle dinlemeliyiz."
+            "Öğretmenimiz konuşurken onu dikkatle dinlemeliyiz.",
+            "Sıramızın üzerine yazı yazabiliriz.",
+            "Okul eşyalarımızı özenli kullanmalıyız."
         ];
-        let list = olusturListe();
+        let grid = olusturGrid();
         maddeler.forEach((madde, index) => {
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${index + 1}. (${madde})</span> <span style="border-bottom: 1px dotted #333; width: 50px; display:inline-block; text-align:center;">( &nbsp;&nbsp;&nbsp;&nbsp; )</span>`;
-            list.appendChild(card);
+            card.style.gridColumn = "span 2";
+            card.innerHTML = `<span style="font-size:11px;">${index + 1}. (${madde})</span> <span style="border-bottom: 1px dotted #333; width: 30px; display:inline-block; text-align:center;">( &nbsp; )</span>`;
+            grid.appendChild(card);
         });
     }
 
+    // 10. Trafik Güvenliği (4 Soru)
     if (secimler.trafik) {
         ekleBaslik("J) Aşağıdaki Trafik Kuralları İle İlgili Boşlukları Doldurunuz:");
         let sorular = [
-            "Karşıdan karşıya geçerken öncelikle ............................ geçidi tercih etmeliyiz.",
-            "Araçlarda seyahat ederken mutlaka ............................ kemeri takmalıyız.",
-            "Trafik ışıklarında yayalar için kırmızı yanıyorsa ............................ gerekir."
+            "Karşıdan karşıya geçerken ................... geçidi tercih etmeliyiz.",
+            "Araçlarda seyahat ederken mutlaka ................... kemeri takmalıyız.",
+            "Trafik ışıklarında kırmızı yanıyorsa ................... gerekir.",
+            "Yaya kaldırımı olmayan yerlerde yolun ................... yürümeliyiz."
         ];
-        let list = olusturListe();
+        let grid = olusturGrid();
         sorular.forEach((soru, index) => {
             let card = document.createElement("div");
             card.className = "question-card";
-            card.innerHTML = `<span>${index + 1}. ${soru}</span>`;
-            list.appendChild(card);
+            card.style.gridColumn = "span 2";
+            card.innerHTML = `<span style="font-size:11px;">${index + 1}. ${soru}</span>`;
+            grid.appendChild(card);
         });
     }
 }
@@ -294,12 +314,12 @@ function ekleBaslik(metin) {
     alan.appendChild(baslik);
 }
 
-function olusturListe() {
+function olusturGrid() {
     let alan = document.getElementById("icerikAlani");
-    let list = document.createElement("div");
-    list.className = "questions-list";
-    alan.appendChild(list);
-    return list;
+    let grid = document.createElement("div");
+    grid.className = "questions-grid";
+    alan.appendChild(grid);
+    return grid;
 }
 </script>
 
