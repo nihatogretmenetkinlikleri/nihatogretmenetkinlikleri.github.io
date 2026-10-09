@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Etkinlik Üreteci - Nihat Öğretmen</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; }
+        body { background: linear-gradient(135deg, #fef9e7 0%, #ebf5fb 100%); min-height: 100vh; color: #333; display: flex; flex-direction: column; }
+        
+        header { background: linear-gradient(135deg, #FF5733, #FFC300); color: white; padding: 25px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        header h1 { font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 5px; }
+        header p { font-size: 15px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; }
+        
+        .container { max-width: 900px; margin: 25px auto; padding: 0 20px; flex: 1; width: 100%; }
+        
+        .back-btn { display: inline-block; background: #2c3e50; color: white; text-decoration: none; padding: 8px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; font-weight: bold; }
+        .back-btn:hover { background: #34495e; }
+
+        .lesson-section { background: white; border: 2px dashed #3498db; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); }
+        .lesson-title { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; border-bottom: 2px solid #ecf0f1; padding-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: bold; color: #555; cursor: pointer; }
+        .checkbox-item input { accent-color: #e74c3c; width: 18px; height: 18px; }
+        
+        .action-bar { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
+        button { padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 12px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-primary { background: #3498db; color: white; }
+        .btn-primary:hover { background: #2980b9; transform: scale(1.02); }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219653; transform: scale(1.02); }
+
+        #worksheetArea { border: 3px solid #cbd5e0; padding: 30px; border-radius: 15px; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+        .sheet-header { text-align: center; border-bottom: 3px double #333; padding-bottom: 10px; margin-bottom: 15px; display: none; }
+        .sheet-header h2 { font-size: 22px; color: #2c3e50; }
+        .sheet-info { display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: bold; font-size: 14px; display: none; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        
+        .section-title { font-size: 16px; font-weight: bold; color: #c0392b; margin: 20px 0 10px 0; border-left: 5px solid #e74c3c; padding-left: 8px; display: none; }
+        .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .question-card { font-size: 15px; padding: 12px 14px; background: #fdfefe; border: 1px solid #e2e8f0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: #444; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { max-width: 100%; margin: 0; padding: 0; }
+            .back-btn, .lesson-section, .action-bar, header, footer { display: none !important; }
+            #worksheetArea { border: none; padding: 0; box-shadow: none; }
+            .sheet-header, .sheet-info, .section-title { display: flex !important; }
+            .section-title { display: block !important; }
+            .question-card { border: 1px solid #bbb; break-inside: avoid; background: white !important; }
+        }
+
+        footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎯 Akıllı Etkinlik Üreteci</h1>
+    <p>Seç, Üret, Yazdır &mdash; Sınırsız Çalışma Kağıdı</p>
+</header>
+
+<div class="container">
+    <a href="index.html" class="back-btn">&larr; Ana Sayfaya Dön</a>
+
+    <div class="lesson-section">
+        <div class="lesson-title">📐 Matematik Etkinlikleri</div>
+        <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" id="chkRitmik"> Ritmik Sayma Tamamlama</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkEldeliToplama" checked> Eldeli Toplama İşlemleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkOnlukBozarak"> Onluk Bozarak Çıkarma</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkCarpma" checked> Çarpma İşlemleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkBolme"> Temel Bölme İşlemleri</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkBasamak"> Yüzlük - Onluk - Birlik</label>
+        </div>
+    </div>
+
+    <div class="lesson-section">
+        <div class="lesson-title">📖 Türkçe Etkinlikleri</div>
+        <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" id="chkZitAnlam" checked> Zıt (Karşıt) Anlamlı Kelimeler</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkNoktalama"> Noktalama İşaretleri (Cümle Sonu)</label>
+        </div>
+    </div>
+
+    <div class="lesson-section">
+        <div class="lesson-title">🌍 Hayat Bilgisi Etkinlikleri</div>
+        <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" id="chkOkulKurallari" checked> Okul ve Sınıf Kuralları (D / Y)</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkTrafik"> Trafik Güvenliği Kuralları</label>
+        </div>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn-primary" onclick="calismaUret()">✨ Çalışma Kağıdı Hazırla</button>
+        <button class="btn-success" onclick="window.print()">🖨️ Yazdır / PDF Kaydet</button>
+    </div>
+
+    <div id="worksheetArea">
+        <div class="sheet-header">
+            <h2>NİHAT ÖĞRETMEN - GÜNLÜK ÇALIŞMA YAPRAĞI</h2>
+        </div>
+        <div class="sheet-info">
+            <span>Adı Soyadı: ........................................................</span>
+            <span>Sınıfı / No: ..........................</span>
+            <span>Puan: ............</span>
+        </div>
+
+        <div id="icerikAlani" style="text-align: center; color: #a0aec0; padding: 40px; font-weight: bold;">
+            Henüz çalışma üretilmedi. Yukarıdan etkinlikleri seçip "Çalışma Kağıdı Hazırla" butonuna tıklayın! 🚀
+        </div>
+    </div>
+</div>
+
+<footer>
+    🎈 Başarılar Dilerim! - Nihat Öğretmen &copy; 2026
+</footer>
+
+<script>
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function calismaUret() {
+    let alan = document.getElementById("icerikAlani");
+    alan.innerHTML = "";
+
+    let secimler = {
+        ritmik: document.getElementById("chkRitmik").checked,
+        eldeliToplama: document.getElementById("chkEldeliToplama").checked,
+        onlukBozarak: document.getElementById("chkOnlukBozarak").checked,
+        carpma: document.getElementById("chkCarpma").checked,
+        bolme: document.getElementById("chkBolme").checked,
+        basamak: document.getElementById("chkBasamak").checked,
+        zitAnlam: document.getElementById("chkZitAnlam").checked,
+        noktalama: document.getElementById("chkNoktalama").checked,
+        okulKurallari: document.getElementById("chkOkulKurallari").checked,
+        trafik: document.getElementById("chkTrafik").checked
+    };
+
+    let toplamSecim = Object.values(secimler).filter(Boolean).length;
+    if (toplamSecim === 0) {
+        alan.innerHTML = "<p style='color:red;'>Lütfen en az bir etkinlik türü seçin!</p>";
+        return;
+    }
+
+    document.querySelector(".sheet-header").style.display = "block";
+    document.querySelector(".sheet-info").style.display = "flex";
+
+    if (secimler.ritmik) {
+        ekleBaslik("A) Aşağıdaki Ritmik Saymalarda Boş Bırakılan Yerleri Tamamlayınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 4; i++) {
+            let artis = [2, 5, 10][rand(0, 2)];
+            let baslangic = artis * rand(1, 4);
+            let s1 = baslangic, s2 = s1 + artis, s3 = s2 + artis;
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${i}.  ${s1}, ${s2}, ${s3}, ___, ___, ${s3 + (artis*3)}</span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.eldeliToplama) {
+        ekleBaslik("B) Aşağıdaki Toplama İşlemlerini Yapınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 6; i++) {
+            let s1 = rand(25, 88), s2 = rand(18, 75);
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${i}.  ${s1} + ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.onlukBozarak) {
+        ekleBaslik("C) Aşağıdaki Çıkarma İşlemlerini Yapınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 6; i++) {
+            let s1 = rand(40, 95), s2 = rand(15, s1 - 5);
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${i}.  ${s1} - ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.carpma) {
+        ekleBaslik("D) Aşağıdaki Çarpma İşlemlerini Yapınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 6; i++) {
+            let s1 = rand(12, 95), s2 = rand(2, 9);
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${i}.  ${s1} × ${s2} =</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.bolme) {
+        ekleBaslik("E) Aşağıdaki Kalansız Bölme İşlemlerini Yapınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 6; i++) {
+            let bolen = rand(2, 9), bolum = rand(4, 15), bolunen = bolen * bolum;
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${i}.  ${bolunen} ÷ ${bolen} =</span> <span style="border-bottom: 1px dotted #333; width: 60px; display:inline-block;"></span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.basamak) {
+        ekleBaslik("F) Aşağıdaki Sayıların Yüzlük, Onluk ve Birliklerini Yazınız:");
+        let grid = olusturGrid();
+        for (let i = 1; i <= 4; i++) {
+            let sayi = rand(210, 895);
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span style="font-size:13px;">${i}. <b>${sayi}</b> = ..... Yüzlük, ..... Onluk, ..... Birlik</span>`;
+            grid.appendChild(card);
+        }
+        alan.appendChild(grid);
+    }
+
+    if (secimler.zitAnlam) {
+        ekleBaslik("G) Aşağıda Verilen Kelimelerin Zıt Anlamlılarını Karşılarına Yazınız:");
+        let kelimeler = ["Büyük", "Siyah", "Uzak", "Eski", "İyi", "Zengin", "Açık", "Güzel", "Yaşlı", "Hızlı"];
+        let secilenler = kelimeler.sort(() => 0.5 - Math.random()).slice(0, 6);
+        let grid = olusturGrid();
+        secilenler.forEach((kelime, index) => {
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${index + 1}.  ${kelime} &rarr;</span> <span style="border-bottom: 1px dotted #333; width: 100px; display:inline-block;"></span>`;
+            grid.appendChild(card);
+        });
+        alan.appendChild(grid);
+    }
+
+    if (secimler.noktalama) {
+        ekleBaslik("H) Aşağıdaki Cümlelerin Sonuna Uygun Noktalama İşaretlerini Koyunuz:");
+        let cumleler = [
+            "Yarın sinemaya gideceğiz",
+            "Bugün hava ne kadar güzel",
+            "Sınavda kaç puan aldın",
+            "Eyvah, çantam otobüste kaldı"
+        ];
+        let grid = olusturGrid();
+        cumleler.forEach((cumle, index) => {
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.innerHTML = `<span>${index + 1}.  ${cumle}</span> <span style="border-bottom: 1px dotted #333; width: 40px; display:inline-block; text-align:center;">( &nbsp;&nbsp;&nbsp;&nbsp; )</span>`;
+            grid.appendChild(card);
+        });
+        alan.appendChild(grid);
+    }
+
+    if (secimler.okulKurallari) {
+        ekleBaslik("İ) Aşağıdaki Cümlelerden Doğru Olanlara (D), Yanlış Olanlara (Y) Yazınız:");
+        let maddeler = [
+            "Ders sırasında söz almadan konuşmamalıyız.",
+            "Sınıfımızı ve okul bahçemizi temiz tutmalıyız.",
+            "Koridorlarda koşarak arkadaşımıza şaka yapabiliriz.",
+            "Öğretmenimiz konuşurken onu dikkatle dinlemeliyiz."
+        ];
+        let grid = olusturGrid();
+        maddeler.forEach((madde, index) => {
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.style.fontSize = "13px";
+            card.innerHTML = `<span>${index + 1}. (${madde})</span> <span style="border-bottom: 1px dotted #333; width: 40px; display:inline-block; text-align:center;">( &nbsp;&nbsp;&nbsp;&nbsp; )</span>`;
+            grid.appendChild(card);
+        });
+        alan.appendChild(grid);
+    }
+
+    if (secimler.trafik) {
+        ekleBaslik("J) Aşağıdaki Trafik Kuralları İle İlgili Boşlukları Doldurunuz:");
+        let sorular = [
+            "Karşıdan karşıya geçerken öncelikle ............................ geçidi tercih etmeliyiz.",
+            "Araçlarda seyahat ederken mutlaka ............................ kemeri takmalıyız.",
+            "Trafik ışıklarında yayalar için kırmızı yanıyorsa ............................ gerekir."
+        ];
+        let grid = olusturGrid();
+        sorular.forEach((soru, index) => {
+            let card = document.createElement("div");
+            card.className = "question-card";
+            card.style.gridColumn = "span 2";
+            card.innerHTML = `<span>${index + 1}. ${soru}</span>`;
+            grid.appendChild(card);
+        });
+        alan.appendChild(grid);
+    }
+}
+
+function ekleBaslik(metin) {
+    let alan = document.getElementById("icerikAlani");
+    let baslik = document.createElement("div");
+    baslik.className = "section-title";
+    baslik.innerText = metin;
+    alan.appendChild(baslik);
+}
+
+function olusturGrid() {
+    let alan = document.getElementById("icerikAlani");
+    let grid = document.createElement("div");
+    grid.className = "questions-grid";
+    alan.appendChild(grid);
+    return grid;
+}
+</script>
+
+</body>
+</html>
