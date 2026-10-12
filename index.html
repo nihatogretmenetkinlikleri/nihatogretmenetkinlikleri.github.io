@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihat Öğretmen'in Eğlenceli Sınıfı</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; }
+        body { background: linear-gradient(135deg, #fef9e7 0%, #ebf5fb 100%); min-height: 100vh; color: #333; display: flex; flex-direction: column; }
+        
+        /* Sihirli Başlık Alanı */
+        header { background: linear-gradient(135deg, #FF5733, #FFC300); color: white; padding: 35px 20px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        header h1 { font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 10px; }
+        header p { font-size: 17px; font-weight: bold; background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; }
+        
+        .container { max-width: 800px; margin: 25px auto; padding: 0 20px; flex: 1; width: 100%; }
+        
+        /* Karşılama Panosu */
+        .welcome-card { background: white; padding: 22px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 25px; border: 3px dashed #3498db; }
+        .welcome-card h2 { color: #2c3e50; font-size: 22px; margin-bottom: 8px; }
+        .welcome-card p { color: #666; font-size: 15px; line-height: 1.5; }
+        
+        .section-title { font-size: 20px; color: #2c3e50; margin: 25px 0 15px 0; text-align: center; position: relative; }
+        .section-title::after { content: '⭐'; display: block; font-size: 13px; margin-top: 4px; }
 
+        /* Buton Alanı */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; justify-content: center; margin-bottom: 20px; }
+        
+        /* Canlı ve Büyük Etkinlik Butonları */
+        .menu-button { background: white; border-radius: 20px; box-shadow: 0 8px 15px rgba(0,0,0,0.08); padding: 22px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 4px solid #e74c3c; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .menu-button:hover { transform: scale(1.03); box-shadow: 0 12px 25px rgba(231, 76, 60, 0.2); }
+        .menu-button .icon { font-size: 40px; margin-bottom: 10px; animation: float 3s ease-in-out infinite; }
+        .menu-button h3 { color: #c0392b; font-size: 18px; margin-bottom: 6px; }
+        .menu-button p { color: #7f8c8d; font-size: 13px; font-weight: bold; }
+
+        /* Ders Kategorileri Kartları (Google Drive Bağlantılı) */
+        .category-button { background: white; border-radius: 18px; box-shadow: 0 6px 15px rgba(0,0,0,0.06); padding: 18px 20px; text-decoration: none; display: flex; align-items: center; gap: 15px; border-left: 6px solid #3498db; border-top: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee; transition: transform 0.2s, box-shadow 0.2s; }
+        .category-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* Sol Kenar Renkleri */
+        .cat-turkce { border-left-color: #3b82f6; }
+        .cat-matematik { border-left-color: #10b981; }
+        .cat-hayat { border-left-color: #84cc16; }
+        .cat-gorsel { border-left-color: #8b5cf6; }
+        .cat-sarki { border-left-color: #f59e0b; }
+        .cat-plan { border-left-color: #1e3a8a; }
+
+        .cat-icon { font-size: 32px; background: #f8fafc; padding: 10px; border-radius: 12px; min-width: 50px; text-align: center; }
+        .cat-info h3 { color: #1e293b; font-size: 17px; margin-bottom: 3px; }
+        .cat-info p { color: #64748b; font-size: 13px; margin: 0; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        footer { text-align: center; padding: 25px; color: #7f8c8d; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nihat Öğretmen'in Dijital Sınıfı</h1>
+    <p>🚀 Eğlenceli Öğrenme Yolculuğu</p>
+</header>
+
+<div class="container">
+    <div class="welcome-card">
+        <h2>Sınıfımıza Hoş Geldiniz Çocuklar! 👋</h2>
+        <p>Sizler için hazırladığım interaktif çalışmalara, videolu derslere ve eğlenceli testlere aşağıdan kolayca ulaşabilirsiniz. Hadi, keşfetmeye başlayın!</p>
+    </div>
+
+    <!-- GÜNCEL ÇALIŞMALAR ALANI -->
+    <h2 class="section-title">Bugünün Çalışmaları</h2>
+    
+    <div class="grid">
+               <!-- Akıllı Etkinlik Üreteci Butonu -->
+        <a href="etkinlik-ureteci.html" class="menu-button" style="border-color: #3498db;">
+            <div class="icon">🎯</div>
+            <h3 style="color: #2980b9;">Akıllı Etkinlik Üreteci</h3>
+            <p>Seçmeli Matematik, Türkçe ve Hayat Bilgisi</p>
+        </a>
+ <!-- 10 Kasım Atatürk'ü Keşfet (İnteraktif Sayfa) -->
+        <a href="10kasim.html" class="menu-button">
+            <div class="icon">🇹🇷</div>
+            <h3>10 Kasım Atatürk'ü Keşfet</h3>
+            <p>Videolu Anlatım & 5 Soruluk Test</p>
+        </a>
+
+        <!-- 10 Kasım Karekodlu Çalışma (Drive) -->
+        <a href="https://drive.google.com/file/d/1EmafPBjnWTR7dMqM5DKzLxociOkQGnQL/view?usp=drivesdk" target="_blank" class="menu-button" style="border-color: #f59e0b;">
+            <div class="icon">📄</div>
+            <h3 style="color: #d97706;">10 Kasım Karekodlu Çalışma</h3>
+            <p>Orijinal PDF / Drive Dokümanını İndir</p>
+        </a>
+    </div>
+
+    <!-- DERS KATEGORİLERİ VE GOOGLE DRIVE BAĞLANTILARI -->
+    <h2 class="section-title">Sınıf Etkinlikleri ve Ders Kategorileri</h2>
+
+    <div class="grid" style="grid-template-columns: 1fr;">
+        
+        <!-- Türkçe Etkinlikleri -->
+        <a href="https://drive.google.com/drive/folders/10-9ZOayyTNNfkKx_iG8__CjBXbscSb12" target="_blank" class="category-button cat-turkce">
+            <div class="cat-icon">📖</div>
+            <div class="cat-info">
+                <h3>Türkçe Etkinlikleri</h3>
+                <p>Okuma metinleri, dikte ve dil bilgisi çalışmaları</p>
+            </div>
+        </a>
+
+        <!-- Matematik Dünyası (Özel Matematik Çalışma Kağıdına Bağlandı) -->
+        <a href="https://drive.google.com/file/d/1neHsIASSb-rBsP2Dq89vgHlIUDuXVXhQ/view?usp=drivesdk" target="_blank" class="category-button cat-matematik">
+            <div class="cat-icon">🔢</div>
+            <div class="cat-info">
+                <h3>Matematik Dünyası</h3>
+                <p>3. Sınıf Matematik Çalışma Kağıdı (20 Soru & Cevap)</p>
+            </div>
+        </a>
+
+        <!-- Hayat Bilgisi & Fen Bilimleri -->
+        <a href="https://drive.google.com/drive/folders/10nnvs5HTcxVm775yi96OrFyeKHuJE_76" target="_blank" class="category-button cat-hayat">
+            <div class="cat-icon">🌱</div>
+            <div class="cat-info">
+                <h3>Hayat Bilgisi & Fen Bilimleri</h3>
+                <p>Doğa, yaşam bilgileri ve çevre bilinci</p>
+            </div>
+        </a>
+
+        <!-- Görsel Sanatlar -->
+        <a href="https://drive.google.com/drive/folders/1ujOYFrYn3Kfl-hkpqVwPFq3Apy1PY9LA" target="_blank" class="category-button cat-gorsel">
+            <div class="cat-icon">🎨</div>
+            <div class="cat-info">
+                <h3>Görsel Sanatlar</h3>
+                <p>Boyama sayfaları, maskeler ve sanat etkinlikleri</p>
+            </div>
+        </a>
+
+        <!-- Eğlenceli Şarkılar -->
+        <a href="https://drive.google.com/drive/folders/1OKulTaR-RbdJOwxj6mFpKhFht1aW6ozq" target="_blank" class="category-button cat-sarki">
+            <div class="cat-icon">🎵</div>
+            <div class="cat-info">
+                <h3>Eğlenceli Şarkılar</h3>
+                <p>Sınıf içi müzikler, şarkı sözleri ve ritimler</p>
+            </div>
+        </a>
+
+        <!-- Yıllık Planlar & Dosyalar -->
+        <a href="https://drive.google.com/drive/folders/1CNHuUeZ470CHNnQVHzU4ac66Z42s2acZ" target="_blank" class="category-button cat-plan">
+            <div class="cat-icon">📁</div>
+            <div class="cat-info">
+                <h3>Yıllık Planlar & Dosyalar</h3>
+                <p>Planlar, belirli gün ve haftalar, dokümanlar</p>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+<footer>
+    🎈 Başarılar Dilerim! - Nihat Öğretmen &copy; 2026
+</footer>
+
+</body>
+</html>
