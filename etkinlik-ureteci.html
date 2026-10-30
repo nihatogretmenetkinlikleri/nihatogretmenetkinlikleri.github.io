@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Etkinlik Üreteci V110 | Nihat Öğretmen</title>
+<title>Etkinlik Üreteci V117 | Nihat Öğretmen</title>
 <style>
 :root{--blue:#2458a6;--light:#eef4ff;--ink:#202b3c;--border:#d5dfed}
 *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f2f5fa}
@@ -22,7 +21,7 @@ button{border:0;border-radius:9px;padding:12px 16px;font-weight:bold;cursor:poin
 .meta{display:flex;justify-content:space-between;gap:12px;margin:12px 0;font-size:12px}.questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .question{border:1px solid #ccd5e2;border-radius:7px;padding:9px;font-size:12px;line-height:1.5;overflow-wrap:anywhere;break-inside:avoid}
 .question.reading-lead{grid-column:1/-1}.passage{background:#f8fbff;border-left:4px solid #8aaee8;padding:10px;margin:8px 0 10px;font-size:12px;line-height:1.55}
-.qnum{font-weight:bold;color:var(--blue)}.line{border-bottom:1px solid #8995a6;height:19px;margin-top:4px}.answer-key{border-top:2px dashed #9ba8ba;margin-top:20px;padding-top:12px}
+.qnum{font-weight:bold;color:var(--blue)}.reading-intro-title{display:block;color:#234f8d;margin-bottom:2px}.reading-question{margin-top:4px}.line{border-bottom:1px solid #8995a6;height:19px;margin-top:4px}.answer-key{border-top:2px dashed #9ba8ba;margin-top:20px;padding-top:12px}
 .answer-key h3{text-align:center}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.answer{font-size:11px;border:1px solid #ddd;padding:6px;border-radius:5px}
 .hidden{display:none}footer{text-align:center;font-size:11px;color:#667085;padding:12px}
 @media(max-width:650px){.fields{grid-template-columns:1fr}.questions,.answers{grid-template-columns:1fr}.question.reading-lead{grid-column:auto}#paper{padding:12px}}
@@ -186,33 +185,64 @@ body.tr3-skill .skill-lead{margin:6px 0 8px;padding:8px 10px;border:1px solid #c
 .v97scramble{margin-top:7px;border:1px solid #9aa5ad;border-radius:7px;padding:6px 8px}.v97scramble>b{font-size:9px}.v97scramble p{margin:2px 0;font-size:9px;line-height:1.2}
 
 
-/* V110: 3. sınıf matematik görsel sorularını tek A4'e yaklaştır */
-@media print{
- body.count-12 .geo-row{gap:5px;margin:2px 0;flex-wrap:nowrap}
- body.count-12 .geo-card{min-width:45px;padding:2px}
- body.count-12 .geo-square{width:30px;height:30px}.geo-rect{width:42px;height:26px}
- body.count-12 .geo-circle{width:32px;height:32px}
- body.count-12 .geo-tri{border-left-width:18px;border-right-width:18px;border-bottom-width:32px}
- body.count-12 .geo-tri:after{left:-15px;top:4px;border-left-width:15px;border-right-width:15px;border-bottom-width:26px}
- body.count-12 .geo-cube{transform:scale(.72);margin:1px}.geo-prism{transform:scale(.72);margin:1px}.geo-cylinder{transform:scale(.72);margin:1px}.geo-sphere{transform:scale(.72);margin:1px}
- body.count-12 .question:has(.geo-row){min-height:0;padding:5px 6px;font-size:8.7pt;line-height:1.25}
- body.count-12 .question:has(.geo-row) .line{height:17px;margin-top:2px}
+/* V112: 2. sınıf Türkçe sözcük anlamı/noktalama — bir sayfa etkinlik + bir sayfa cevap anahtarı */
+@media print {
+ body.g2tr-word-punct.count-12 #paper>p{font-size:8.5pt!important;margin:3px 0 5px!important}
+ body.g2tr-word-punct.count-12 .paper-head{padding-bottom:5px}
+ body.g2tr-word-punct.count-12 .paper-head h2{font-size:14pt;margin:3px 0}
+ body.g2tr-word-punct.count-12 .meta{font-size:8pt;margin:5px 0}
+ body.g2tr-word-punct.count-12 .questions{gap:4px 6px}
+ body.g2tr-word-punct.count-12 .question{font-size:8.5pt;line-height:1.2;padding:4px;min-height:0}
+ body.g2tr-word-punct.count-12 .line{height:16px;margin-top:2px}
+ body.g2tr-word-punct.count-20 #paper>p{font-size:8pt!important;margin:2px 0 4px!important}
+ body.g2tr-word-punct.count-20 .paper-head{padding-bottom:4px}
+ body.g2tr-word-punct.count-20 .paper-head h2{font-size:13pt;margin:2px 0}
+ body.g2tr-word-punct.count-20 .meta{font-size:7.5pt;margin:4px 0}
+ body.g2tr-word-punct.count-20 .questions{gap:3px 5px}
+ body.g2tr-word-punct.count-20 .question{font-size:7.6pt;line-height:1.15;padding:3px;min-height:0}
+ body.g2tr-word-punct.count-20 .line{height:12px;margin-top:1px}
+ body.g2tr-word-punct .question{break-inside:avoid;page-break-inside:avoid}
+ body.g2tr-word-punct .answer-key{break-before:page;page-break-before:always;margin-top:0;padding-top:8px}
+ body.g2tr-word-punct .answer-key h3{margin:0 0 8px}
+ body.g2tr-word-punct .answers{gap:4px}
+ body.g2tr-word-punct .answer{font-size:8.5pt;padding:4px;line-height:1.25;break-inside:avoid;page-break-inside:avoid}
 }
 
-/* V110: 3. sınıf geometrik cisimler — 12 soru tek A4 */
-@media print{
- body.math3-solids.count-12 .paper-head{padding-bottom:5px}
- body.math3-solids.count-12 .meta{margin:6px 0 4px}
- body.math3-solids.count-12 #paper>p{margin:3px 0 5px!important;font-size:9px!important}
- body.math3-solids.count-12 .questions{gap:4px 7px}
- body.math3-solids.count-12 .question{font-size:8.8pt;line-height:1.28;padding:4px 6px;min-height:0;height:36mm;overflow:hidden}
- body.math3-solids.count-12 .solid-row{margin:0;gap:2px}
- body.math3-solids.count-12 .solid-card{padding:0 1px}
- body.math3-solids.count-12 .solid-card svg{width:32px;height:28px}
- body.math3-solids.count-12 .solid-card b{font-size:6px}
- body.math3-solids.count-12 .line{height:14px;margin-top:2px}
- body.math3-solids.count-12 .nihat-stamp{margin-top:2mm;padding-top:1mm;font-size:7pt}
+/* V112: Soruları sayfaya daha dengeli yay, yazı ve yanıt alanlarını büyüt */
+@media print {
+ body.g2tr-word-punct.count-12 #paper>p{font-size:9.5pt!important;margin:5px 0 7px!important}
+ body.g2tr-word-punct.count-12 .paper-head{padding-bottom:7px}
+ body.g2tr-word-punct.count-12 .paper-head h2{font-size:15pt;margin:4px 0}
+ body.g2tr-word-punct.count-12 .meta{font-size:8.7pt;margin:7px 0}
+ body.g2tr-word-punct.count-12 .questions{gap:6px 8px}
+ body.g2tr-word-punct.count-12 .question{font-size:9.6pt;line-height:1.28;padding:7px;min-height:25mm}
+ body.g2tr-word-punct.count-12 .line{height:22px;margin-top:3px}
+ body.g2tr-word-punct.count-20 #paper>p{font-size:8.5pt!important;margin:3px 0 5px!important}
+ body.g2tr-word-punct.count-20 .paper-head{padding-bottom:5px}
+ body.g2tr-word-punct.count-20 .paper-head h2{font-size:14pt;margin:3px 0}
+ body.g2tr-word-punct.count-20 .meta{font-size:8pt;margin:5px 0}
+ body.g2tr-word-punct.count-20 .questions{gap:4px 6px}
+ body.g2tr-word-punct.count-20 .question{font-size:8.2pt;line-height:1.2;padding:4px;min-height:16mm}
+ body.g2tr-word-punct.count-20 .line{height:14px;margin-top:2px}
+ body.g2tr-word-punct .answer-key{padding-top:9px}
+ body.g2tr-word-punct .answer-key h3{font-size:12pt;margin:0 0 10px}
+ body.g2tr-word-punct .answers{gap:5px}
+ body.g2tr-word-punct .answer{font-size:9pt;padding:5px;line-height:1.3}
 }
+
+/* V112: 2. sınıf Türkçe çok konulu 20 soruyu tek A4 çalışma sayfasına sığdır */
+@media print {
+ body.g2tr-multi.count-20 #paper{padding:0}
+ body.g2tr-multi.count-20 .paper-head{padding-bottom:3px}
+ body.g2tr-multi.count-20 .paper-head h2{font-size:13pt;margin:2px 0}
+ body.g2tr-multi.count-20 .meta{font-size:7.5pt;margin:3px 0}
+ body.g2tr-multi.count-20 #paper>p{font-size:8pt!important;margin:2px 0 3px!important}
+ body.g2tr-multi.count-20 .questions{gap:2px 5px}
+ body.g2tr-multi.count-20 .question{font-size:7.6pt;line-height:1.12;padding:3px;min-height:13mm;break-inside:avoid;page-break-inside:avoid}
+ body.g2tr-multi.count-20 .line{height:9px;margin-top:1px}
+ body.g2tr-multi.count-20 .answer-key{break-before:page;page-break-before:always}
+}
+
 </style>
 
 <style>
@@ -226,14 +256,27 @@ body.tr3-skill .skill-lead{margin:6px 0 8px;padding:8px 10px;border:1px solid #c
 /* V95: görsel seçeneklerini okunabilir büyüt, 12 soruda cevap alanını biraz genişlet */
 .v94choices .v94svg{height:105px!important;width:100%!important}.v94choices>div{min-height:118px}.tr3-reading .question{min-height:62px}
 @media print{.v94choices .v94svg{height:98px!important}.v94choices>div{min-height:110px}}
-
-/* V110: 3. sınıf matematik geometri görselleri */
-.solid-row{display:flex;justify-content:center;align-items:flex-end;gap:5px;flex-wrap:nowrap;margin:2px 0}.solid-card{display:inline-flex;flex-direction:column;align-items:center;border:1px solid #c8cdd3;border-radius:5px;padding:1px 2px;background:#fff}.solid-card svg{width:48px;height:42px}.solid-card b{font-size:7px;font-weight:500}.mini-data{border-collapse:collapse;margin:3px auto;font-size:8px;min-width:72%}.mini-data th,.mini-data td{border:1px solid #777;padding:2px 4px;text-align:center}.mini-chart{height:72px;display:flex;align-items:flex-end;justify-content:center;gap:12px;margin:2px auto 4px}.bar-wrap{height:70px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}.bar-wrap i{display:block;width:20px;border:1.5px solid #333;background:#eee}.bar-wrap b{font-size:7px;position:absolute;top:0}.bar-wrap small{font-size:7px}.spatial-grid{display:grid;grid-template-columns:repeat(3,22px);width:max-content;margin:3px auto}.spatial-grid span{height:22px;border:1px solid #777;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:9px}body.count-12 .solid-row{gap:2px}body.count-12 .solid-card svg{width:40px;height:34px}body.count-12 .mini-chart{height:58px}.question:has(.solid-row),.question:has(.mini-data),.question:has(.mini-chart){padding-top:4px;padding-bottom:4px}
-.geo-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:7px 0}.geo-shape{display:inline-block;vertical-align:middle}.geo-square{width:46px;height:46px;border:2px solid #333}.geo-rect{width:68px;height:40px;border:2px solid #333}.geo-tri{width:0;height:0;border-left:27px solid transparent;border-right:27px solid transparent;border-bottom:48px solid #555;position:relative}.geo-tri:after{content:"";position:absolute;left:-23px;top:5px;border-left:23px solid transparent;border-right:23px solid transparent;border-bottom:40px solid white}.geo-circle{width:48px;height:48px;border:2px solid #333;border-radius:50%}.geo-solid{font-size:42px;line-height:1}.geo-label{font-size:9px;text-align:center;margin-top:2px}.geo-card{display:inline-flex;flex-direction:column;align-items:center;min-width:72px;padding:4px;border:1px solid #bbb;border-radius:6px}.geo-cube{width:46px;height:46px;border:2px solid #333;position:relative;margin:8px}.geo-cube:before{content:"";position:absolute;width:34px;height:34px;border:2px solid #666;left:10px;top:-10px}.geo-cube:after{content:"";position:absolute;width:14px;height:2px;background:#666;left:-1px;top:5px;transform:rotate(-40deg);box-shadow:33px 28px 0 #666}.geo-cylinder{width:45px;height:52px;border:2px solid #333;border-radius:50%/14%;position:relative}.geo-cylinder:after{content:"";position:absolute;left:-2px;right:-2px;bottom:-2px;height:13px;border:2px solid #333;border-radius:50%}.geo-sphere{width:50px;height:50px;border:2px solid #333;border-radius:50%;position:relative}.geo-sphere:after{content:"";position:absolute;left:7px;right:7px;top:20px;height:9px;border:1px solid #777;border-radius:50%}.geo-prism{width:58px;height:42px;border:2px solid #333;position:relative;margin:8px}.geo-prism:before{content:"";position:absolute;width:44px;height:30px;border:2px solid #666;left:10px;top:-10px}.geo-prism:after{content:"";position:absolute;width:13px;height:2px;background:#666;left:-1px;top:4px;transform:rotate(-38deg);box-shadow:43px 31px 0 #666}
 </style>
+<style>
+/* V112: 20 soruluk çok konulu çalışma sayfası tüm ders ve sınıflarda tek A4 */
+@media print {
+ body.multi-topic-20 #paper{padding:0!important}
+ body.multi-topic-20 .paper-head{padding-bottom:3px!important}
+ body.multi-topic-20 .paper-head h2{font-size:13pt!important;margin:2px 0!important}
+ body.multi-topic-20 .meta{font-size:7.5pt!important;margin:3px 0!important}
+ body.multi-topic-20 #paper>p{font-size:8pt!important;margin:2px 0 3px!important}
+ body.multi-topic-20 .skill-lead{font-size:7.7pt!important;line-height:1.12!important;padding:3px!important;margin:2px 0 3px!important}
+ body.multi-topic-20 .questions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:2px 5px!important}
+ body.multi-topic-20 .question{font-size:7.6pt!important;line-height:1.12!important;padding:3px!important;min-height:13mm!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ body.multi-topic-20 .line{height:9px!important;margin-top:1px!important}
+ body.multi-topic-20 .question svg{max-height:24mm!important}
+ body.multi-topic-20 .answer-key{break-before:page!important;page-break-before:always!important}
+}
+</style>
+
 </head>
 <body>
-<header><h1>Etkinlik Üreteci</h1><p>Nihat Öğretmen • İlkokul çalışma kâğıtları • V110</p></header>
+<header><h1>Etkinlik Üreteci</h1><p>Nihat Öğretmen • İlkokul çalışma kâğıtları • V117</p></header>
 <main>
 <section class="panel setup">
 <h2>Çalışmanı hazırla</h2>
@@ -269,7 +312,7 @@ body.tr3-skill .skill-lead{margin:6px 0 8px;padding:8px 10px;border:1px solid #c
 <label class="opt"><input type="checkbox" value="write"> Harf yazma</label>
 </div></div>
 <div class="buttons"><button class="primary" id="make">Çalışma kâğıdı hazırla</button><button class="secondary" id="print">Yazdır / PDF kaydet</button><button class="secondary" id="keyButton">Cevap anahtarını aç</button></div>
-<div id="status">V110 • Bir ders ve konu seçerek başlayın.</div>
+<div id="status">V117 • Bir ders ve konu seçerek başlayın.</div>
 </section>
 <section class="panel"><h2 class="preview-title">Çalışma kâğıdı ön izlemesi</h2><div id="paper"><p class="note">Hazırladığınız çalışma burada görünecek.</p></div></section>
 </main>
@@ -278,7 +321,7 @@ body.tr3-skill .skill-lead{margin:6px 0 8px;padding:8px 10px;border:1px solid #c
 const program={
 1:{"Türkçe":["Harf Yazma Çalışması","İlk okuma ve yazma","Sözcük ve cümle","Okuduğunu anlama"],"Matematik":["Sayılar ve sayma","Toplama","Çıkarma","Örüntüler","Geometrik şekiller","Problemler"],"Hayat Bilgisi":["Okulumuzda hayat","Evimizde hayat","Sağlıklı hayat","Güvenli hayat"]},
 2:{"Türkçe":["Okuduğunu anlama","Sözcük anlamı","Eş ve zıt anlamlı kelimeler","Cümle bilgisi","Yazım ve noktalama"],"Matematik":["Doğal sayılar","Basamak değeri","Toplama","Çıkarma","Çarpma","Bölme","Ölçme","Örüntüler","Problemler"],"Hayat Bilgisi":["Okulumuzda hayat","Ailem ve toplum","Sağlıklı hayat","Güvenli hayat","Doğa ve çevre"],"İngilizce":["Greetings","Numbers","Colours","My classroom"]},
-3:{"Türkçe":["Okuduğunu anlama","Şiir Bilgisi","Yazılı Anlatım","Yazım Kuralları","Atasözü ve Deyimler","Alfabe","Ünlü ve ünsüz harfler","Hece sayısı","Hecelerine ayırma","Birleşik kelimeleri hecelerine ayırma","Heceden kelime türetme","Kelimelerin çağrıştıkları","Kelime haritası","Görsellerin anlattıkları","Kelime ve görsel ilişkisi","Kelimelerin anlamı","Sözcük anlamı","Eş ve zıt anlamlı kelimeler","Cümle bilgisi","Yazım ve noktalama"],"Matematik":["1000’e kadar sayılar","Sayıların okunuşu","Basamak değeri ve çözümleme","Sayıları karşılaştırma ve sıralama","Sayıları yuvarlama","Ritmik saymalar","Tek ve çift sayılar","Kesirler","Toplama işlemi","Çıkarma işlemi","Zihinden toplama ve çıkarma","Çarpma işlemi","Bölme işlemi","Sayı örüntüleri","Şekil örüntüleri","Geometrik cisimler","Geometrik şekiller ve özellikleri","Mekânsal ilişkiler","Uzunluk ölçme","Çevre ve alan","Kütle ölçme","Sıvı ölçme","Zaman ölçme","Para","Verilere dayalı problemler","Problem çözme"],"Hayat Bilgisi":["Okulumuzda hayat","Evimizde hayat","Sağlıklı hayat","Güvenli hayat","Doğa ve çevre"],"Fen Bilimleri":["Bilimsel keşif yolculuğu","Canlılar dünyası","Kuvveti tanıyalım","Maddeyi tanıyalım","Işık ve ses"],"İngilizce":["Greetings","Numbers","Colours","Animals","My family"]},
+3:{"Türkçe":["Okuduğunu anlama","Şiir Bilgisi","Yazılı Anlatım","Yazım Kuralları","Atasözü ve Deyimler","Alfabe","Ünlü ve ünsüz harfler","Hece sayısı","Hecelerine ayırma","Birleşik kelimeleri hecelerine ayırma","Heceden kelime türetme","Kelimelerin çağrıştıkları","Kelime haritası","Görsellerin anlattıkları","Kelime ve görsel ilişkisi","Kelimelerin anlamı","Sözcük anlamı","Eş ve zıt anlamlı kelimeler","Cümle bilgisi","Yazım ve noktalama"],"Matematik":["Sayıların okunuşu","Basamak değeri ve çözümleme","Sayıları sıralama","Toplama","Çıkarma","Çarpma","Bölme","Kesirler","Ölçme","Geometrik şekiller","Problemler"],"Hayat Bilgisi":["Okulumuzda hayat","Evimizde hayat","Sağlıklı hayat","Güvenli hayat","Doğa ve çevre"],"Fen Bilimleri":["Bilimsel keşif yolculuğu","Canlılar dünyası","Kuvveti tanıyalım","Maddeyi tanıyalım","Işık ve ses"],"İngilizce":["Greetings","Numbers","Colours","Animals","My family"]},
 4:{"Türkçe":["Okuduğunu anlama","Sözcük anlamı","Cümle bilgisi","Yazım ve noktalama","Metin türleri"],"Matematik":["Doğal sayılar","Basamak değeri","Toplama","Çıkarma","Çarpma","Bölme","Kesirler","Ölçme","Geometrik şekiller","Problemler"],"Fen Bilimleri":["Dünya ve çevremiz","Besinler","Kuvvet","Madde","Işık ve ses","İnsan ve çevre"],"Sosyal Bilgiler":["Birey ve toplum","Kültür ve miras","İnsanlar ve çevre","Bilim ve teknoloji","Üretim ve tüketim"],"İngilizce":["Classroom rules","Numbers","Colours","Free time"]}
 };
 const allLetters="a b c ç d e f g ğ h ı i j k l m n o ö p r s ş t u ü v y z".split(" "),firstGroup=["a","n","e","t","i","l"];
@@ -305,18 +348,8 @@ function renderTopics(){
    ["✍️ Yazma ve Dil Çalışmaları",["Şiir Bilgisi","Yazılı Anlatım","Yazım Kuralları","Atasözü ve Deyimler","Yazım ve noktalama"]]
   ];
   groups.forEach(([name,names],gi)=>{let valid=names.filter(x=>list.includes(x));if(!valid.length)return;let box=document.createElement("details");box.className="topic-group";box.open=gi===0;let sum=document.createElement("summary");sum.textContent=name+" ("+valid.length+")";let inside=document.createElement("div");inside.className="topic-group-items";valid.forEach(t=>inside.append(makeOpt(t)));box.append(sum,inside);root.append(box)});
-  }else if(g===3&&s==="Matematik"){
-   const groups=[
-    ["🔢 Sayılar ve Nicelikler",["1000’e kadar sayılar","Sayıların okunuşu","Basamak değeri ve çözümleme","Sayıları karşılaştırma ve sıralama","Sayıları yuvarlama","Ritmik saymalar","Tek ve çift sayılar","Kesirler"]],
-    ["➕ Toplama ve Çıkarma",["Toplama işlemi","Çıkarma işlemi","Zihinden toplama ve çıkarma"]],
-    ["✖️ Çarpma, Bölme ve Örüntüler",["Çarpma işlemi","Bölme işlemi","Sayı örüntüleri","Şekil örüntüleri"]],
-    ["📐 Geometri",["Geometrik cisimler","Geometrik şekiller ve özellikleri","Mekânsal ilişkiler"]],
-    ["📏 Ölçme",["Uzunluk ölçme","Çevre ve alan","Kütle ölçme","Sıvı ölçme","Zaman ölçme","Para"]],
-    ["🧠 Problem Çözme",["Verilere dayalı problemler","Problem çözme"]]
-   ];
-   groups.forEach(([name,names],gi)=>{let valid=names.filter(x=>list.includes(x));if(!valid.length)return;let box=document.createElement("details");box.className="topic-group";box.open=gi===0;let sum=document.createElement("summary");sum.textContent=name+" ("+valid.length+")";let inside=document.createElement("div");inside.className="topic-group-items";valid.forEach(t=>inside.append(makeOpt(t)));box.append(sum,inside);root.append(box)});
-  }else list.forEach(t=>root.append(makeOpt(t)));
-  updateLiteracy();
+ }else list.forEach(t=>root.append(makeOpt(t)));
+ updateLiteracy();
 }
 function updateLiteracy(){let chosen=[...$("topics").querySelectorAll("input:checked")].map(x=>x.value);let base=+$("grade").value===1&&$("subject").value==="Türkçe";let hand=base&&chosen.includes("Harf Yazma Çalışması");$("literacy").classList.toggle("hidden",!(base&&chosen.includes("İlk okuma ve yazma")));$("handwriting").classList.toggle("hidden",!hand);let lf=$("levelField");if(lf)lf.classList.toggle("hidden",hand)}
 function numberName(n){const o=["sıfır","bir","iki","üç","dört","beş","altı","yedi","sekiz","dokuz"],t=["","on","yirmi","otuz","kırk","elli","altmış","yetmiş","seksen","doksan"];if(n<10)return o[n];if(n<100)return(t[Math.floor(n/10)]+" "+(n%10?o[n%10]:"")).trim();if(n<1000)return((Math.floor(n/100)===1?"yüz":o[Math.floor(n/100)]+" yüz")+(n%100?" "+numberName(n%100):""));return String(n)}
@@ -576,31 +609,37 @@ function geometryQuestion3(l){
 
 
 function problemQuestion3(l){
- const r=(a,b)=>a+Math.floor(Math.random()*(b-a+1)), key="PROB3V110|"+l;
- const easy=["addsub","mul","div","money","length","choose"];
- const medium=[...easy,"twoStep","compare","time","table","unknown","writeOp"];
- const hard=[...medium,"multi","reverse","error","missingInfo","reason","budget","equalGroups"];
- const type=takeUnique(key,l==="easy"?easy:l==="hard"?hard:medium); let a,b,c;
- if(type==="addsub"){a=r(180,420);b=r(70,190);return line("Kütüphanede "+a+" kitap vardı. "+b+" kitap ödünç verildi. Kaç kitap kaldı?",a-b);}
- if(type==="mul"){a=r(4,9);b=r(3,8);return line("Her kutuda "+a+" kalem bulunan "+b+" kutuda toplam kaç kalem vardır?",a*b);}
- if(type==="div"){b=r(3,8);a=b*r(4,9);return line(a+" ceviz "+b+" çocuğa eşit paylaştırılıyor. Her çocuk kaç ceviz alır?",a/b);}
- if(type==="money"){a=pick([50,60,70,80]);b=pick([18,24,27,32]);c=pick([12,15,20]);return line("Zeynep'in "+a+" TL'si var. "+b+" TL'lik kitap ve "+c+" TL'lik kalem alırsa kaç TL'si kalır?",a-b-c+" TL");}
- if(type==="length"){a=r(2,4)*100; b=pick([35,45,55,65]);return line(a+" cm uzunluğundaki ipin "+b+" cm'si kullanıldı. Kaç santimetre ip kaldı?",a-b+" cm");}
- if(type==="choose"){a=r(5,9);b=r(3,7);return line("Her rafta "+a+" kitap olan "+b+" rafın toplam kitap sayısını bulmak için hangi işlemi seçersiniz? İşlemi yapınız.","Çarpma; "+a+" × "+b+" = "+a*b);}
- if(type==="twoStep"){a=r(200,400);b=r(80,160);c=r(30,90);return line("Bir okulda "+a+" fidan vardı. "+b+" fidan daha dikildi, sonra "+c+" fidan başka bahçeye taşındı. Kaç fidan kaldı?",a+b-c);}
- if(type==="compare"){a=r(120,260);b=r(120,260);return line("3-A sınıfı "+a+", 3-B sınıfı "+b+" kapak topladı. Hangi sınıf daha fazla topladı ve aradaki fark kaçtır?",(a>b?"3-A":"3-B")+"; fark "+Math.abs(a-b));}
- if(type==="time")return line("Bir etkinlik 14.20'de başladı ve 45 dakika sürdü. Etkinlik saat kaçta bitti?","15.05");
- if(type==="table"){a=r(8,18);b=r(8,18);c=r(8,18);return line("Bir tabloda pazartesi "+a+", salı "+b+", çarşamba "+c+" kitap okunduğu yazıyor. En çok hangi gün okunmuştur ve üç günün toplamı kaçtır?",[a,b,c].indexOf(Math.max(a,b,c))===0?"Pazartesi; "+(a+b+c):[a,b,c].indexOf(Math.max(a,b,c))===1?"Salı; "+(a+b+c):"Çarşamba; "+(a+b+c));}
- if(type==="unknown"){a=r(180,350);b=r(60,140);return line("Bir kutuya "+b+" kalem eklenince kalem sayısı "+(a+b)+" oldu. Başlangıçta kaç kalem vardı?",a);}
- if(type==="writeOp"){a=r(4,8);b=r(5,9);return line(a+" × "+b+" işlemine uygun bir problem cümlesi yazınız ve sonucu bulunuz.","Uygun problem; sonuç "+a*b);}
- if(type==="multi"){a=r(4,7);b=r(6,9);c=r(5,15);return line("Her birinde "+b+" silgi bulunan "+a+" paket vardı. "+c+" silgi dağıtıldı. Kaç silgi kaldı?",a*b-c);}
- if(type==="reverse"){a=r(80,160);b=r(30,70);c=a+b;return line("Bir sayıya "+b+" eklenince "+c+" oluyor. Başlangıçtaki sayıyı bulun ve işleminizi kontrol edin.",a);}
- if(type==="error"){a=r(120,250);b=r(60,140);return line("Efe, "+a+" + "+b+" işleminin sonucunu "+(a+b+10)+" buldu. Hatasını kontrol edip doğru sonucu yazınız.",a+b);}
- if(type==="missingInfo")return line("‘Bir sınıfta öğrenciler 6'şarlı gruplara ayrıldı.’ Toplam öğrenci sayısını bulmak için hangi bilgi eksiktir?","Kaç grup olduğu bilgisi.");
- if(type==="reason"){a=r(5,9);b=r(4,8);return line("Her sırada "+a+" öğrenci ve "+b+" sıra varsa neden toplama yerine çarpma işlemi kullanmak uygundur? Sonucu bulunuz.","Eşit gruplar tekrarlandığı için; "+a*b+" öğrenci.");}
- if(type==="budget"){a=pick([80,90,100]);b=pick([28,32,35]);c=pick([18,22,25]);return line("Bütçesi "+a+" TL olan bir öğrenci "+b+" TL ve "+c+" TL'lik iki ürün alıyor. Kalan parasıyla 20 TL'lik bir ürün daha alabilir mi?","Kalan "+(a-b-c)+" TL; "+(a-b-c>=20?"alabilir.":"alamaz."));}
- b=r(4,8);a=b*r(4,9);return line(a+" nesne "+b+" eş gruba ayrılıyor. Her gruptaki nesne sayısını bulun ve çarpma ile kontrol edin.",a/b+"; kontrol: "+b+" × "+(a/b)+" = "+a);
+ const r=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ const key="PROBLEM3|"+l;
+ const easy=["add","sub","mul","share","money","simpleMeasure","simpleTime"];
+ const medium=[...easy,"twoStep","missing","compare","target","reverse","chooseOp","extraInfo"];
+ const hard=[...medium,"error","estimate","writeProblem","missingInfo","twoStepMulSub","logic","checkReverse"];
+ const type=takeUnique(key,l==="easy"?easy:l==="hard"?hard:medium);
+ let a,b,c,d;
+ if(type==="add"){a=r(25,85);b=r(15,65);return line("Bir sınıf kitaplığında "+a+" hikâye kitabı vardı. "+b+" yeni kitap daha getirildi. Kitaplıkta kaç kitap oldu?",a+b);}
+ if(type==="sub"){a=r(90,180);b=r(25,70);return line("Bir yardım kampanyasında "+a+" ürün toplandı. Bunların "+b+" tanesi dağıtıldı. Kaç ürün kaldı?",a-b);}
+ if(type==="mul"){a=r(3,8);b=r(4,9);return line("Bir panoda "+a+" sıra vardır. Her sıraya "+b+" yıldız yapıştırılıyor. Toplam kaç yıldız gerekir?",a*b);}
+ if(type==="share"){b=random([3,4,5,6,8]);a=b*r(3,9);return line(a+" kalem "+b+" öğrenciye eşit paylaştırılıyor. Her öğrenci kaç kalem alır?",a/b);}
+ if(type==="money"){a=random([15,20,25,30,35]);b=random([10,15,20,25]);c=a+b+random([10,20,30]);return line("Deniz "+a+" TL'lik kitap ve "+b+" TL'lik kalemlik aldı. Kasaya "+c+" TL verdi. Kaç TL para üstü alır?",c-a-b+" TL");}
+ if(type==="simpleMeasure"){a=r(2,5);b=random([20,30,40,50,60]);c=random([20,30,40,50]);return line(a+" m "+b+" cm uzunluğundaki ipin "+c+" cm'si kesildi. Geriye kaç santimetre ip kaldı?",a*100+b-c+" cm");}
+ if(type==="simpleTime"){a=random([20,25,30,35,40]);return line("Saat 14.00'te başlayan bir etkinlik "+a+" dakika sürdü. Etkinlik saat kaçta bitti?","14."+String(a).padStart(2,"0"));}
+ if(type==="twoStep"){a=r(70,140);b=r(25,60);c=r(15,40);return line("Kütüphaneye sabah "+a+" kitap, öğleden sonra "+b+" kitap geldi. Aynı gün "+c+" kitap ödünç verildi. Kütüphanedeki kitap sayısı kaç arttı?",a+b-c);}
+ if(type==="missing"){a=r(40,90);b=r(15,35);c=a+b;return line("Bir kutuda bir miktar boncuk vardı. "+b+" boncuk eklenince toplam "+c+" boncuk oldu. Başlangıçta kaç boncuk vardı?",a);}
+ if(type==="compare"){a=r(70,130);b=r(35,69);return line("3/A sınıfı "+a+" kapak, 3/B sınıfı "+b+" kapak topladı. 3/A sınıfı kaç fazla kapak toplamıştır?",a-b);}
+ if(type==="target"){a=r(60,100);b=r(40,75);c=a+b+r(20,45);return line("İki sınıf sırasıyla "+a+" ve "+b+" fidan için bağış topladı. Hedef "+c+" fidandır. Hedefe ulaşmak için kaç fidanlık bağış daha gerekir?",c-a-b);}
+ if(type==="reverse"){a=r(35,80);b=r(15,35);return line("Ece bir miktar çıkartmasının "+b+" tanesini verdi ve "+a+" çıkartması kaldı. Başlangıçta kaç çıkartması vardı?",a+b);}
+ if(type==="chooseOp"){a=r(4,8);b=r(3,9);return line("Her masada "+b+" öğrenci oturuyor ve "+a+" masa dolu. Toplam öğrenci sayısını bulmak için hangi işlemi kullanırsınız? Sonucu bulunuz.","Çarpma; "+a+" × "+b+" = "+a*b);}
+ if(type==="extraInfo"){a=r(45,80);b=r(15,30);return line("Bir otobüste "+a+" yolcu vardı. Durakta "+b+" yolcu indi. Otobüs mavi renklidir. Kaç yolcu kaldı? Gereksiz bilgiyi de yazınız.",(a-b)+" yolcu; gereksiz bilgi: otobüsün mavi olması.");}
+ if(type==="error"){a=r(120,180);b=r(30,60);let wrong=a+b+10;return line("Ali, ‘"+a+" + "+b+" = "+wrong+"’ sonucunu buldu. Ali'nin sonucunun doğru olup olmadığını işlem yaparak açıklayınız.","Yanlış; doğru sonuç "+(a+b)+".");}
+ if(type==="estimate"){a=r(120,380);b=r(110,290);return line(a+" + "+b+" işleminin sonucunu önce en yakın yüzlüğe yuvarlayarak tahmin ediniz. Sonra gerçek sonucu bulup karşılaştırınız.","Tahmin yaklaşık "+(Math.round(a/100)*100+Math.round(b/100)*100)+"; gerçek sonuç "+(a+b)+".");}
+ if(type==="writeProblem"){a=r(4,8);b=r(3,9);return line(a+" × "+b+" işlemine uygun kısa bir problem yazınız ve çözünüz.","Örnek problem uygun olmalı; sonuç "+a*b+".");}
+ if(type==="missingInfo") return line("‘Bir manav bazı elmaları sattı. Geriye 28 elma kaldı.’ Bu problemde başlangıçtaki elma sayısını bulmak için hangi bilgi eksiktir?","Kaç elma satıldığı ya da başlangıçta kaç elma olduğu bilgisi eksiktir.");
+ if(type==="twoStepMulSub"){a=r(3,6);b=r(6,9);c=r(4,12);return line("Bir öğretmen "+a+" paket kalem aldı. Her pakette "+b+" kalem vardı. Kalemlerin "+c+" tanesi kullanıldı. Kaç kalem kaldı?",a*b-c);}
+ if(type==="logic"){a=r(3,7);b=r(4,8);c=a*b;return line("Bir öğrenci "+c+" cevizi "+a+" kişiye eşit paylaştırmak için ‘"+c+" ÷ "+a+"’ işlemini seçti. Bu seçim doğru mudur? Neden?","Doğrudur; eşit paylaşma bölme işlemiyle bulunur ve kişi başına "+b+" ceviz düşer.");}
+ if(type==="checkReverse"){a=r(300,600);b=r(80,190);return line(a+" − "+b+" işlemini yapınız. Sonucunuzu ters işlem kullanarak kontrol ediniz.",(a-b)+"; kontrol: "+(a-b)+" + "+b+" = "+a);}
+ return line("Bir kutuda 24 kalem vardı. 7 kalem kullanıldı. Kaç kalem kaldı?",17);
 }
+
 
 // ===== V67: 1. SINIF MATEMATİK — SAYILAR VE SAYMA =====
 function numbersCounting1Question(level){
@@ -823,211 +862,7 @@ function problems1Question(level){
  return line("Bir sepette 8 elma vardı. 3 elma yenildi. Kaç elma kaldı?",5);
 }
 
-
-
-// V110 — 3. sınıf matematik görsel yardımcıları
-function solidSvg(kind,label){
- const common='width="62" height="54" viewBox="0 0 62 54" aria-label="'+label+'"';
- let body='';
- if(kind==='cube') body='<path d="M14 17 L35 8 L50 17 L29 27 Z M14 17 V39 L29 48 V27 M29 48 L50 38 V17" fill="none" stroke="#222" stroke-width="2" stroke-linejoin="round"/>';
- if(kind==='rectprism') body='<path d="M8 19 L24 9 H54 V36 L39 47 H8 Z M8 19 H39 L54 9 M39 19 V47 M54 36 L39 47" fill="none" stroke="#222" stroke-width="2" stroke-linejoin="round"/>';
- if(kind==='squareprism') body='<path d="M13 15 L25 7 H48 V38 L36 47 H13 Z M13 15 H36 L48 7 M36 15 V47 M48 38 L36 47" fill="none" stroke="#222" stroke-width="2" stroke-linejoin="round"/>';
- if(kind==='triprism') body='<path d="M10 39 L22 14 L35 39 Z M22 14 L39 8 L53 34 L35 39 M39 8 L22 14 M53 34 L35 39" fill="none" stroke="#222" stroke-width="2" stroke-linejoin="round"/>';
- if(kind==='cylinder') body='<ellipse cx="31" cy="11" rx="17" ry="6" fill="white" stroke="#222" stroke-width="2"/><path d="M14 11 V42 M48 11 V42" stroke="#222" stroke-width="2"/><path d="M14 42 A17 6 0 0 0 48 42" fill="none" stroke="#222" stroke-width="2"/><path d="M14 42 A17 6 0 0 1 48 42" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3 2"/>';
- if(kind==='sphere') body='<circle cx="31" cy="27" r="20" fill="white" stroke="#222" stroke-width="2"/><ellipse cx="31" cy="27" rx="20" ry="7" fill="none" stroke="#777" stroke-width="1.2"/><path d="M31 7 C20 15 20 39 31 47 M31 7 C42 15 42 39 31 47" fill="none" stroke="#999" stroke-width="1"/>';
- return '<svg '+common+'>'+body+'</svg>';
-}
-function solidCard(kind,label,letter){return '<span class="solid-card">'+solidSvg(kind,label)+'<b>'+letter+'</b></span>';}
-function solidSet(kinds){const names={cube:'Küp',rectprism:'Dikdörtgenler prizması',squareprism:'Kare prizma',triprism:'Üçgen prizma',cylinder:'Silindir',sphere:'Küre'};return '<div class="solid-row">'+kinds.map((k,i)=>solidCard(k,names[k],String.fromCharCode(65+i))).join('')+'</div>';}
-function dataTableHtml(a,b,c){return '<table class="mini-data"><tr><th>Gün</th><th>Pzt.</th><th>Salı</th><th>Çarş.</th></tr><tr><th>Kitap</th><td>'+a+'</td><td>'+b+'</td><td>'+c+'</td></tr></table>';}
-function barChartHtml(a,b,c){let mx=Math.max(a,b,c), vals=[a,b,c],labs=['Pzt','Salı','Çar'];return '<div class="mini-chart">'+vals.map((v,i)=>'<span class="bar-wrap"><i style="height:'+Math.max(12,Math.round(v/mx*52))+'px"></i><b>'+v+'</b><small>'+labs[i]+'</small></span>').join('')+'</div>';}
-function spatialGrid(posA,posB){let cells='';for(let i=0;i<9;i++){let t=i===posA?'A':(i===posB?'B':'');cells+='<span>'+t+'</span>';}return '<div class="spatial-grid">'+cells+'</div>';}
-
-// V110 — 3. sınıf Matematik: 2026-2027 konu zenginleştirme motoru
-function math3NewQuestion(topic,l){
- const r=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
- const pick=a=>a[Math.floor(Math.random()*a.length)];
- const key="M3V110|"+topic+"|"+l;
- const take=types=>takeUnique(key,types);
- let a,b,c,n,ans;
- if(topic==="1000’e kadar sayılar"){
-  let t=take(["readwrite","beforeafter","build","decompose","compare","clue","digit"]); n=r(100,999);
-  if(t==="readwrite")return line(n+" sayısını yazıyla yazınız.",numberName(n));
-  if(t==="beforeafter")return line(n+" sayısının bir önceki ve bir sonraki doğal sayısını yazınız.",(n-1)+" ve "+(n+1));
-  if(t==="build"){let h=r(1,9),o=r(0,9),u=r(0,9);return line(h+", "+o+" ve "+u+" rakamlarını sırasıyla yüzler, onlar ve birler basamağına yazarak oluşan sayıyı bulunuz.",h*100+o*10+u)}
-  if(t==="decompose")return placeValueQuestion(3,l);
-  if(t==="compare"){a=r(100,999);b=r(100,999);while(a===b)b=r(100,999);return line(a+" __ "+b+" boşluğuna uygun karşılaştırma işaretini yazınız.",a>b?">":"<")}
-  if(t==="clue"){let h=r(1,9),o=r(0,9),u=r(0,9);return line(h+" yüzlük, "+o+" onluk ve "+u+" birlikten oluşan sayı kaçtır?",h*100+o*10+u)}
-  return line(n+" sayısının yüzler, onlar ve birler basamağındaki rakamları yazınız.",Math.floor(n/100)+", "+Math.floor(n/10)%10+", "+n%10);
- }
- if(topic==="Sayıları karşılaştırma ve sıralama")return orderingQuestion3(l);
- if(topic==="Sayıları yuvarlama"){
-  let t=take(["ten","hundred","estimate","which","error"]);n=r(101,999);
-  if(t==="ten")return line(n+" sayısını en yakın onluğa yuvarlayınız.",Math.round(n/10)*10);
-  if(t==="hundred")return line(n+" sayısını en yakın yüzlüğe yuvarlayınız.",Math.round(n/100)*100);
-  if(t==="estimate"){a=r(120,480);b=r(120,480);return line(a+" + "+b+" işlemini sayıları en yakın onluğa yuvarlayarak tahmin ediniz.",Math.round(a/10)*10+Math.round(b/10)*10)}
-  if(t==="which"){let base=10*r(10,89),x=base+r(1,9);return line(x+" sayısı en yakın onluğa yuvarlandığında hangi onluğa ulaşır?",Math.round(x/10)*10)}
-  let rounded=Math.round(n/10)*10;return line("Efe, "+n+" sayısını en yakın onluğa "+(rounded+10)+" olarak yuvarladı. Hatasını düzeltiniz.",rounded);
- }
- if(topic==="Ritmik saymalar"){
-  let step=pick([6,7,8,9]),t=take(["forward","back","missing","rule","multiple","between","error","problem"]),start;
-  if(t==="forward"){start=step*r(1,8);return line(start+", "+(start+step)+", "+(start+2*step)+", __, __, __ dizisini "+step+"'şar ritmik sayarak tamamlayınız.",(start+3*step)+", "+(start+4*step)+", "+(start+5*step));}
-  if(t==="back"){start=step*r(7,12);return line(start+", "+(start-step)+", "+(start-2*step)+", __, __ geriye doğru "+step+"'şar ritmik saymayı tamamlayınız.",(start-3*step)+", "+(start-4*step));}
-  if(t==="missing"){start=step*r(1,5);return line(start+", __, "+(start+2*step)+", __, "+(start+4*step)+", __ dizisindeki boşlukları "+step+"'şar saymaya göre doldurunuz.",(start+step)+", "+(start+3*step)+", "+(start+5*step));}
-  if(t==="rule"){start=step*r(1,4);return line(start+", "+(start+step)+", "+(start+2*step)+", "+(start+3*step)+" dizisinin kuralını yazınız ve sonraki iki sayıyı bulunuz.",step+"'şar artar; "+(start+4*step)+", "+(start+5*step));}
-  if(t==="multiple"){let k=r(4,9);return line(step+"'şar ritmik sayarken "+k+". söylenen sayı kaçtır?",step*k);}
-  if(t==="between"){let a=step*r(2,5),b=a+step*4;return line(a+" ile "+b+" arasında "+step+"'şar ritmik sayarken söylenen sayıları yazınız.",(a+step)+", "+(a+2*step)+", "+(a+3*step));}
-  if(t==="error"){start=step*r(1,4);let wrong=start+3*step+1;return line(start+", "+(start+step)+", "+(start+2*step)+", "+wrong+", "+(start+4*step)+" dizisinde ritmik saymayı bozan sayıyı bulup düzeltiniz.",wrong+" yerine "+(start+3*step));}
-  let groups=r(4,8);return line("Her sırada "+step+" öğrenci bulunan "+groups+" sıra vardır. "+step+"'şar ritmik sayarak toplam öğrenci sayısını bulunuz.",step*groups);
- }
- if(topic==="Tek ve çift sayılar"){
-  let t=take(["classify","next","sum","difference","clue","error"]);a=r(10,99);b=r(10,99);
-  if(t==="classify")return line(a+" sayısı tek mi, çift mi? Nedenini yazınız.",(a%2?"Tek":"Çift")+" sayıdır; birler basamağı "+a%10+"'dir.");
-  if(t==="next")return line(a+" sayısından büyük en küçük "+(a%2?"çift":"tek")+" sayıyı yazınız.",a+1);
-  if(t==="sum")return line(a+" + "+b+" işleminin sonucunun tek mi çift mi olduğunu işlem yaparak bulunuz.",(a+b)+"; "+((a+b)%2?"tek":"çift"));
-  if(t==="difference"){if(b>a)[a,b]=[b,a];return line(a+" − "+b+" işleminin sonucu tek mi çift mi?",(a-b)+"; "+((a-b)%2?"tek":"çift"));}
-  if(t==="clue"){n=2*r(20,45);return line("40 ile 90 arasında, birler basamağı "+n%10+" olan çift sayılardan biri nedir?",n+" gibi uygun bir çift sayı.");}
-  return line("'Birler basamağı 5 olan bütün sayılar çifttir.' ifadesi doğru mu? Açıklayınız.","Yanlış; birler basamağı 5 olan sayılar tektir.");
- }
- if(topic==="Toplama işlemi")return additionQuestion3(l);
- if(topic==="Çıkarma işlemi")return subtractionQuestion3(l);
- if(topic==="Zihinden toplama ve çıkarma"){
-  let t=take(["add10","sub10","complete100","compensate","two"]);a=r(20,89);
-  if(t==="add10"){b=10*pick([1,2,3,4,5]);return line(a+" + "+b+" işlemini zihinden yapınız.",a+b)}
-  if(t==="sub10"){a=r(60,99);b=10*pick([1,2,3,4,5]);return line(a+" − "+b+" işlemini zihinden yapınız.",a-b)}
-  if(t==="complete100"){a=r(20,90);return line(a+" sayısına kaç eklenirse 100 olur?",100-a)}
-  if(t==="compensate"){a=pick([198,299,398]);b=r(20,80);return line(a+" + "+b+" işlemini en yakın yüzlüğe tamamlama yoluyla zihinden yapınız.",a+b)}
-  a=r(120,450);b=pick([20,30,40,50]);return line(a+" − "+b+" işlemini zihinden yapınız.",a-b);
- }
- if(topic==="Çarpma işlemi")return multiplicationQuestion3(l);
- if(topic==="Bölme işlemi")return divisionQuestion3(l);
- if(topic==="Sayı örüntüleri"){
-  let t=take(["forward","backward","missing","rule","error","position","create","story"]),step=pick([2,3,4,5,6,7,8,9,10]),start=r(8,60);
-  if(t==="forward")return line(start+", "+(start+step)+", "+(start+2*step)+", __, __ örüntüsünü tamamlayınız.",(start+3*step)+", "+(start+4*step));
-  if(t==="backward"){start=r(55,95);step=pick([2,3,4,5,6,7,8,9,10]);return line(start+", "+(start-step)+", "+(start-2*step)+", __, __ örüntüsünü geriye doğru tamamlayınız.",(start-3*step)+", "+(start-4*step));}
-  if(t==="missing")return line(start+", __, "+(start+2*step)+", "+(start+3*step)+", __ dizisindeki eksik sayıları bulunuz.",(start+step)+" ve "+(start+4*step));
-  if(t==="rule")return line(start+", "+(start+step)+", "+(start+2*step)+", "+(start+3*step)+" örüntüsünün kuralını yazınız ve sonraki sayıyı bulunuz.",step+" artar; "+(start+4*step));
-  if(t==="error"){let wrong=start+3*step+pick([1,2]);return line(start+", "+(start+step)+", "+(start+2*step)+", "+wrong+", "+(start+4*step)+" örüntüsünde hatalı sayıyı bulup düzeltiniz.",wrong+" yerine "+(start+3*step));}
-  if(t==="position")return line(start+" sayısından başlayıp "+step+"'er ritmik sayarsak 5. söylediğimiz sayı kaç olur?",start+4*step);
-  if(t==="create")return line(step+" artan, ilk terimi "+start+" olan 5 terimli bir sayı örüntüsü oluşturunuz.",[0,1,2,3,4].map(i=>start+i*step).join(", "));
-  let count=r(3,6);return line("Bir çocuk her gün kumbarasına önceki güne göre "+step+" TL daha fazla para atıyor. İlk gün "+start+" TL attı. İkinci ve üçüncü gün kaç TL atar?",(start+step)+" TL ve "+(start+2*step)+" TL");
- }
- if(topic==="Şekil örüntüleri"){
-  let t=take(["complete","missing","error","rule","create","grow","choose","translate"]), pats=[
-   ["○ △ ○ △ ○ △ __ __","○, △","Bir daire-bir üçgen tekrar eder."],
-   ["□ □ ○ □ □ ○ __ __ __","□, □, ○","İki kare-bir daire tekrar eder."],
-   ["△ ○ ○ △ ○ ○ __ __ __","△, ○, ○","Bir üçgen-iki daire tekrar eder."],
-   ["○ □ △ ○ □ △ __ __ __","○, □, △","Daire-kare-üçgen tekrar eder."]],z=pick(pats);
-  if(t==="complete")return line("Örüntüyü tamamlayınız: "+z[0]+" Kuralını da yazınız.",z[1]+"; "+z[2]);
-  if(t==="missing")return line("○ △ __ △ ○ △ dizisinde eksik şekli bulunuz ve nedenini yazınız.","○; daire-üçgen sırası tekrar eder.");
-  if(t==="error")return line("□ ○ □ ○ △ ○ □ ○ örüntüsünde kuralı bozan şekli bulunuz ve düzeltiniz.","5. şekil △ yerine □ olmalıdır.");
-  if(t==="rule")return line("△ △ ○ △ △ ○ △ △ ○ örüntüsünün tekrar eden bölümünü ve kuralını yazınız.","△ △ ○; iki üçgen-bir daire tekrar eder.");
-  if(t==="create")return line("'Bir kare, iki daire' kuralına göre 9 şekillik bir örüntü oluşturunuz.","□ ○ ○ □ ○ ○ □ ○ ○");
-  if(t==="grow")return line("1. adım: □   2. adım: □□   3. adım: □□□. 4. ve 5. adımı çiziniz. Örüntü nasıl büyüyor?","□□□□ ve □□□□□; her adımda bir kare artar.");
-  if(t==="choose")return line("Kuralı '○ ○ △' olan örüntünün devamı hangisidir? A) ○ △ ○  B) ○ ○ △  C) △ △ ○","B");
-  return line("'Üçgen-kare-kare' biçiminde tekrar eden örüntüyü şekillerle gösterip iki tekrar yazınız.","△ □ □ △ □ □");
- }
- if(topic==="Geometrik cisimler"){
-  let t=take(["identify4","identify6","object","property","compare","faces","odd","draw"]),v4=solidSet(["cube","rectprism","cylinder","sphere"]),v6=solidSet(["cube","rectprism","squareprism","triprism","cylinder","sphere"]);
-  if(t==="identify4")return line(v4+"A, B, C ve D cisimlerinin adlarını sırayla yazınız.","Küp, dikdörtgenler prizması, silindir, küre.");
-  if(t==="identify6")return line(v6+"Gösterilen cisimlerden küre, silindir ve üçgen prizmanın harflerini yazınız.","F, E, D");
-  if(t==="object")return line(v4+"Zar, ayakkabı kutusu, konserve kutusu ve topu uygun cisimlerle eşleştiriniz.","Zar-A, ayakkabı kutusu-B, konserve kutusu-C, top-D.");
-  if(t==="property")return line(solidSet(["cube","cylinder","sphere"])+"Köşesi olmayan cisimleri seçiniz. Bunlardan hangisinin düz yüzü de vardır?","B ve C; silindirin düz yüzleri de vardır.");
-  if(t==="compare")return line(solidSet(["cube","rectprism","sphere"])+"A ile B'nin ortak bir özelliğini, C'nin onlardan farklı bir özelliğini yazınız.","A-B düz yüzlü ve köşelidir; C küredir, köşesi yoktur ve eğri yüzlüdür.");
-  if(t==="faces")return line(solidSet(["cube","cylinder"])+"Hangisi yalnız düz yüzlerden oluşur? Hangisinde hem düz hem eğri yüz bulunur?","A yalnız düz yüzlerden; B düz ve eğri yüzlerden oluşur.");
-  if(t==="odd")return line(solidSet(["cube","rectprism","squareprism","sphere"])+"Diğerlerinden farklı olan cismi seçiniz ve nedenini yazınız.","D; kürenin köşesi ve ayrıtı yoktur.");
-  return line("Bir küp ve bir silindir çiziniz. Her birine benzeyen günlük yaşamdan bir nesne örneği yazınız.","Örnek: zar — küp; konserve kutusu — silindir.");
- }
- if(topic==="Geometrik şekiller ve özellikleri"){
-  let t=take(["visualName","visualProps","visualCompare","engine1","engine2","engine3","engine4","engine5"]);
-  const v='<div class="geo-row"><span class="geo-card"><i class="geo-square geo-shape"></i><span class="geo-label">A</span></span><span class="geo-card"><i class="geo-rect geo-shape"></i><span class="geo-label">B</span></span><span class="geo-card"><i class="geo-tri geo-shape"></i><span class="geo-label">C</span></span><span class="geo-card"><i class="geo-circle geo-shape"></i><span class="geo-label">D</span></span></div>';
-  if(t==="visualName")return line(v+"A, B, C ve D şekillerinin adlarını sırayla yazınız.","Kare, dikdörtgen, üçgen, çember/daire.");
-  if(t==="visualProps")return line(v+"Dört köşesi olan şekilleri seçiniz ve kenar sayılarını yazınız.","A ve B; ikisinin de 4 kenarı vardır.");
-  if(t==="visualCompare")return line(v+"C şekli ile A şeklinin kenar ve köşe sayılarını karşılaştırınız.","C: 3 kenar, 3 köşe; A: 4 kenar, 4 köşe.");
-  return geometryQuestion3(l);
- }
- if(topic==="Mekânsal ilişkiler"){
-  let t=take(["rightleft","abovebelow","frontback","grid","route","nearfar","instruction","reverse"]);
-  if(t==="rightleft")return line("Ece, Mert'in sağında; Can ise Mert'in solundadır. Ece, Can'a göre hangi yöndedir?","Sağındadır.");
-  if(t==="abovebelow")return line("Kitap rafta kalemliğin üstünde, çanta ise kalemliğin altındadır. Kitap çantaya göre hangi konumdadır?","Üstündedir.");
-  if(t==="frontback")return line("Sırada Ayşe, Bora'nın önünde; Bora da Cem'in önündedir. Cem, Ayşe'ye göre nerededir?","Arkasındadır.");
-  if(t==="grid")return line(spatialGrid(0,8)+"A sol üst köşede, B sağ alt köşededir. A'dan B'ye ulaşmak için yatay ve dikey toplam en az kaç kare ilerlenir?","4 kare.");
-  if(t==="route")return line("Başlangıçtan 2 adım ileri, 1 adım sağa, 1 adım geri gidiliyor. Başlangıca göre son konumu sözle açıklayınız.","1 adım ileride ve 1 adım sağdadır.");
-  if(t==="nearfar")return line("Okul eve 300 m, park eve 120 m uzaklıktadır. Eve göre hangisi daha yakındır? Aradaki uzaklık farkı kaç metredir?","Park; 180 m.");
-  if(t==="instruction")return line("Bir kareli kâğıtta başlangıç noktasından 3 kare sağa ve 2 kare yukarı gidiniz. Aynı noktaya götüren farklı bir yönerge yazınız.","Örnek: 2 kare yukarı, 3 kare sağa.");
-  return line("Ali'nin sağında Zeynep vardır. Zeynep'in Ali'ye göre konumu sağ ise Ali'nin Zeynep'e göre konumu nedir?","Solundadır.");
- }
- if(topic==="Uzunluk ölçme"){
-  let t=take(["mcm","cmToM","compare","add","sub","estimate","target","daily"]),x,y,z;
-  if(t==="mcm"){x=r(1,8);y=pick([10,20,30,40,50,60,70,80,90]);return line(x+" m "+y+" cm kaç santimetredir?",x*100+y+" cm");}
-  if(t==="cmToM"){x=r(2,8);y=pick([10,20,30,40,50,60,70,80,90]);z=x*100+y;return line(z+" cm uzunluğu metre ve santimetre olarak yazınız.",x+" m "+y+" cm");}
-  if(t==="compare"){x=r(1,5);y=r(10,90);z=x*100+y-r(10,70);return line(x+" m "+y+" cm ile "+z+" cm uzunluklarını karşılaştırınız. Hangisi daha uzundur?",x+" m "+y+" cm");}
-  if(t==="add"){x=r(1,4);y=pick([20,30,40,50,60]);z=pick([20,30,40,50]);return line(x+" m "+y+" cm uzunluğundaki ipe "+z+" cm ekleniyor. Yeni uzunluk kaç santimetredir?",x*100+y+z+" cm");}
-  if(t==="sub"){x=r(2,5);y=pick([20,30,40,50,60]);z=pick([30,40,50,60,70]);return line(x+" m "+y+" cm kurdelenin "+z+" cm'si kesiliyor. Kaç santimetre kalır?",x*100+y-z+" cm");}
-  if(t==="estimate"){x=pick([28,47,53,76,92,118,145]);return line(x+" cm uzunluğundaki bir nesneyi ölçmek için metre mi santimetre mi daha uygun birimdir? Neden?","Santimetre; bu uzunluğu daha uygun ve ayrıntılı ifade eder.");}
-  if(t==="target"){x=r(1,3);y=pick([20,30,40,50]);z=(x+1)*100;return line(x+" m "+y+" cm uzunluğundaki şerit "+z+" cm'ye tamamlanacaktır. Kaç santimetre daha gerekir?",z-(x*100+y)+" cm");}
-  let obj=pick([["kapı",2,"m"],["kalem",18,"cm"],["sınıf tahtası",3,"m"],["kitap",24,"cm"]]);return line(obj[0]+" uzunluğunu ölçerken hangi birimi kullanmak daha uygundur: metre mi santimetre mi? Yaklaşık bir ölçü de yazınız.",obj[2]+"; yaklaşık "+obj[1]+" "+obj[2]);
- }
- if(topic==="Çevre ve alan"){
-  let t=take(["perimeterSquare","perimeterRect","unitArea","compare"]);a=r(2,9);b=r(2,9);
-  if(t==="perimeterSquare")return line("Bir karenin bir kenarı "+a+" cm'dir. Çevresi kaç santimetredir?",4*a+" cm");
-  if(t==="perimeterRect")return line("Uzun kenarı "+a+" cm, kısa kenarı "+b+" cm olan dikdörtgenin çevresini bulunuz.",2*(a+b)+" cm");
-  if(t==="unitArea")return line(a+" satır ve "+b+" sütundan oluşan birim kareli dikdörtgen kaç birim kare kaplar?",a*b+" birim kare");
-  return line("A şekli 12, B şekli 9 birim kare kaplıyor. Hangisinin alanı daha büyüktür ve fark kaç birim karedir?","A; 3 birim kare.");
- }
- if(topic==="Kütle ölçme"){
-  a=r(1,8);b=r(100,900);return line(a+" kg "+b+" g kaç gramdır?",a*1000+b+" g");
- }
- if(topic==="Sıvı ölçme"){
-  let t=take(["remain","total","addUse","compare","containers","complete","estimate","multi"]),x,y,z;
-  if(t==="remain"){x=r(3,9);y=r(1,x-1);return line(x+" L suyun "+y+" L'si kullanılıyor. Kaç litre su kalır?",x-y+" L");}
-  if(t==="total"){x=r(2,5);y=r(2,5);return line(x+" L ve "+y+" L su bulunan iki kapta toplam kaç litre su vardır?",x+y+" L");}
-  if(t==="addUse"){x=r(2,6);y=r(1,3);z=r(1,Math.min(3,x+y-1));return line("Bir kapta "+x+" L su vardı. "+y+" L eklendi, sonra "+z+" L kullanıldı. Kaç litre kaldı?",x+y-z+" L");}
-  if(t==="compare"){x=r(2,8);y=r(2,8);while(x===y)y=r(2,8);return line("A kabında "+x+" L, B kabında "+y+" L sıvı vardır. Hangi kapta daha fazla sıvı vardır ve fark kaç litredir?",(x>y?"A":"B")+" kabı; "+Math.abs(x-y)+" L");}
-  if(t==="containers"){x=r(3,6);y=r(2,4);return line(x+" litrelik "+y+" eş şişe tamamen doludur. Şişelerde toplam kaç litre sıvı vardır?",x*y+" L");}
-  if(t==="complete"){x=r(6,10);y=r(1,x-1);return line(x+" L kapasiteli bir kapta "+y+" L su var. Kabın dolması için kaç litre daha gerekir?",x-y+" L");}
-  if(t==="estimate")return line("Bir su bardağının kapasitesini litre ile mi, bir sürahinin kapasitesini litre ile mi ifade etmek daha uygundur? Açıklayınız.","Sürahi; litre daha büyük sıvı miktarlarını ifade etmek için uygundur.");
-  x=r(2,4);y=r(2,4);z=r(1,3);return line("Her biri "+x+" L alan "+y+" şişedeki suyun "+z+" L'si kullanılıyor. Kaç litre su kalır?",x*y-z+" L");
- }
- if(topic==="Zaman ölçme"){
-  let t=take(["after","before","duration","start","calendar","weeks","compare","schedule"]),h,m,d;
-  if(t==="after"){h=r(8,16);m=pick([0,15,30]);d=pick([15,30,45]);let total=h*60+m+d;return line("Saat "+String(h).padStart(2,'0')+"."+String(m).padStart(2,'0')+"'dan "+d+" dakika sonra saat kaç olur?",String(Math.floor(total/60)).padStart(2,'0')+"."+String(total%60).padStart(2,'0'));}
-  if(t==="before"){h=r(10,17);m=pick([0,30,45]);d=pick([15,30]);let total=h*60+m-d;return line("Saat "+String(h).padStart(2,'0')+"."+String(m).padStart(2,'0')+"'dan "+d+" dakika önce saat kaçtır?",String(Math.floor(total/60)).padStart(2,'0')+"."+String(total%60).padStart(2,'0'));}
-  if(t==="duration"){h=r(8,14);m=pick([0,10,20,30]);d=pick([30,40,45,50]);let total=h*60+m+d;return line("Bir etkinlik "+String(h).padStart(2,'0')+"."+String(m).padStart(2,'0')+"'da başlayıp "+String(Math.floor(total/60)).padStart(2,'0')+"."+String(total%60).padStart(2,'0')+"'da bitiyor. Kaç dakika sürmüştür?",d+" dakika");}
-  if(t==="start"){h=r(11,16);m=pick([0,15,30,45]);d=pick([30,45,60]);let total=h*60+m-d;return line("Bir film saat "+String(h).padStart(2,'0')+"."+String(m).padStart(2,'0')+"'da bitti ve "+d+" dakika sürdü. Film saat kaçta başladı?",String(Math.floor(total/60)).padStart(2,'0')+"."+String(total%60).padStart(2,'0'));}
-  if(t==="calendar"){let day=pick(["Pazartesi","Salı","Çarşamba","Perşembe","Cuma"]),map={"Pazartesi":"Perşembe","Salı":"Cuma","Çarşamba":"Cumartesi","Perşembe":"Pazar","Cuma":"Pazartesi"};return line("Bugün "+day+" ise 3 gün sonra hangi gün olur?",map[day]);}
-  if(t==="weeks"){d=r(2,6);return line(d+" hafta kaç gündür?",d*7+" gün");}
-  if(t==="compare")return line("Ayşe bir işi 35 dakikada, Efe 50 dakikada tamamladı. Kim daha kısa sürede bitirdi? Aradaki süre farkı kaç dakikadır?","Ayşe; 15 dakika");
-  return line("Ders 09.00'da başlıyor. 40 dakika ders ve 10 dakika teneffüsten sonra ikinci ders saat kaçta başlar?","09.50");
- }
- if(topic==="Para"){
-  let t=take(["total","change","compose","compare","enough","twoWays","budget","coins"]),x,y,z;
-  if(t==="total"){x=pick([18,24,27,32,35]);y=pick([12,15,19,22]);return line(x+" TL'lik kitap ile "+y+" TL'lik kalemin toplam fiyatı kaç TL'dir?",x+y+" TL");}
-  if(t==="change"){x=pick([24,28,32,36]);y=pick([15,18,20,22]);z=x+y+pick([10,20,30]);return line("Ece "+x+" TL'lik kitap ve "+y+" TL'lik boya aldı. "+z+" TL verdi. Kaç TL para üstü alır?",z-x-y+" TL");}
-  if(t==="compose"){x=pick([35,40,45,50,60,70]);return line(x+" TL'yi 20 TL, 10 TL ve 5 TL'lik paraları kullanarak bir farklı biçimde oluşturunuz.","Toplamı "+x+" TL yapan uygun para birleşimi.");}
-  if(t==="compare"){x=pick([25,30,35,40]);y=x+pick([5,10,15]);return line("Bir oyuncak "+x+" TL, diğeri "+y+" TL'dir. Hangisi daha pahalıdır ve aradaki fark kaç TL'dir?",y+" TL'lik oyuncak; fark "+(y-x)+" TL");}
-  if(t==="enough"){x=pick([42,47,53,58]);y=pick([40,50,60]);return line("Bir ürün "+x+" TL'dir. Ali'nin "+y+" TL'si vardır. Parası yeterli mi? "+(y>=x?"Kaç TL'si artar?":"Kaç TL daha gerekir?"),(y>=x?(y-x)+" TL artar.":(x-y)+" TL daha gerekir."));}
-  if(t==="twoWays"){x=pick([30,40,50,60]);return line(x+" TL'yi iki farklı para grubu kullanarak gösteriniz.","Toplamı "+x+" TL yapan iki farklı doğru gösterim.");}
-  if(t==="budget"){x=pick([60,70,80]);y=pick([22,28,35]);z=pick([15,18,20]);return line("Mert'in "+x+" TL'si var. "+y+" TL'lik kitap ve "+z+" TL'lik kalemlik alırsa kaç TL'si kalır?",x-y-z+" TL");}
-  x=pick([25,30,35,40]);return line(x+" TL'yi yalnızca 10 TL ve 5 TL'lik paralarla oluşturunuz.","Örneğin uygun 10 TL ve 5 TL toplamı = "+x+" TL.");
- }
- if(topic==="Verilere dayalı problemler"){
-  let t=take(["tableTotal","tableMax","chartDifference","chartTwo","missing","interpret","frequency","create"]),x=r(8,22),y=r(8,22),z=r(8,22),vals=[x,y,z],days=["Pazartesi","Salı","Çarşamba"];
-  if(t==="tableTotal")return line(dataTableHtml(x,y,z)+"Tablodaki üç günün toplam kitap sayısını bulunuz.",x+y+z);
-  if(t==="tableMax"){let mx=Math.max(...vals);return line(dataTableHtml(x,y,z)+"En çok kitap hangi gün okunmuştur? En az okunan günle farkını bulunuz.",days[vals.indexOf(mx)]+"; fark "+(mx-Math.min(...vals)));}
-  if(t==="chartDifference")return line(barChartHtml(x,y,z)+"Sütun grafiğine göre en yüksek ve en düşük değer arasındaki fark kaçtır?",Math.max(...vals)-Math.min(...vals));
-  if(t==="chartTwo")return line(barChartHtml(x,y,z)+"Grafiğe göre Pazartesi ve Çarşamba değerlerinin toplamı kaçtır?",x+z);
-  if(t==="missing"){let total=x+y+z;return line('<table class="mini-data"><tr><th>Gün</th><th>Pzt.</th><th>Salı</th><th>Çarş.</th></tr><tr><th>Kitap</th><td>'+x+'</td><td>'+y+'</td><td>?</td></tr></table>'+"Üç günde toplam "+total+" kitap okundu. Eksik değeri bulunuz.",z);}
-  if(t==="interpret")return line(dataTableHtml(x,y,z)+"Tabloya göre iki doğru karşılaştırma cümlesi yazınız.","Değerlere uygun iki doğru karşılaştırma.");
-  if(t==="frequency")return line('<table class="mini-data"><tr><th>Meyve</th><th>Çetele</th><th>Sıklık</th></tr><tr><td>Elma</td><td>||||| ||</td><td>7</td></tr><tr><td>Muz</td><td>|||||</td><td>5</td></tr><tr><td>Armut</td><td>|||</td><td>3</td></tr></table>'+"Sıklık tablosuna göre toplam kaç öğrenci vardır? En çok tercih edilen meyve hangisidir?","15 öğrenci; elma.");
-  return line("Elma: 6, Muz: 4, Armut: 5 verilerini kullanarak üç satırlı bir sıklık tablosu oluşturunuz. Toplamı da yazınız.","Toplam 15; tutarlı sıklık tablosu.");
- }
- if(topic==="Problem çözme")return problemQuestion3(l);
- return null;
-}
-
 function mathSkillQuestion(topic,g,l){
- if(g===3){let v106=math3NewQuestion(topic,l);if(v106)return v106;}
  if(g===1&&topic==="Problemler") return problems1Question(l);
  if(g===1&&topic==="Sayılar ve sayma") return numbersCounting1Question(l);
  if(g===1&&topic==="Toplama") return addition1Question(l);
@@ -1620,14 +1455,231 @@ function wordSentence1Worksheet(count, level){
  return qs.slice(0,count);
 }
 
+
+/* V107: Aynı öğrenme çıktısını farklı soru yolları ve bağlamlarla ölçer.
+   Yeni çalışma kâğıtlarında önceki soru metinlerini hatırlayıp tekrarları azaltır. */
+function grade2TaggedLine(text, answer, task, outcome, extraLines=1){
+ const item=q(text+Array.from({length:extraLines},()=>'<div class="line"></div>').join(""),answer);
+ item.task=task; item.outcome=outcome; return item;
+}
+const g2WordBank=[
+ {w:"ödünç",s:"Mert ödünç aldığı kitabı bitirince kütüphaneye geri verdi.",m:"Bir şeyi bir süre kullanıp geri vermek üzere almak.",hint:"Kitabı kısa süre kullandı ve sonra geri verdi."},
+ {w:"solgun",s:"Susuz kalan çiçeğin yaprakları solgun görünüyordu.",m:"Canlı ve parlak görünmeyen.",hint:"Çiçeğin rengi canlılığını kaybetmişti."},
+ {w:"kaygan",s:"Yağmurdan sonra taş yol kaygan olduğu için Ece yavaş yürüdü.",m:"Üzerinde kolayca kayılabilen.",hint:"Ece düşmemek için yavaş yürüdü."},
+ {w:"özenle",s:"Ela yırtılan kitap sayfasını özenle düzeltti.",m:"Dikkat ederek, titiz davranarak.",hint:"Ela sayfayı dikkatlice düzeltti."},
+ {w:"biriktirdi",s:"Mina her hafta kumbarasına para koyup harçlığını biriktirdi.",m:"Zaman içinde azar azar topladı.",hint:"Mina parasını kumbarasına her hafta ekledi."},
+ {w:"onardı",s:"Arda kırılan oyuncak arabasını onardı ve yeniden kullandı.",m:"Bozulan bir şeyi düzeltti.",hint:"Arda kırık oyuncağı yeniden çalışır duruma getirdi."},
+ {w:"paylaştı",s:"Ece boya kalemlerini arkadaşıyla paylaştı.",m:"Bir şeyi başkalarının da kullanmasına sundu.",hint:"Ece kalemlerini arkadaşıyla birlikte kullandı."},
+ {w:"fidan",s:"Bahçeye dikilen küçük fidan zamanla büyüdü.",m:"Yeni yetişen küçük ağaç.",hint:"Bahçeye dikildi ve büyüyen bir ağaç oldu."},
+ {w:"sığınak",s:"Küçük tavşan yağmur dinene kadar sığınağında bekledi.",m:"Tehlikeden ya da kötü havadan korunulan yer.",hint:"Tavşan yağmurdan korunmak için orada bekledi."},
+ {w:"kıyı",s:"Çocuklar denizin kıyısında taş topladı.",m:"Deniz ya da gölün kenarı.",hint:"Çocuklar denizin kenarında taş topladı."},
+ {w:"yankı",s:"Dağda seslenen Efe kendi sesinin yankısını duydu.",m:"Sesin bir yere çarpıp geri duyulması.",hint:"Efe seslendikten sonra kendi sesi yeniden duyuldu."},
+ {w:"serin",s:"Ağaçların gölgesinde hava serindi; burada dinlendik.",m:"Fazla sıcak olmayan, hafif soğuk.",hint:"Gölge, güneşli yere göre daha az sıcaktı."},
+ {w:"hafif",s:"Boş kutu hafif olduğu için Zeynep onu kolayca taşıdı.",m:"Ağır olmayan.",hint:"Zeynep kutuyu zorlanmadan taşıdı."},
+ {w:"dikkatli",s:"Can karşıya geçmeden önce iki yana dikkatli baktı.",m:"Özen göstererek davranan.",hint:"Can yola çıkmadan önce çevresini kontrol etti."},
+ {w:"yardımsever",s:"Duru düşen kitapları arkadaşına yardım ederek topladı.",m:"Başkalarına yardım etmeyi seven.",hint:"Duru arkadaşının işini kolaylaştırdı."},
+ {w:"sabırlı",s:"Sabırlı olan Eylül, tohumun filizlenmesini günlerce bekledi.",m:"Acele etmeden bekleyebilen.",hint:"Eylül hemen sonuç alamasa da beklemeyi sürdürdü."},
+ {w:"tasarruflu",s:"Dişlerini fırçalarken musluğu kapatan Ali tasarruflu davrandı.",m:"Bir şeyi gereksiz yere harcamayan.",hint:"Ali suyun boşa akmasını önledi."},
+ {w:"planlı",s:"Ece çantasını akşamdan hazırladı; güne planlı başladı.",m:"Yapacaklarını önceden düzenleyen.",hint:"Ece ertesi gün için hazırlığını önceden yaptı."},
+ {w:"saydam",s:"Saydam camın ardından bahçeyi görebiliyorduk.",m:"Arkasındaki şeylerin görülebildiği.",hint:"Camın arkasındaki bahçe görünüyordu."},
+ {w:"kıvrımlı",s:"Kıvrımlı yol tepenin çevresinden dolaşarak ilerliyordu.",m:"Düz gitmeyip dönemeçler yapan.",hint:"Yol tepenin çevresinde dönerek ilerliyordu."},
+ {w:"nazik",s:"Nazik çocuk, arkadaşından kalemini isterken lütfen dedi.",m:"Kibar ve incelikli davranan.",hint:"Çocuk isteğini kibarca söyledi."},
+ {w:"sorumlu",s:"Sorumlu öğrenci sınıf kitaplarını ders bitince yerine koydu.",m:"Üstüne düşen işi yapan.",hint:"Öğrenci kendisine verilen işi tamamladı."},
+ {w:"canlandı",s:"Fidana su verince yaprakları canlandı ve dikleşti.",m:"Daha canlı bir duruma geldi.",hint:"Yapraklar yeniden diri görünmeye başladı."},
+ {w:"düzenli",s:"Mert kitaplarını her akşam rafa aynı sırayla dizdi.",m:"Eşyalarını ya da işlerini belirli bir sırada tutan.",hint:"Mert kitaplarını her akşam aynı sırayla yerleştirdi."}
+];
+const g2Actions=[
+ ["Oyuncak arabası kırılınca onu yapıştırıp yeniden kullandı.","onardı"],
+ ["Her hafta kumbarasına para koydu.","biriktirdi"],
+ ["Boyalarını arkadaşıyla birlikte kullandı.","paylaştı"],
+ ["Kitap sayfasını yırtmadan dikkatlice çevirdi.","özenli"],
+ ["Yola çıkmadan önce iki yana baktı.","dikkatli"],
+ ["Dişlerini fırçalarken musluğu kapattı.","tasarruflu"],
+ ["Arkadaşının düşen kitaplarını topladı.","yardımsever"],
+ ["Çantasını gece yatmadan önce hazırladı.","planlı"],
+ ["Tohumun büyümesini acele etmeden bekledi.","sabırlı"],
+ ["Sınıf kitaplarını ders bitince rafa koydu.","sorumlu"],
+ ["Yağmurda ıslanmamak için kapalı bir yerde bekledi.","sığındı"],
+
+];
+const g2Polysemy=[
+ ["yüz","Ece yüzünü yıkadı. / Yarışta yüz metre koştu.","İlkinde insanın yüzü; ikincisinde 100 sayısı."],
+ ["çay","Dedem çay içti. / Köyün yanından bir çay akıyor.","İlkinde içecek; ikincisinde küçük akarsu."],
+ ["gül","Bahçedeki gül açtı. / Arkadaşımın şakasına gül.","İlkinde çiçek; ikincisinde gülmek eylemi."],
+ ["yaz","Yaz mevsiminde köye gittik. / Defterine adını yaz.","İlkinde mevsim; ikincisinde yazmak eylemi."],
+ ["kaz","Çiftlikte bir kaz gördük. / Bahçeye küçük bir çukur kaz.","İlkinde hayvan; ikincisinde kazmak eylemi."],
+ ["dolu","Bardak suyla dolu. / Dolu yağınca bahçeye çıktık.","İlkinde boş olmayan; ikincisinde buz tanesi biçiminde yağış."],
+ ["bin","Bin kişi törene katıldı. / Otobüse bin ve yerini bul.","İlkinde 1000 sayısı; ikincisinde binmek eylemi."],
+ ["ekmek","Masaya ekmek koydu. / Tohumları toprağa ekmek için hazırlandı.","İlkinde yiyecek; ikincisinde ekmek eylemi."]
+];
+const wordMeaning2Tasks=[
+ l=>{const x=random(g2WordBank);return ["Cümledeki “"+x.w+"” sözcüğü ne anlama geliyor? "+x.s+(l==="hard"?" Anlamı bulmanıza yardım eden ipucunu da yazınız.":""),x.m+(l==="hard"?" İpucu: "+x.hint:""),"bağlamdan anlam çıkarma","T.Y.2.2.c"];},
+ l=>{const x=random(g2WordBank),wrong=shuffle(g2WordBank.filter(y=>y!==x)).slice(0,3).map(y=>y.m),opts=shuffle([x.m,...wrong]),letters=["A","B","C","D"],pos=opts.indexOf(x.m);return ["Metne göre “"+x.w+"” sözcüğünün anlamını seçiniz: "+x.s+"<br>"+opts.map((o,i)=>letters[i]+") "+o).join("<br>"),letters[pos],"bağlamda anlam seçme","T.Y.2.2.c"];},
+ l=>{const x=random(g2WordBank);return ["Tanımı okuyup uygun sözcüğü yazınız: “"+x.m+"”",x.w+(l==="hard"?". Bu sözcüğü bir cümlede de kullanınız.":""),"tanımdan sözcüğe ulaşma","T.Y.2.2.f",l==="hard"?2:1];},
+ l=>{const x=random(g2Actions),opts=shuffle([x[1],...shuffle([...new Set(g2Actions.map(a=>a[1]))].filter(w=>w!==x[1])).slice(0,3)]),letters=["A","B","C","D"];return ["Davranışı en iyi anlatan sözcüğü seçiniz: "+x[0]+"<br>"+opts.map((w,i)=>letters[i]+") "+w).join("<br>"),letters[opts.indexOf(x[1])],"davranışı sözcükle ilişkilendirme","T.Y.2.2.f"];},
+ l=>{const x=random(g2WordBank);return ["“"+x.w+"” sözcüğünü anlamına uygun bir cümlede kullanınız.",x.s+" (Anlamına uygun başka cümleler de kabul edilir.)","anlamına uygun cümle kurma","T.Y.2.2.f",2];},
+ l=>{const x=random(g2WordBank),y=random(g2WordBank.filter(z=>z!==x)),opts=shuffle([x.hint,y.hint]),letters=["A","B"];return ["“"+x.w+"” sözcüğünün anlamını bulmanıza yardım eden ipucu hangisidir?<br>A) "+opts[0]+"<br>B) "+opts[1],letters[opts.indexOf(x.hint)],"anlamı gösteren ipucunu seçme","T.Y.2.2.c"];},
+ l=>{const x=random(g2Polysemy);return ["“"+x[0]+"” sözcüğü aşağıdaki cümlelerde farklı anlamlarda kullanılmıştır. Her cümledeki anlamını yazınız: "+x[1],x[2],"çok anlamlı sözcüğü bağlamda ayırt etme","T.Y.2.2.c",2];},
+ l=>{const x=random(g2WordBank);return ["“"+x.w+"” sözcüğü bu cümlede ne anlatıyor? "+x.s,x.m,"bağlama göre anlamı belirleme","T.Y.2.2.c"];},
+ l=>{const x=random(g2WordBank);return ["Cümledeki sözcüğün anlamını bulmanıza yardım eden ipucunu gösteriniz: "+x.s+" Hedef sözcük: “"+x.w+"”.",x.hint,"anlam ipucunu gösterme","T.Y.2.2.c"];},
+ l=>{const x=random(g2WordBank),sentence=x.s.replace(new RegExp(x.w,"i"),"______");return ["Boşluğu, cümlenin anlamına uygun sözcükle tamamlayınız: "+sentence,x.w,"bağlama uygun sözcüğü tamamlama","T.Y.2.2.f"];},
+ l=>{const x=random(g2Actions);return ["“"+x[0]+"” davranışını en iyi anlatan sözcüğü yazınız.",x[1],"davranışa uygun sözcük bulma","T.Y.2.2.f"];},
+ l=>{const x=random(g2WordBank);return ["Açıklaması verilen sözcüğü bulunuz: "+x.m,x.w,"tanımı sözcükle eşleştirme","T.Y.2.2.c"];},
+ l=>{const x=random(g2Polysemy);return ["“"+x[0]+"” sözcüğünün iki farklı anlamını cümlelerden yararlanarak açıklayınız: "+x[1],x[2],"çok anlamlı sözcüğü bağlamda karşılaştırma","T.Y.2.2.c",2];},
+ l=>{const x=random(g2Actions);return ["Durumu en iyi anlatan sözcüğü yazınız: "+x[0],x[1],"durumu özetleyen sözcüğü seçme","T.Y.2.2.f"];},
+ l=>{const x=random(g2WordBank);return ["Aşağıdaki özelliği anlatan sözcüğü yazınız: "+x.m,x.w,"özellik ve sözcük eşleştirme","T.Y.2.2.c"];},
+ l=>{const x=random(g2WordBank),sentence=x.s.replace(new RegExp(x.w,"i"),"______");return ["Cümledeki boşluğa hangi sözcük gelmelidir? "+sentence,x.w,"sözcüğü cümlede kullanma","T.Y.2.2.f"];},
+ l=>{const x=random(g2WordBank);return ["“"+x.w+"” sözcüğünü kendi sözlerinizle açıklayınız.",x.m+" (Anlamı doğru anlatan öğrenci açıklaması kabul edilir.)","sözcük anlamını açıklama","T.Y.2.2.c",2];},
+ l=>{const x=random(g2WordBank),others=shuffle(g2WordBank.filter(y=>y!==x)).slice(0,3),opts=shuffle([x,...others]),letters=["A","B","C","D"],pos=opts.findIndex(y=>y===x);return ["Verilen durumu en iyi anlatan sözcüğü seçiniz: "+x.hint+"<br>"+opts.map((y,i)=>letters[i]+") "+y.w).join("<br>"),letters[pos],"seçeneklerden anlamca uygun olanı bulma","T.Y.2.2.c"];},
+ l=>{const x=random(g2Actions);return ["Durumu, anlamı koruyarak tek bir sözcükle özetleyiniz: "+x[0],x[1],"olaydan uygun sözcük üretme","T.Y.2.2.f"];},
+ l=>{const x=random(g2WordBank);return ["“"+x.w+"” sözcüğünün anlamını gösteren yeni bir cümle yazınız. Örnek durum: "+x.hint,x.s+" (Aynı anlamı gösteren başka cümleler de kabul edilir.)","anlamı örnekle gösterme","T.Y.2.2.f",2];}
+];
+const punctuation2Tasks=[
+ l=>{const x=random([["ece bugün kitap okudu","Ece bugün kitap okudu."],["mert bahçede fidan dikti","Mert bahçede fidan dikti."],["ayşe kütüphaneden kitap aldı","Ayşe kütüphaneden kitap aldı."],["can ve ece parka gitti","Can ve Ece parka gitti."],["pazartesi günü yağmur yağdı","Pazartesi günü yağmur yağdı."],["annem akşam çorba yaptı","Annem akşam çorba yaptı."]]);return ["Cümleyi büyük harfle başlatıp uygun noktalama işaretiyle yeniden yazınız: “"+x[0]+"”",x[1],"cümle başı ve nokta","T.Y.2.3.ğ"];},
+ l=>{const x=random(["Bugün hava çok güzel","Bahçedeki güller açtı","Efe yeni kitabını bitirdi","Kedimiz koltukta uyuyor","Yarın sınıfça müzeye gidiyoruz","Babam akşam eve erken geldi"]);return ["Bu cümle tamamlanmış bir düşünce anlatıyor. Sonuna hangi işaret gelir? Yeniden yazınız: “"+x+"”",x+".","cümle sonu noktalama işareti","T.Y.2.3.ğ"];},
+ l=>{const x=random(["Yarın bizimle parka gelecek misin","Saat kaçta yola çıkacağız","Kütüphaneden hangi kitabı aldın","Bugün ödevimizi bitirdik mi","Mavi kalemimi gördün mü","Okul gezisi ne zaman başlayacak","Sınıfımıza kim yeni geldi","Çantanda kaç kitap var"]);return ["Cümledeki anlamı dikkate alıp sonuna uygun işareti koyunuz: “"+x+"”",x+"?","soru cümlesini noktalama","T.Y.2.3.ğ"];},
+ l=>{const x=random(["Ne güzel bir uçurtma yaptın","Yaşasın, takımımız maçı kazandı","Eyvah, yağmur başladı","Bu ne kadar büyük bir balık","Harika, fidanımız filizlendi","Aferin, resmi çok güzel çizdin"]);return ["Duyguyu gösteren uygun noktalama işaretini ekleyerek cümleyi yeniden yazınız: “"+x+"”",x+"!","duyguya uygun noktalama","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Çantamda","kalem","silgi","defter"],["Pazardan","elma","armut","üzüm"],["Bahçede","lale","gül","menekşe"],["Masada","kitap","defter","kalem"],["Piknikte","peynir","ekmek","zeytin"],["Kutuda","kırmızı","mavi","sarı boya"]]);return ["Sıralananları virgül kullanarak cümle içinde doğru yazınız: "+x[0]+" "+x.slice(1).join(" "),x[0]+" "+x.slice(1,-1).join(", ")+" ve "+x[3]+".","virgülle sıralama","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Ankara","ya","geziye gittik."],["İzmir","de","dayımı ziyaret ettim."],["Ayşe","ye","kitabımı verdim."],["Mert","in","kalemi sıranın altında kaldı."],["Türkiye","ye","dönüş yaptık."],["Ece","nin","resmi panoya asıldı."]]);return ["Özel ada gelen eki uygun işaretle ayırıp cümleyi yeniden yazınız: “"+x[0]+x[1]+" "+x[2]+"”",x[0]+(x[1]==="ya"?"’ya":x[1]==="de"?"’de":x[1]==="ye"?"’ye":x[1]==="in"?"’in":"’nin")+" "+x[2],"özel ad ve kesme işareti","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Bugün hava çok güzel.","Bugün hava çok güzel."],["Yarın okul gezisi var.","Yarın okul gezisi var."],["Kedimiz süt içti.","Kedimiz süt içti."],["Bahçede oyun oynadık.","Bahçede oyun oynadık."]]);const opts=Math.random()<.5?["A) "+x[0],"B) "+x[1].replace(".","?")]:["A) "+x[1].replace(".","?"),"B) "+x[0]];return ["Anlamına ve yazımına uygun olan cümleyi seçiniz:<br>"+opts.join("<br>"),opts[0].endsWith(x[0])?"A":"B","doğru yazımı seçme","T.Y.2.3.ğ"];},
+ l=>{const x=random(["Saat kaçta yola çıkacağız","Hangi kitabı okumak istersin","Bugün bize kim gelecek","Kedimiz nerede uyuyor","Yarışmayı hangi takım kazandı","Okuldan sonra nereye gideceksin"]);return ["Bu cümle soru anlamı taşıyor. Uygun işareti ekleyip yeniden yazınız: “"+x+"”",x+"?","cümle anlamına uygun işaret","T.Y.2.3.ğ"];},
+ l=>{const x=random([["bahçede / oynadı / çocuklar","Çocuklar bahçede oynadı."],["kitabını / Ece / okudu","Ece kitabını okudu."],["sınıfa / öğretmen / girdi","Öğretmen sınıfa girdi."],["süt / kedi / içti","Kedi süt içti."],["Ankara’ya / yarın / gideceğiz","Yarın Ankara’ya gideceğiz."],["tohumları / Duru / suladı","Duru tohumları suladı."]]);return ["Sözcükleri doğru sıraya koyunuz; büyük harf ve nokta kullanınız: “"+x[0]+"”",x[1],"cümle kurma ve yazım","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Efe kitabını aldı sonra evde okumaya başladı","Efe kitabını aldı. Sonra evde okumaya başladı."],["Mina kapıyı açtı içeriye sessizce girdi","Mina kapıyı açtı. İçeriye sessizce girdi."],["Yağmur başladı çocuklar sınıfa döndü","Yağmur başladı. Çocuklar sınıfa döndü."],["Can topunu buldu oyununa devam etti","Can topunu buldu. Oyununa devam etti."]]);return ["Bu bölümde iki ayrı cümle var. Nokta ve büyük harfleri ekleyerek yeniden yazınız: “"+x[0]+"”",x[1],"cümleleri ayırma","T.Y.2.3.ğ"];},
+ l=>{const x=random([["pazartesi günü ayşe ankaraya gitti","Pazartesi günü Ayşe Ankara’ya gitti."],["salı günü mert izmire gidecek","Salı günü Mert İzmir’e gidecek."],["öğretmenimiz zeynep hanım bugün geldi","Öğretmenimiz Zeynep Hanım bugün geldi."],["23 nisanda ece gösteriye katıldı","23 Nisan’da Ece gösteriye katıldı."],["cumhuriyet bayramında izmire gittik","Cumhuriyet Bayramı’nda İzmir’e gittik."]]);return ["Büyük harfleri ve özel adlara gelen ekleri düzeltip cümleyi yeniden yazınız: “"+x[0]+"”",x[1],"özel ad ve cümle başı","T.Y.2.3.ğ"];},
+ l=>{const x=random(["Evet bugün fidanları sulayacağız","Hayır bugün yüzmeye gitmeyeceğim","Evet yarın kütüphaneye uğrayacağım","Hayır bu kitabı henüz bitirmedim","Evet arkadaşım da bizimle gelecek"]);return ["Cümleye “Evet” ya da “Hayır” ile başlanmış. Gerekli virgülü ekleyiniz: “"+x+"”",x.replace(/^(Evet|Hayır) /,"$1, ")+".","virgül kullanımı","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Mert eve geldi Çantasını bıraktı","Mert eve geldi. Çantasını bıraktı."],["Ece kitabı bitirdi Yeni bir hikâye seçti","Ece kitabı bitirdi. Yeni bir hikâye seçti."],["Kuş su içti Sonra ağaca kondu","Kuş su içti. Sonra ağaca kondu."],["Ders bitti Öğrenciler bahçeye çıktı","Ders bitti. Öğrenciler bahçeye çıktı."]]);return ["İki düşünceyi nokta ile ayırıp ikinci cümleyi büyük harfle başlatınız: “"+x[0]+"”",x[1],"cümle sonu ve büyük harf","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Piknik çantasında şunlar var","su, sandviç ve elma"],["Sınıf kitaplığında şu kitaplar var","masal, şiir ve öykü"],["Bahçeye şu çiçekleri diktik","gül, lale ve menekşe"],["Sepete şu meyveleri koyduk","elma, armut ve üzüm"]]);return ["Listeyi iki nokta ve virgülleri kullanarak doğru yazınız: “"+x[0]+" "+x[1]+"”",x[0]+": "+x[1]+".","listeyi noktalama","T.Y.2.3.ğ"];},
+ l=>{const x=random([["23 nisan günü ankaraya gittik","23 Nisan günü Ankara’ya gittik."],["29 ekimde okulda tören yaptık","29 Ekim’de okulda tören yaptık."],["atatürk 1881 yılında selanikte doğdu","Atatürk 1881 yılında Selanik’te doğdu."],["cumhuriyet bayramında izmirdeydik","Cumhuriyet Bayramı’nda İzmir’deydik."]]);return ["Büyük harfleri, kesme işaretini ve cümle sonu işaretini düzelterek yazınız: “"+x[0]+"”",x[1],"özel ad, büyük harf ve nokta","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Ece kitabını bitirdi?","Ece kitabını bitirdi."],["Çocuklar bahçede oynuyor?","Çocuklar bahçede oynuyor."],["Babam akşam yemeğini hazırladı?","Babam akşam yemeğini hazırladı."],["Kuş ağacın dalına kondu?","Kuş ağacın dalına kondu."]]);return ["Cümle soru sormuyor, bir bilgi veriyor. Yanlış işareti düzeltiniz: “"+x[0]+"”",x[1],"anlama uygun cümle sonu işareti","T.Y.2.3.ğ"];},
+ l=>{const x=random([["Kütüphaneden bir hikâye kitabı aldım.","Kütüphaneden ne aldın?"],["Saat üçte parka gideceğiz.","Saat kaçta parka gideceğiz?"],["Mavi çantamı sınıfta unuttum.","Hangi çantanı sınıfta unuttun?"],["Tören okul bahçesinde yapılacak.","Tören nerede yapılacak?"],["Yarışmayı bizim sınıf kazandı.","Yarışmayı hangi sınıf kazandı?"]]);return ["Verilen cevabı alabileceğiniz anlamlı bir soru cümlesi yazınız: “"+x[0]+"”",x[1]+" (Aynı cevabı gerektiren başka sorular da kabul edilir.)","soru cümlesi oluşturma","T.Y.2.3.ğ",2];},
+ l=>{const x=random(["Hayır bugün parka gelemem","Evet yarın kitabı getireceğim","Hayır bu kalem benim değil","Evet yarışmaya katılmak istiyorum","Hayır henüz yemeğimi yemedim"]);return ["Cümlenin başındaki yanıt sözcüğünden sonra gerekli işareti koyunuz: “"+x+"”",x.replace(/^(Evet|Hayır) /,"$1, ")+".","virgül kullanımı","T.Y.2.3.ğ"];},
+ l=>{const x=random([["şaşırma","Ne kadar büyük bir balık"],["sevinç","Yaşasın, bugün geziye gidiyoruz"],["korku","Eyvah, kapı aniden kapandı"],["beğeni","Bu resim ne kadar güzel"],["heyecan","Takımımız son dakikada gol attı"]]);return ["Verilen duyguyu anlatan bir cümle yazıp sonuna uygun işareti koyunuz. Duygu: "+x[0]+". Örnek başlangıç: “"+x[1]+"”",x[1]+"! (Duyguyu anlatan başka cümleler de kabul edilir.)","duyguya uygun cümle yazma","T.Y.2.3.ğ",2];},
+ l=>{const x=random([["sevgili ece yarın parka gelecek misin seni bekliyorum ayşe","Sevgili Ece, yarın parka gelecek misin? Seni bekliyorum. Ayşe."],["merhaba can bugün kütüphaneye gelecek misin seni kapıda bekleyeceğim mert","Merhaba Can, bugün kütüphaneye gelecek misin? Seni kapıda bekleyeceğim. Mert."],["sevgili mina kitabını bitirdin mi yarın bana getirir misin eylül","Sevgili Mina, kitabını bitirdin mi? Yarın bana getirir misin? Eylül."],["merhaba arda bugün bize uğrayacak mısın yeni oyunu göstereceğim efe","Merhaba Arda, bugün bize uğrayacak mısın? Yeni oyunu göstereceğim. Efe."]]);return ["Kısa nottaki büyük harf ve noktalama yanlışlarını düzelterek yeniden yazınız: “"+x[0]+"”",x[1],"kısa metni düzenleme","T.Y.2.3.ğ",2];}
+];
+const G2_WORD_SKILL_GROUPS=[[0,1,5,6,7,8,12],[2,11,14,16],[4,9,15,19],[3,10,13,17,18]];
+const G2_PUNCT_SKILL_GROUPS=[[0,1,2,3,7,15,18],[4,11,13,17],[5,10,14],[6,8,9,12,16,19]];
+function grade2TaskPlan(count,groups){
+ const total=groups.reduce((n,g)=>n+g.length,0),exact=groups.map(g=>count*g.length/total);
+ const quotas=exact.map(Math.floor);let remaining=count-quotas.reduce((a,b)=>a+b,0);
+ const order=exact.map((v,i)=>({i,f:v-quotas[i]})).sort((a,b)=>b.f-a.f);
+ for(const x of order){if(remaining<=0)break;if(quotas[x.i]<groups[x.i].length){quotas[x.i]++;remaining--;}}
+ const chosen=[];groups.forEach((g,i)=>chosen.push(...shuffle(g).slice(0,quotas[i])));
+ return shuffle(chosen);
+}
+function grade2RememberedQuestion(topic,level,tasks){
+ const key=({"Sözcük anlamı":"word","Yazım ve noktalama":"punct","Eş ve zıt anlamlı kelimeler":"synant","Cümle bilgisi":"sentence"})[topic]||"other";
+ const taskIndex=takeUnique("G2TR-"+key.toUpperCase()+"|"+level,tasks.map((_,i)=>i));
+ let result,signature,seen=[];
+ const storageKey="nihat-v108-g2tr-"+key+"-"+level;
+ try{seen=JSON.parse(localStorage.getItem(storageKey)||"[]");if(!Array.isArray(seen))seen=[]}catch(e){seen=[]}
+ for(let attempt=0;attempt<80;attempt++){
+  result=tasks[taskIndex](level);
+  signature=String(result[0]).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().toLocaleLowerCase("tr-TR");
+  if(!seen.includes(signature))break;
+ }
+ if(signature){
+  seen.push(signature);if(seen.length>4000)seen=seen.slice(-4000);
+  try{localStorage.setItem(storageKey,JSON.stringify(seen))}catch(e){}
+ }
+ const [text,answer,task,outcome,lines=1]=result;
+ return [grade2TaggedLine(text,answer,task,outcome,lines)];
+}
+function grade2WordMeaningQuestion(level){return grade2RememberedQuestion("Sözcük anlamı",level,wordMeaning2Tasks)}
+function grade2PunctuationQuestion(level){
+ let result=grade2RememberedQuestion("Yazım ve noktalama",level,punctuation2Tasks)[0];
+ if(level==="hard" && !result.text.includes("kısaca açıklayınız")){result.text+=" Düzelttiğiniz kuralı kısaca açıklayınız.";result.answer+=" Kuralı doğru açıklayan yanıt kabul edilir."}
+ return [result];
+}
+
+/* V113: Eş ve zıt anlamlı sözcük havuzu 14 girişten 40 girişe genişletildi. */
+const g2SynAntBank=[
+ {word:"mutlu",same:"sevinçli",opposite:"üzgün"},{word:"hızlı",same:"çabuk",opposite:"yavaş"},
+ {word:"büyük",same:"iri",opposite:"küçük"},{word:"güzel",same:"hoş",opposite:"çirkin"},
+ {word:"temiz",same:"pak",opposite:"kirli"},{word:"yaşlı",same:"ihtiyar",opposite:"genç"},
+ {word:"siyah",same:"kara",opposite:"beyaz"},{word:"yoksul",same:"fakir",opposite:"zengin"},
+ {word:"ıslak",same:"yaş",opposite:"kuru"},{word:"kolay",same:"basit",opposite:"zor"},
+ {word:"güçlü",same:"kuvvetli",opposite:"güçsüz"},{word:"neşe",same:"sevinç",opposite:"üzüntü"},
+ {word:"barış",same:"sulh",opposite:"savaş"},{word:"dar",same:"sıkışık",opposite:"geniş"},
+ {word:"çalışkan",same:"gayretli",opposite:"tembel"},{word:"akıllı",same:"zeki",opposite:"akılsız"},
+ {word:"cesur",same:"yürekli",opposite:"korkak"},{word:"kibar",same:"nazik",opposite:"kaba"},
+ {word:"yorgun",same:"bitkin",opposite:"dinç"},{word:"uzun",same:"uzun boylu",opposite:"kısa"},
+ {word:"kısa",same:"kısacık",opposite:"uzun"},{word:"soğuk",same:"serin",opposite:"sıcak"},
+ {word:"erken",same:"önce",opposite:"geç"},{word:"yeni",same:"taze",opposite:"eski"},
+ {word:"doğru",same:"gerçek",opposite:"yanlış"},{word:"yanlış",same:"hatalı",opposite:"doğru"},
+ {word:"dost",same:"arkadaş",opposite:"düşman"},{word:"sert",same:"katı",opposite:"yumuşak"},
+ {word:"varlıklı",same:"zengin",opposite:"yoksul"},{word:"cömert",same:"eli açık",opposite:"cimri"},
+ {word:"cimri",same:"pinti",opposite:"cömert"},{word:"kalabalık",same:"çok kişiyle dolu",opposite:"tenha"},
+ {word:"tenha",same:"ıssız",opposite:"kalabalık"},{word:"sağlam",same:"dayanıklı",opposite:"bozuk"},
+ {word:"bozuk",same:"hasarlı",opposite:"sağlam"},{word:"yüksek",same:"yüce",opposite:"alçak"},
+ {word:"alçak",same:"düşük",opposite:"yüksek"},{word:"küçük",same:"minik",opposite:"büyük"},
+ {word:"neşeli",same:"sevinçli",opposite:"üzgün"},{word:"hasta",same:"rahatsız",opposite:"sağlıklı"}
+];
+function g2SynAntPick(level){
+ const key="G2TR-SYNANT-WORDS|"+level,used=cycleState[key]||[];
+ let available=g2SynAntBank.filter(x=>!used.includes(x.word));
+ if(!available.length){available=g2SynAntBank.slice();cycleState[key]=[];}
+ const chosen=random(available);cycleState[key]=(cycleState[key]||[]).concat(chosen.word);return chosen;
+}
+const g2SynAntTasks=[
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.word+"’ sözcüğünün eş anlamlısını yazınız.",x.same,"eş anlamlı sözcüğü bulma","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.word+"’ sözcüğünün zıt anlamlısını yazınız.",x.opposite,"zıt anlamlı sözcüğü bulma","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l),kind=random(["eş","zıt"]),ans=kind==="eş"?x.same:x.opposite,wrong=kind==="eş"?x.opposite:x.same,opts=shuffle([ans,wrong]),letters=["A","B"];return ["‘"+x.word+"’ sözcüğünün "+kind+" anlamlısını seçiniz:<br>"+opts.map((v,i)=>letters[i]+") "+v).join("<br>"),letters[opts.indexOf(ans)],"seçeneklerden anlam ilişkisini bulma","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["Aşağıdaki sözcük çiftinin anlam ilişkisini yazınız: ‘"+x.word+" – "+x.same+"’","Eş anlamlı.","sözcükler arasındaki anlam ilişkisini belirleme","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["Aşağıdaki sözcük çiftinin anlam ilişkisini yazınız: ‘"+x.word+" – "+x.opposite+"’","Zıt anlamlı.","sözcükler arasındaki anlam ilişkisini belirleme","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l),opts=shuffle([x.same,x.opposite]),answer=opts.indexOf(x.same)===0?"A":"B";return ["‘"+x.word+"’ sözcüğünün anlamına en yakın sözcüğü seçiniz:<br>A) "+opts[0]+"<br>B) "+opts[1],answer,"bağlamdan eş anlamlıyı seçme","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.word+"’ sözcüğünün zıt anlamlısını kullanarak anlamlı bir cümle yazınız.","Örnek: ‘"+x.opposite+"’ sözcüğünü içeren anlamlı bir cümle. Başka uygun cümleler de kabul edilir.","zıt anlamlı sözcüğü cümlede kullanma","T.Y.2.2.f",2];},
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.same+"’ sözcüğünün eş anlamlısını yazınız.",x.word,"eş anlamlı ilişkiyi ters yönde kurma","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l),opts=shuffle([x.same,x.opposite]),ans=opts.indexOf(x.same);return ["Hangi sözcük çifti eş anlamlıdır?<br>A) "+x.word+" – "+opts[0]+"<br>B) "+x.word+" – "+opts[1],ans===0?"A":"B","eş anlamlı sözcük çiftini ayırt etme","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.word+"’ ve ‘"+x.same+"’ sözcükleri anlam bakımından nasıl ilişkilidir? Kısaca açıklayınız.","Eş anlamlıdır; anlamları aynıdır ya da birbirine çok yakındır.","anlam ilişkisini açıklama","T.Y.2.2.c",2];},
+ l=>{let x=g2SynAntPick(l);return ["Birbirine zıt anlamlı iki sözcük yazınız. İlk sözcük: ‘"+x.word+"’.",x.word+" – "+x.opposite,"zıt anlamlı sözcük üretme","T.Y.2.2.c"];},
+ l=>{let x=g2SynAntPick(l);return ["‘"+x.opposite+"’ sözcüğünün zıt anlamlısını yazınız.",x.word,"zıt anlamlı ilişkiyi ters yönde kurma","T.Y.2.2.c"];}
+];
+const g2SentenceTasks=[
+ l=>{let x=random([["Ece sabah bahçede kitap okudu.",5],["Küçük kuş ağaca kondu.",4],["Öğretmen sınıfa yeni kitaplar getirdi.",5],["Babam akşam yemek yaptı.",4],["Çocuklar okul bahçesinde oyun oynadı.",5],["Minik kedi minderde uyudu.",4],["Yağmurdan sonra gökkuşağı çıktı.",4],["Deniz kardeşiyle parka gitti.",4],["Annem pazardan elma aldı.",4],["Arda masal kitabını dikkatle okudu.",5]]);return ["‘"+x[0]+"’ cümlesinde kaç sözcük vardır?",String(x[1]),"cümledeki sözcük sayısını belirleme","T.Y.2.2.a"];},
+ l=>{let x=random([["Ali sabah erkenden parka gitti.","Ali"],["Bahçedeki çiçekleri Ece suladı.","Bahçedeki"],["Küçük kuş ağaca kondu.","Küçük"],["Mert yeni defterini çantasına koydu.","Mert"],["Öğretmen sınıfa masal kitabı getirdi.","Öğretmen"],["Dün akşam yağmur başladı.","Dün"],["Sarı kelebek çiçeğin üzerine kondu.","Sarı"],["Babam hafta sonu pazara gitti.","Babam"]]);return ["‘"+x[0]+"’ cümlesinin ilk sözcüğünü yazınız.",x[1],"cümlede sözcük sırasını fark etme","T.Y.2.3.ğ"];},
+ l=>{let x=random([["okudu / Ece / kitabını","Ece kitabını okudu."],["bahçede / çocuklar / oynadı","Çocuklar bahçede oynadı."],["fidanı / Arda / suladı","Arda fidanı suladı."],["annem / kek / yaptı","Annem kek yaptı."],["kütüphaneye / Mert / gitti","Mert kütüphaneye gitti."],["su / kedi / içti","Kedi su içti."],["şarkı / öğrenciler / söyledi","Öğrenciler şarkı söyledi."],["topu / Deniz / yakaladı","Deniz topu yakaladı."],["resim / kardeşim / çizdi","Kardeşim resim çizdi."],["yola / ailemiz / çıktı","Ailemiz yola çıktı."]]);return ["Sözcükleri anlamlı ve kurallı bir cümle olacak biçimde sıralayınız: ‘"+x[0]+"’",x[1],"sözcükleri kurallı cümleye dönüştürme","T.Y.2.2.g"];},
+ l=>{let x=random([["Ece kitabını ______.","okudu"],["Kuş ağacın dalına ______.","kondu"],["Çocuklar bahçede top ______.","oynadı"],["Annem sofraya çorba ______.","koydu"],["Arda dişlerini her akşam ______.","fırçalar"],["Balık suda ______.","yüzer"],["Öğrenciler öğretmenlerini dikkatle ______.","dinledi"],["Küçük çocuk merdivenleri yavaşça ______.","çıktı"],["Dedem bahçeye fidan ______.","dikti"],["Yağmur yağınca yollar ______.","ıslandı"]]);return ["Cümleyi anlamına uygun sözcükle tamamlayınız: ‘"+x[0]+"’",x[1],"cümleyi bağlama uygun tamamlama","T.Y.2.2.f"];},
+ l=>{let x=random([["Küçük kedi.","Hayır. Kedinin ne yaptığı söylenmediği için tamamlanmış bir düşünce yoktur."],["Ece'nin yeni kitabı.","Hayır. Kitapla ilgili düşünce tamamlanmamıştır."],["Bahçenin kenarındaki uzun sıra.","Hayır. Sırayla ilgili bir yargı bildirilmemiştir."],["Çocuklar bahçede oynadı.","Evet. Tamamlanmış bir düşünce bildiriyor."],["Mavi çanta.","Hayır. Çantayla ilgili ne olduğu ya da ne yapıldığı söylenmemiştir."],["Kuş gökyüzünde uçtu.","Evet. Tamamlanmış bir düşünce bildiriyor."],["Okulun büyük bahçesi.","Hayır. Bahçeyle ilgili bir yargı tamamlanmamıştır."],["Annem akşam yemek yaptı.","Evet. Tamamlanmış bir düşünce bildiriyor."]]);return ["‘"+x[0]+"’ tamamlanmış bir cümle midir? Neden?",x[1],"tam cümle ile söz grubunu ayırt etme","T.Y.2.2.a"];},
+ l=>{let x=random([["çocuklar / kitap okuyor","Çocuklar kitap okuyor."],["kuş / uçtu","Kuş uçtu."],["öğrenciler / şarkı söyledi","Öğrenciler şarkı söyledi."],["Mina / resim çiziyor","Mina resim çiziyor."],["köpek / bahçede koştu","Köpek bahçede koştu."],["babam / çiçekleri suladı","Babam çiçekleri suladı."],["kardeşim / süt içti","Kardeşim süt içti."],["arılar / çiçeklere kondu","Arılar çiçeklere kondu."],["teyzem / bize masal anlattı","Teyzem bize masal anlattı."],["Deniz / kalemini buldu","Deniz kalemini buldu."]]);return ["Verilen sözcüklerle anlamlı bir cümle kurunuz: ‘"+x[0]+"’",x[1],"anlamlı cümle oluşturma","T.Y.2.2.g"];},
+ l=>{let x=random([["Mina eldivenlerini giydi çünkü hava soğuktu.","Havanın soğuk olması, eldiven giymesinin nedenidir."],["Can çok çalıştı, bu yüzden yarışmayı kazandı.","Can'ın çok çalışması yarışmayı kazanmasının nedenidir."],["Yağmur yağdı, bu nedenle yollar ıslandı.","Yağmur yağması yolların ıslanmasının nedenidir."],["Ece erken yattı çünkü sabah erkenden kalkacaktı.","Sabah erkenden kalkacak olması erken yatmasının nedenidir."],["Rüzgâr kuvvetlendi, bu yüzden uçurtma yere indi.","Rüzgârın kuvvetlenmesi uçurtmanın yere inmesine neden oldu."],["Mert susadığı için bir bardak su içti.","Susaması su içmesinin nedenidir."],["Kar yağınca yollar beyaz bir örtüyle kaplandı.","Kar yağması yolların beyaz görünmesinin nedenidir."],["Arda düzenli çalıştı, bu nedenle ödevini zamanında bitirdi.","Arda'nın düzenli çalışması ödevini zamanında bitirmesinin nedenidir."]]);return ["‘"+x[0]+"’ cümlesinde neden ile sonucu açıklayınız.",x[1],"cümlede neden-sonuç ilişkisini fark etme","T.Y.2.2.c",2];},
+ l=>{let x=random([["Ece bahçede çiçek suladı.","Kim çiçek suladı?","Ece."],["Mert kütüphaneden masal kitabı aldı.","Mert nereden kitap aldı?","Kütüphaneden."],["Çocuklar sabah erkenden yola çıktı.","Çocuklar ne zaman yola çıktı?","Sabah erkenden."],["Ayşe mavi kalemle resim çizdi.","Ayşe neyle resim çizdi?","Mavi kalemle."],["Dedem pazardan elma aldı.","Dedem nereden elma aldı?","Pazardan."],["Köpek bahçede uyudu.","Köpek nerede uyudu?","Bahçede."],["Sınıfımız yarın müzeye gidecek.","Sınıfımız ne zaman müzeye gidecek?","Yarın."],["Arda topu arkadaşına verdi.","Arda topu kime verdi?","Arkadaşına."],["Kardeşim sabah süt içti.","Kardeşim ne içti?","Süt."],["Öğretmen öğrencilere öykü okudu.","Öğretmen kime öykü okudu?","Öğrencilere."]]);return ["‘"+x[0]+"’ cümlesine verilen soruyu cevaplayınız: "+x[1],x[2],"cümleden kişi, yer, zaman veya nesne bilgisi bulma","T.Y.2.2.c"];},
+ l=>{let x=random([["Kedi süt içti.","Kedi ne yaptı?","Süt içti."],["Ayşe kırmızı bir elbise giydi.","Ayşe ne giydi?","Kırmızı bir elbise."],["Babam bahçeye fidan dikti.","Babam ne dikti?","Fidan."],["Kuş pencerenin önünde ötüyor.","Kuş nerede ötüyor?","Pencerenin önünde."],["Mina akşam masal okudu.","Mina ne zaman masal okudu?","Akşam."],["Öğrenciler sınıfta deney yaptı.","Öğrenciler nerede deney yaptı?","Sınıfta."],["Deniz kardeşiyle satranç oynadı.","Deniz kiminle satranç oynadı?","Kardeşiyle."],["Teyzem bize kurabiye getirdi.","Teyzem bize ne getirdi?","Kurabiye."],["Arılar çiçeklerden çiçek özü toplar.","Arılar ne toplar?","Çiçek özü."],["Ece kalemini sıranın üstünde buldu.","Ece kalemini nerede buldu?","Sıranın üstünde."]]);return ["‘"+x[0]+"’ cümlesini okuyup soruyu cevaplayınız: "+x[1],x[2],"cümledeki bilgiyi soruya göre bulma","T.Y.2.2.c"];},
+ l=>{let x=random([["Ece okula gitti.","Ece yanıtını verecek bir soru yazınız.","Kim okula gitti?"],["Ali top oynadı.","Top yanıtını verecek bir soru yazınız.","Ali ne oynadı?"],["Mert kitap okudu.","Mert yanıtını verecek bir soru yazınız.","Kim kitap okudu?"],["Duru sabah erkenden uyandı.","Ne zaman yanıtını verecek bir soru yazınız.","Duru ne zaman uyandı?"],["Kedi koltuğun üstünde uyudu.","Nerede yanıtını verecek bir soru yazınız.","Kedi nerede uyudu?"],["Babam pazardan domates aldı.","Ne aldı yanıtını verecek bir soru yazınız.","Babam pazardan ne aldı?"],["Öğretmen sınıfa yeni kitap getirdi.","Kim yanıtını verecek bir soru yazınız.","Sınıfa yeni kitap getiren kim?"],["Çocuklar parkta ip atladı.","Nerede yanıtını verecek bir soru yazınız.","Çocuklar nerede ip atladı?"],["Arda arkadaşına kalemini verdi.","Kime yanıtını verecek bir soru yazınız.","Arda kalemini kime verdi?"],["Annem akşam çorba yaptı.","Ne zaman yanıtını verecek bir soru yazınız.","Annem ne zaman çorba yaptı?"]]);return ["‘"+x[0]+"’ cümlesi için "+x[1],x[2]+" (Aynı yanıtı gerektiren başka sorular da kabul edilir.)","verilen cümleye uygun soru oluşturma","T.Y.2.2.g",2];},
+ l=>{let x=random([["kırmızı / top / yuvarlandı","Kırmızı top yuvarlandı."],["küçük / kuş / uçtu","Küçük kuş uçtu."],["yaşlı / ağaç / gölge verdi","Yaşlı ağaç gölge verdi."],["neşeli / çocuk / şarkı söyledi","Neşeli çocuk şarkı söyledi."],["mavi / balon / gökyüzüne yükseldi","Mavi balon gökyüzüne yükseldi."],["çalışkan / öğrenci / ödevini bitirdi","Çalışkan öğrenci ödevini bitirdi."],["sarı / kelebek / çiçeğe kondu","Sarı kelebek çiçeğe kondu."],["yumuşak / yastık / yere düştü","Yumuşak yastık yere düştü."],["tatlı / koku / odayı sardı","Tatlı koku odayı sardı."],["uzun / tren / istasyona geldi","Uzun tren istasyona geldi."]]);return ["Sözcükleri uygun sıraya koyup kurallı cümleyi yazınız: ‘"+x[0]+"’",x[1],"sıfat ve adları cümlede anlamlı kullanma","T.Y.2.2.g"];},
+ l=>{let x=random([["Ece çantasını hazırladı. Ece okula gitti.","Ece çantasını hazırladı ve okula gitti."],["Yağmur başladı. Çocuklar içeri girdi.","Yağmur başlayınca çocuklar içeri girdi."],["Mert kitabını bitirdi. Yeni bir kitap seçti.","Mert kitabını bitirdi, sonra yeni bir kitap seçti."],["Kuş susadı. Kuş su içti.","Kuş susadığı için su içti."],["Duru paltosunu giydi. Dışarı çıktı.","Duru paltosunu giydi ve dışarı çıktı."],["Ece resmini tamamladı. Öğretmenine gösterdi.","Ece resmini tamamladı, sonra öğretmenine gösterdi."],["Rüzgâr esti. Yapraklar uçuştu.","Rüzgâr esince yapraklar uçuştu."],["Arda ödevini bitirdi. Oyun oynamaya başladı.","Arda ödevini bitirdi, sonra oyun oynamaya başladı."],["Güneş açtı. Çocuklar bahçeye çıktı.","Güneş açınca çocuklar bahçeye çıktı."],["Mina kitabını aldı. Sessizce okumaya başladı.","Mina kitabını aldı ve sessizce okumaya başladı."]]);return ["İki cümleyi anlam ilişkisine uygun bir sözcükle birleştiriniz: ‘"+x[0]+"’",x[1]+" (Benzer anlamlı uygun birleştirmeler de kabul edilir.)","cümleleri anlam ilişkisine uygun bağlama","T.Y.2.2.g",2];},
+ l=>{let x=random([["Bugün parka gittik.","Yer bilgisini ekleyiniz.","Bugün okuldan sonra parka gittik."],["Kuş uçtu.","Nasıl uçtuğunu ekleyiniz.","Kuş gökyüzünde hızla uçtu."],["Ece kitap okudu.","Ne zaman okuduğunu ekleyiniz.","Ece akşam kitap okudu."],["Çocuklar oynadı.","Nerede oynadıklarını ekleyiniz.","Çocuklar bahçede oynadı."],["Kedi uyudu.","Nerede uyuduğunu ekleyiniz.","Kedi minderde uyudu."],["Mert resim çizdi.","Neyle çizdiğini ekleyiniz.","Mert renkli kalemlerle resim çizdi."],["Babam yürüdü.","Nasıl yürüdüğünü ekleyiniz.","Babam yavaşça yürüdü."],["Öğrenciler şarkı söyledi.","Ne zaman söylediklerini ekleyiniz.","Öğrenciler tören sırasında şarkı söyledi."],["Arılar çiçeklere kondu.","Hangi çiçeklere konduğunu ekleyiniz.","Arılar sarı çiçeklere kondu."],["Teyzem yemek yaptı.","Kimin için yaptığını ekleyiniz.","Teyzem ailemiz için yemek yaptı."]]);return ["Cümleyi istenen bilgiyle genişletiniz: ‘"+x[0]+"’ "+x[1],x[2]+" (Benzer anlamlı yanıtlar kabul edilir.)","cümleye yer, zaman veya durum bilgisi ekleme","T.Y.2.2.g",2];},
+ l=>{let x=random([["Ece süt içti.","Ece süt içmedi."],["Kuş ağaçta ötüyor.","Kuş ağaçta ötmüyor."],["Mert ödevini unuttu.","Mert ödevini unutmadı."],["Çocuklar bahçede koştu.","Çocuklar bahçede koşmadı."],["Annem bugün işe gitti.","Annem bugün işe gitmedi."],["Arda kapıyı açtı.","Arda kapıyı açmadı."],["Kedi koltukta uyuyor.","Kedi koltukta uyumuyor."],["Duru elmasını yedi.","Duru elmasını yemedi."]]);return ["Cümleyi olumsuz anlamlı olacak biçimde yeniden yazınız: ‘"+x[0]+"’",x[1],"cümleyi olumsuz anlamla kurma","T.Y.2.2.g"];}
+
+ ,l=>{let x=random([["Mina sabah okula yürüyerek gitti.","gitti."],["Küçük kuş dala kondu.","kondu."],["Efe renkli resmini arkadaşına gösterdi.","gösterdi."],["Annem mutfakta kek yaptı.","yaptı."],["Çocuklar bahçede ip atladı.","atladı."],["Öğretmen öyküyü sınıfta okudu.","okudu."],["Dedem akşam çiçekleri suladı.","suladı."],["Arılar çiçeklerden öz toplar.","toplar."]]);return ["‘"+x[0]+"’ cümlesinin son sözcüğünü yazınız.",x[1],"cümlede sözcük sırasını fark etme","T.Y.2.3.ğ"];},
+ l=>{let x=random([["Mina kapıyı açtı.","açtı"],["Köpek bahçede koşuyor.","koşuyor"],["Öğrenciler şarkı söyledi.","söyledi"],["Babam gazeteyi okudu.","okudu"],["Balık suda yüzüyor.","yüzüyor"],["Arda topu arkadaşına attı.","attı"],["Teyzem çiçekleri suladı.","suladı"],["Kelebek çiçeğe kondu.","kondu"]]);return ["‘"+x[0]+"’ cümlesinde yapılan işi ya da hareketi bildiren sözcüğü yazınız.",x[1],"cümlede eylemi bildiren sözcüğü fark etme","T.Y.2.2.a"];},
+ l=>{let x=random([["Bahçede top oynayan çocuk Efe'dir.","Efe"],["Kütüphaneden masal kitabı alan Mina'dır.","Mina"],["Çiçekleri sulayan kişi annemdir.","Annem"],["Kediyi veterinere götüren Arda'dır.","Arda"],["Sınıfta şiir okuyan öğrenci Duru'dur.","Duru"],["Parka bisikletle giden Deniz'dir.","Deniz"],["Masayı hazırlayan kişi dedemdir.","Dedem"],["Kuşlara yem veren çocuk Ela'dır.","Ela"]]);return ["‘"+x[0]+"’ cümlesinde işi yapan kişiyi yazınız.",x[1],"cümlede işi yapan kişiyi belirleme","T.Y.2.2.c"];},
+ l=>{let x=random([["Yağmur başlayınca çocuklar ______.","şemsiyelerini açtı"],["Karnı acıkan Ece ______.","sandviçini yedi"],["Dişleri temiz olsun diye Mert ______.","dişlerini fırçaladı"],["Soğuk havada kuşlar ______.","yuvalarına sığındı"],["Kitabını bitiren Mina ______.","yeni bir kitap seçti"],["Çiçeklerin toprağı kuruyunca Arda ______.","onları suladı"],["Otobüsü kaçırmamak için babam ______.","erken çıktı"],["Yorulan sporcular ______.","dinlenme molası verdi"]]);return ["Cümleyi verilen duruma uygun biçimde tamamlayınız: ‘"+x[0]+"’",x[1],"duruma uygun cümle tamamlama","T.Y.2.2.f"];},
+ l=>{let x=random([["Ece'nin elinde bir şemsiye var ve yağmur yağıyor.",["Ece şemsiyesini açtı.","Ece denizde yüzdü."]],["Mert'in karnı acıktı ve masada elma var.",["Mert elmayı yedi.","Mert uyumaya gitti."]],["Kuş susadı, önünde bir kap su var.",["Kuş su içti.","Kuş kitap okudu."]],["Hava soğuk, çocuk dışarı çıkacak.",["Çocuk montunu giydi.","Çocuk dondurma aldı."]],["Mina'nın kitabı yere düştü.",["Mina kitabını yerden aldı.","Mina çiçekleri suladı."]],["Arda'nın bisikletinin lastiği indi.",["Arda lastiği şişirdi.","Arda yüzmeye başladı."]],["Ece masayı kurmak istiyor.",["Ece tabakları masaya koydu.","Ece yatağını topladı."]],["Çocuklar uyumadan önce dişlerini temizliyor.",["Çocuklar dişlerini fırçaladı.","Çocuklar bahçede koştu."]]]);let opts=shuffle(x[1]),answer=opts.indexOf(x[1][0])===0?"A":"B";return ["Verilen duruma uygun cümleyi seçiniz: ‘"+x[0]+"’<br>A) "+opts[0]+"<br>B) "+opts[1],answer,"duruma uygun cümleyi seçme","T.Y.2.2.c"];},
+ l=>{let x=random([["Mina sabah erkenden okula gitti.","Sabah erkenden"],["Çocuklar parkta neşeyle oynadı.","Parkta"],["Babam akşam yemeği hazırladı.","Akşam"],["Kuşlar ilkbaharda yuva kurar.","İlkbaharda"],["Ece kitabını odasında okudu.","Odasında"],["Duru hafta sonu anneannesine gidecek.","Hafta sonu"],["Öğrenciler tören sırasında şiir okudu.","Tören sırasında"],["Arda okuldan sonra arkadaşına uğradı.","Okuldan sonra"]]);return ["‘"+x[0]+"’ cümlesinde zaman bildiren sözcük ya da sözcük grubunu yazınız.",x[1],"cümlede zaman bilgisini bulma","T.Y.2.2.c"];},
+ l=>{let x=random([["Ece süt içmedi.","Ece süt içti."],["Kuş ağaçta ötmüyor.","Kuş ağaçta ötüyor."],["Mert ödevini unutmadı.","Mert ödevini unuttu."],["Çocuklar bahçede koşmadı.","Çocuklar bahçede koştu."],["Annem bugün işe gitmedi.","Annem bugün işe gitti."],["Arda kapıyı açmadı.","Arda kapıyı açtı."],["Kedi koltukta uyumuyor.","Kedi koltukta uyuyor."],["Duru elmasını yemedi.","Duru elmasını yedi."]]);return ["Cümleyi olumlu anlamlı olacak biçimde yeniden yazınız: ‘"+x[0]+"’",x[1],"cümleyi olumlu anlamla kurma","T.Y.2.2.g"];},
+ l=>{let x=random([["Sabah Ece okula yürüyerek gitti.","Ece sabah okula yürüyerek gitti."],["Bahçede çocuklar neşeyle oynadı.","Çocuklar bahçede neşeyle oynadı."],["Akşam babam bize masal okudu.","Babam akşam bize masal okudu."],["Dün Mina kütüphaneden kitap aldı.","Mina dün kütüphaneden kitap aldı."],["Dikkatle Arda resmini boyadı.","Arda resmini dikkatle boyadı."],["Hafta sonu ailemiz müzeyi gezdi.","Ailemiz hafta sonu müzeyi gezdi."],["Mutfakta annem kek yaptı.","Annem mutfakta kek yaptı."],["Sabah erkenden kuşlar ötmeye başladı.","Kuşlar sabah erkenden ötmeye başladı."]]);return ["Cümlenin anlamını koruyarak sözcüklerin yerini değiştirip yeniden yazınız: ‘"+x[0]+"’",x[1]+" (Anlamı koruyan başka sözcük sıralamaları da kabul edilir.)","cümlede sözcük sırasını anlamı koruyarak değiştirme","T.Y.2.2.g",2];},
+ l=>{let x=random([["Mina'nın çantasında boya kalemleri var.","Boya kalemleri Mina'nın çantasında.","Mina boya kalemlerini masada unuttu."],["Bahçede sarı bir kelebek uçuyor.","Sarı bir kelebek bahçede uçuyor.","Sarı kelebek çiçeğe kondu."],["Masada kırmızı elmalar duruyor.","Kırmızı elmalar masada duruyor.","Kırmızı elmalar sepette duruyor."],["Sınıfta öğrenciler sessizce kitap okuyor.","Öğrenciler sınıfta sessizce kitap okuyor.","Öğrenciler sınıfta şarkı söylüyor."],["Ağaçta küçük bir kuş ötüyor.","Küçük bir kuş ağaçta ötüyor.","Küçük kuş yuvada uyuyor."],["Sepette taze ekmekler var.","Taze ekmekler sepette.","Taze ekmekler masada."],["Pencerede mavi bir perde asılı.","Mavi perde pencerede asılı.","Mavi perde yıkandı."],["Sahilde çocuklar kumdan kale yapıyor.","Çocuklar kumdan kaleyi sahilde yapıyor.","Çocuklar sahilde top oynuyor."]]);let opts=shuffle([x[1],x[2]]),answer=opts.indexOf(x[1])===0?"A":"B";return ["Verilen cümleyle aynı anlamı taşıyan cümleyi seçiniz: ‘"+x[0]+"’<br>A) "+opts[0]+"<br>B) "+opts[1],answer,"anlamı koruyan cümleleri karşılaştırma","T.Y.2.2.c"];},
+ l=>{let x=random([["Ece kitap okudu.","Ece kitap okudu mu?"],["Mert okula yürüyerek gitti.","Mert okula yürüyerek gitti mi?"],["Kuş ağaca kondu.","Kuş ağaca kondu mu?"],["Çocuklar parkta oynadı.","Çocuklar parkta oynadı mı?"],["Babam akşam yemek yaptı.","Babam akşam yemek yaptı mı?"],["Kedi süt içti.","Kedi süt içti mi?"],["Deniz çantasını hazırladı.","Deniz çantasını hazırladı mı?"],["Öğretmen sınıfa geldi.","Öğretmen sınıfa geldi mi?"]]);return ["Cümleyi soru anlamı taşıyacak biçimde yeniden yazınız: ‘"+x[0]+"’",x[1],"bildirme cümlesini soru cümlesine dönüştürme","T.Y.2.2.g"];}
+
+];
+const G2_SYNANT_SKILL_GROUPS=[[0,1,2],[3,4,5],[6,7,8],[9,10,11]];
+/* V117: Cümle Bilgisi 24 soru biçimi ve genişletilmiş örnek havuzlarıyla düzenlendi. */
+const G2_SENTENCE_SKILL_GROUPS=[[0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23]];
+function grade2SynAntQuestion(level){return grade2RememberedQuestion("Eş ve zıt anlamlı kelimeler",level,g2SynAntTasks)}
+function grade2SentenceQuestion(level){return grade2RememberedQuestion("Cümle bilgisi",level,g2SentenceTasks)}
+
 function turkishQuestion(topic,g,l){
  if(topic==="Okuduğunu anlama"&&g===3){let p=random(reading3),amount=l==="easy"?2:l==="medium"?4:6,chosen=shuffle(p.qs.slice()).slice(0,amount);return chosen.map((x,i)=>q((i===0?"<strong>"+p.title+"</strong><div class='passage'>"+p.text+"</div>":"")+x[0]+'<div class="line"></div>',x[1],"reading"))}
  if(g===3&&tr3FoundationV72[topic])return [tr3FoundationQuestionV72(topic,l)];
  if(g===3&&tr3Banks[topic])return [uniqueBankQuestion(topic)];
  if(topic==="Okuduğunu anlama"){let z=random([["Mina çiçekleri suladı. Sonra kitabını okudu.","Mina önce ne yaptı?","Çiçekleri suladı."],["Can yerde bulduğu kalemi öğretmenine verdi.","Can ne buldu?","Kalem."]]);return [line("Metni okuyunuz: "+z[0]+"<br>"+z[1],z[2])]}
+ if(g===2&&topic==="Eş ve zıt anlamlı kelimeler")return grade2SynAntQuestion(l);
  if(topic==="Eş ve zıt anlamlı kelimeler"){let x=random([["uzun","kısa"],["büyük","küçük"],["hızlı","yavaş"],["sıcak","soğuk"]]);return [line('"'+x[0]+'" kelimesinin zıt anlamlısını yazınız.',x[1])]}
+ if(g===2&&topic==="Sözcük anlamı")return grade2WordMeaningQuestion(l);
  if(topic==="Sözcük anlamı")return [line('"özenli" kelimesini anlamına uygun bir cümlede kullanınız.',"Anlamlı ve uygun bir cümle.")];
+ if(g===2&&topic==="Cümle bilgisi")return grade2SentenceQuestion(l);
  if(topic==="Cümle bilgisi"){let z="Çocuklar okul bahçesinde neşeyle oyun oynadı.";return [line('"'+z+'" cümlesinde kaç kelime vardır?',7)]}
+ if(g===2&&topic==="Yazım ve noktalama")return grade2PunctuationQuestion(l);
  if(topic==="Yazım ve noktalama"){let x=random([["bugün ankaraya gideceğiz","Bugün Ankara'ya gideceğiz."],["ayşe kitap okuyor","Ayşe kitap okuyor."]]);return [line("Cümleyi doğru biçimde yazınız: "+x[0],x[1])]}
  return [line("Konuyla ilgili anlamlı bir cümle yazınız.","Uygun öğrenci yanıtı.")]
 }
@@ -2905,8 +2957,146 @@ const reading2=[
 {title:"Minik Fidan",text:"Deniz, sınıfıyla birlikte okul bahçesine küçük bir fidan dikti. Önce toprağı kazdılar, sonra fidanı dikkatlice yerleştirdiler. Deniz fidanın çevresine toprak doldurdu ve onu suladı. Öğretmenleri, bitkilerin büyümek için suya ve güneş ışığına ihtiyaç duyduğunu söyledi. Çocuklar fidana sırayla bakmaya karar verdiler.",qs:[
 ["Deniz ve arkadaşları nereye fidan dikti?","Okul bahçesine."],["Fidan dikilirken önce ne yaptılar?","Toprağı kazdılar."],["Deniz fidanı diktikten sonra ne yaptı?","Fidanı suladı."],["Bitkilerin büyümek için nelere ihtiyacı vardır?","Suya ve güneş ışığına."],["Çocuklar fidan için nasıl bir karar aldı?","Fidana sırayla bakmaya karar verdiler."],["'Dikkatlice' sözcüğü bize işin nasıl yapıldığını anlatır?","Özenli ve dikkatli biçimde."],["Fidan uzun süre sulanmazsa ne olabilir?","Kuruyabilir / büyümesi zorlaşabilir."],["Olayları sıralayınız: sulama – toprağı kazma – fidanı yerleştirme.","Toprağı kazma – fidanı yerleştirme – sulama."],["Metnin konusu nedir?","Bir fidanın dikilmesi ve bakımı."],["Metne uygun farklı bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Bahçemizdeki Fidan."],["Çocukların fidana sırayla bakması hangi davranışı gösterir?","Sorumluluk / yardımlaşma."],["Siz fidanın sağlıklı büyümesi için başka ne yapardınız?","Uygun öğrenci yanıtı."]]},
 {title:"Kütüphane Günü",text:"Arda, cumartesi günü annesiyle kütüphaneye gitti. Önce raflardaki kitapları inceledi. Hayvanlarla ilgili bir kitap seçti ve sessiz bir masaya oturdu. Kitabı bitiremediği için görevliye kitabı eve götürüp götüremeyeceğini sordu. Görevli kitabı ödünç verdi ve bir hafta sonra geri getirmesini istedi.",qs:[
-["Arda kütüphaneye hangi gün gitti?","Cumartesi günü."],["Arda kiminle kütüphaneye gitti?","Annesiyle."],["Arda nasıl bir kitap seçti?","Hayvanlarla ilgili bir kitap."],["Arda neden kitabı eve götürmek istedi?","Kitabı bitiremediği için."],["Görevli Arda'dan ne istedi?","Kitabı bir hafta sonra geri getirmesini."],["Arda kitap seçmeden önce ne yaptı?","Raflardaki kitapları inceledi."],["Kütüphanede neden sessiz olmak gerekir?","Okuyanları rahatsız etmemek için."],["'Ödünç' sözcüğü metinde ne anlatmaktadır?","Bir süre kullanıp geri vermek üzere alma."],["Olayları oluş sırasına göre kısaca yazınız.","Kütüphaneye gitti; kitapları inceledi; kitap seçti/okudu; ödünç aldı."],["Metnin konusu nedir?","Arda'nın kütüphane ziyareti."],["Metne uygun başka bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Arda Kütüphanede."],["Arda kitabı zamanında geri getirmezse ne gibi bir sorun olabilir?","Başka kişiler kitaptan yararlanamayabilir vb."]]}];
-function reading2Worksheet(count){let p=random(reading2),chosen=shuffle(p.qs.slice()).slice(0,Math.min(count,p.qs.length));return chosen.map((x,i)=>q((i===0?"<strong>"+p.title+"</strong><div class='passage'>"+p.text+"</div>":"")+x[0]+"<div class='line'></div>",x[1],"reading"));}
+["Arda kütüphaneye hangi gün gitti?","Cumartesi günü."],["Arda kiminle kütüphaneye gitti?","Annesiyle."],["Arda nasıl bir kitap seçti?","Hayvanlarla ilgili bir kitap."],["Arda neden kitabı eve götürmek istedi?","Kitabı bitiremediği için."],["Görevli Arda'dan ne istedi?","Kitabı bir hafta sonra geri getirmesini."],["Arda kitap seçmeden önce ne yaptı?","Raflardaki kitapları inceledi."],["Kütüphanede neden sessiz olmak gerekir?","Okuyanları rahatsız etmemek için."],["'Ödünç' sözcüğü metinde ne anlatmaktadır?","Bir süre kullanıp geri vermek üzere alma."],["Olayları oluş sırasına göre kısaca yazınız.","Kütüphaneye gitti; kitapları inceledi; kitap seçti/okudu; ödünç aldı."],["Metnin konusu nedir?","Arda'nın kütüphane ziyareti."],["Metne uygun başka bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Arda Kütüphanede."],["Arda kitabı zamanında geri getirmezse ne gibi bir sorun olabilir?","Başka kişiler kitaptan yararlanamayabilir vb."]]},
+{title:"Yağmur Ölçer",text:"Ece ve Mert, sınıf penceresinin önüne şeffaf bir kap koydu. Amaçları bir haftada yağan yağmuru gözlemlemekti. Her gün ders başlamadan önce kaptaki suyu kontrol edip miktarını çizelgeye işaretlediler. Salı günü kapta az, perşembe günü ise daha çok su birikti. Hafta sonunda çizelgeye birlikte baktılar. Yağışın her gün aynı olmadığını gördüler. Öğretmenleri, ölçüm yaparken her gün aynı saatte kontrol etmenin karşılaştırmayı kolaylaştırdığını anlattı.",qs:[
+["Ece ve Mert kabı nereye koydu?","Sınıf penceresinin önüne."],["Çocuklar neyi gözlemlemek istedi?","Bir haftada yağan yağmuru."],["Kaptaki suyu ne zaman kontrol ettiler?","Her gün ders başlamadan önce."],["Salı ve perşembe günlerinden hangisinde daha çok su birikti?","Perşembe günü."],["Çocuklar ölçümleri nereye kaydetti?","Çizelgeye."],["Yağışın her gün aynı olmadığını nasıl anladılar?","Günlük ölçümleri karşılaştırdılar."],["Ölçümü her gün aynı saatte yapmak neden yararlıdır?","Karşılaştırmayı daha doğru ve kolay yapar."],["Metindeki ‘miktar’ sözcüğü neyi anlatır?","Bir şeyin ne kadar olduğunu."],["Olayları sıralayınız: çizelgeyi inceleme – kabı koyma – günlük ölçüm yapma.","Kabı koyma – günlük ölçüm yapma – çizelgeyi inceleme."],["Metnin konusu nedir?","Yağmur miktarının gözlem ve çizelgeyle izlenmesi."],["Metne başka bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Bir Haftalık Yağmur Gözlemi."],["Çocuklar ölçüm saatini her gün değiştirseydi karşılaştırma nasıl etkilenebilirdi?","Ölçümler aynı koşullarda olmayacağı için karşılaştırma zorlaşabilirdi."]]},
+{title:"Sınıf Kitaplığı",text:"2-A sınıfındaki öğrenciler kitaplarını paylaşmak için küçük bir kitaplık kurdu. Her öğrenci evinden bir kitap getirdi ve kitabının içine adını yazan bir ayraç koydu. Öğretmen, kitap alanların adını ve kitabı geri getireceği günü listeye yazmalarını istedi. İlk hafta Deniz bir masal kitabı aldı. Kitabı bitirince zamanında geri getirdi. Arkadaşları, kitapları özenli kullanıp sırayla okuyunca herkesin yeni kitaplar keşfedebildiğini fark etti.",qs:[
+["Öğrenciler kitaplığı neden kurdu?","Kitaplarını paylaşmak için."],["Öğrenciler kitaplarının içine ne koydu?","Adını yazan bir ayraç."],["Kitap alanlar listeye hangi bilgileri yazdı?","Adlarını ve kitabı geri getirecekleri günü."],["İlk hafta Deniz ne tür bir kitap aldı?","Bir masal kitabı."],["Deniz kitabı bitirince ne yaptı?","Zamanında geri getirdi."],["Kitapları özenli kullanmak neden önemlidir?","Başkalarının da kitaplardan yararlanabilmesi için."],["‘Keşfetmek’ sözcüğü metinde ne anlama yakındır?","Yeni bir şeyi bulmak ya da tanımak."],["Olayları sıralayınız: Deniz kitabı aldı – sınıf kitaplığı kuruldu – Deniz kitabı geri getirdi.","Sınıf kitaplığı kuruldu – Deniz kitabı aldı – Deniz kitabı geri getirdi."],["Metnin konusu nedir?","Sınıfta kurulan kitaplık ve kitap paylaşımı."],["Metne farklı bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Kitaplarımızı Paylaşıyoruz."],["Öğrencilerin sırayla kitap okuması hangi davranışları destekler?","Paylaşma ve sorumluluk."],["Kitap alan bir öğrenci kitabı zamanında getirmezse ne olabilir?","Sıradaki öğrenci kitabı okuyamayabilir."]]},
+{title:"Parkı Temiz Tutalım",text:"Pazar sabahı Zeynep ailesiyle parka gitti. Oyun alanının yanında yere bırakılmış birkaç kâğıt gördü. Babasıyla birlikte kâğıtları geri dönüşüm kutusuna attılar. Zeynep, parkta oynayan çocuklara da çöplerini kutuya atmalarını hatırlattı. Bir çocuk, elindeki meyve kabuğunu yere bırakacakken durdu ve çöp kutusuna götürdü. Dönüşte Zeynep parkın daha temiz göründüğünü fark etti. Ailesi, ortak kullanılan yerleri temiz tutmanın herkesin sorumluluğu olduğunu konuştu.",qs:[
+["Zeynep parka kiminle gitti?","Ailesiyle."],["Zeynep oyun alanının yanında ne gördü?","Yere bırakılmış birkaç kâğıt."],["Kâğıtları nereye attılar?","Geri dönüşüm kutusuna."],["Zeynep çocuklara neyi hatırlattı?","Çöplerini kutuya atmalarını."],["Çocuk meyve kabuğunu yere attı mı?","Hayır; durup çöp kutusuna götürdü."],["Zeynep dönüşte ne fark etti?","Park daha temiz görünüyordu."],["‘Ortak kullanılan yer’ ne demektir?","Birçok kişinin yararlandığı yer."],["Olayları sıraya koyunuz: çocuk çöpü kutuya attı – Zeynep kâğıtları gördü – aile parka gitti.","Aile parka gitti – Zeynep kâğıtları gördü – çocuk çöpü kutuya attı."],["Metnin konusu nedir?","Parkı temiz tutmak için yapılanlar."],["Metne uygun başka bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Temiz Park."],["Zeynep'in davranışı çevresindekileri nasıl etkilemiş olabilir?","Onlara çöpleri kutuya atmayı hatırlatmış olabilir."],["Ortak alanları temiz tutmak neden herkesin sorumluluğudur?","Herkes bu alanlardan yararlanır; temiz kalması herkesi etkiler."]]},
+{title:"Gösteri Günü",text:"Sınıf, ailelere kısa bir şiir dinletisi hazırlıyordu. Öğrenciler şiirlerini seçti ve sırayla prova yaptı. Elif sahneye çıkarken heyecanlandı; arkadaşı Can ona derin bir nefes almasını ve ilk dizeyi sakince okumasını söyledi. Dinleti başlayınca herkes sırasını bekledi. Elif şiirini bitirdiğinde sınıf arkadaşları onu alkışladı. Gösteri sonunda öğretmen, birlikte çalışmanın ve birbirini desteklemenin hazırlığı kolaylaştırdığını söyledi.",qs:[
+["Sınıf ne hazırlıyordu?","Ailelere kısa bir şiir dinletisi."],["Öğrenciler şiirlerini seçtikten sonra ne yaptı?","Sırayla prova yaptı."],["Elif sahneye çıkarken nasıl hissetti?","Heyecanlandı."],["Can, Elif'e ne önerdi?","Derin bir nefes alıp ilk dizeyi sakince okumasını."],["Dinleti başlayınca öğrenciler ne yaptı?","Sıralarını bekledi."],["Elif şiirini bitirince arkadaşları nasıl karşılık verdi?","Onu alkışladı."],["Can'ın davranışını hangi sözcük anlatır?","Destekleyici / yardımsever."],["Olayları sıralayınız: dinleti başladı – prova yapıldı – Elif şiirini okudu.","Prova yapıldı – dinleti başladı – Elif şiirini okudu."],["Metnin konusu nedir?","Sınıfın şiir dinletisine hazırlanması."],["Metne başka bir başlık yazınız.","Uygun öğrenci yanıtı; ör. Şiir Dinletisi."],["Öğretmen birlikte çalışmanın hangi yararını söyledi?","Hazırlığı kolaylaştırdığını."],["Can destek olmasaydı Elif ne yapabilirdi?","Yine derin nefes alıp sakince okumayı deneyebilir ya da öğretmeninden destek isteyebilirdi."]]}];
+// V112: 2. sınıf okuduğunu anlama havuzu 50 özgün metne çıkarıldı.
+// Her metin; bilgi bulma, olay sırası, çıkarım, sözcük, konu, başlık ve uygulama soruları üretir.
+const reading2ExtraData=[
+["Tohum Takası","Sınıf baharda tohum takası yaptı. Ada fasulye tohumlarını masaya koydu; arkadaşları domates ve ayçiçeği tohumu getirdi. Herkes tohumlarını etiketleyip saksıya ekti. Birkaç gün sonra Ada ilk yeşil filizi görünce bakım çizelgesine tarih yazdı.","Ada masaya hangi tohumları koydu?","Fasulye tohumlarını.","Öğrenciler tohumları paylaşarak farklı bitkiler yetiştirdi.","filiz","Yeni büyümeye başlayan bitki.","Sınıfta tohumların paylaşılıp yetiştirilmesi.","Ada tohumları masaya koydu, tohumları etiketledi ve ekti, filiz çıkınca çizelgeye tarih yazdı."],
+["Sessiz Sıra","Yağmurlu sabah öğrenciler okul kapısında sıraya girdi. Islak şemsiyelerini askılığa bıraktılar. Kerem koridorda acele ederken arkadaşına çarpmamak için yavaşladı; ayakkabısındaki suyu da paspasa sildi. Koridor kısa sürede kuru ve düzenli kaldı.","Kerem arkadaşına çarpmamak için ne yaptı?","Yavaşladı.","Dikkatli davranmak koridorun güvenli ve temiz kalmasına yardım etti.","düzenli","Belirli bir sıraya ve biçime uygun.","Okul koridorunda dikkatli davranılması.","Öğrenciler sıraya girdi, şemsiyelerini bıraktı, koridorda yürüdü, Kerem paspasa suyu sildi."],
+["Kayıp Suluk","Mina beden eğitimi dersinden sonra mavi suluğunu bulamadı. Önce sırasının altına baktı, sonra öğretmenine sordu. Öğretmen suluğu bahçedeki çeşmenin yanında gördüğünü söyledi. Mina suluğunu orada buldu; ad etiketi kime ait olduğunu anlamayı kolaylaştırmıştı.","Mina suluğunu nerede buldu?","Bahçedeki çeşmenin yanında.","Eşyaya ad etiketi koymak sahibini bulmayı kolaylaştırır.","etiket","Bir eşyayı tanıtan küçük yazı veya işaret.","Mina'nın kayıp suluğunu arayıp bulması.","Mina suluğunu bulamadı, sırasına baktı, öğretmenine sordu ve çeşmenin yanında buldu."],
+["Fırın Kokusu","Bora dedesiyle ekmek yapmak için erkenden uyandı. Dedesi unu kaba koydu, Bora suyu ekledi; birlikte hamuru yoğurup üzerini örttüler. Hamur kabarınca dedesi fırına verdi. Mutfak ekmek kokunca Bora, hamurun kabarması için beklemek gerektiğini öğrendi.","Bora ekmek yapmak için kiminle çalıştı?","Dedesiyle.","Hamurun kabarması için bir süre beklemek gerekir.","kabarma","Bir şeyin şişip büyümesi.","Bora'nın dedesiyle ekmek yapmayı öğrenmesi.","Un kaba kondu, su eklendi, hamur yoğrulup dinlendirildi ve fırına verildi."],
+["Renkli Şemsiye","Lara okul çıkışında yağmur başlayınca şemsiyesi olmayan arkadaşı İpek'i durağa birlikte yürümeye çağırdı. Şemsiyeyi ikisinin üzerine tuttu; su birikintilerinden yavaşça geçtiler. Otobüs gelince İpek teşekkür etti. Lara küçük bir paylaşımın arkadaşının yolunu kolaylaştırdığını düşündü.","Lara kimi durağa kadar çağırdı?","Arkadaşı İpek'i.","Lara şemsiyesini paylaşarak arkadaşına yardım etti.","paylaşım","Bir şeyi başkasının da kullanmasına izin verme.","Lara'nın yağmurda arkadaşına yardım etmesi.","Yağmur başladı, Lara İpek'i çağırdı, birlikte durağa yürüdüler ve otobüse bindiler."],
+["Takvimdeki Yıldız","Ömer her akşam ertesi gün için çantasını hazırlamaya karar verdi. Kitaplarını kontrol edip kalem kutusunu koydu. Annesi, hazırlığını bitirdiği gün takvimde bir yıldız boyamasını önerdi. Bir hafta sonra Ömer sabah acele etmeden okula çıktı.","Ömer her akşam ne yapmaya karar verdi?","Ertesi gün için çantasını hazırlamaya.","Önceden hazırlanmak sabah acele etmesini önledi.","hazırlık","Bir işe başlamadan önce gerekli şeyleri düzenleme.","Ömer'in çantasını düzenli hazırlama alışkanlığı.","Ömer çantasını hazırlamaya karar verdi, eşyalarını kontrol etti, takvimde günleri işaretledi ve sabah zamanında çıktı."],
+["Kedinin Su Kabı","Apartman bahçesindeki kedi sıcak bir günde gölgede dinleniyordu. Eylül su kabının boş olduğunu fark edip ailesine haber verdi. Birlikte kaba temiz su koydular. Eylül kabı her gün kontrol etmeyi üstlendi; ertesi gün su azaldığında yeniden doldurdu.","Eylül su kabında ne fark etti?","Kabın boş olduğunu.","Hayvanların suya ulaşması için kapları düzenli kontrol etmek gerekir.","üstlenmek","Bir işi yapma sorumluluğunu almak.","Eylül'ün bahçedeki kedi için su sağlaması.","Eylül boş kabı fark etti, ailesine haber verdi, kaba su koydu ve ertesi gün yeniden kontrol etti."],
+["Kâğıt Uçak Yarışı","Mert ile Selin kâğıt uçaklarını aynı çizgiden uçurmak istedi. Eş kâğıtlar seçip uçaklarını katladılar. Öğretmen herkesin aynı yerden sırayla atış yapmasını söyledi. Selin'in uçağı daha uzağa gitti. Çocuklar uçakların katlanışını da karşılaştırdı.","Çocuklar uçaklarını nereden uçurmak istedi?","Aynı çizgiden.","Adil karşılaştırma için başlangıç yeri ve kâğıtlar aynı olmalıdır.","karşılaştırmak","Benzerlikleri ve farklılıkları incelemek.","Mert ile Selin'in kâğıt uçaklarını deneyip karşılaştırması.","Eş kâğıt seçtiler, uçakları katladılar, aynı çizgiden uçurdular ve sonuçları karşılaştırdılar."],
+["Pazar Çantası","Yasemin annesiyle pazara giderken bez çantalarını aldı. Elma, domates ve havuç seçtiler. Yasemin ezilmesin diye domatesleri çantanın üstüne yerleştirdi. Eve dönünce sebzeleri yıkayıp buzdolabına koymaya yardım etti. Annesi planlı alışverişin poşet kullanımını azalttığını söyledi.","Yasemin domatesleri çantanın neresine koydu?","Üst bölümüne.","Bez çanta kullanmak poşet tüketimini azaltabilir; dikkatli yerleştirmek ürünleri korur.","planlı","Önceden düşünülerek düzenlenmiş.","Yasemin'in annesiyle pazarda alışveriş yapması.","Bez çantaları aldılar, ürünleri seçtiler, domatesleri üste koydular ve eve dönünce sebzeleri yerleştirdiler."],
+["Kuşlara Bakış","Sınıf penceresine kuş gözlem kartı asıldı. Defne bahçeye gelen kuşları sessizce izleyip renklerini ve kondukları dalları not etti. Bir hafta sonra notlarını sınıfta paylaştı. Öğretmen, kuşları ürkütmemeyi ve yuvalarına yaklaşmamayı hatırlattı.","Defne kuşlarla ilgili hangi bilgileri not etti?","Renklerini ve hangi dala konduklarını.","Canlıları gözlemlerken onları ürkütmemek ve yaşam alanlarına zarar vermemek gerekir.","gözlem","Dikkatle bakıp bilgi edinme.","Çocukların bahçedeki kuşları gözlemlemesi.","Çocuklar kuşları izledi, Defne not aldı, notlar bir hafta sonra sınıfta paylaşıldı."],
+["Rüzgârlı Gün","Ali uçurtmasını uçurmak için geniş çayıra gitti. Babası önce rüzgârın yönünü kontrol etmesini söyledi. Rüzgâr esince babası uçurtmayı kaldırdı; Ali ipi dengeli tuttu. Uçurtma yükseldi. Eve dönerken Ali onu kuru bir yere kaldırdı.","Ali uçurtmasını uçurmak için nereye gitti?","Geniş çayıra.","Rüzgârın yönünü bilmek uçurtmanın yükselmesine yardımcı oldu.","dengeli","Sallanmadan, kararlı biçimde duran.","Ali'nin babasıyla uçurtma uçurması.","Ali çayıra gitti, rüzgârın yönünü kontrol etti, uçurtmayı kaldırdı ve ipi dengeli tuttu."],
+["Damlaya Damlaya","Sınıf suyu dikkatli kullanmak için görev listesi hazırladı. Nöbetçiler muslukları kontrol etti. Zeynep lavaboda damlayan musluğu görüp öğretmenine haber verdi. Musluk onarılınca boşa akan su durdu. Çocuklar küçük bir sızıntının zamanla çok su harcayabileceğini konuştu.","Zeynep lavaboda ne fark etti?","Musluktan damla damla su aktığını.","Sızıntıyı bildirmek su israfını önlemeye yardım eder.","israf","Bir şeyi gereksiz yere harcama.","Sınıfta suyu dikkatli kullanmak için yapılanlar.","Görev listesi hazırlandı, Zeynep sızıntıyı gördü, öğretmene haber verdi ve musluk onarıldı."],
+["Kırık Dal","Fırtınadan sonra okul bahçesinde ince bir dal yere düşmüştü. Efe dala basılabileceğini fark edip öğretmenine haber verdi. Öğretmen çocuklardan uzak durmalarını istedi; görevli dalı güvenli biçimde kaldırdı. Efe tehlikeli bir şeyi tek başına düzeltmek yerine yetişkine haber vermenin doğru olduğunu öğrendi.","Efe yerdeki dalı görünce ne yaptı?","Öğretmenine haber verdi.","Tehlikeli olabilecek bir durumu yetişkine bildirmek güvenliği sağlar.","tehlikeli","Zarar verme olasılığı bulunan.","Fırtına sonrası bahçedeki dalın güvenli biçimde kaldırılması.","Fırtına çıktı, dal düştü, Efe öğretmene haber verdi ve görevli dalı kaldırdı."],
+["Oyuncak Köprüsü","Sınıf oyuncak arabalar için köprü yapmak istedi. Nisa tahta blokları dizdi, Aras uçları destekledi. İlk denemede köprü sallandı ve araba durdu. Çocuklar blokları sıklaştırıp yeniden denedi. Bu kez araba karşıya geçti.","İlk denemede köprüye ne oldu?","Sallandı ve araba durdu.","Sorun çıkınca yapıyı değiştirip yeniden denemek çözüm bulmaya yardım etti.","desteklemek","Bir şeyin sağlam durmasına yardım etmek.","Çocukların oyuncak araba için köprü yapıp denemesi.","Bloklar dizildi, köprü sallandı, çocuklar blokları sıklaştırdı ve araba karşıya geçti."],
+["Sıcak Çorba","Duru okuldan gelince çorbasının çok sıcak olduğunu gördü. Annesi birkaç dakika beklemesini söyledi. Duru masayı hazırlarken çorba soğudu; dikkatlice karıştırıp küçük bir yudum aldı. Annesi sıcak yiyecekleri aceleyle içmenin ağzı yakabileceğini anlattı.","Duru çorbası çok sıcak olunca ne yaptı?","Birkaç dakika bekledi.","Beklemek ve dikkatli içmek yanmayı önleyebilir.","aceleyle","Çok hızlı ve düşünmeden.","Duru'nun sıcak çorbayı dikkatli içmesi.","Duru çorbayı sıcak gördü, bekledi, karıştırdı ve küçük bir yudum aldı."],
+["Renkli Yapraklar","Sonbaharda Nehir okul yolundaki ağaçlardan düşen yaprakları inceledi. Yere zarar vermeden birkaç yaprak topladı, büyüklüklerine göre sıraladı ve renklerini defterine çizdi. Öğretmeni mevsim değişince bitkilerin görünüşünün de değişebileceğini anlattı.","Nehir yaprakları hangi özelliğe göre sıraladı?","Büyüklüklerine göre.","Yaprakları incelemek mevsim değişikliklerini fark etmeye yardım etti.","mevsim","Yılın hava ve doğa özellikleri farklı olan bölümlerinden biri.","Nehir'in sonbahar yapraklarını incelemesi.","Nehir yaprakları inceledi, birkaçını topladı, büyüklüklerine göre sıraladı ve renklerini çizdi."],
+["Paylaşılan Boyalar","Resim dersinde herkes aynı mavi boyaya ihtiyaç duydu. Öğretmen sırayla kullanmalarını önerdi. Eylül boyayı kullandı, kapağını kapatıp Arda'ya verdi. Arda işi bitince boyayı masaya koydu. Grup resmini tamamladı ve boyaları kutuya kaldırdı.","Eylül mavi boyayı kullandıktan sonra ne yaptı?","Kapağını kapatıp Arda'ya verdi.","Sırayla paylaşmak herkesin malzemeyi kullanmasını ve boyanın korunmasını sağladı.","sırayla","Bir sırayı izleyerek, peş peşe.","Resim dersinde boyaların paylaşılması.","Öğrenciler boyayı sırayla kullandı, resmi tamamladı ve boyaları kutuya kaldırdı."],
+["Minik Tamirci","Berk'in oyuncak kamyonunun tekerleği gevşemişti. Babasıyla kamyonu masaya koyup incelediler. Berk küçük vidayı buldu, babası uygun tornavidayı seçti. Vidayı sıkınca tekerlek yerine oturdu. Berk aletleri iş bitince kaldırmayı öğrendi.","Berk'in kamyonunda hangi parça gevşemişti?","Tekerleği.","Bir yetişkinin yardımıyla tamir yapmak ve aletleri düzenli kullanmak önemlidir.","uygun","İşe yarayan, doğru olan.","Berk'in babasıyla oyuncak kamyonunu tamir etmesi.","Kamyon incelendi, vida bulundu, tornavida seçildi ve vida sıkıldı."],
+["Kütüphane Kartı","Sena okul kütüphanesinden ilk kez kitap alacaktı. Görevli ona kart verdi ve iade tarihini gösterdi. Tarih yaklaşınca Sena kitabı çantasına koyup zamanında teslim etti. Sonra yeni bir kitap seçti ve kartını kalem kutusunun özel gözüne yerleştirdi.","Görevli Sena'ya hangi tarihi gösterdi?","Kitabın iade tarihini.","İade tarihini takip etmek kitabı zamanında geri vermeye yardım eder.","iade","Alınan bir şeyi geri verme.","Sena'nın okul kütüphanesinden kitap almayı öğrenmesi.","Sena kart aldı, kitap seçti, iade tarihini takip etti, kitabı teslim edip yenisini aldı."],
+["Küçük Harita","Murat yeni sınıfını bulmak için öğretmeninin çizdiği basit haritaya baktı. Haritada giriş, merdiven ve sınıf işaretliydi. Murat kapıdan girdi, merdiveni çıktı ve koridorun sonundaki sınıfa ulaştı. Haritadaki işaretleri izlediği için yanlış kata gitmedi.","Murat sınıfını bulmak için neye baktı?","Öğretmeninin çizdiği basit haritaya.","Haritadaki işaretleri izlemek doğru yere ulaşmasını sağladı.","işaret","Bir yeri veya bilgiyi gösteren şekil ya da belirti.","Murat'ın harita yardımıyla sınıfını bulması.","Murat kapıdan girdi, merdiveni çıktı ve koridorun sonundaki sınıfa ulaştı."],
+["Kardan Adam","Gece yağan karın ardından İpek ve kardeşi bahçeye çıktı. Büyük bir kar topunu gövde yaptılar, üstüne küçük bir top koydular. Gözleri için taş, burnu için havuç kullandılar. Güneş yükselince kardan adam erimeye başladı. İpek, karın sıcak havada suya dönüşebileceğini anlattı.","İpek kardan adamın burnu için ne kullandı?","Havuç.","Güneş ısıttığı için kar erimeye başladı.","dönüşmek","Başka bir duruma veya biçime geçmek.","İpek ile kardeşinin kardan adam yapması ve karın erimesini gözlemesi.","Büyük kar topu yapıldı, küçük top üste kondu, yüzü süslendi ve güneşte erime başladı."],
+["Küçük Fırça","Selim resim yaparken masaya boya damlattı. Öğretmeni ona fırça ve nemli bez verdi. Selim önce fazla boyayı fırçayla topladı, sonra masayı sildi. Malzemeleri yıkayıp yerine koydu. Arkadaşı da onun ardından kendi çalışma alanını düzenledi.","Selim masayı temizlemek için hangi iki şeyi kullandı?","Fırça ve nemli bez.","Düzenli davranmak arkadaşına da çalışma alanını toplaması için örnek oldu.","malzeme","Bir işi yapmak için kullanılan araç veya gereç.","Selim'in resim masasını temizleyip malzemelerini toplaması.","Selim fazla boyayı topladı, masayı sildi, malzemeleri yıkadı ve yerine koydu."],
+["Otobüs Durağı","Asya dedesiyle otobüs beklerken sıranın sonuna geçti. Otobüs gelince önce inen yolcuların çıkmasını bekledi. Sonra dedesine yer bulup oturdu. Yol boyunca çöpünü çantasındaki poşete koydu. Dedesi toplu taşımada başkalarını düşünmenin önemli olduğunu söyledi.","Asya otobüs gelince önce neyi bekledi?","İnen yolcuların çıkmasını.","Sıraya uymak ve başkalarını düşünmek yolculuğu düzenli kılar.","toplu taşıma","Birçok kişinin birlikte kullandığı ulaşım aracı.","Asya'nın dedesiyle otobüs yolculuğunda kurallara uyması.","Asya sıraya geçti, yolcuların inmesini bekledi, dedesiyle oturdu ve çöpünü sakladı."],
+["Kavanozdaki Düğmeler","Nene dikiş kutusundaki düğmeleri renklerine göre ayırmak istedi. Elif masaya küçük tabaklar koydu. Beyaz düğmeleri bir tabağa, mavileri diğerine yerleştirdi. Sonra düğmeleri sayıp sayıları not etti. Nene aradığı düğmeyi kolay buldu.","Elif düğmeleri hangi özelliklerine göre ayırdı?","Renklerine göre.","Düzenlemek ve saymak aranan düğmeyi kolay bulmayı sağladı.","ayırmak","Benzer özelliktekileri farklı gruplara koymak.","Elif'in ninesine düğmeleri düzenlemede yardım etmesi.","Tabaklar kondu, düğmeler renge göre ayrıldı, sayıldı ve sayılar not edildi."],
+["Bahçe Takvimi","Öğrenciler sebze yatağını izlemek için takvim hazırladı. Nöbetçi her gün toprağın kuru olup olmadığına baktı. Pazartesi sulama gerekti, salı günü toprak nemliydi. Sulama günlerini işaretlediler. Böylece bitkileri gereğinden fazla sulamadılar ve görevliyi herkes gördü.","Öğrenciler takvime hangi günleri işaretledi?","Sulama günlerini.","Takvim fazla sulamayı önledi ve görev paylaşımını görünür yaptı.","nemli","İçinde az miktarda su bulunan, kuru olmayan.","Öğrencilerin sebze yatağının bakımını takvimle düzenlemesi.","Takvim hazırlandı, toprak kontrol edildi, sulama günleri kaydedildi ve görevler takip edildi."],
+["Düşen Kitaplar","Koridordaki raftan birkaç kitap yere düştü. Eylül ve Baran koridorun boşalmasını bekledi, sonra kitapları boyutlarına göre dizdi. En büyükleri alt rafa koydular. Öğretmen, ağır kitapların alta yerleştirilmesinin rafın dengeli durmasına yardım ettiğini anlattı.","Eylül ve Baran kitapları hangi özelliğe göre dizdi?","Boyutlarına göre.","Ağır kitapları alta koymak rafın dengesini korumaya yardım eder.","dengeli","Sallanmadan, sağlam ve kararlı duran.","Çocukların düşen kitapları güvenli biçimde rafa dizmesi.","Kitaplar düştü, çocuklar koridorun boşalmasını bekledi, kitapları boyutlarına göre dizdi ve büyükleri alta koydu."],
+["Sınıfın Gölgesi","Güneşli bir günde öğrenciler ağacın gölgesinin sabah ve öğleden sonra farklı yerde olduğunu fark etti. Sabah aynı noktaya küçük bir taş koyup gölgeyi çizdiler. Öğleden sonra yeniden çizince şeklin değiştiğini gördüler. Gün içindeki gözlemlerini sınıfta konuştular.","Öğrenciler sabah aynı noktaya ne koydu?","Küçük bir taş.","Gölgenin yeri günün farklı saatlerinde değişebilir.","gölge","Işığın önüne bir şey gelince oluşan karanlık alan.","Öğrencilerin gün içinde gölgenin yerini gözlemlemesi.","Sabah taş kondu ve gölge çizildi, öğleden sonra gölge yeniden çizildi ve çizimler karşılaştırıldı."],
+["Mavi Kapak","Arda kitabı sınıf kitaplığına geri koydu ama yanlış rafa bıraktı. Kitapların konu etiketlerine göre dizildiğini arkadaşından öğrendi. Etiketi okuyup kitabı hayvanlar bölümüne taşıdı. Sonraki kitabı yerine koyarken önce etiketine baktı.","Arda kitabı doğru rafa koymak için neyi okudu?","Konu etiketini.","Rafları düzenlerken konu etiketine bakmak doğru yeri buldurur.","etiket","Bir şeyi tanıtan veya sınıflandıran yazı ya da işaret.","Arda'nın kitabı doğru rafa yerleştirmeyi öğrenmesi.","Arda kitabı rafa koydu, yanlış yerde olduğunu fark etti, etiketi okudu ve hayvanlar bölümüne taşıdı."],
+["Çizgili Defter","Nehir yazı çalışmasında harflerinin satırın dışına taştığını fark etti. Öğretmeni yavaş yazmasını ve harfleri çizgiler arasında tutmasını önerdi. Nehir kısa bir cümle yazıp kontrol etti. İkinci denemesinde harfleri daha düzenli oldu.","Öğretmeni Nehir'e nasıl yazmasını önerdi?","Yavaşça ve harfleri çizgiler arasında tutarak.","Yavaş ve dikkatli çalışmak yazının düzenlenmesine yardım etti.","düzenli","Belirli bir sıraya ve biçime uygun.","Nehir'in yazısını daha okunaklı hâle getirmek için çalışması.","Nehir sorunu fark etti, yavaş yazdı, yazısını kontrol etti ve ikinci denemede daha düzenli yazdı."],
+["Küçük Nota","Müzik dersinde Ozan ritmi kaçırınca grup yeniden denedi. Öğretmen ritmi önce yavaşça alkışladı. Çocuklar birlikte alkışlayıp hızlarını artırdı. Ozan arkadaşlarını dikkatle dinleyince doğru yerde alkışladı. Grup şarkıyı uyum içinde söyledi.","Öğretmen ritmi ilk olarak nasıl gösterdi?","Yavaşça alkışlayarak.","Arkadaşlarını dikkatle dinlemek Ozan'ın ritme uyum sağlamasına yardım etti.","uyum","Birlikte düzenli ve birbirine uygun olma.","Sınıfın ritim çalışmasıyla şarkıyı birlikte söylemesi.","Ritim yavaşça gösterildi, çocuklar alkışladı, hız artırıldı ve şarkı söylendi."],
+["Sepetteki Elmalar","Mert elmaları sepete koymadan önce çürük olanları ayırdı. Sağlam elmaları yıkadı ve kardeşiyle paylaştı. Bir elmanın ezik olduğunu görünce onu diğerlerinden ayrı tuttu. Annesi yiyecekleri kontrol edip temizlemenin önemli olduğunu söyledi.","Mert elmaları sepete koymadan önce ne yaptı?","Çürük olanları ayırdı.","Yiyecekleri kontrol edip yıkamak temiz ve sağlıklı tüketimi destekler.","tüketim","Bir yiyeceği veya ürünü kullanma ya da yeme.","Mert'in elmaları kontrol edip kardeşiyle paylaşması.","Elmaları kontrol etti, çürükleri ayırdı, sağlamları yıkadı ve kardeşiyle paylaştı."],
+["Küçük Pusula","Gezi sırasında sınıf parkın girişini bulmak için öğretmenin krokisinden yararlandı. Krokide çeşme, oyun alanı ve çıkış işaretliydi. Defne çeşmenin yanından geçti, oyun alanını gördü ve çıkışa ulaştı. Arkadaşları simgelerin yön bulmayı kolaylaştırdığını fark etti.","Krokide hangi yerler işaretlenmişti?","Çeşme, oyun alanı ve çıkış kapısı.","Krokideki simgeler parkta yön bulmayı kolaylaştırdı.","kroki","Bir yerin kuşbakışı basit çizimi.","Defne'nin parkta kroki yardımıyla çıkışı bulması.","Defne çeşmenin yanından geçti, oyun alanını gördü ve çıkışa ulaştı."],
+["Sallanan Sandalye","Eren okuma köşesindeki sandalyenin sallandığını fark etti. Kullanmak yerine öğretmenine haber verdi. Öğretmen sandalyeyi kenara çekip görevliye bildirdi. Çocuklar o gün minderlerde kitap okudu. Sandalye onarılınca yeniden yerine kondu.","Eren sandalyenin sallandığını görünce kime haber verdi?","Öğretmenine.","Bozuk bir eşyayı kullanmamak düşme ve yaralanma riskini azaltır.","onarılmak","Bozulan bir şeyin düzeltilmesi.","Eren'in sallanan sandalyeyi fark edip güvenli davranması.","Eren sandalyeyi fark etti, öğretmene haber verdi, sandalye kaldırıldı ve onarıldı."],
+["Piknik Listesi","Aylin pikniğe gitmeden önce su, meyve, örtü ve çöp poşetini listeye yazdı. Ailesiyle yiyeceklerini paylaştı. Dönüşte yerde kalan kâğıtları topladı ve çöp poşetine koydu. Ailesi alanı temiz bırakmanın iyi bir alışkanlık olduğunu söyledi.","Aylin listeye hangi eşyaları yazdı?","Su, meyve, örtü ve çöp poşeti.","Liste hazırlığı kolaylaştırdı; çöpleri toplamak alanı temiz bıraktı.","alışkanlık","Sık sık yapılan ve zamanla yerleşen davranış.","Aylin'in ailesiyle piknik hazırlayıp alanı temiz bırakması.","Aylin liste yaptı, pikniğe gitti, yiyecekleri paylaştı ve dönüşte çöpleri topladı."],
+["Bir Damla Boya","Resim kulübünde öğretmen sarı ve mavi boyayı karıştırınca yeşil oluştuğunu gösterdi. İdil önce kâğıdın kenarında küçük bir deneme yaptı. Renk istediği gibi olunca ağacın yapraklarını boyadı. Deneme yapmak, resmi tamamlamadan önce rengi görmesini sağladı.","Sarı ve mavi boya karışınca hangi renk oluştu?","Yeşil.","Önce küçük bir deneme yapmak rengi görüp sonra güvenle kullanmayı sağlar.","karıştırmak","İki veya daha fazla şeyi bir araya getirmek.","İdil'in boyaları deneyerek resmini tamamlaması.","Boyalar karıştırıldı, İdil küçük bir deneme yaptı, rengi kontrol etti ve yaprakları boyadı."],
+["Yaşlı Ağaca Saygı","Mahalle çocukları oyun oynarken yaşlı ağacın çevresindeki toprağın ezildiğini gördü. Köklerine basmamak için oyun alanını biraz uzağa taşıdılar. Çevresine küçük bir ip çektikten sonra ağacın dibinde daha az ayak izi oldu. Çocuklar doğayı korumak için oyun yerini değiştirebileceklerini anladı.","Çocuklar oyun alanını neden uzağa taşıdı?","Ağacın köklerini ve çevresindeki toprağı korumak için.","Oyun yerini değiştirmek ağacın köklerini korumaya yardım etti.","kök","Bitkiyi toprağa bağlayan ve su alan bölümü.","Çocukların yaşlı ağacın çevresini koruması.","Çocuklar ezilmiş toprağı gördü, oyun alanını değiştirdi, çevreye ip çekti ve ayak izleri azaldı."],
+["Sıra Bende","Masa oyununda Deniz sürekli ilk oynamak istedi. Arkadaşları herkesin sırayla oynaması gerektiğini hatırlattı. Deniz zarları karıştırıp ilk sırayı arkadaşına verdi. Oyun boyunca oyuncular sırasını bekledi. Deniz kurallara uymanın oyunu daha eğlenceli yaptığını söyledi.","Deniz ilk sırayı kime verdi?","Arkadaşına.","Sıraya uymak oyunun adil ve keyifli sürmesini sağladı.","kural","Bir işte uyulması gereken düzen veya ilke.","Deniz'in masa oyununda sırayla oynamayı öğrenmesi.","Deniz ilk oynamak istedi, arkadaşları sırayı hatırlattı, Deniz arkadaşına öncelik verdi ve oyun sırayla sürdü."],
+["Kırmızı Balon","Lunaparkta Ece'nin kırmızı balonu elinden kaçıp ağaca takıldı. Babası güvenli yerde beklemelerini söyledi. Bir görevli balonun yerini gösterdi ve uzun bir çubukla aldı. Ece balonunu geri alınca ipini daha sıkı tutmayı öğrendi.","Ece'nin balonu nereye takıldı?","Ağaca.","Güvenli yerde beklemek ve görevli yardımı istemek doğru çözümdü.","görevli","Bir işi yapmakla sorumlu kişi.","Ece'nin kaçan balonunu güvenli biçimde geri alması.","Balon kaçtı, görevli yerini gösterdi, uzun çubukla aldı ve Ece ipi sıkı tuttu."],
+["Taze Hava","Öğretmen ders arasında sınıfın penceresini kısa süre açtı. Öğrenciler sıralarında bekledi. Birkaç dakika sonra pencere kapatıldı ve derse devam edildi. Ece sınıf havalanınca ortamın daha ferah olduğunu söyledi. Öğretmen pencereyi açarken güvenlik kurallarına uymayı hatırlattı.","Öğretmen sınıfın penceresini ne zaman açtı?","Ders arasında.","Sınıfı kısa süre havalandırmak ortamı ferahlatabilir; güvenlik kurallarına uyulmalıdır.","ferah","Temiz ve rahatlatıcı; bunaltıcı olmayan.","Sınıfın havalandırılması ve güvenli davranılması.","Ders arasında pencere açıldı, sınıf havalandı, pencere kapatıldı ve derse devam edildi."],
+["Dikiş Kutusu","Mina'nın çantasındaki küçük söküğü teyzesi fark etti. Teyzesi ipliği hazırlayıp çantayı onardı. Mina yanında bekledi ve iğnenin sivri olduğunu öğrendi. Teyzesi, kesici ve sivri araçları yetişkin yardımı olmadan kullanmaması gerektiğini anlattı.","Mina'nın çantasında ne vardı?","Küçük bir sökük.","İğne sivri olduğundan yetişkin yardımıyla kullanılmalıdır.","sivri","Ucu ince ve batıcı olan.","Mina'nın teyzesinin çantasını onarması ve güvenli araç kullanımı.","Sökük fark edildi, iplik hazırlandı, teyze çantayı dikti ve Mina güvenlik kuralını öğrendi."],
+["Sıcaklık Çizelgesi","Sınıf bir hafta boyunca sabah hava sıcaklığını termometreyle ölçtü. Öğrenci değeri çizelgeye yazdı. Çarşamba pazartesiden daha sıcaktı. Haftanın sonunda sayılara bakarak en sıcak günü buldular. Öğretmen ölçümü aynı saatte yapmanın karşılaştırmayı kolaylaştırdığını belirtti.","Öğrenciler hava sıcaklığını neyle ölçtü?","Termometreyle.","Aynı saatte ölçüm yapmak daha adil bir karşılaştırma sağlar.","çizelge","Bilgileri düzenli satır ve sütunlarda gösteren liste.","Sınıfın bir haftalık hava sıcaklığını ölçüp karşılaştırması.","Sıcaklık ölçüldü, değerler çizelgeye yazıldı ve hafta sonunda günler karşılaştırıldı."],
+["Küçük Sahne","Okul gösterisinde perde açılmadan önce öğrenciler kostümlerini kontrol etti. Zeynep arkadaşının eksik kurdelesini görünce yedek kutudan bir tane buldu. Gösteri başlayınca herkes rolünü oynadı. Öğretmen, hazırlıkta yardımlaşmanın gösterinin sorunsuz ilerlemesine katkı sağladığını söyledi.","Zeynep arkadaşına nasıl yardım etti?","Yedek kutudan eksik kurdele için bir tane buldu.","Önceden hazırlık yapmak ve yardımlaşmak gösterinin düzenli ilerlemesini sağladı.","katkı","Bir işin gerçekleşmesine yardım eden destek.","Öğrencilerin okul gösterisine hazırlanması ve yardımlaşması.","Kostümler kontrol edildi, Zeynep kurdeleyi buldu, gösteri başladı ve roller oynandı."],
+["Kuş Evi","Öğretmen ve öğrenciler okul bahçesine küçük bir kuş evi hazırladı. Önce karton kutunun üstünü su geçirmeyen kâğıtla kapladılar. Öğretmen kuş evini ağacın yüksek bir dalına astı; böylece kediler ulaşamayacaktı. Çocuklar içine kuru ot koydu. Birkaç gün sonra girişte ince dallar gördüler. Kuşların yuva yapmaya başladığını düşünüp ağacı uzaktan sessizce izlemeye karar verdiler.","Kuş evini nereye astılar?","Ağacın yüksek bir dalına.","Canlıların yuvalarını korumalı ve onları rahatsız etmeden uzaktan gözlemlemeliyiz.","yuva","Bir hayvanın barınmak ve yavrularını büyütmek için yaptığı yer.","Öğrencilerin kuşlar için güvenli bir ev hazırlayıp onları gözlemlemesi.","Kuş evi hazırlandı, ağaca asıldı, içine kuru ot kondu, girişte dallar görüldü ve çocuklar uzaktan izlemeye karar verdi."]
+];
+const reading2ExtraDetails={
+"Tohum Takası":[["Arkadaşları hangi iki tür tohum getirmişti?","Domates ve ayçiçeği tohumu."],["Ada ilk filizi görünce nereye tarih yazdı?","Bakım çizelgesine."],["Öğrenciler tohumları neden etiketledi?","Hangi tohumun ne olduğunu bilmek ve bitkileri takip etmek için."]],
+"Sessiz Sıra":[["Öğrenciler ıslak şemsiyelerini nereye bıraktı?","Askılığa."],["Kerem ayakkabısındaki suyu nereye sildi?","Paspasa."],["Koridorun kuru kalmasına ne yardım etti?","Ayakkabılardaki suyun paspasa silinmesi ve dikkatli yürünmesi."]],
+"Kayıp Suluk":[["Mina'nın suluğu ne renkti?","Maviydi."],["Mina öğretmenine neden soru sordu?","Suluğunu bulamadığı için."],["Suluğun sahibini bulmayı hangi ayrıntı kolaylaştırdı?","Üzerindeki ad etiketi."]],
+"Fırın Kokusu":[["Bora hamura hangi malzemeyi ekledi?","Suyu."],["Hamurun üzerini neyle örttüler?","Temiz bir bezle."],["Dedesi hamuru ne zaman fırına verdi?","Hamur kabarınca."]],
+"Renkli Şemsiye":[["Lara ve İpek nereye kadar birlikte yürüdü?","Otobüs durağına kadar."],["Otobüs gelince İpek ne yaptı?","Lara'ya teşekkür etti."],["Lara şemsiyeyi neden ikisinin üzerine tuttu?","İpek'in de yağmurdan korunması için."]],
+"Takvimdeki Yıldız":[["Ömer çantasına hangi eşyayı koydu?","Kalem kutusunu."],["Annesi hazırlığını bitirdiği gün ne yapmasını önerdi?","Takvimde bir yıldız boyamasını."],["Ömer sabah neden acele etmeden çıktı?","Çantasını akşamdan hazırladığı için."]],
+"Kedinin Su Kabı":[["Kedi sıcak günde nerede dinleniyordu?","Gölgede."],["Eylül kaba nasıl bir su koydu?","Temiz su."],["Eylül neden su kabını her gün kontrol etmeyi üstlendi?","Kedinin suya erişmesini sağlamak için."]],
+"Kâğıt Uçak Yarışı":[["Uçakları kimler yarıştırdı?","Mert ile Selin."],["Hangi uçağın daha uzağa gittiği görüldü?","Selin'in uçağının."],["Öğretmen neden aynı çizgiden atış yapılmasını istedi?","Adil bir karşılaştırma yapmak için."]],
+"Pazar Çantası":[["Yasemin pazardan hangi üç ürünü seçti?","Elma, domates ve havuç."],["Yasemin eve dönünce sebzeleri nereye koymaya yardım etti?","Buzdolabına."],["Yasemin domatesleri neden çantanın üstüne koydu?","Ezilmemeleri için."]],
+"Kuşlara Bakış":[["Defne kuşlarla ilgili hangi iki bilgiyi not etti?","Renklerini ve kondukları dalları."],["Defne notlarını ne zaman sınıfta paylaştı?","Bir hafta sonra."],["Öğretmen çocuklara neden yuvalara yaklaşmamalarını söyledi?","Kuşları ve yuvalarını rahatsız etmemek için."]],
+"Rüzgârlı Gün":[["Ali rüzgârın yönünü kimin önerisiyle kontrol etti?","Babasının."],["Ali eve dönerken uçurtmayı nereye kaldırdı?","Kuru bir yere."],["Ali uçurtmayı yükseltmek için önce neyi kontrol etti?","Rüzgârın yönünü."]],
+"Damlaya Damlaya":[["Zeynep damlayan musluğu kime bildirdi?","Öğretmenine."],["Musluk onarılınca ne durdu?","Boşa akan su."],["Musluğu onarmak neden önemliydi?","Suyun gereksiz yere akmasını önlemek için."]],
+"Kırık Dal":[["Dal hangi olaydan sonra yere düşmüştü?","Fırtınadan sonra."],["Dal bahçeden kim tarafından kaldırıldı?","Görevli tarafından."],["Efe neden dala kendisi dokunmadı?","Tehlikeli olabileceği için yetişkine haber verdi."]],
+"Oyuncak Köprüsü":[["Köprü yapmak için hangi malzemeyi kullandılar?","Tahta blokları."],["İlk denemede oyuncak arabaya ne oldu?","Köprü sallanınca araba durdu."],["Arabanın ikinci denemede geçmesini ne sağladı?","Blokların daha sık yerleştirilmesi."]],
+"Sıcak Çorba":[["Duru çorba soğurken ne yaptı?","Masayı hazırladı."],["Annesi aceleyle içmenin hangi soruna yol açabileceğini söyledi?","Ağzı yakabileceğini."],["Duru çorbayı neden hemen içmedi?","Çok sıcak olduğu için biraz bekledi."]],
+"Renkli Yapraklar":[["Nehir yaprakları hangi mevsimde inceledi?","Sonbaharda."],["Nehir topladığı yaprakların renklerini nereye çizdi?","Resim defterine."],["Nehir yaprakları neden büyüklüklerine göre sıraladı?","Yaprakları inceleyip karşılaştırmak için."]],
+"Paylaşılan Boyalar":[["Resim dersinde herkes hangi boyaya ihtiyaç duydu?","Mavi boyaya."],["Eylül boyayı kullandıktan sonra kime verdi?","Arda'ya."],["Boyanın kurumamasına ne yardım etti?","Kapağının kapatılıp iş bitince kutuya kaldırılması."]],
+"Minik Tamirci":[["Berk kamyonun tekerleği için ne buldu?","Küçük vidayı."],["Babası hangi aleti seçti?","Uygun tornavidayı."],["Tekerlek nasıl yerine oturdu?","Vida sıkılınca."]],
+"Kütüphane Kartı":[["Görevli Sena'ya hangi kartı verdi?","Adının yazılı olduğu kütüphane kartını."],["Sena kartını nereye koyuyordu?","Kalem kutusunun özel gözüne."],["Sena kitabı neden zamanında teslim etti?","İade tarihini takip ettiği için."]],
+"Küçük Harita":[["Haritada sınıf dışında hangi iki yer işaretliydi?","Giriş kapısı ve merdiven."],["Murat sınıfına ulaşmak için merdivenden sonra nereye gitti?","Koridorun sonuna."],["Murat neden yanlış kata gitmedi?","Haritadaki işaretleri izlediği için."]],
+"Kardan Adam":[["İpek kardan adamın gözleri için ne kullandı?","Taşları."],["Kardan adamın burnu neydi?","Havuç."],["Kardan adam neden erimeye başladı?","Güneş yükselip karı ısıttığı için."]],
+"Küçük Fırça":[["Öğretmen Selim'e masayı temizlemesi için neler verdi?","Küçük bir fırça ve nemli bez."],["Selim önce masadaki boyaya ne yaptı?","Fazla boyayı fırçayla topladı."],["Selim'in arkadaşı kendi alanını neden topladı?","Selim'in düzenli davranışını örnek aldığı için."]],
+"Otobüs Durağı":[["Asya otobüsü kiminle bekliyordu?","Dedesiyle."],["Asya çöpünü nereye koydu?","Çantasındaki küçük poşete."],["Asya otobüse binerken neden önce bekledi?","İnen yolcuların rahatça çıkması için."]],
+"Kavanozdaki Düğmeler":[["Elif beyaz düğmeleri nereye koydu?","Bir tabağa."],["Elif düğmeleri hangi özelliğine göre ayırdı?","Renklerine göre."],["Nene aradığı düğmeyi neden daha kolay buldu?","Düğmeler renklerine göre ayrılıp düzenlendiği için."]],
+"Bahçe Takvimi":[["Öğrenciler bakım için ne hazırladı?","Bir takvim ve görev listesi."],["Salı günü toprağın durumu nasıldı?","Nemliydi."],["Öğrenciler toprağı neden her gün kontrol etti?","Bitkileri yalnızca gerektiğinde sulamak için."]],
+"Düşen Kitaplar":[["Eylül ve Baran kitapları nereye dizdi?","Koridordaki rafa."],["En büyük kitapları hangi rafa koydular?","Alt rafa."],["Büyük kitaplar neden alt rafa kondu?","Rafın dengeli durmasına yardım etmesi için."]],
+"Sınıfın Gölgesi":[["Öğrenciler gölgeyi hangi saatte yeniden çizdi?","Öğleden sonra."],["Gölgenin yeri hangi iki zamanda farklıydı?","Sabah ve öğleden sonra."],["Öğrenciler gölgeyi neden iki kez çizdi?","Gölgenin gün içinde değişip değişmediğini görmek için."]],
+"Mavi Kapak":[["Arda kitabı hangi bölüme taşıdı?","Hayvanlar bölümüne."],["Kitaplar hangi bilgiye göre dizilmişti?","Konu etiketlerine göre."],["Arda kitabı doğru rafa koymak için ne yaptı?","Konu etiketini okuyup ilgili bölüme taşıdı."]],
+"Çizgili Defter":[["Nehir yazı yazarken hangi sorunu fark etti?","Harfleri satırın dışına taşıyordu."],["Öğretmeni Nehir'e harfleri nereye yazmasını önerdi?","Çizgilerin arasında."],["İkinci denemede ne değişti?","Harfleri daha düzenli oldu."]],
+"Küçük Nota":[["Öğretmen ritmi ilk olarak neyle gösterdi?","Yavaşça alkışlayarak."],["Ozan doğru yerde alkışlamak için ne yaptı?","Arkadaşlarını dikkatle dinledi."],["Grup şarkıyı nasıl söyledi?","Uyum içinde."]],
+"Sepetteki Elmalar":[["Mert elmaları kiminle paylaştı?","Kardeşiyle."],["Mert sağlam elmaları yemeden önce ne yaptı?","Yıkadı."],["Mert çürük elmaları neden ayırdı?","Sağlam olanları ayrı tutup yiyecekleri kontrol etmek için."]],
+"Küçük Pusula":[["Krokide çeşme dışında hangi yerler gösterilmişti?","Oyun alanı ve çıkış kapısı."],["Defne çeşmeden sonra hangi yeri gördü?","Oyun alanını."],["Defne çıkışı bulmak için neden zorlanmadı?","Krokideki simgeleri izlediği için."]],
+"Sallanan Sandalye":[["Eren sandalye ile ilgili ne fark etti?","Sallandığını."],["Sandalye onarılana kadar çocuklar nerede kitap okudu?","Minderlerde."],["Sandalye neden kenara çekildi?","Kullanılması düşme ve yaralanma riski oluşturabileceği için."]],
+"Piknik Listesi":[["Aylin piknik listesine hangi iki eşyayı yazdı?","Örtü ve çöp poşeti."],["Aylin dönüşte yerdeki kâğıtları nereye koydu?","Çöp poşetine."],["Aile piknik alanını neden temiz bıraktı?","Ortak kullanılan yeri temiz korumak için."]],
+"Bir Damla Boya":[["Öğretmen yeşil elde etmek için hangi iki rengi karıştırdı?","Sarı ve maviyi."],["İdil boyamadan önce nerede deneme yaptı?","Kâğıdın kenarında."],["İdil neden önce küçük bir deneme yaptı?","Rengin istediği gibi olup olmadığını görmek için."]],
+"Yaşlı Ağaca Saygı":[["Çocuklar oyun alanını nereye taşıdı?","Ağacın biraz uzağına."],["Çocuklar ağacın çevresine ne çekti?","Küçük bir ip."],["Çocuklar oyun yerini neden değiştirdi?","Ağacın köklerini ve toprağı korumak için."]],
+"Sıra Bende":[["Deniz oyunda zarlarla ne yaptı?","Zarları karıştırdı."],["Arkadaşları Deniz'e hangi kuralı hatırlattı?","Herkesin sırayla oynaması gerektiğini."],["Oyuncular neden sıralarını bekledi?","Oyunun kurallarına uymak ve adil oynamak için."]],
+"Kırmızı Balon":[["Ece'nin balonu ne renkti?","Kırmızıydı."],["Görevli balonu nasıl aldı?","Uzun bir çubukla."],["Ece balonunu geri almak için neden güvenli yerde bekledi?","Balona ulaşırken tehlikeli bir şey yapmamak için."]],
+"Taze Hava":[["Pencere açıldığında öğrenciler nerede bekledi?","Sıralarında."],["Pencere ne kadar süre açık kaldı?","Birkaç dakika."],["Öğretmen pencereyi açarken hangi konuya dikkat çekti?","Güvenlik kurallarına uymaya."]],
+"Dikiş Kutusu":[["Teyzesi çantayı onarırken hangi malzemeyi hazırladı?","İpliği."],["Mina iğnenin hangi özelliğini öğrendi?","Sivri olduğunu."],["Teyzesi Mina'ya hangi güvenlik kuralını anlattı?","Kesici ve sivri araçları yetişkin yardımı olmadan kullanmaması gerektiğini."]],
+"Sıcaklık Çizelgesi":[["Öğrenciler sıcaklığı hangi araçla ölçtü?","Termometreyle."],["Hangi gün hava pazartesiden daha sıcaktı?","Çarşamba günü."],["Öğretmen ölçümün aynı saatte yapılmasını neden istedi?","Sonuçları daha adil karşılaştırmak için."]],
+"Küçük Sahne":[["Zeynep arkadaşına hangi konuda yardım etti?","Eksik kurdeleyi buldu."],["Gösteri başlamadan önce öğrenciler neyi kontrol etti?","Kostümlerini."],["Zeynep kurdeleyi nereden buldu?","Yedek kutudan."]],
+"Kuş Evi":[["Kutunun üstünü neyle kapladılar?","Su geçirmeyen kâğıtla."],["Kuş evinin girişinde birkaç gün sonra ne gördüler?","İnce dallar."],["Öğretmen kuş evini neden yüksek bir dala astı?","Kedilerin ulaşamaması ve kuşların güvende olması için."]]
+};
+function reading2Questions(p,singleText=false){
+ if(p.qs)return p.qs;
+ const [title,text,factQ,factA,inferA,word,wordA,topicA,sequenceA]=p.data;
+ if(singleText){
+  const d=reading2ExtraDetails[title];
+  if(!d)return [];
+  return [[factQ,factA],d[0],d[1],["Olayları oluş sırasına göre yazınız.",sequenceA],["Metindeki ‘"+word+"’ sözcüğü ne anlama gelir?",wordA],["Metnin konusu nedir?",topicA],["Metinden çıkarılabilecek düşünce nedir?",inferA],d[2],["Metne uygun başka bir başlık yazınız.","Uygun öğrenci yanıtı; metnin konusunu yansıtan bir başlık."],["Olayların devamında ne olabileceğini tahmin ediniz.","Uygun öğrenci yanıtı; metindeki olaylarla tutarlı bir tahmin."],["Metindeki davranışlardan birini uygun buldunuz mu? Neden?","Öğrenci görüşü; metindeki davranışla ilgili gerekçeli yanıt."],["Benzer bir durumda siz nasıl davranırdınız?","Uygun öğrenci yanıtı; metindeki durumla ilişkili bir davranış."]];
+ }
+ return [[factQ,factA],["Metindeki olayları oluş sırasına göre yazınız.",sequenceA],["Metinden çıkarılabilecek düşünce nedir?",inferA],["Metindeki ‘"+word+"’ sözcüğünün anlamı nedir?",wordA],["Metnin konusu nedir?",topicA],["Metne uygun başka bir başlık yazınız.","Uygun öğrenci yanıtı; metnin konusunu yansıtan bir başlık."],["Metindeki davranışlardan hangisi size örnek olabilir? Neden?","Uygun öğrenci yanıtı; metindeki davranışla ilişkilendirilen gerekçe."],["Metinde anlatılan duruma benzer bir örnek veriniz.","Uygun öğrenci yanıtı; metindeki durumla benzer bir örnek."],["Metindeki olayın sonunda ne değişmiştir?","Uygun öğrenci yanıtı; metnin başlangıç ve sonuç durumunu belirtir."],["Metindeki soruna başka bir çözüm öneriniz.","Uygun öğrenci yanıtı; metinle tutarlı çözüm."],["Metni bir cümleyle özetleyiniz.",topicA],["Bu metinden öğrendiğiniz bir bilgiyi yazınız.",factA],["Metindeki olayda hangi davranış yardımcı olmuştur?",inferA],["Metinde anlatılan en önemli ayrıntı nedir?",factA],["Siz bu metindeki durumda olsaydınız nasıl davranırdınız?","Uygun öğrenci yanıtı; gerekçesiyle açıklanır."],["Metindeki olayın sonucunu kendi cümlenizle anlatınız.","Uygun öğrenci yanıtı; metindeki sonucu belirtir."],["Metindeki kişi ya da kişiler hangi güçlüğü aşmıştır?","Uygun öğrenci yanıtı; metindeki durumu açıklayan yanıt."],["Metindeki olaydan çıkarılabilecek bir ders yazınız.",inferA],["Metindeki hangi ayrıntı olayın nasıl geliştiğini anlamanıza yardım etti?",factA],["Metnin başındaki durum ile sonundaki durumu karşılaştırınız.","Uygun öğrenci yanıtı; metindeki başlangıç ve sonuç durumunu belirtir."],["Olayın çözülmesine yardımcı olan şeyi yazınız.",inferA],["Metnin içeriğine uygun bir başlık bulup nedenini açıklayınız.","Uygun öğrenci yanıtı; başlığın metinle ilişkisi açıklanır."]];
+}
+reading2ExtraData.forEach(d=>reading2.push({title:d[0],text:d[1],qs:null,data:d}));
+function reading2Worksheet(count){
+ const key="nihat-v112-g2tr-reading";let seen=[];
+ try{seen=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(seen))seen=[]}catch(e){seen=[]}
+ const chosen=[];let remaining=count;const worksheetPrompts=new Set();
+ if(count<=12){
+  for(const p of shuffle(reading2)){
+   const fresh=shuffle(reading2Questions(p,true).filter(x=>!seen.includes(p.title+"|"+x[0])));
+   if(fresh.length>=count){chosen.push({p,qs:fresh.slice(0,count)});remaining=0;break;}
+  }
+ }else{
+  const firstCount=Math.ceil(count/2),secondCount=Math.floor(count/2),pool=shuffle(reading2).map(p=>({p,qs:shuffle(reading2Questions(p,false).filter(x=>!seen.includes(p.title+"|"+x[0])))}));
+  outer:for(let i=0;i<pool.length;i++){
+   const first=pool[i];if(first.qs.length<firstCount)continue;
+   const firstQs=first.qs.slice(0,firstCount),usedPrompts=new Set(firstQs.map(x=>x[0]));
+   for(let j=i+1;j<pool.length;j++){
+    const second=pool[j],secondQs=second.qs.filter(x=>!usedPrompts.has(x[0])).slice(0,secondCount);
+    if(secondQs.length>=secondCount){chosen.push({p:first.p,qs:firstQs},{p:second.p,qs:secondQs});remaining=0;break outer;}
+   }
+  }
+ }
+ if(remaining>0){
+  const fallback=shuffle(reading2).map(p=>({p,qs:shuffle(reading2Questions(p,count<=12).filter(x=>!seen.includes(p.title+"|"+x[0])))}));
+  for(const item of fallback){if(remaining<=0)break;const fresh=item.qs.filter(x=>!worksheetPrompts.has(x[0])).slice(0,remaining);if(fresh.length){chosen.push({p:item.p,qs:fresh});fresh.forEach(x=>worksheetPrompts.add(x[0]));remaining-=fresh.length;}}
+ }
+ const out=[];let questionNo=0;for(const group of chosen)group.qs.forEach((x,i)=>{questionNo++;const intro=i===0?"<div class='reading-intro'><strong class='reading-intro-title'>"+group.p.title+"</strong><div class='passage'>"+group.p.text+"</div></div><div class='reading-question'><span class='qnum'>"+questionNo+". </span>"+x[0]+"</div>":x[0];const item=q(intro+"<div class='line'></div>",x[1],"reading");if(i===0)item.noAutoNum=true;out.push(item)});
+ const additions=chosen.flatMap(g=>g.qs.map(x=>g.p.title+"|"+x[0]));seen.push(...additions);if(seen.length>1200)seen=seen.slice(-1200);try{localStorage.setItem(key,JSON.stringify(seen))}catch(e){}
+ return out.slice(0,count);
+}
 
 const reading4=[
 {title:"Mahalledeki Küçük Kütüphane",text:"Elif'in mahallesindeki parkın bir köşesine küçük bir kitap dolabı yerleştirildi. Dolabın üzerinde 'Al, oku, geri getir ya da başka bir kitap bırak' yazıyordu. İlk günlerde bazı raflar boş kaldı. Elif evindeki yaşına uygun birkaç kitabı ailesinden izin alarak dolaba bıraktı. Bir süre sonra komşular da kitap getirmeye başladı. Çocuklar parkta oynadıktan sonra kitaplara göz atıyor, beğendiklerini eve götürüp okuyordu. Elif, ortak kullanılan bir şeyi korumanın yalnızca görevlilerin değil, onu kullanan herkesin sorumluluğu olduğunu fark etti.",qs:[["Kitap dolabının kullanım kuralını kendi cümlenizle açıklayınız.","Kitap alınabilir; okunduktan sonra geri getirilmeli veya başka kitap bırakılmalıdır."],["Elif kitapları dolaba bırakmadan önce neden ailesinden izin almış olabilir?","Kitaplar ortak/aileye ait olduğu için sorumlu davranmak istemiş olabilir."],["Komşuların da kitap getirmesi hangi değeri gösterir?","Paylaşma/dayanışma."],["Metnin ana düşüncesini yazınız.","Ortak kullanılan alan ve eşyaları korumak herkesin sorumluluğudur."],["Elif'in davranışından hangi kişilik özelliği çıkarılabilir?","Sorumlu/paylaşımcı."],["Dolaptaki kitaplar geri getirilmeseydi ne gibi bir sorun oluşurdu?","Kitaplar azalır ve sistem sürdürülemezdi."],["‘ortak’ sözcüğü metinde hangi anlamda kullanılmıştır?","Birden fazla kişinin kullanımına ait."],["Olayların gelişimine uygun farklı bir başlık yazınız.","Parktaki Kitaplık vb."],["Kitap dolabının mahallede çocuklara sağlayabileceği iki yararı yazınız.","Kitaba erişimi kolaylaştırır; okuma alışkanlığını ve paylaşmayı destekler."],["Elif hiçbir kitap bırakmasaydı olayların gelişimi nasıl değişebilirdi?","Dolabın rafları daha uzun süre boş kalabilir, komşuların katılımı gecikebilirdi."],["Metindeki olayları oluş sırasına göre kısaca yazınız.","Dolap yerleştirildi; Elif kitap bıraktı; komşular katıldı; çocuklar kitaplardan yararlandı."],["Bu uygulamanın uzun süre devam etmesi için bir öneri yazınız.","Kitapların düzenli geri getirilmesi, korunması ve yeni kitaplarla desteklenmesi gibi uygun öneri."]]},
@@ -2992,6 +3182,16 @@ function build(){
  cycleState={};if(window.__v85ResetPage)window.__v85ResetPage();
  let g=+$("grade").value,s=$("subject").value,topics=[...$("topics").querySelectorAll("input:checked")].map(x=>x.value),count=+$("count").value,l=$("level").value;
  if(!topics.length){$("status").textContent="Lütfen en az bir konu seçiniz.";return}
+ if(g===2&&s==="Türkçe"){
+  const base=Math.floor(count/topics.length),extra=count%topics.length;
+  topics.forEach((topic,i)=>{
+   const n=base+(i<extra?1:0);
+   if(topic==="Sözcük anlamı")cycleState["G2TR-WORD|"+l]=grade2TaskPlan(n,G2_WORD_SKILL_GROUPS);
+   if(topic==="Yazım ve noktalama")cycleState["G2TR-PUNCT|"+l]=grade2TaskPlan(n,G2_PUNCT_SKILL_GROUPS);
+   if(topic==="Eş ve zıt anlamlı kelimeler")cycleState["G2TR-SYNANT|"+l]=grade2TaskPlan(n,G2_SYNANT_SKILL_GROUPS);
+   if(topic==="Cümle bilgisi")cycleState["G2TR-SENTENCE|"+l]=grade2TaskPlan(n,G2_SENTENCE_SKILL_GROUPS);
+  });
+ }
  if(g===1&&s==="Türkçe"&&topics.includes("Harf Yazma Çalışması")){questions=[{text:"Harf yazma sayfası",answer:"Uygulama"}];renderHandwriting();$("status").textContent="Harf yazma çalışma sayfası hazırlandı.";return}
  document.body.classList.remove("hand1","hand-color");let gen=[],usedScience=new Set();
  if(g===1&&s==="Türkçe"&&topics.includes("İlk okuma ve yazma"))gen=literacyQuestions(count);
@@ -3000,7 +3200,12 @@ function build(){
  else if(g===2&&s==="Türkçe"&&topics.length===1&&topics[0]==="Okuduğunu anlama")gen=reading2Worksheet(count);
  else if(g===3&&s==="Türkçe"&&topics.length===1&&topics[0]==="Okuduğunu anlama")gen=reading3Worksheet(count,l);
  else if(g===4&&s==="Türkçe"&&topics.length===1&&topics[0]==="Okuduğunu anlama")gen=g4Reading(count);
- else if(g===3&&s==="Türkçe"&&topics.length>1&&topics.includes("Okuduğunu anlama")){
+ else if(g===2&&s==="Türkçe"&&topics.length>1){
+   const base=Math.floor(count/topics.length),extra=count%topics.length,quota={};
+   topics.forEach((t,i)=>quota[t]=base+(i<extra?1:0));
+   for(const topic of topics){const need=quota[topic]||0;if(topic==="Okuduğunu anlama"){gen.push(...reading2Worksheet(need));continue;}for(let k=0;k<need;k++){const items=turkishQuestion(topic,g,l);if(items&&items.length){const item=items[k%items.length];item.topic=topic;gen.push(item);}}}
+   gen=gen.slice(0,count);
+ } else if(g===3&&s==="Türkçe"&&topics.length>1&&topics.includes("Okuduğunu anlama")){
    // V105: Okuduğunu anlama artık MIX'i ele geçirmez. Toplam sayı tüm seçili konulara dengeli bölünür.
    const base=Math.floor(count/topics.length), extra=count%topics.length;
    const quota={};topics.forEach((t,i)=>quota[t]=base+(i<extra?1:0));
@@ -3026,7 +3231,7 @@ function applyCountLayout(){
   document.body.classList.add("count-"+$("count").value);
 }
 function renderPaper(){document.body.classList.toggle("lit1",+$('grade').value===1&&$('subject').value==="Türkçe"&&[...$('topics').querySelectorAll('input:checked')].some(x=>x.value==="İlk okuma ve yazma"));document.body.classList.remove("lit-color","lit-coloring");if(document.body.classList.contains("lit1")){let pm=$("printMode")?$("printMode").value:"toner";if(pm==="color")document.body.classList.add("lit-color");if(pm==="coloring")document.body.classList.add("lit-coloring");}
-  applyCountLayout();let __selTopics=[...$("topics").querySelectorAll("input:checked")].map(x=>x.value);document.body.classList.toggle("math3-solids", $("grade").value==="3" && $("subject").value==="Matematik" && __selTopics.length===1 && __selTopics[0]==="Geometrik cisimler");document.body.classList.toggle("tr3-skill", $("grade").value==="3" && $("subject").value==="Türkçe" && __selTopics.length===1 && Array.isArray(window.__v90ReadingTopics) && window.__v90ReadingTopics.includes(__selTopics[0]));document.body.classList.toggle("ne-kim-nerede", $("grade").value==="3" && $("subject").value==="Türkçe" && __selTopics.length===1 && __selTopics[0]==="Metinde Ne? Kim? Nerede?");document.body.classList.toggle("read1", $("grade").value==="1" && $("subject").value==="Türkçe" && [...$("topics").querySelectorAll("input:checked")].length===1 && [...$("topics").querySelectorAll("input:checked")][0].value==="Okuduğunu anlama");document.body.classList.toggle("tr3-reading", ($("grade").value==="1" || $("grade").value==="2" || $("grade").value==="3" || $("grade").value==="4") && $("subject").value==="Türkçe" && [...$("topics").querySelectorAll("input:checked")].length===1 && [...$("topics").querySelectorAll("input:checked")][0].value==="Okuduğunu anlama");let g=$("grade").value,s=$("subject").value,title=$("title").value.trim()||[...$("topics").querySelectorAll("input:checked")].map(x=>x.value).join(" • ");let html="<div class='paper-head'><div>ÇALIŞMA KÂĞIDI</div><h2>"+esc(title)+"</h2><div>"+g+". Sınıf • "+esc(s)+"</div></div><div class='meta'><span>Adı Soyadı: "+esc($("student").value.trim()||"........................................")+"</span><span>Tarih: .... / .... / ........</span></div><p style='font-size:12px'>Soruları dikkatlice okuyup cevaplayınız.</p>";if(questions.length&&questions[0].leadHtml)html+="<div class='skill-lead'>"+questions[0].leadHtml+"</div>";html+="<div class='questions'>";questions.forEach((x,i)=>html+="<div class='question "+(x.kind==="reading"?"reading":"")+"'><span class='qnum'>"+(i+1)+". </span>"+x.text+"</div>");html+="</div>";if(showKey){html+="<div class='answer-key'><h3>CEVAP ANAHTARI</h3><div class='answers'>";questions.forEach((x,i)=>html+="<div class='answer'><strong>"+(i+1)+".</strong> "+esc(x.answer||"Öğrenci yanıtı.")+"</div>");html+="</div></div>"}if(document.body.classList.contains("lit1"))html+="<div class='mini-stars'>☆ ☆ ☆</div><div class='lit-note'>Bugünkü çalışmam • Bir yıldız boya!</div>";html+="<div class='nihat-stamp'>Nihat Öğretmen • Etkinlik Üreteci • nihatogretmenetkinlikleri.github.io</div>";$("paper").innerHTML=html}
+  applyCountLayout();let __selTopics=[...$("topics").querySelectorAll("input:checked")].map(x=>x.value);document.body.classList.toggle("g2tr-word-punct", $("grade").value==="2" && $("subject").value==="Türkçe" && __selTopics.length>=1 && __selTopics.every(t=>["Sözcük anlamı","Yazım ve noktalama"].includes(t)));document.body.classList.toggle("g2tr-multi", $("grade").value==="2" && $("subject").value==="Türkçe" && __selTopics.length>1);document.body.classList.toggle("multi-topic-20", $("count").value==="20" && __selTopics.length>1);document.body.classList.toggle("tr3-skill", $("grade").value==="3" && $("subject").value==="Türkçe" && __selTopics.length===1 && Array.isArray(window.__v90ReadingTopics) && window.__v90ReadingTopics.includes(__selTopics[0]));document.body.classList.toggle("ne-kim-nerede", $("grade").value==="3" && $("subject").value==="Türkçe" && __selTopics.length===1 && __selTopics[0]==="Metinde Ne? Kim? Nerede?");document.body.classList.toggle("read1", $("grade").value==="1" && $("subject").value==="Türkçe" && [...$("topics").querySelectorAll("input:checked")].length===1 && [...$("topics").querySelectorAll("input:checked")][0].value==="Okuduğunu anlama");document.body.classList.toggle("tr3-reading", ($("grade").value==="1" || $("grade").value==="2" || $("grade").value==="3" || $("grade").value==="4") && $("subject").value==="Türkçe" && [...$("topics").querySelectorAll("input:checked")].length===1 && [...$("topics").querySelectorAll("input:checked")][0].value==="Okuduğunu anlama");let g=$("grade").value,s=$("subject").value,title=$("title").value.trim()||[...$("topics").querySelectorAll("input:checked")].map(x=>x.value).join(" • ");let html="<div class='paper-head'><div>ÇALIŞMA KÂĞIDI</div><h2>"+esc(title)+"</h2><div>"+g+". Sınıf • "+esc(s)+"</div></div><div class='meta'><span>Adı Soyadı: "+esc($("student").value.trim()||"........................................")+"</span><span>Tarih: .... / .... / ........</span></div><p style='font-size:12px'>Soruları dikkatlice okuyup cevaplayınız.</p>";if(questions.length&&questions[0].leadHtml)html+="<div class='skill-lead'>"+questions[0].leadHtml+"</div>";html+="<div class='questions'>";questions.forEach((x,i)=>html+="<div class='question "+(x.kind==="reading"?"reading":"")+"'>"+(x.noAutoNum?"":"<span class='qnum'>"+(i+1)+". </span>")+x.text+"</div>");html+="</div>";if(showKey){html+="<div class='answer-key'><h3>CEVAP ANAHTARI</h3><div class='answers'>";questions.forEach((x,i)=>html+="<div class='answer'><strong>"+(i+1)+".</strong> "+esc(x.answer||"Öğrenci yanıtı.")+"</div>");html+="</div></div>"}if(document.body.classList.contains("lit1"))html+="<div class='mini-stars'>☆ ☆ ☆</div><div class='lit-note'>Bugünkü çalışmam • Bir yıldız boya!</div>";html+="<div class='nihat-stamp'>Nihat Öğretmen • Etkinlik Üreteci • nihatogretmenetkinlikleri.github.io</div>";$("paper").innerHTML=html}
 function bootV76(){
  const gradeEl=document.getElementById("grade"),subjectEl=document.getElementById("subject"),topicsEl=document.getElementById("topics");
  function safeTopics(){try{renderTopics()}catch(e){console.error(e)}}
@@ -3946,7 +4151,7 @@ function storySceneSVG(s,variant=0){
 }
 
 function graphData(){if(state.graph)return state.graph; const all=[{title:'Bir Haftada Okunan Kitaplar',labels:['Ayşe','Mert','Ece','Can'],vals:[4,7,5,3],unit:'kitap'},{title:'Sınıfın Meyve Tercihi',labels:['Elma','Muz','Portakal','Armut'],vals:[8,5,6,3],unit:'öğrenci'},{title:'Toplanan Atık Kâğıt',labels:['Pzt','Salı','Çarş','Perş'],vals:[3,6,4,7],unit:'kg'},{title:'Bahçede Gözlenen Kuşlar',labels:['Serçe','Güvercin','Karga','Saksağan'],vals:[9,5,3,4],unit:'kuş'},{title:'Kulüp Tercihleri',labels:['Müzik','Spor','Resim','Satranç'],vals:[6,8,5,4],unit:'öğrenci'}];return state.graph=R(all);}
-function graphSVG(d){let max=Math.max(...d.vals), bars=d.vals.map((v,i)=>{let h=72*v/max,x=55+i*78;return `<rect x="${x}" y="${105-h}" width="34" height="${h}" fill="#ddd" stroke="#444"/><text x="${x+17}" y="${98-h}" text-anchor="middle" font-size="11">${v}</text><text x="${x+17}" y="123" text-anchor="middle" font-size="10">${d.labels[i]}</text>`}).join('');return `<div class="v94chart"><strong>${d.title}</strong><svg viewBox="0 0 390 135"><path d="M35 10 V110 H370" stroke="#444" fill="none"/>${bars}</svg></div>`;}
+function graphSVG(d){let max=Math.max(...d.vals), bars=d.vals.map((v,i)=>{let h=72*v/max,x=55+i*78;return `<rect x="${x}" y="${105-h}" width="34" height="${h}" fill="#ddd" stroke="#444"/><text x="${x+17}" y="${98-h}" text-anchor="middle" font-size="11">${v}</text><text x="${x+17}" y="123" text-anchor="middle" font-size="10">${d.labels[i]}</text>`}).join('');return `<div class="v94chart"><strong>${d.title}</strong><svg viewBox="0 0 390 135"><path d="M35 10 V112 H370" stroke="#444" fill="none"/>${bars}</svg></div>`;}
 function signSVG(type){const m={cross:['Yaya Geçidi','<path d="M35 12 v76 M10 38 h50 M10 62 h50"/>'],recycle:['Geri Dönüşüm','<path d="M35 12 l18 28 h-13 l10 16 M55 68 l-38 0 7-12 M16 50 l19-32 7 12"/>'],quiet:['Sessizlik','<path d="M18 42 h14 l16-15 v46 L32 58 H18z"/><path d="M58 30 l18 40 M76 30 L58 70"/>'],exit:['Çıkış','<rect x="18" y="15" width="42" height="65"/><path d="M38 48 h42 M68 36 l12 12-12 12"/>'],warn:['Dikkat','<path d="M45 10 L82 80 H8z"/><path d="M45 32 v25 M45 67 v3"/>']};let x=m[type];return `<div class="v94sign"><svg viewBox="0 0 90 95"><g fill="none" stroke="#444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">${x[1]}</g></svg><strong>${x[0]}</strong></div>`;}
 function material(topic){let s=story(topic);return `<div class="v94pass"><strong>${esc93(s.title)}</strong><p>${esc93(s.text)}</p></div>`;}
 function qsFor(topic){let s=story(topic),lead=material(topic),base=[];
