@@ -325,7 +325,95 @@ body.g1-renewed #paper{max-width:210mm;margin:0 auto}
 }
 @media screen and (min-width:701px){.g1-n12 .g1-questions{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}}
 </style>
-<style>.g1-footer{justify-content:center;border:0;padding:0}.g1-footer img{display:block;width:40mm;height:auto;align-self:center}</style><style>#levelField[hidden]{display:none}</style><style>header .site-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 9px;color:white;font-size:clamp(14px,2.4vw,18px);font-weight:600}header .home-link{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;min-height:46px;color:white;text-decoration:none;font:600 11px/1.2 Arial,sans-serif}header .home-link img{width:52px;height:auto;clip-path:polygon(13.22% 46.02%,13.74% 43.53%,14.58% 42.25%,45.64% 7.97%,46.68% 7.20%,47.92% 6.86%,49.02% 7.11%,50.13% 7.97%,61.91% 21.08%,61.91% 16.71%,61.13% 16.20%,60.74% 14.65%,61.07% 12.94%,61.85% 11.91%,72.46% 11.91%,73.44% 12.94%,73.76% 14.74%,73.44% 16.28%,72.66% 16.80%,72.66% 32.99%,80.53% 41.56%,81.51% 42.93%,82.03% 45.07%,81.97% 47.30%,81.32% 49.36%,79.88% 51.76%,78.71% 52.70%,77.08% 52.87%,75.72% 52.19%,72.59% 48.76%,72.59% 77.89%,74.74% 77.89%,75.98% 78.75%,76.63% 80.38%,76.63% 86.55%,76.04% 88.26%,75.00% 89.20%,21.03% 89.20%,19.73% 88.60%,19.01% 87.06%,19.01% 80.81%,19.40% 79.26%,20.64% 78.15%,23.31% 78.06%,23.31% 48.50%,20.51% 51.76%,18.95% 52.70%,17.45% 52.53%,15.89% 51.33%,14.13% 48.67%)}header .home-link:hover span{text-decoration:underline}header .home-link:focus-visible{outline:2px solid white;outline-offset:3px}header h1{margin:0 0 4px}header p{margin:0}</style><style>.hb-cards{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0}.hb-card{display:inline-block;padding:1px 6px;border:1px solid currentColor;border-radius:4px;font-weight:bold}.hb-clue{line-height:1.25}@media print{.hb-card{color:#222}.hb-clue{font-size:11pt}}</style><style>@media print{body.g1-renewed .g1-page .g1-questions:has(.hb-cards){grid-auto-rows:auto;align-content:stretch}}</style></head>
+<style>.g1-footer{justify-content:center;border:0;padding:0}.g1-footer img{display:block;width:40mm;height:auto;align-self:center}</style><style>#levelField[hidden]{display:none}</style><style>header .site-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 9px;color:white;font-size:clamp(14px,2.4vw,18px);font-weight:600}header .home-link{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;min-height:46px;color:white;text-decoration:none;font:600 11px/1.2 Arial,sans-serif}header .home-link img{width:52px;height:auto;clip-path:polygon(13.22% 46.02%,13.74% 43.53%,14.58% 42.25%,45.64% 7.97%,46.68% 7.20%,47.92% 6.86%,49.02% 7.11%,50.13% 7.97%,61.91% 21.08%,61.91% 16.71%,61.13% 16.20%,60.74% 14.65%,61.07% 12.94%,61.85% 11.91%,72.46% 11.91%,73.44% 12.94%,73.76% 14.74%,73.44% 16.28%,72.66% 16.80%,72.66% 32.99%,80.53% 41.56%,81.51% 42.93%,82.03% 45.07%,81.97% 47.30%,81.32% 49.36%,79.88% 51.76%,78.71% 52.70%,77.08% 52.87%,75.72% 52.19%,72.59% 48.76%,72.59% 77.89%,74.74% 77.89%,75.98% 78.75%,76.63% 80.38%,76.63% 86.55%,76.04% 88.26%,75.00% 89.20%,21.03% 89.20%,19.73% 88.60%,19.01% 87.06%,19.01% 80.81%,19.40% 79.26%,20.64% 78.15%,23.31% 78.06%,23.31% 48.50%,20.51% 51.76%,18.95% 52.70%,17.45% 52.53%,15.89% 51.33%,14.13% 48.67%)}header .home-link:hover span{text-decoration:underline}header .home-link:focus-visible{outline:2px solid white;outline-offset:3px}header h1{margin:0 0 4px}header p{margin:0}</style><style>.hb-cards{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0}.hb-card{display:inline-block;padding:1px 6px;border:1px solid currentColor;border-radius:4px;font-weight:bold}.hb-clue{line-height:1.25}@media print{.hb-card{color:#222}.hb-clue{font-size:11pt}}</style><style>@media print{body.g1-renewed .g1-page .g1-questions:has(.hb-cards){grid-auto-rows:auto;align-content:stretch}}</style><style>
+.math1-art{display:block;width:auto;max-width:100%;height:12mm;margin:2mm auto}
+.math1-grid{display:block;height:22mm;width:auto;max-width:100%;margin:1mm auto}
+.math1-numbers{text-align:center;font-size:1.1em;margin:4mm 0}
+body.math1-visual .g1-questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5mm}
+body.math1-visual .g1-question{min-width:0}
+@media print{
+ body.math1-visual.g1-renewed .g1-page{height:274mm;min-height:274mm}
+ body.math1-visual.g1-renewed .g1-page .g1-questions{min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm 5mm}
+ body.math1-visual.g1-renewed .g1-page .g1-question{font-size:10.5pt;line-height:1.25}
+ body.math1-visual .math1-art{height:10mm;margin:1mm auto}
+ body.math1-visual .math1-grid{height:20mm;margin:.6mm auto}
+ body.math1-visual.g1-renewed .g1-page .g1-question .line{min-height:4mm}
+ body.math1-visual .g1-n12 .math1-grid{height:27mm;margin:0}
+ body.math1-visual .math1-task:has(.math1-grid){display:grid;grid-template-columns:minmax(0,1fr) 32mm;gap:2mm;align-items:start}
+ body.math1-visual .math1-task .math1-grid{height:27mm;margin:0}
+ body.math1-visual .g1-n12 .g1-instruction{margin:2mm 0}
+ body.math1-visual .g1-n12 .math1-art{height:9mm}
+}
+@media screen and (max-width:600px){body.math1-visual .g1-questions{grid-template-columns:1fr}}
+</style><style>
+.math1-scene{display:block;width:38mm;max-width:100%;height:30mm;margin:2mm auto}
+.math1-task:has(.math1-scene){display:grid;grid-template-columns:minmax(0,1fr) 38mm;gap:2mm;align-items:start}
+.math1-two>div{width:48%}.math1-two>div .math1-art{width:100%}.math1-two{display:flex;gap:3mm;align-items:center}.math1-two .math1-art{width:48%;height:12mm}
+.math1-dotgroups{display:flex;align-items:center;justify-content:space-around;gap:2mm;margin:2mm 0}.math1-dotgroups svg{width:22%;height:10mm}
+.math1-arrows{font-size:18pt;letter-spacing:3px;text-align:center}
+@media print{
+ body.math1-visual .math1-task:has(.math1-scene){grid-template-columns:minmax(0,1fr) 32mm}
+ body.math1-visual .math1-scene{width:32mm;height:26mm;margin:0}
+ body.math1-visual .math1-two .math1-art{height:10mm}
+ body.math1-visual .math1-dotgroups svg{height:10mm}
+ body.math1-visual .g1-n6 .math1-art,body.math1-visual .g1-n8 .math1-art{height:14mm}
+}
+</style><style>
+body.math1-visual .math1-object-strip{height:14mm}
+body.math1-visual .math1-composition{height:22mm}
+body.math1-visual .math1-complete{height:18mm}
+@media print{
+ body.math1-visual .g1-n12 .math1-object-strip{height:14mm}
+ body.math1-visual .g1-n12 .math1-composition{height:22mm}
+ body.math1-visual .g1-n12 .math1-complete{height:18mm}
+}
+</style><style>
+.math1-equation{font-size:1.18em;text-align:center;line-height:1.6;margin:2mm 0;word-spacing:2px}
+.math1-part{border:1px solid #888;border-radius:5px;text-align:center;padding:2mm;line-height:1.5;margin:2mm 0}
+.math1-table{display:flex;justify-content:space-around;border:1px solid #888;margin:2mm 0;padding:2mm}
+body.math1-visual .math1-frames{height:13mm}
+body.math1-visual .math1-counters{height:12mm}
+body.math1-visual .math1-numberline{height:16mm}
+@media print{
+ body.math1-visual .g1-n12 .math1-frames{height:12mm}
+ body.math1-visual .g1-n12 .math1-counters{height:11mm}
+ body.math1-visual .g1-n12 .math1-numberline{height:15mm}
+ .math1-equation{font-size:12pt;line-height:1.5;margin:1.5mm 0}
+ .math1-part{margin:1mm 0;padding:1mm}
+}
+</style><style>.math1-match{display:flex;justify-content:space-between;margin:2mm 12mm;font-size:12pt;line-height:2}</style><style>
+.math1-answer{display:inline-block;box-sizing:border-box;width:8mm;height:6mm;border:1px solid #222;vertical-align:middle;margin:0 .4mm;background:white}
+body.math1-visual .math1-equation{font-size:14pt;line-height:1.65}
+body.math1-visual .math1-counters,body.math1-visual .g1-n12 .math1-counters{height:auto!important;max-width:100%;flex:none}
+body.math1-visual .math1-two .math1-counters{max-width:100%;margin:1mm auto}
+.math1-add-groups{display:flex;align-items:center;justify-content:center;gap:3mm;margin:1.5mm auto}
+.math1-add-groups>b{font-size:16pt;flex:none}
+body.math1-visual .math1-add-groups .math1-counters{margin:0;max-width:42%}
+.math1-match{font-size:14pt}
+@media print{
+ body.math1-visual .g1-n12 .math1-equation{font-size:13pt;line-height:1.45;margin:1mm 0}
+ body.math1-visual .g1-n12 .math1-answer{height:6mm;width:8mm}
+ body.math1-visual .g1-n12 .math1-add-groups{margin:1mm 0;gap:3mm}
+}
+</style><style>
+body.math1-visual .measure-art{display:block;height:19mm;width:auto;max-width:100%;margin:1mm auto}
+body.math1-visual .balance-art{height:24mm}
+body.math1-visual .money-art{height:14mm}
+@media print{
+ body.math1-visual .g1-n12 .measure-art{height:15mm}
+ body.math1-visual .g1-n12 .balance-art{height:23mm}
+ body.math1-visual .g1-n12 .money-art{height:13mm}
+ body.math1-visual .math1-two .money-art{max-width:100%;width:auto;height:13mm}
+}
+</style><style>
+.money-compare>div{display:flex;align-items:center;gap:3mm;justify-content:center}
+body.math1-visual .money-compare .money-art{height:10mm;max-width:85%;margin:.5mm 0}
+@media print{
+ body.math1-visual .math1-task:has(.balance-art){display:grid;grid-template-columns:minmax(0,1fr) 38mm;gap:2mm;align-items:start}
+ body.math1-visual .g1-n12 .balance-art{height:24mm;max-width:38mm;margin:0}
+ body.math1-visual .g1-n12 .money-compare .money-art{height:9mm}
+}
+</style></head>
 <body>
 <header><div class="site-brand"><a class="home-link" href="https://nihatogretmendijitalsinif.com.tr/"><img src="data:image/jpeg;base64,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" alt=""><span>Ana sayfa</span></a><span>Nihat Öğretmen’in Dijital Sınıfı</span></div><h1>Etkinlik Üreteci</h1><p>İlkokul çalışma kâğıtları</p></header>
 <main>
@@ -429,7 +517,7 @@ const grade1TopicGroups = {
 program[1]["Hayat Bilgisi"] = grade1TopicGroups["Hayat Bilgisi"].flatMap(group => group[1]);
 function renderTopics(){
  let g=+$("grade").value,s=$("subject").value,root=$("topics"),list=(program[g][s]||[]);root.innerHTML="";
- const makeOpt=(t,planned=false)=>{let lab=document.createElement("label");lab.className="opt";let cb=document.createElement("input");cb.type="checkbox";cb.value=t;cb.checked=false;const pending=planned||g===1&&s==="Türkçe"&&["Harf Yazma Çalışması","İlk okuma ve yazma"].includes(t);cb.disabled=pending;lab.classList.toggle("pending-topic",pending);lab.append(cb,document.createTextNode(t+(pending?" — Hazırlanıyor":"")));return lab};
+ const makeOpt=(t,planned=false)=>{let lab=document.createElement("label");lab.className="opt";let cb=document.createElement("input");cb.type="checkbox";cb.value=t;cb.checked=false;const pending=(planned && !(s==="Matematik" && Object.prototype.hasOwnProperty.call(math1VisualBanks,t)))||g===1&&s==="Türkçe"&&["Harf Yazma Çalışması","İlk okuma ve yazma"].includes(t);cb.disabled=pending;lab.classList.toggle("pending-topic",pending);lab.append(cb,document.createTextNode(t+(pending?" — Hazırlanıyor":"")));return lab};
  if(g===3&&s==="Türkçe"){
   const groups=[
    ["📖 Okuma ve Anlama",["Okuduğunu anlama","Metinde Ne? Kim? Nerede?","Hikâye unsurları","Hikâye haritası","Olayların oluş sırası","Olayları sıralama","Metni yorumlama","Görsel yorumlama","Görsel-başlık ilişkisi","Görsel-metin ilişkisi","Beden dili","Duyguları ifade etme","Şekil, sembol ve işaretler","Grafik ve tablo okuma","Metin türleri","Metnin konusu","Metin tamamlama","Konu-başlık ilişkisi","Ana düşünce"]],
@@ -983,7 +1071,534 @@ function problems1Question(level){
  return line("Bir sepette 8 elma vardı. 3 elma yenildi. Kaç elma kaldı?",5);
 }
 
+// First-grade visual banks. Twelve task families, ten examples per family.
+const math1VisualBanks = {};
+const math1Names = ['daire', 'üçgen', 'kare', 'dikdörtgen'];
+function math1Shape(shape, x, y, size=24) {
+ const r=size/2;
+ const drawings=[`<circle cx="${x}" cy="${y}" r="${r}"/>`, `<path d="M${x} ${y-r} L${x+r} ${y+r} L${x-r} ${y+r} Z"/>`, `<rect x="${x-r}" y="${y-r}" width="${size}" height="${size}"/>`, `<rect x="${x-r*1.3}" y="${y-r*.7}" width="${size*1.3}" height="${size*.7}"/>`];
+ return `<g fill="white" stroke="black" stroke-width="1.6">${drawings[shape]}</g>`;
+}
+function math1Strip(shapes) {
+ return `<svg class="math1-art" viewBox="0 0 ${shapes.length*38+8} 42" role="img" aria-label="Şekil dizisi">${shapes.map((s,i)=>s===null?`<path d="M${i*38+8} 34h26" stroke="black"/>`:math1Shape(s,i*38+22,19)).join('')}</svg>`;
+}
+function math1Card(type, prompt, visual, answer) {
+ prompt=prompt.charAt(0).toLocaleUpperCase("tr-TR")+prompt.slice(1);
+ visual=visual.replace(/□|___/g,'<span class="math1-answer" aria-label="Cevap kutusu"></span>');
+ return {type,text:`<div class="math1-task" data-math1-type="${type}"><span class="math1-prompt">${prompt}</span>${visual}</div>`,answer,kind:'normal'};
+}
+function math1BuildBank(topic, families) {
+ families={...families,...math1Additional(topic)};
+ const result=[];
+ for(const [type, candidates] of Object.entries(families)) {
+  const unique=[...new Map(candidates.map(card=>[card.text,card])).values()];
+  if(unique.length<10) throw new Error(topic+' / '+type+': insufficient variety');
+  // Deterministic sampling avoids selecting the same operand from each row.
+  let seed=2166136261;
+  for(const ch of topic+'|'+type) seed=Math.imul(seed^ch.charCodeAt(0),16777619)>>>0;
+  for(let i=unique.length-1;i>0;i--){
+   seed=(Math.imul(seed,1664525)+1013904223)>>>0;
+   const j=seed%(i+1);
+   [unique[i],unique[j]]=[unique[j],unique[i]];
+  }
+  result.push(...unique.slice(0,10));
+ }
+ if(result.length!==120 || new Set(result.map(c=>c.text)).size!==120) throw new Error(topic+': invalid bank');
+ math1VisualBanks[topic]=result;
+}
+function math1BuildPatterns() {
+ const families={continue:[],missing:[],repair:[],rule:[],numbers:[],create:[]};
+ for(let a=0;a<4;a++) for(let b=0;b<4;b++) {
+  if(a===b) continue;
+  for(const unit of [[a,b],[a,a,b],[a,b,b]]) {
+   const sequence=Array.from({length:unit.length*3},(_,i)=>unit[i%unit.length]);
+   
+   families.continue.push(math1Card('continue','Örüntüyü iki şekil çizerek sürdürünüz.',math1Strip([...sequence.slice(0,6),null,null]),[0,1].map(i=>math1Names[unit[(6+i)%unit.length]]).join(', ')));
+   const missing=sequence.slice();missing[4]=null;
+   families.missing.push(math1Card('missing','Eksik şekli boş yere çiziniz.',math1Strip(missing),math1Names[sequence[4]]));
+   const wrong=sequence.slice();wrong[sequence.length-2]=(wrong[sequence.length-2]+1)%4;
+   families.repair.push(math1Card('repair','Örüntüyü bozan şekli işaretleyip doğrusunu çiziniz.',math1Strip(wrong),`${sequence.length-1}. şekil yerine ${math1Names[sequence[sequence.length-2]]}.`));
+   families.rule.push(math1Card('rule','Tekrar eden en küçük şekil grubunu çember içine alınız.',math1Strip(sequence),unit.map(s=>math1Names[s]).join(', ')));
+   families.create.push(math1Card('create','Verilen grubu aynı sırayla üç kez çizerek örüntü oluşturunuz.',math1Strip(unit),sequence.map(s=>math1Names[s]).join(', ')));
+  }
+ }
+ for(const step of [1,2,5]) for(let start=0;start+step*5<=20;start++) {
+  const seq=Array.from({length:6},(_,i)=>start+i*step);
+  families.numbers.push(math1Card('numbers','Sayı örüntüsünün boşluklarını doldurunuz.',`<div class="math1-numbers">${seq.slice(0,4).join(' · ')} · ___ · ___</div>`,seq.slice(4).join(', ')));
+ }
+ math1BuildBank('Örüntüler',families);
+}
+function math1BuildGeometry() {
+ const families={name:[],corners:[],classify:[],draw:[],count:[],compare:[]};
+ for(let a=0;a<4;a++) for(let b=0;b<4;b++) for(let c=0;c<4;c++) {
+  if(a===b || b===c) continue;
+  const seq=[a,b,c,a];
+  const picture=math1Strip(seq);
+  families.name.push(math1Card('name','Şekillerin adlarını soldan sağa yazınız.',picture,seq.map(s=>math1Names[s]).join(', ')));
+  families.corners.push(math1Card('corners',`Şekillerdeki ${math1Names[b]} şeklinin köşelerine nokta koyunuz. Köşesi yoksa “yok” yazınız.`,picture,b===0?'Dairenin köşesi yoktur.':`${math1Names[b]} üzerinde ${b===1?3:4} köşe işaretlenir.`));
+  families.classify.push(math1Card('classify','Dört köşeli şekilleri işaretleyiniz. Yoksa “yok” yazınız.',picture,seq.flatMap((s,i)=>s>=2?[`${i+1}. şekil`]:[]).join(', ')||'Dört köşeli şekil yok.'));
+  families.draw.push(math1Card('draw','Soldan ikinci şeklin daha büyük bir örneğini çiziniz.',picture,`Daha büyük bir ${math1Names[b]} çizilir.`));
+  families.count.push(math1Card('count',`Kaç ${math1Names[a]} vardır? Sayısını yazınız.`,picture,String(seq.filter(s=>s===a).length)));
+  const counts=seq.map(s=>[0,3,4,4][s]);
+  const max=Math.max(...counts);
+  families.compare.push(math1Card('compare','Köşe sayısı en fazla olan bütün şekilleri işaretleyiniz.',picture,counts.flatMap((n,i)=>n===max?[`${i+1}. şekil (${max} köşe)`]:[]).join(', ')));
+ }
+ math1BuildBank('Geometrik şekiller',families);
+}
+function math1Grid(cells, mark) {
+ const labels='ABCD';
+ let art='';
+ for(let row=0;row<4;row++) for(let col=0;col<4;col++) {
+  const x=22+col*28,y=15+row*25,index=row*4+col;
+  art+=`<rect x="${x}" y="${y}" width="28" height="25" fill="white" stroke="#777" stroke-width=".7"/>`;
+  if(cells[index]!==undefined) art+=math1Shape(cells[index],x+14,y+12,14);
+  if(index===mark) art+=`<circle cx="${x+14}" cy="${y+12}" r="3" fill="black"/>`;
+ }
+ for(let i=0;i<4;i++) art+=`<text x="${36+i*28}" y="11" text-anchor="middle">${labels[i]}</text><text x="13" y="${32+i*25}" text-anchor="middle">${i+1}</text>`;
+ return `<svg class="math1-grid" viewBox="0 0 140 118" role="img" aria-label="Dört satır ve dört sütunlu kareli alan"><g font-family="Arial" font-size="12">${art}</g></svg>`;
+}
+function math1Cell(index){return 'ABCD'[index%4]+(Math.floor(index/4)+1);}
+function math1BuildPosition() {
+ const families={right:[],left:[],above:[],below:[],between:[],locate:[]};
+ for(let a=0;a<4;a++) for(let b=0;b<4;b++) for(let c=0;c<4;c++) {
+  if(a===b || a===c || b===c) continue;
+  const picture=math1Strip([a,b,c]);
+  families.right.push(math1Card('right',`Ortadaki ${math1Names[b]} şeklinin hemen sağında hangi şekil var?`,picture,math1Names[c]));
+  families.left.push(math1Card('left',`Ortadaki ${math1Names[b]} şeklinin hemen solunda hangi şekil var?`,picture,math1Names[a]));
+  families.between.push(math1Card('between',`${math1Names[a]} ile ${math1Names[c]} arasındaki şekli boyayınız.`,picture,math1Names[b]));
+  const grid=math1Grid({1:a,5:b,9:c});
+  families.above.push(math1Card('above',`${math1Names[b]} şeklinin hemen üstündeki şeklin adını yazınız.`,grid,math1Names[a]));
+  families.below.push(math1Card('below',`${math1Names[b]} şeklinin hemen altındaki şeklin adını yazınız.`,grid,math1Names[c]));
+ }
+ for(let pos=0;pos<16;pos++) for(let shape=0;shape<4;shape++) families.locate.push(math1Card('locate',`${math1Cell(pos)} karesine bir ${math1Names[shape]} çiziniz.`,math1Grid({},undefined),`${math1Cell(pos)} karesinde ${math1Names[shape]}.`));
+ math1BuildBank('Yer, yön ve konum',families);
+}
+function math1BuildRoutes() {
+ const families={endpoint:[],trace:[],missing:[],steps:[],reverse:[],check:[]};
+ for(let row=0;row<4;row++) for(let col=0;col<4;col++) for(const dx of [-2,-1,1,2]) for(const dy of [-2,-1,1,2]) {
+  if(col+dx<0||col+dx>3||row+dy<0||row+dy>3)continue;
+  const start=row*4+col,corner=row*4+col+dx,end=(row+dy)*4+col+dx;
+  const horizontal=dx>0?'sağa':'sola',vertical=dy>0?'aşağı':'yukarı';
+  const instructions=`${Math.abs(dx)} kare ${horizontal}, sonra ${Math.abs(dy)} kare ${vertical}`;
+  const lead=`Noktadan başlayınız. `;
+  const grid=math1Grid({},start);
+  families.endpoint.push(math1Card('endpoint',lead+instructions+' gidiniz. Ulaştığınız kareyi boyayınız.',grid,math1Cell(end)));
+  families.trace.push(math1Card('trace',lead+instructions+' giden yolu çiziniz.',grid,`${math1Cell(start)} → ${math1Cell(corner)} → ${math1Cell(end)}`));
+  families.missing.push(math1Card('missing',`${math1Cell(start)} → ${math1Cell(end)}: ${Math.abs(dx)} kare ${horizontal}, ${Math.abs(dy)} kare _____. Eksik yönü yazınız.`,grid,vertical));
+  families.steps.push(math1Card('steps',lead+instructions+' gidiniz. Toplam kaç kare ilerlediniz?',grid,String(Math.abs(dx)+Math.abs(dy))));
+  families.reverse.push(math1Card('reverse',`${math1Cell(end)} → ${math1Cell(start)} yolunu önce dikey, sonra yatay çiziniz.`,grid,`${Math.abs(dy)} kare ${dy>0?'yukarı':'aşağı'}, ${Math.abs(dx)} kare ${dx>0?'sola':'sağa'}.`));
+  const shown=(start+end)%2?end:(end+1)%16;
+  families.check.push(math1Card('check',lead+instructions+` gidince ${math1Cell(shown)} karesine ulaşılır mı? Doğru kareyi yazınız.`,grid,`${shown===end?'Evet':'Hayır'}, ${math1Cell(end)}.`));
+ }
+ math1BuildBank('Yönergelerle hedefe ulaşma',families);
+}
+// Additional tasks use everyday objects, construction, comparison and route reasoning.
+const math1ObjectNames=['top','kitap','çiçek','fincan','kalem','ağaç','ev','araba'];
+function math1Object(id,x,y,size=34){
+ const paths=[
+  '<circle r="11"/><path d="M-9-6Q0 1 9-6M-9 6Q0-1 9 6M0-11Q-5 0 0 11"/>',
+  '<path d="M-10-10H7L11-7V11H-10ZM7-10V7H-10M7 7L11 11M-6-5H3M-6-1H3"/>',
+  '<path d="M0 0V12M0 8Q-8 2-8 7Q-5 12 0 8M0 5Q8 0 8 5Q5 10 0 5"/><circle cy="-10" r="4"/><circle cx="-5" cy="-5" r="4"/><circle cx="5" cy="-5" r="4"/><circle cy="-1" r="4"/><circle cy="-6" r="3"/>',
+  '<path d="M-10-6H6V5Q6 10-2 10Q-10 10-10 5ZM6-4Q16-4 13 3Q11 6 6 5M-12 12H12"/>',
+  '<path d="M-5-9H5V6L0 13-5 6ZM-5-5H5M-2-5V6M2-5V6M-5 6H5M-2 10H2"/>',
+  '<path d="M-2 3V13H3V3"/><path d="M-10 4Q-16-2-8-6Q-10-14 0-13Q10-14 8-6Q16-2 10 4Z"/>',
+  '<path d="M-10-1V12H10V-1M-13-1L0-13 13-1ZM-3 12V4H3V12M-7 2H-5V5H-7"/>',
+  '<path d="M-13 1L-8-7H5L10 1H13V9H-13ZM-7-5H-1V1H-10M1-5H4L8 1H1"/><circle cx="-7" cy="9" r="3"/><circle cx="7" cy="9" r="3"/>'
+ ];
+ return `<g transform="translate(${x} ${y}) scale(${size/28})" stroke="black" stroke-width="1.4" stroke-linejoin="round" fill="white">${paths[id]}</g>`;
+}
+function math1Objects(ids){return math1Svg(ids.map((id,i)=>math1Object(id,20+i*36,19)).join(''),ids.length*36+6,40).replace('math1-art','math1-art math1-object-strip');}
+function math1Svg(body,w=150,h=76,scene=false){return `<svg class="${scene?'math1-scene':'math1-art'}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Soruyla ilgili çizim">${body}</svg>`;}
+function math1ExtraPatterns(){
+ const f={objectRule:[],colorRule:[],translateRule:[],numericRepair:[],compareRules:[],grow:[]};
+ for(let a=0;a<5;a++) for(let b=0;b<5;b++){
+  if(a===b)continue;
+  const seq=[a,b,a,b,a,b];
+  f.objectRule.push(math1Card('objectRule','Nesne örüntüsünün kuralını söyleyiniz. Sıradaki iki nesnenin adını yazınız.',math1Objects(seq),`${math1ObjectNames[a]}, ${math1ObjectNames[b]} sırayla tekrar eder. Sonraki: ${math1ObjectNames[a]}, ${math1ObjectNames[b]}.`));
+ }
+ for(let i=0;i<12;i++){
+  const unit=[[0,1],[0,0,1],[0,1,1],[0,0,0,1]][i%4],offset=Math.floor(i/4);
+  const fill=Array.from({length:12},(_,n)=>unit[(n+offset)%unit.length]);
+  const art=fill.map((v,n)=>`<circle cx="${12+n*25}" cy="15" r="9" fill="${n<8&&v?'#555':'white'}" stroke="black"/>`).join('');
+  f.colorRule.push(math1Card('colorRule','İlk sekiz dairedeki boyama kuralını son dört dairede sürdürünüz.',math1Svg(art,305,30),fill.slice(8).map(v=>v?'Boyalı':'Boş').join(', ')));
+  const a=i%4,b=(a+1+Math.floor(i/4))%4;
+  const seq=i%2?[a,a,b,a,a,b]:[a,b,b,a,b,b];
+  f.translateRule.push(math1Card('translateRule',`${math1Names[a]} yerine çizgi, ${math1Names[b]} yerine nokta koyarak örüntüyü yeniden yazınız.`,math1Strip(seq),seq.map(s=>s===a?'—':'•').join(' ')));
+  const step=Math.floor(i/8)+1,start=i%8,seqN=Array.from({length:6},(_,n)=>start+n*step),wrong=2+i%3;
+  const broken=seqN.slice();broken[wrong]++;
+  f.numericRepair.push(math1Card('numericRepair','Yanlış sayının üstünü çizip doğrusunu yazınız.',`<div class="math1-numbers">${broken.join(' · ')}</div>`,`${broken[wrong]} yerine ${seqN[wrong]}.`));
+  const unitA=i%2?[a,b]:[a,a,b],unitB=i<6?unitA.map(s=>s===a?b:a):(i%2?[b,b,a]:[b,a]);
+  const repeated=u=>Array.from({length:6},(_,n)=>u[n%u.length]);
+  f.compareRules.push(math1Card('compareRules','İki örüntü aynı tekrar kuralına mı sahip? Evet veya hayır yazınız.',`<div class="math1-two"><div><b>A</b>${math1Strip(repeated(unitA))}</div><div><b>B</b>${math1Strip(repeated(unitB))}</div></div>`,i<6?'Evet. Şekiller değişse de tekrar kuralı aynı.':'Hayır. Birinde iki, diğerinde üç şekillik grup tekrar eder.'));
+  const startN=i%4+1,stepN=Math.floor(i/4)+1;
+  const groups=[startN,startN+stepN,startN+2*stepN];
+  const dots=groups.map((n,j)=>{let svg=Array.from({length:n},(_,k)=>`<circle cx="${8+(k%5)*10}" cy="${8+Math.floor(k/5)*10}" r="3" fill="black"/>`).join('');return `<svg viewBox="0 0 55 30">${svg}</svg>`;}).join('');
+  f.grow.push(math1Card('grow','Nokta grupları düzenli büyüyor. Sonraki grupta kaç nokta olur?',`<div class="math1-dotgroups">${dots}<span>?</span></div>`,String(startN+3*stepN)));
+ }
+ return f;
+}
+function math1ExtraGeometry(){
+ const f={completeSide:[],buildPicture:[],rotate:[],objectMatch:[],property:[],construct:[]};
+ for(let i=0;i<12;i++){
+  const shape=i%3+1,angle=Math.floor(i/3)*90;
+  const side=shape===1?'<path d="M-16 14L0-14 16 14"/>':shape===2?'<path d="M-14 14V-14H14V14"/>':'<path d="M-22 12V-12H22V12"/>';
+  f.completeSide.push(math1Card('completeSide','Eksik kenarı çizerek şekli tamamlayınız. Adını yazınız.',math1Svg(`<g transform="translate(45 26) rotate(${angle})" fill="none" stroke="black" stroke-width="1.5">${side}</g>`,90,56).replace('math1-art','math1-art math1-complete'),math1Names[shape]));
+  const windows=i%3+1,wheels=i%2+2;
+  let drawing=math1Shape(2,65,40,36)+math1Shape(1,65,14,28);
+  for(let n=0;n<windows;n++) drawing+=math1Shape(0,53+n*12,34,7);
+  drawing+=math1Shape(3,65,49,10);
+  // A side fence provides a second composition without ambiguous hidden shapes.
+  drawing+=Array.from({length:wheels},(_,n)=>math1Shape(1,12+n*13,49,10)).join('');
+  let target=i%2===0?0:1,count=target===0?windows:wheels+1;
+  if(i>=6){
+   drawing=math1Shape(3,58,28,38)+math1Shape(2,88,28,20);
+   for(let n=0;n<windows;n++)drawing+=math1Shape(0,36+n*19,50,12);
+   for(let n=0;n<wheels;n++)drawing+=math1Shape(1,33+n*16,9,10);
+   count=target===0?windows:wheels;
+  }
+  f.buildPicture.push(math1Card('buildPicture',`Resimdeki ${math1Names[target]} şekillerini sayınız. Kaç tane var?`,math1Svg(drawing,100,64).replace('math1-art','math1-art math1-composition'),String(count)));
+  const targetShape=i%4,rotation=Math.floor(i/4)*35+20;
+  const choices=[0,1,2,3].map((s,n)=>`<g transform="translate(${20+n*40} 22) rotate(${rotation})">${math1Shape(s,0,0,19)}</g>`).join('');
+  f.rotate.push(math1Card('rotate',`Döndürülmüş şekillerden ${math1Names[targetShape]} olanı işaretleyiniz.`,math1Svg(choices,165,46),`${targetShape+1}. şekil.`));
+  const objects=[['tabak','daire'],['kapı','dikdörtgen'],['üçgen bayrak','üçgen'],['kare peçete','kare']];
+  const pair=objects[i%4],j=Math.floor(i/4),order=[0,1,2,3].map((_,n)=>(n+j)%4);
+  f.objectMatch.push(math1Card('objectMatch',`${pair[0]} çizmek için hangi şekilden yararlanırsınız? İşaretleyiniz.`,math1Strip(order),pair[1]));
+  const s=i%4,claimed=[0,3,4,4][s]+(i<4?0:i<8?1:2);
+  f.property.push(math1Card('property',`“Bu şeklin ${claimed} köşesi var.” Doğru mu? Yanlışsa düzeltiniz.`,math1Strip([s]),claimed===[0,3,4,4][s]?'Doğru.':`Yanlış. ${[0,3,4,4][s]} köşesi var.`));
+  const tasks=[['Bir kare ve bir üçgenle ev çiziniz.','Kare gövde, üçgen çatı.'],['Bir dikdörtgen ve iki daireyle araba çiziniz.','Dikdörtgen gövde, daire tekerlekler.'],['Bir daire ve bir dikdörtgenle ağaç çiziniz.','Daire taç, dikdörtgen gövde.'],['Bir üçgen ve bir dikdörtgenle yelkenli çiziniz.','Üçgen yelken, dikdörtgen tekne.']];
+  const task=tasks[i%4];
+  f.construct.push(math1Card('construct',task[0]+` ${j+1} küçük daire de ekleyiniz.`,'',task[1]+` ${j+1} ek daire.`));
+ }
+ return f;
+}
+function math1ExtraPosition(){
+ const f={inside:[],drawRelative:[],correctScene:[],queue:[],shelf:[],describe:[]};
+ for(let i=0;i<12;i++){
+  const a=i%8,b=(a+1+Math.floor(i/8))%8,c=(a+3)%8;
+  const scene=math1Svg('<rect x="38" y="8" width="65" height="57" rx="4" fill="none" stroke="black"/>'+math1Object(a,70,36)+math1Object(b,19,39),125,73,true);
+  f.inside.push(math1Card('inside',i<6?'Kutunun içindeki nesneyi boyayınız.':'Kutunun dışındaki nesnenin adını yazınız.',scene,math1ObjectNames[i<6?a:b]));
+  const dirs=['sağına','soluna','üstüne','altına'],dir=dirs[(i+Math.floor(i/8))%4];
+  f.drawRelative.push(math1Card('drawRelative',`${math1ObjectNames[a]} resminin ${dir} bir ${math1Names[i%4]} çiziniz.`,math1Svg(math1Object(a,65,36),130,74,true),`${math1ObjectNames[a]} resminin ${dir} ${math1Names[i%4]}.`));
+  const left=i%2===0;const drawing=math1Svg(math1Object(a,left?25:100,30)+math1Object(b,left?100:25,30),130,62,true);
+  f.correctScene.push(math1Card('correctScene',`${math1ObjectNames[a]}, ${math1ObjectNames[b]} resminin sağında olmalı. Doğru yerdeyse ✓ koyunuz; değilse doğru yere ok çiziniz.`,drawing,left?`${math1ObjectNames[a]} solda. ${math1ObjectNames[b]} resminin sağına ok çizilir.`:'✓'));
+  const row=math1Objects([a,b,c]);
+  f.queue.push(math1Card('queue',`Sıranın başı soldadır. ${i<6?'En öndeki':'En arkadaki'} nesneyi çember içine alınız.`,row,math1ObjectNames[i<6?a:c]));
+  const shelf=math1Svg('<path d="M8 33H120M8 69H120" stroke="black" stroke-width="2"/>'+math1Object(a,35,18)+math1Object(b,92,18)+math1Object(c,62,54),130,75,true);
+  f.shelf.push(math1Card('shelf',i<6?'Alt raftaki nesnenin adını yazınız.':'Üst raftaki iki nesneyi işaretleyiniz.',shelf,i<6?math1ObjectNames[c]:`${math1ObjectNames[a]} ve ${math1ObjectNames[b]}`));
+  f.describe.push(math1Card('describe',`${math1ObjectNames[b]} resminin yerini “arasında” sözcüğünü kullanarak anlatınız.`,row,`${math1ObjectNames[b]}, ${math1ObjectNames[a]} ile ${math1ObjectNames[c]} arasındadır.`));
+ }
+ return f;
+}
+function math1RouteGrid(start,end,obstacle){
+ // Distinct start dot, target outline circle and shaded blocked square.
+ let body='';
+ for(let row=0;row<4;row++)for(let col=0;col<4;col++){
+  const idx=row*4+col,x=10+col*26,y=8+row*24;
+  body+=`<rect x="${x}" y="${y}" width="26" height="24" fill="${idx===obstacle?'#ccc':'white'}" stroke="#555"/>`;
+  if(idx===start)body+=`<circle cx="${x+13}" cy="${y+12}" r="3" fill="black"/>`;
+  if(idx===end)body+=`<circle cx="${x+13}" cy="${y+12}" r="8" fill="none" stroke="black" stroke-width="1.8"/>`;
+ }
+ return math1Svg(body,124,112,true);
+}
+function math1ExtraRoutes(){
+ const f={arrowPath:[],blocked:[],findStart:[],shortest:[],reverseArrows:[],wrongTurn:[]};
+ for(let row=0;row<4;row++)for(let col=0;col<3;col++){
+  const start=row*4+col,dy=row<2?1:-1,dx=col%2+1,end=(row+dy)*4+col+dx;
+  const grid=math1RouteGrid(start,end);
+  f.arrowPath.push(math1Card('arrowPath','Noktadan çembere giden yolu oklarla yazınız. Her ok bir kare olsun.',grid,`${'→ '.repeat(dx)}${dy>0?'↓':'↑'} (bu adımların uygun sıralamaları kabul edilir).`));
+  f.shortest.push(math1Card('shortest','Noktadan çembere en kısa yol kaç karedir? Çapraz gitmeyiniz.',grid,`${dx+1} kare.`));
+  f.blocked.push(math1Card('blocked','Gri kareye basmadan noktadan çembere en kısa yolu çiziniz.',math1RouteGrid(start,end,start+1),`${dy>0?'1 aşağı':'1 yukarı'}, ${dx} sağa.`));
+  f.findStart.push(math1Card('findStart',`${dx} kare sağa, bir kare ${dy>0?'aşağı':'yukarı'} gidip çembere ulaştınız. Başladığınız kareye nokta koyunuz.`,math1RouteGrid(undefined,end),`Üstten ${row+1}. satır, soldan ${col+1}. sütun.`));
+  f.reverseArrows.push(math1Card('reverseArrows','Çemberden noktaya geri dönüş yolunu oklarla yazınız.',grid,`${dy>0?'↑':'↓'} ${'← '.repeat(dx)}(uygun sıralamalar kabul edilir).`));
+  f.wrongTurn.push(math1Card('wrongTurn',`Noktadan çembere gideceksiniz. “${dx} sola, 1 ${dy>0?'aşağı':'yukarı'}” yönergesindeki yanlış yönü düzeltiniz.`,grid,'Sola yerine sağa.'));
+ }
+ return f;
+}
+function math1Additional(topic){
+ const builders={'Örüntüler':math1ExtraPatterns,'Geometrik şekiller':math1ExtraGeometry,'Yer, yön ve konum':math1ExtraPosition,'Yönergelerle hedefe ulaşma':math1ExtraRoutes};
+ return builders[topic]?builders[topic]():{};
+}
+
+math1BuildPatterns();math1BuildGeometry();math1BuildPosition();math1BuildRoutes();
+function math1Counters(total,crossed=0){
+ const dots=Array.from({length:total},(_,i)=>{
+  const x=9+(i%10)*13,y=9+Math.floor(i/10)*18;
+  const slash=i>=total-crossed?`<path d="M${x-6} ${y+6}L${x+6} ${y-6}" stroke="black" stroke-width="1.8"/>`:'';
+  return `<circle cx="${x}" cy="${y}" r="5" fill="white" stroke="black"/>${slash}`;
+ }).join('');
+ const width=total===0?30:18+(Math.min(total,10)-1)*13;
+ const height=total>10?38:20;
+ const empty='<rect x="2" y="1" width="26" height="17" fill="none" stroke="#888"/>';
+ return math1Svg(total===0?empty:dots,width,height)
+  .replace('math1-art','math1-art math1-counters')
+  .replace('<svg ',`<svg data-count="${total}" data-crossed="${crossed}" style="width:${width*.34}mm" `);
+}
+function math1Frames(n){
+ let art='';
+ for(let i=0;i<20;i++){
+  const x=3+(i%5)*16+Math.floor(i/10)*87,y=3+Math.floor((i%10)/5)*16;
+  art+=`<rect x="${x}" y="${y}" width="16" height="16" stroke="black" fill="white"/>`;
+  if(i<n)art+=`<circle cx="${x+8}" cy="${y+8}" r="4.5" fill="black"/>`;
+ }
+ return math1Svg(art,171,38).replace('math1-art','math1-art math1-frames');
+}
+function math1Equation(text){return `<div class="math1-equation">${text}</div>`;}
+function math1NumberLine(mark,from=0,to=10){
+ let art=`<path d="M10 24H250" stroke="black"/>`;
+ for(let n=from;n<=to;n++){
+  const x=10+(n-from)*240/(to-from);
+  art+=`<path d="M${x} 19V29" stroke="black"/><text x="${x}" y="42" text-anchor="middle" font-family="Arial" font-size="12">${n}</text>`;
+  if(n===mark)art+=`<path d="M${x-4} 6L${x} 14L${x+4} 6Z" fill="black"/>`;
+ }
+ return math1Svg(art,260,46).replace('math1-art','math1-art math1-numberline');
+}
+function math1BuildCounting(){
+ const f={countObjects:[],tens:[],readNumber:[],beforeAfter:[],compareGroups:[],order:[],skip:[],ordinal:[],complete20:[],markNumber:[],correctCount:[],partition:[]};
+ const words=['sıfır','bir','iki','üç','dört','beş','altı','yedi','sekiz','dokuz','on','on bir','on iki','on üç','on dört','on beş','on altı','on yedi','on sekiz','on dokuz','yirmi'];
+ for(let n=1;n<=20;n++){
+  f.countObjects.push(math1Card('countObjects','Daireleri sayınız. Sayısını rakamla yazınız.',math1Counters(n),String(n)));
+  f.tens.push(math1Card('tens','Dolu noktaları sayınız. Kaç onluk ve kaç birlik vardır?',math1Frames(n),`${Math.floor(n/10)} onluk, ${n%10} birlik (${n}).`));
+  f.readNumber.push(math1Card('readNumber','Sözcükle yazılan sayıyı rakamla yazınız.',math1Equation(words[n]),String(n)));
+  if(n<20)f.beforeAfter.push(math1Card('beforeAfter','Bir önceki ve bir sonraki sayıyı yazınız.',math1Equation(`___ · ${n} · ___`),`${n-1}, ${n+1}`));
+  const small=Math.max(0,n-3),a=n%2?n:small,b=n%2?small:n;
+  f.compareGroups.push(math1Card('compareGroups','Daha çok daire olan grubu işaretleyiniz.',`<div class="math1-two"><div><b>A</b>${math1Counters(a)}</div><div><b>B</b>${math1Counters(b)}</div></div>`,a>b?'A':'B'));
+  if(n<=16){
+   const seq=[n+3,n,n+1,n+4];
+   f.order.push(math1Card('order','Sayıları küçükten büyüğe sıralayınız.',math1Equation(seq.join(' · ')),[n,n+1,n+3,n+4].join(' < ')));
+  }
+  if(n<=12)f.skip.push(math1Card('skip','İkişer sayarak boşlukları doldurunuz.',math1Equation(`${n} · ___ · ${n+4} · ___ · ${n+8}`),`${n+2}, ${n+6}`));
+  if(n<=12){
+   const length=6+Math.floor(n/4),position=n%length+1;
+   f.ordinal.push(math1Card('ordinal',`Soldan ${position}. daireyi boyayınız.`,math1Counters(length),`Soldan ${position}. daire.`));
+  }
+  f.complete20.push(math1Card('complete20','Her kutu 10 nokta alıyor. İki kutunun da dolması için kaç nokta daha gerekir?',math1Frames(n),String(20-n)));
+  f.markNumber.push(math1Card('markNumber',`${n} sayısının yerini sayı doğrusunda çember içine alınız.`,math1NumberLine(undefined,n<=10?0:10,n<=10?10:20),`${n} işaretlenir.`));
+  const shown=n%2?n:(n===20?19:n+1);
+  f.correctCount.push(math1Card('correctCount',`Bir öğrenci “${shown} daire var.” dedi. Sayınız; doğruysa ✓ koyunuz, yanlışsa düzeltiniz.`,math1Counters(n),shown===n?'✓':`${n} daire var.`));
+  if(n>=2)f.partition.push(math1Card('partition',`${n} daireyi iki gruba ayırınız. Her grubun sayısını yazınız.`,math1Counters(n),`Örnek: 1 ve ${n-1}. Toplamı ${n} olan iki grup kabul edilir.`));
+ }
+ math1BuildBank('Sayılar ve sayma',f);
+}
+function math1BuildAddition(){
+ const f={join:[],drawAdd:[],missingAddend:[],lineJump:[],tenComplete:[],swap:[],compareSums:[],correctSum:[],makeSum:[],zero:[],matchResult:[],parts:[]};
+ for(let a=1;a<=10;a++)for(let b=1;b<=10;b++){
+  const sum=a+b;
+  f.join.push(math1Card('join','İki grubu birlikte sayınız. Toplama işlemini yazınız.',`<div class="math1-add-groups">${math1Counters(a)}<b>+</b>${math1Counters(b)}</div>${math1Equation("□ + □ = □")}`,`${a} + ${b} = ${sum}`));
+  f.drawAdd.push(math1Card('drawAdd',`${a} daire vardı. ${b} daire daha çiziniz. Toplam kaç daire oldu?`,math1Counters(a),`${b} ek daire, toplam ${sum}.`));
+  f.missingAddend.push(math1Card('missingAddend','Eksik toplananı yazınız.',math1Equation(`${a} + □ = ${sum}`),String(b)));
+  if(sum<=10)f.lineJump.push(math1Card('lineJump',`${a} sayısından ${b} adım ileri gidiniz. Ulaştığınız sayıyı yazınız.`,math1NumberLine(a),String(sum)));
+  if(a<10&&sum>10)f.tenComplete.push(math1Card('tenComplete',`${a} + ${b}: ${b} sayısını ${10-a} ve ${sum-10} olarak ayırınız. Önce 10'a tamamlayıp kalanı ekleyiniz.`,math1Equation(`${a} + ___ = 10<br>10 + ___ = ___`),`${10-a}; ${sum-10}; ${sum}`));
+  f.swap.push(math1Card('swap','Toplananların yerini değiştirerek ikinci işlemi tamamlayınız.',math1Equation(`${a} + ${b} = ${sum}<br>□ + □ = □`),`${b} + ${a} = ${sum}`));
+  if(sum<20)f.compareSums.push(math1Card('compareSums','Sonucu daha büyük olan işlemi işaretleyiniz.',math1Equation(a%2?`${a} + ${b+1} &nbsp;&nbsp; ${a} + ${b}`:`${a} + ${b} &nbsp;&nbsp; ${a} + ${b+1}`),`${a} + ${b+1} = ${sum+1}`));
+  const shown=(a+b)%2?sum:sum-1;
+  f.correctSum.push(math1Card('correctSum','İşlemi kontrol ediniz. Doğruysa ✓ koyunuz, yanlışsa sonucu düzeltiniz.',math1Equation(`${a} + ${b} = ${shown}`),shown===sum?'✓':String(sum)));
+  if(a<b)f.makeSum.push(math1Card('makeSum',`Bu sayılardan toplamı ${sum} olan ikisini seçiniz. İşlemi yazınız.`,math1Equation(`${a} · ${b} · ${sum}`),`${a} + ${b} = ${sum}`));
+  if(b===1)f.zero.push(math1Card('zero',`${a} nesnenin yanına hiç nesne eklenmedi. İşlemi tamamlayınız.`,math1Equation(`${a} + 0 = □`),String(a)));
+  f.matchResult.push(math1Card('matchResult','İşlemleri sonuçlarıyla eşleştiriniz.',`<div class="math1-match"><div>${a} + ${b}<br>${a+1} + ${b}</div><div>${sum+1}<br>${sum}</div></div>`,`${a}+${b}=${sum}; ${a+1}+${b}=${sum+1}`));
+  f.parts.push(math1Card('parts',`Bir grupta ${a}, diğer grupta ${b} nesne var. Toplam kaç nesne vardır?`,math1Equation('□ + □ = □'),String(sum)));
+ }
+ // Keep every result within twenty.
+ f.matchResult=f.matchResult.filter(card=>!card.answer.includes('=21'));
+ math1BuildBank('Toplama',f);
+}
+function math1BuildSubtraction(){
+ const f={crossOut:[],drawRemove:[],missingRemoved:[],lineBack:[],missingStart:[],compareLeft:[],checkSubtract:[],inverse:[],zeroRemove:[],allRemove:[],chooseSubtract:[],partWhole:[]};
+ for(let total=2;total<=20;total++)for(let removed=1;removed<total;removed++){
+  const left=total-removed;
+  f.crossOut.push(math1Card('crossOut','Üstü çizilenler ayrıldı. Kalanları sayıp çıkarma işlemini yazınız.',math1Counters(total,removed),`${total} − ${removed} = ${left}`));
+  f.drawRemove.push(math1Card('drawRemove',`${removed} dairenin üstünü çiziniz. Kaç daire kaldığını yazınız.`,math1Counters(total),String(left)));
+  f.missingRemoved.push(math1Card('missingRemoved','Eksik sayıyı bulunuz.',math1Equation(`${total} − □ = ${left}`),String(removed)));
+  if(total<=10)f.lineBack.push(math1Card('lineBack',`${total} sayısından ${removed} adım geri gidiniz. Ulaştığınız sayıyı yazınız.`,math1NumberLine(total),String(left)));
+  f.missingStart.push(math1Card('missingStart','Başlangıçtaki sayıyı bulunuz.',math1Equation(`□ − ${removed} = ${left}`),String(total)));
+  f.compareLeft.push(math1Card('compareLeft','Hangisinde daha çok kalır? İşaretleyiniz ve sonuçları yazınız.',math1Equation(total%2?`${total} − ${removed+1} &nbsp;&nbsp; ${total} − ${removed}`:`${total} − ${removed} &nbsp;&nbsp; ${total} − ${removed+1}`),`${total}−${removed}=${left} daha büyük; diğer sonuç ${left-1}.`));
+  const shown=total%2?left:left+1;
+  f.checkSubtract.push(math1Card('checkSubtract','Sonucu kontrol ediniz. Yanlışsa düzeltiniz.',math1Equation(`${total} − ${removed} = ${shown}`),shown===left?'Doğru.':String(left)));
+  f.inverse.push(math1Card('inverse','Çıkarmanın sonucunu toplama yaparak kontrol ediniz.',math1Equation(`${total} − ${removed} = □<br>□ + ${removed} = ${total}`),`İki kutuya da ${left}.`));
+  if(removed===1){
+   f.zeroRemove.push(math1Card('zeroRemove',`${total} nesneden hiçbiri alınmadı. Kaç nesne kaldı?`,math1Equation(`${total} − 0 = □`),String(total)));
+   f.allRemove.push(math1Card('allRemove',`${total} nesnenin hepsi alındı. Kaç nesne kaldı?`,math1Equation(`${total} − ${total} = □`),'0'));
+  }
+  if(total+removed<=20)f.chooseSubtract.push(math1Card('chooseSubtract',`Başta ${total} nesne vardı. ${removed} tanesi alındı. Uygun işlemi işaretleyip çözünüz.`,math1Equation(`${total} − ${removed} &nbsp;&nbsp; ${total} + ${removed}`),`${total} − ${removed} = ${left}`));
+  f.partWhole.push(math1Card('partWhole',`${total} nesne iki gruba ayrıldı. Bir grupta ${removed} nesne var. Diğer grupta kaç nesne vardır?`,math1Equation(`${total} − ${removed} = □`),String(left)));
+ }
+ math1BuildBank('Çıkarma',f);
+}
+function math1BuildProblems(){
+ const f={joinStory:[],leaveStory:[],compareStory:[],reachGoal:[],chooseOperation:[],askQuestion:[],tableStory:[],pictureStory:[],correctStory:[],missingStory:[],writeStory:[],twoSteps:[]};
+ const settings=[
+  ['kalem','Kalemlikte','kondu','alındı',4],['kitap','Rafta','eklendi','ödünç alındı',1],
+  ['top','Sepette','kondu','alındı',0],['çiçek','Vazoda','kondu','alındı',2],
+  ['fincan','Masada','kondu','kaldırıldı',3],['oyuncak araba','Kutuda','kondu','alındı',7],
+  ['fidan','Bahçede','dikildi','başka yere taşındı',5],['balon','Odada','getirildi','patladı',null],
+  ['boncuk','Kutuda','eklendi','alındı',null],['kurabiye','Tabakta','kondu','yenildi',null],
+  ['elma','Sepette','kondu','yenildi',null],['çıkartma','Defterde','yapıştırıldı','çıkarıldı',null]
+ ];
+ for(let i=0;i<settings.length;i++){
+  const [noun,place,addVerb,subVerb,icon]=settings[i],a=4+i%7,b=1+i%4,sum=a+b;
+  const illustration=icon===null?'':math1Objects([icon]);
+  f.joinStory.push(math1Card('joinStory',`${place} ${a} ${noun} vardı. ${b} ${noun} daha ${addVerb}. Şimdi kaç ${noun} var?`,illustration,`${a} + ${b} = ${sum}`));
+  f.leaveStory.push(math1Card('leaveStory',`${place} ${sum} ${noun} vardı. ${b} tanesi ${subVerb}. Kaç ${noun} kaldı?`,illustration,`${sum} − ${b} = ${a}`));
+  f.compareStory.push(math1Card('compareStory',`Ece'de ${sum}, Can'da ${a} tane ${noun} var. Ece'de kaç tane daha fazla var?`,'',`${sum} − ${a} = ${b}`));
+  f.reachGoal.push(math1Card('reachGoal',`${sum} ${noun} gerekiyor. Elimizde ${a} tane var. Kaç tane daha gerekir?`,illustration,`${sum} − ${a} = ${b}`));
+  const taking=i%2===0;
+  f.chooseOperation.push(math1Card('chooseOperation',`${place} ${sum} ${noun} vardı. ${b} ${taking?'tanesi':'tane daha'} ${taking?subVerb:addVerb}. Hangi işlemi kullanırsınız? Çözünüz.`,math1Equation('Toplama mı, çıkarma mı?'),taking?`${sum} − ${b} = ${a}`:`${sum} + ${b} = ${sum+b}`));
+  f.askQuestion.push(math1Card('askQuestion',`${place} ${a} ${noun} vardı. ${b} tane daha ${addVerb}. Bu bilgiye uygun bir problem sorusu yazınız.`,'',`Şimdi kaç ${noun} var? (${sum})`));
+  f.tableStory.push(math1Card('tableStory',`İki kutudaki ${noun} sayılarına bakınız. Toplam kaç tane var?`,`<div class="math1-table"><span>1. kutu: ${a}</span><span>2. kutu: ${b}</span></div>`,String(sum)));
+  f.pictureStory.push(math1Card('pictureStory','Daireler bir sepetteki elmaları gösteriyor. Üstü çizilenler yenildi. Kalan elma sayısını yazınız.',math1Counters(sum,b),String(a)));
+  f.correctStory.push(math1Card('correctStory',`${sum} ${noun} vardı. ${b} tanesi ${subVerb}. Ece “${a+1} tane kaldı.” dedi. Doğru sonucu yazınız.`,'',`${sum} − ${b} = ${a}`));
+  f.missingStory.push(math1Card('missingStory',`${place} bir miktar ${noun} vardı. ${b} tanesi ${subVerb}; ${a} tane kaldı. Başta kaç tane vardı?`,'',`${a} + ${b} = ${sum}`));
+  f.writeStory.push(math1Card('writeStory',`${noun} kullanarak bu işleme uygun kısa bir problem kurunuz.`,math1Equation(i%2?`${sum} − ${b} = ${a}`:`${a} + ${b} = ${sum}`),`İşlemle ve ${noun} bağlamıyla uyumlu öğrenci problemi.`));
+  const out=1+i%3;
+  f.twoSteps.push(math1Card('twoSteps',`Kutuda ${a} boncuk vardı. ${b} boncuk eklendi, sonra ${out} boncuk alındı. Kaç boncuk kaldı?`,'',`${a} + ${b} − ${out} = ${sum-out}`));
+ }
+ math1BuildBank('Problemler',f);
+}
+math1BuildCounting();math1BuildAddition();math1BuildSubtraction();math1BuildProblems();
+
+function measureSvg(body,w,h){return math1Svg(body,w,h).replace('math1-art','math1-art measure-art');}
+function measureLabel(text,x,y){return `<text x="${x}" y="${y}" font-size="11" font-family="Arial" fill="black">${text}</text>`;}
+function unitRow(n,x,y,size=14,step=size){return Array.from({length:n},(_,i)=>`<rect x="${x+i*step}" y="${y}" width="${size}" height="12" fill="white" stroke="black" stroke-width=".8"/>`).join('');}
+function lengthModel(n,mode='normal',shown=n){
+ const step=mode==='gap'?17:mode==='overlap'?11:14;
+ const width=Math.max(n*14,shown*step)+28;
+ const bar=`<rect x="12" y="6" width="${n*14}" height="9" fill="#ddd" stroke="black"/><path d="M12 2V39M${12+n*14} 2V39" stroke="#777" stroke-dasharray="2 2"/>`;
+ const row=unitRow(shown,12,23,14,step);
+ return measureSvg(bar+(mode==='overlap'?row.replaceAll('fill="white"','fill="none"'):row),width,43).replace('<svg ',`<svg data-length="${n}" data-units="${shown}" data-unit-mode="${mode}" `);
+}
+function lengthCompare(values){
+ let body='';values.forEach((n,i)=>{body+=measureLabel('ABC'[i],2,14+i*30)+`<rect x="20" y="${4+i*30}" width="${n*14}" height="9" fill="#ddd" stroke="black"/>`+unitRow(n,20,14+i*30,14);});
+ return measureSvg(body,Math.max(...values)*14+27,values.length*30+7);
+}
+function buildLengthBank(){
+ const f={measure:[],compare:[],difference:[],finish:[],draw:[],check:[],gaps:[],overlaps:[],unitSize:[],orderLengths:[],joinLengths:[],sameStart:[]};
+ for(let n=2;n<=13;n++){
+  f.measure.push(math1Card('measure','Şeridin uzunluğu kaç eş küptür?',lengthModel(n),`${n} küp.`));
+  const values=n%2?[n,n+1]:[n+1,n];
+  f.compare.push(math1Card('compare','Aynı büyüklükte küpler kullanıldı. Uzun olan şeridi işaretleyiniz.',lengthCompare(values),values[0]>values[1]?'A':'B'));
+  const small=Math.max(1,n-(n%4+1));
+  f.difference.push(math1Card('difference','A şeridi B şeridinden kaç küp daha uzundur?',lengthCompare([n,small]),`${n-small} küp.`));
+  const shown=n%3+1;
+  f.finish.push(math1Card('finish','Şeridin altını tamamlamak için kaç eş küp daha gerekir?',lengthModel(n,'normal',Math.min(shown,n-1)),`${n-Math.min(shown,n-1)} küp.`));
+  f.draw.push(math1Card('draw',`Alt sıradaki eş küplerden yararlanarak ${n} küp uzunluğunda bir şerit çiziniz.`,measureSvg(unitRow(14,12,27),222,44),`${n} küplük şerit çizilir.`));
+  const claim=n%2?n:n+1;
+  f.check.push(math1Card('check',`“Şerit ${claim} küp uzunluğunda.” Doğruysa ✓ koyunuz, yanlışsa düzeltiniz.`,lengthModel(n),claim===n?'✓':`${n} küp.`));
+  f.gaps.push(math1Card('gaps','Küplerle yapılan ölçümdeki hatayı söyleyiniz.',lengthModel(n,'gap'),'Küpler arasında boşluk var. Birimler boşluksuz yan yana gelmeli.'));
+  f.overlaps.push(math1Card('overlaps','Bu ölçüm doğru mu? Küplerin yerleşimine bakıp hatayı yazınız.',lengthModel(n,'overlap'),'Hayır. Küpler üst üste geliyor. Birimler yan yana ve üst üste gelmeden yerleştirilmeli.'));
+  const count=n-1;
+  const body=`<rect x="12" y="3" width="${count*28}" height="8" fill="#ddd" stroke="black"/>`+unitRow(count,12,17,28)+unitRow(count*2,12,37,14);
+  f.unitSize.push(math1Card('unitSize','Aynı şerit iki farklı birimle ölçüldü. Küçük birimlerden mi, büyük birimlerden mi daha çok kullanıldı?',measureSvg(body,count*28+25,55),'Küçük birimlerden daha çok kullanıldı.'));
+  const ordered=n%2?[n+2,n,n+1]:[n+1,n+2,n];
+  f.orderLengths.push(math1Card('orderLengths','Şeritleri kısadan uzuna harfleriyle sıralayınız.',lengthCompare(ordered),ordered.map((v,i)=>[v,'ABC'[i]]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]).join(' – ')));
+  const other=n%4+1;
+  f.joinLengths.push(math1Card('joinLengths','Şeritler uç uca eklenirse toplam uzunluk kaç küp olur?',lengthCompare([n,other]),`${n+other} küp.`));
+  const shift=n%3+1;
+  const shifted=`<rect x="12" y="5" width="${n*14}" height="9" fill="#ddd" stroke="black"/>`+unitRow(n,12+shift*14,25)+`<path d="M12 1V40" stroke="#555" stroke-dasharray="2 2"/>`;
+  f.sameStart.push(math1Card('sameStart','Ölçmeye doğru yerden başlanmış mı? Neyi düzeltmeliyiz?',measureSvg(shifted,(n+shift)*14+28,46),'Hayır. İlk küp şeridin başlangıcına hizalanmalı.'));
+ }
+ math1BuildBank('Standart olmayan araçlarla uzunluk ölçme',f);
+}
+function balanceModel(left,right,tilt=0){
+ const ly=24-tilt*9,ry=24+tilt*9;
+ const pan=(x,y,label)=>`<path d="M${x} ${y}L${x-25} ${y+27}H${x+25}Z" fill="none" stroke="black"/><path d="M${x-25} ${y+27}Q${x} ${y+39} ${x+25} ${y+27}" fill="#eee" stroke="black"/>`+measureLabel(label,x-19,y+23);
+ const body='<path d="M80 23V81M60 83H100" stroke="black" stroke-width="3"/>'+`<path d="M35 ${ly}L125 ${ry}" stroke="black" stroke-width="2"/>`+pan(35,ly,left)+pan(125,ry,right);
+ return measureSvg(body,165,89).replace('measure-art','measure-art balance-art').replace('<svg ',`<svg data-tilt="${tilt}" `);
+}
+function buildWeightBank(){
+ const f={heavy:[],light:[],equal:[],units:[],addBalance:[],removeBalance:[],sortWeights:[],differenceWeight:[],combineWeight:[],judge:[],unitCompare:[],hidden:[]};
+ for(let n=2;n<=13;n++){
+  const tilt=n%2?1:-1;
+  const names=['A','B','C','D'];
+  const leftName=names[(n-2)%4],rightName=names[((n-2)%4+1+Math.floor((n-2)/4))%4];
+  f.heavy.push(math1Card('heavy','Terazide hangi kutu daha ağırdır?',balanceModel(leftName,rightName,tilt),tilt===1?rightName:leftName));
+  f.light.push(math1Card('light','Terazide hangi kutu daha hafiftir?',balanceModel(leftName,rightName,tilt),tilt===1?leftName:rightName));
+  f.equal.push(math1Card('equal',`Terazi dengede. ${n} özdeş küp ile kutunun ağırlığını karşılaştırınız.`,balanceModel('Kutu',`${n} küp`),'Kutu ve küplerin toplam ağırlığı eşittir.'));
+  f.units.push(math1Card('units','Terazi dengede. Kutu kaç özdeş küp ağırlığındadır?',balanceModel('Kutu',`${n} küp`),`${n} küp.`));
+  const less=Math.max(1,n-(n%3+1)),delta=n-less;
+  f.addBalance.push(math1Card('addBalance','Küpler özdeş. Teraziyi dengelemek için hafif kefeye kaç küp eklenmelidir?',balanceModel(`${n} küp`,`${less} küp`,-1),`${delta} küp.`));
+  f.removeBalance.push(math1Card('removeBalance','Küpler özdeş. Ağır kefeden kaç küp alınırsa denge sağlanır?',balanceModel(`${less} küp`,`${n} küp`,1),`${delta} küp.`));
+  const weights=[n+2,n,n+1];
+  f.sortWeights.push(math1Card('sortWeights','Her kutu aynı tür küple tartıldı. Hafiften ağıra sıralayınız.',`<div class="math1-table"><span>A: ${weights[0]} küp</span><span>B: ${weights[1]} küp</span><span>C: ${weights[2]} küp</span></div>`,'B – C – A'));
+  f.differenceWeight.push(math1Card('differenceWeight',`A kutusu ${n} küp, B kutusu ${less} küp ağırlığında. Küpler özdeş. A kaç küp daha ağırdır?`,'',`${delta} küp.`));
+  f.combineWeight.push(math1Card('combineWeight',`Bir kutu ${n} küp, bir kitap 2 küp ağırlığında. Birlikte kaç özdeş küple dengelenirler?`,'',`${n+2} küp.`));
+  f.judge.push(math1Card('judge',`“${leftName} kutusu daha ağır.” deniyor. Doğru mu?`,balanceModel(leftName,rightName,tilt),tilt===-1?'Doğru.':`Yanlış. ${rightName} daha ağır.`));
+  f.unitCompare.push(math1Card('unitCompare',`Aynı kutu ${n} küçük küple veya ${n+2} boncukla dengeleniyor. Bir küp mü, bir boncuk mu daha ağır?`,'','Bir küp daha ağır.'));
+  f.hidden.push(math1Card('hidden',`Bir kutu ${n} özdeş küple dengeleniyor. Sağ kefedeki ${less} küpün yanına kaç küp daha konmalıdır?`,balanceModel('Kutu',`${less} küp`,-1),`${delta} küp.`));
+ }
+ math1BuildBank('Standart olmayan araçlarla tartma',f);
+}
+function moneyModel(values,unit='TL'){
+ let body='',x=3;
+ values.forEach(value=>{
+  const note=unit==='TL'&&value>=5,width=note?46:30;
+  body+=note?`<rect x="${x}" y="5" width="42" height="27" rx="2" fill="white" stroke="black"/>`:`<circle cx="${x+13}" cy="19" r="13" fill="white" stroke="black"/>`;
+  body+=`<text x="${x+(note?21:13)}" y="18" font-family="Arial" font-size="12" text-anchor="middle">${value}</text><text x="${x+(note?21:13)}" y="28" font-family="Arial" font-size="8" text-anchor="middle">${unit}</text>`;
+  x+=width+5;
+ });
+ return measureSvg(body,x,38).replace('measure-art','measure-art money-art').replace('<svg ',`<svg data-money-total="${values.reduce((a,b)=>a+b,0)}" data-money-unit="${unit}" `);
+}
+function moneyParts(n){const values=[];for(const value of [20,10,5,1])while(n>=value){values.push(value);n-=value;}return values;}
+function buildMoneyBank(){
+ const f={totalMoney:[],enough:[],change:[],missingMoney:[],compareMoney:[],exactPay:[],twoItems:[],leftMoney:[],save:[],errorMoney:[],coinCount:[],kurus:[]};
+ for(let n=1;n<=20;n++){
+  const values=moneyParts(n),coins=moneyModel(values),price=Math.max(1,Math.min(20,n+(n%2?2:-2)));
+  f.totalMoney.push(math1Card('totalMoney','Gösterilen paraların toplamı kaç TL?',coins,`${n} TL.`));
+  f.enough.push(math1Card('enough',`${price} TL olan bir ürün için bu para yeterli mi?`,coins,n>=price?'Evet.':`Hayır. ${price-n} TL eksik.`));
+  f.change.push(math1Card('change',`Bir ürün ${n} TL. 20 TL verirseniz kaç TL para üstü alırsınız?`,moneyModel([20]),`${20-n} TL.`));
+  if(n<20)f.missingMoney.push(math1Card('missingMoney','Parayı 20 TL yapmak için kaç TL eklenmeli?',coins,`${20-n} TL.`));
+  if(n<20)f.compareMoney.push(math1Card('compareMoney','Hangi grubun toplam değeri daha büyük?',`<div class="money-compare"><div><b>A</b>${n%2?moneyModel(moneyParts(n+1)):coins}</div><div><b>B</b>${n%2?coins:moneyModel(moneyParts(n+1))}</div></div>`,n%2?'A':'B'));
+  f.exactPay.push(math1Card('exactPay',`${n} TL tutarı 1 TL'lik madeni paralarla ödeyeceksiniz. Kaç para gerekir?`,'',`${n} tane 1 TL.`));
+  if(n<=15)f.twoItems.push(math1Card('twoItems',`Bir ürün ${n} TL, diğeri 5 TL. Birlikte kaç TL ödersiniz?`,`<div class="math1-table"><span>${n} TL</span><span>5 TL</span></div>`,`${n+5} TL.`));
+  f.leftMoney.push(math1Card('leftMoney',`20 TL'niz var. ${n} TL harcadınız. Kaç TL kaldı?`,'',`${20-n} TL.`));
+  if(n<=15)f.save.push(math1Card('save',`Kumbarada ${n} TL vardı. 5 TL daha eklendi. Şimdi kaç TL var?`,moneyModel(moneyParts(n)),`${n+5} TL.`));
+  const claim=n%2?n:n-1;
+  f.errorMoney.push(math1Card('errorMoney',`“Bu paraların toplamı ${claim} TL.” Doğru mu? Yanlışsa düzeltiniz.`,coins,claim===n?'Doğru.':`${n} TL.`));
+  f.coinCount.push(math1Card('coinCount','Gösterilen paraların kaç tanesi madenidir?',coins,`${values.filter(v=>v===1).length} madeni para.`));
+  const cents=[5,10,25,50],a=cents[n%4],b=cents[Math.floor(n/4)%4];
+  f.kurus.push(math1Card('kurus','Değerleri eşitse “eşit” yazınız. Farklıysa büyük değerli parayı işaretleyiniz.',moneyModel([a,b],'kr'),a===b?'Eşit.':`${Math.max(a,b)} kuruş.`));
+ }
+ math1BuildBank('Paralarımız',f);
+}
+buildLengthBank();buildWeightBank();buildMoneyBank();
+
+const math1Memory={};
+function math1VisualQuestion(topic) {
+ const bank=math1VisualBanks[topic],key='nihat-math1-visual-v3:'+topic;
+ let state=math1Memory[topic];
+ if(!state) {
+  try {state=JSON.parse(localStorage.getItem(key));}catch(e){}
+  if(!state || !Array.isArray(state.queue) || state.queue.some(i=>!Number.isInteger(i)||i<0||i>=bank.length) || new Set(state.queue).size!==state.queue.length) state={queue:[]};
+ }
+ if(!state.queue.length) {
+  const types=shuffle([...new Set(bank.map(card=>card.type))]);
+  const buckets=types.map(type=>shuffle(bank.flatMap((card,index)=>card.type===type?[index]:[])));
+  state.queue=[];
+  let previous=[];
+  for(let row=0;row<10;row++) {
+   let order=shuffle(types.map((_,i)=>i));
+   // Each twelve-card sheet has all twelve tasks, in a new order.
+   for(let i=0;i<order.length;i++) {
+    if(order[i]===previous[i]) {const j=(i+1)%order.length;[order[i],order[j]]=[order[j],order[i]];}
+   }
+   state.queue.push(...order.map(i=>buckets[i][row]));
+   previous=order;
+  }
+  const recent=new Set(state.recent||[]);
+  for(let i=0;i<12;i++) {
+   if(!recent.has(state.queue[i])) continue;
+   const swap=state.queue.findIndex((id,j)=>j>=12 && bank[id].type===bank[state.queue[i]].type && !recent.has(id));
+   if(swap>=0) [state.queue[i],state.queue[swap]]=[state.queue[swap],state.queue[i]];
+  }
+ }
+ const index=state.queue.shift();
+ const card=bank[index];
+ state.recent=[...(state.recent||[]),index].slice(-12);
+ math1Memory[topic]=state;
+ try {localStorage.setItem(key,JSON.stringify(state));}catch(e){}
+ return {...card};
+}
+
 function mathSkillQuestion(topic,g,l){
+ if(g===1 && math1VisualBanks[topic]) return math1VisualQuestion(topic);
  if(g===1&&topic==="Problemler") return problems1Question(l);
  if(g===1&&topic==="Sayılar ve sayma") return numbersCounting1Question(l);
  if(g===1&&topic==="Toplama") return addition1Question(l);
@@ -1183,6 +1798,7 @@ function naturalNumbers2Question(l){
 }
 
 function mathQuestion(topic,g,l){
+ if(g===1 && math1VisualBanks[topic]) return math1VisualQuestion(topic);
  if(g===1&&topic==="Problemler") return problems1Question(l);
  if(topic==="Doğal sayılar" && g===2) return naturalNumbers2Question(l);
  if(topic==="Problemler" && l==="hard") return mathSkillQuestion(topic,g,l);
@@ -5442,13 +6058,14 @@ function grammarWorksheet(topic,count){
 }
 
 function renderGrade1(){
+ document.body.classList.toggle("math1-visual", $("subject").value==="Matematik" && questions.some(item=>item.text.includes("math1-task")));
  document.body.classList.add('g1-renewed');
  const story=questions.find(item=>item.g1Story)?.g1Story;
  const heading=esc($('title').value.trim()||[...$('topics').querySelectorAll('input:checked')].map(x=>x.value).join(' • '));
  const meta=`<div class="meta"><span>Adı Soyadı: ${esc($('student').value.trim()||'........................................')}</span><span>Tarih: .... / .... / ........</span></div>`;
  const readCount=questions.filter(item=>item.g1Story).length;
  const mixed=readCount>0&&readCount<questions.length;
- let html=`<section class="g1-page g1-n${questions.length}"><div class="paper-head"><div>1. Sınıf • ${esc($('subject').value)}</div><h2>${heading}</h2></div>${meta}${story?`<article class="g1-story"><h3>${esc(story[0])}</h3><p>${esc(story[1])}</p></article><p class="g1-instruction">${mixed?'İlk '+readCount+' soruyu metne göre cevaplayınız. Sonraki soruların yönergelerini okuyunuz.':'Metni okuyunuz. Soruları metne göre cevaplayınız.'}</p>`:'<p class="g1-instruction">Yönergeleri okuyunuz. Cevaplarınızı çizgilere yazınız.</p>'}<div class="g1-questions">${questions.map((item,index)=>`<div class="g1-question"><div><b>${index+1}.</b> ${item.text.replace(/<div class="line"><\/div>$/, '')}</div><div class="line"></div></div>`).join('')}</div><div class="g1-footer"><img alt="Nihat Öğretmen’in Dijital Sınıfı" src="data:image/png;base64,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"></div></section>`;
+ let html=`<section class="g1-page g1-n${questions.length}"><div class="paper-head"><div>1. Sınıf • ${esc($('subject').value)}</div><h2>${heading}</h2></div>${meta}${story?`<article class="g1-story"><h3>${esc(story[0])}</h3><p>${esc(story[1])}</p></article><p class="g1-instruction">${mixed?'İlk '+readCount+' soruyu metne göre cevaplayınız. Sonraki soruların yönergelerini okuyunuz.':'Metni okuyunuz. Soruları metne göre cevaplayınız.'}</p>`:'<p class="g1-instruction">Yönergeleri okuyunuz. İstenen yerleri işaretleyiniz, çiziniz veya yazınız.</p>'}<div class="g1-questions">${questions.map((item,index)=>`<div class="g1-question"><div><b>${index+1}.</b> ${item.text.replace(/<div class="line"><\/div>$/, '')}</div><div class="line"></div></div>`).join('')}</div><div class="g1-footer"><img alt="Nihat Öğretmen’in Dijital Sınıfı" src="data:image/png;base64,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"></div></section>`;
  if(showKey)html+=`<section class="g1-key"><h2>Cevap Anahtarı</h2>${story?'<h3>'+esc(story[0])+'</h3>':''}${questions.map((item,index)=>`<p><b>${index+1}.</b> ${esc(item.answer)}</p>`).join('')}</section>`;
  $('paper').innerHTML=html;
 }
