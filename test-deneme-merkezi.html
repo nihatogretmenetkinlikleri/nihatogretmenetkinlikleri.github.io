@@ -8744,4 +8744,44 @@ window.NihatKesir3={banks,sync};sync();
  };
 })();
 </script>
+
+<!-- Only Grade 3 Data Interpretation, exactly 16 questions: one A4 page. -->
+<style id="g3-data-qn16-single-a4">
+@media print {
+ body.g3DataPrint #printArea .questions.qn16 {
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:repeat(8,auto)!important;grid-auto-flow:column!important;
+  grid-auto-rows:auto!important;column-gap:7mm!important;row-gap:.65mm!important;
+  align-content:start!important;min-height:0!important;height:auto!important;
+  max-height:none!important;overflow:visible!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq {
+  min-width:0!important;break-inside:avoid!important;page-break-inside:avoid!important;
+  margin:0!important;padding:0!important;font-size:11px!important;line-height:1.14!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qtext,
+ body.g3DataPrint #printArea .questions.qn16 .pq .choices {
+  font-size:11px!important;line-height:1.14!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual:has(.data-vis.chart) {
+  height:12mm!important;min-height:12mm!important;margin:0!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart {
+  height:43px!important;min-height:43px!important;max-height:43px!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart .bararea {height:42px!important;}
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart .barwrap {
+  height:40px!important;width:22px!important;min-width:22px!important;margin-right:2px!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart .barwrap i {
+  bottom:15px!important;left:5px!important;width:12px!important;max-height:17px!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart .barwrap b {
+  width:22px!important;height:10px!important;line-height:10px!important;font-size:8px!important;
+ }
+ body.g3DataPrint #printArea .questions.qn16 .pq .qvisual .data-vis.chart .barwrap em {
+  width:22px!important;font-size:8px!important;
+ }
+}
+</style>
 </body></html>
