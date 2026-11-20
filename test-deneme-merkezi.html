@@ -4762,7 +4762,14 @@ const EN2_THEMES=[
  ["5. TEMA — Homes & Houses & Neighbourhoods",["Parts and rooms of a house","House furniture","Pets in the house","Parts of the body of a pet"]],
  ["6. TEMA — Life in the City & the World",["Liquids","Fruits","Vegetables","Basic food"]]
 ];
+
+/* 3. sınıf Hayat Bilgisi: yalnızca ders kitabı konu başlıkları. Henüz test etkin değil. */
+const HB3_AREAS = [["1. ÖĞRENME ALANI — BEN VE OKULUM", ["Güçlüyüm, Geliştiriyorum", "Hakkım da Var Sorumluluğum da", "Çocuğum, Haklarımla Varım"]], ["2. ÖĞRENME ALANI — SAĞLIĞIM VE GÜVENLİĞİM", ["Sağlığımı Koruyorum", "Güvenliğimizi Tehdit Eden Durumlar", "Trafik Kurallarının Önemi"]], ["3. ÖĞRENME ALANI — AİLEM VE TOPLUM", ["Aile ve Toplum", "Yardımlaşma", "Meslekler"]], ["4. ÖĞRENME ALANI — YAŞADIĞIM YER VE ÜLKEM", ["Tarihî Mekân ve Doğal Güzellikler", "Ülkemizin Yönetim Şekli", "Mustafa Kemal Atatürk’ün Başarıları ve Kişilik Özellikleri", "Millî Birlik ve Beraberlik"]], ["5. ÖĞRENME ALANI — DOĞA VE ÇEVRE", ["Doğadaki Varlıkların İnsan Yaşamındaki Önemi", "Kroki ve Konum", "Afet Öncesi, Afet Anı ve Afet Sonrasında Yapılması Gerekenler", "Çevresel Sürdürülebilirlik"]], ["6. ÖĞRENME ALANI — BİLİM, TEKNOLOJİ VE SANAT", ["Bilimsel Gelişmelerin Hayatımızdaki Önemi", "Teknolojik Gelişmelerin Günlük Yaşama Etkisi", "Sanatçıların Sanata Katkıları"]]];
 function topics(){let l=$("lesson").value,m=activeMap(),math=v168IsMath();
+ if($('grade').value==='3. Sınıf' && l==='Hayat Bilgisi') {
+  $('topic').innerHTML=HB3_AREAS.map(([area,entries])=>'<optgroup label="'+area+'">'+entries.map(t=>'<option disabled>'+t+' — hazırlanıyor</option>').join('')+'</optgroup>').join('');
+  $('v168MixPanel').style.display='none'; $('v168MixOn').checked=false; v208SetCover(false); v168MixToggle(); return;
+ }
  if($("grade").value==="2. Sınıf" && l==="İngilizce"){
   $("topic").innerHTML=EN2_THEMES.map(([theme,entries])=>`<optgroup label="${theme}">${entries.map(t=>`<option disabled>${t} — soru havuzu hazırlanıyor</option>`).join("")}</optgroup>`).join("");
   $("v168MixPanel").style.display="none";$("v168MixOn").checked=false;v208SetCover(false);v168MixToggle();return;
